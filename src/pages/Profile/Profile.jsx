@@ -48,8 +48,8 @@ function Profile() {
 
       {/* about */}
       <div className="w-[70%] font-inter mx-10">
-        <div className="flex justify-between items-center  font-[600px] text-[16px]/[19.36px]">
-          <h1 className="text-[#484747]">About</h1>
+        <div className="flex justify-between items-center text-[16px]/[19.36px] font-medium">
+          <h className="text-[#484747]">About</h>
           <GoPencil className="text-[#3E1654]" />
         </div>
         <div className="font-inter font-normal font-[16px]/[24.64px] text-[#00000099]">
