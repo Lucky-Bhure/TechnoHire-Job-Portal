@@ -13,14 +13,11 @@ const [forgetPass, setForgetPass] = useState(false);
     <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-white">
       {/* Left Side: Form */}
       <div className="w-full md:w-[60%] h-screen md:h-auto px-6 py-8 md:px-12 lg:px-32 sm:px-32 xs:px-12 rounded-lg">
-        <h2 className="text-3xl font-semibold text-gray-800 mb-4 text-center">
+        <h2 className="text-3xl font-semibold text-gray-800 mb-[45px] text-center">
           Log In To <span style={{ color: "#7900BA" }}>TechnoHire</span>
         </h2>
         <form className="space-y-4">
           <div>
-            <label className="block text-md font-medium text-gray-600">
-              Email
-            </label>
             <input
               type="email"
               placeholder="Enter your email"
@@ -28,9 +25,6 @@ const [forgetPass, setForgetPass] = useState(false);
             />
           </div>
           <div>
-            <label className="block text-md font-medium text-gray-600">
-              Password
-            </label>
             <input
               type="password"
               placeholder="Enter your password"
@@ -45,24 +39,24 @@ const [forgetPass, setForgetPass] = useState(false);
               </span>
             </label>
             <Link
-              to="/forgot-password"
+              to="/forget-password"
               className="text-md text-violet-600 hover:underline font-semibold"
             >
               Forgot password?
             </Link>
 
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center ">
             <button
               type="submit"
-              className="w-[80%] py-3 px-4 bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-700"
+              className="w-[65%] py-3 px-4 my-[20px] bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-700"
             >
               Log In
             </button>
           </div>
         </form>
 
-        <div className="w-[75%] my-4 mx-[12%] flex items-center justify-center">
+        <div className="w-[55%] my-4 mx-[23%] mb-[25px] flex items-center justify-center">
           <span className="block w-[40%] border-t border-gray-300" />
           <span className="text-gray-500 mx-4 font-semibold whitespace-nowrap">
             Or Login With
@@ -131,7 +125,7 @@ const [forgetPass, setForgetPass] = useState(false);
           </button>
         </div>
 
-        <p className="mt-4 text-center text-gray-600">
+        <p className="mt-[25px] text-center text-gray-600">
           Don't have an account?{" "}
           <a href="#" className="text-violet-600 hover:underline font-semibold">
             Sign up
