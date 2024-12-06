@@ -32,7 +32,7 @@ const [forgetPass, setForgetPass] = useState(false);
           <p className=" mb-[40px] text-right text-gray-600 text-lg">
         Go back to {" "}
           <Link href="#" to="/login" className="text-violet-600 hover:underline font-semibold">
-          Login
+            Login
           </Link>
         </p>
           </div>
