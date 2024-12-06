@@ -9,6 +9,7 @@ export default {
       inter: ['Inter', ''],
       poppins: ['Poppins', ''],
       lato: ['Lato', ''],
+      urbanist: ['Urbanist', '']
     },
     extend: {},
   },
