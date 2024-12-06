@@ -5,12 +5,12 @@ import { Button } from "primereact/button";
 const Scheduleinterview = () => {
   return (
     <>
-      {/* <Layout> */}
-        Shcdulefor interview
-
-          <Button label="Submit" severity="primary"  />
-
-      {/* </Layout> */}
+      <Layout>
+      <div className="primereact-container">
+        <h1 className="text-xl font-poppins">Schedule Interview</h1>
+        <Button label="Submit" className="p-button-primary" />
+      </div>
+      </Layout>
     </>
   );
 };

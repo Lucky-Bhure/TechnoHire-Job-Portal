@@ -9,7 +9,6 @@ import Setting from "./pages/modules/Settings/Setting";
 import Feedback from "./pages/modules/Feedback/Feedback";
 import Login from "./components/login/Login";
 import ForgotPasswordDialog from "./components/Dialog/ForgotPasswordDialog";
-// import { ErrorBoundary } from "react-error-boundary";
 
 const App = () => {
   return (
