@@ -62,7 +62,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div class="border-b-2 w-full border-grey-400 ..."></div>
+        <div className="border-b-2 w-full border-grey-400 ..."></div>
       </div>
     </>
   );

@@ -7,11 +7,16 @@ import Savedjobs from "./pages/modules/Savedjobs/Savedjobs";
 import Scheduleinterview from "./pages/modules/Scheduleinterview/Scheduleinterview";
 import Setting from "./pages/modules/Settings/Setting";
 import Feedback from "./pages/modules/Feedback/Feedback";
+import Login from "./components/login/Login";
+import ForgotPasswordDialog from "./components/Dialog/ForgotPasswordDialog";
+// import { ErrorBoundary } from "react-error-boundary";
 
 const App = () => {
   return (
     <>
       <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/forgot-password" element={<ForgotPasswordDialog />} />
         <Route path="/" element={<Overview />} />
         <Route path="/my-profile" element={<Myprofile />} />
         <Route path="/applied-jobs" element={<Aplliedjobs />} />
@@ -19,6 +24,7 @@ const App = () => {
         <Route path="/scheduled-interview" element={<Scheduleinterview />} />
         <Route path="/settings" element={<Setting />} />
         <Route path="/feedback" element={<Feedback />} />
+        <Route path="*" element={<div>Page Not Found</div>} />
       </Routes>
     </>
   );
