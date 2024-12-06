@@ -17,7 +17,7 @@ function Profile() {
           src="./profile.jpg"
           alt=""
         />
-        <div class="font-medium  font-poppins">
+        <div className="font-medium  font-poppins">
           <h1 className="text-2xl/[36px] text-[#3E1654] font-semibold">
             Ninad Sathe
           </h1>
