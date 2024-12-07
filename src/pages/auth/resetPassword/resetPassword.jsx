@@ -4,6 +4,7 @@ import LoginLogo from "../../../assets/img/loginLogo.png";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { AiOutlineArrowRight } from "react-icons/ai";
 
 const ResetPassword = () => {
   const validation = Yup.object({
@@ -108,7 +109,7 @@ const ResetPassword = () => {
               className="w-[65%] py-3 px-4 bg-violet-700 text-white font-bold rounded-lg hover:bg-violet-700 flex items-center justify-center"
             >
               <span className="text-lg">Reset Password</span>
-              <i className="fa-solid fa-arrow-right mx-3 text-lg" />
+              <AiOutlineArrowRight className="mx-3 "/>
             </Link>
           </div>
         </form>
