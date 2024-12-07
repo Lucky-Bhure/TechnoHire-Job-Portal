@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^6.7.1",
-    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@ant-design/icons": "^5.5.2",
+    "antd": "^5.22.3",
     "axios": "^1.7.8",
     "formik": "^2.4.6",
     "lodash": "^4.17.21",
