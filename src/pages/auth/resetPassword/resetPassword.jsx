@@ -118,7 +118,7 @@ const ResetPassword = () => {
             Go back to {" "}
             <Link
               href="#"
-              to="/"
+              to="/login"
               className="text-violet-700 hover:underline font-semibold"
             >
               Login
