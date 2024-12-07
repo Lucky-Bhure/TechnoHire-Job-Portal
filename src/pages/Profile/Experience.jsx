@@ -4,6 +4,11 @@ import { FiPlus } from "react-icons/fi";
 import { HiOutlineEye } from "react-icons/hi2";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import ey_logo from '../.../../../assets/Profileassests/ey_logo.png'
+import infosys from '../.../../../assets/Profileassests/infosys.jpg'
+import perficient from '../.../../../assets/Profileassests/perficient.jpg'
+import google from '../.../../../assets/Profileassests/google.jpg'
+import pdf_logo from '../.../../../assets/Profileassests/pdf_logo.png'
 
 function Experience() {
   return (
@@ -20,7 +25,7 @@ function Experience() {
         </div>
         <div className="flex items-center">
           <div className="flex-shrink-0">
-            <img className="w-[55px] h-[51px]" src="/ey_logo.png" alt="" />
+            <img className="w-[55px] h-[51px]" src={ey_logo} alt="" />
           </div>
           <div className="flex-1 min-w-0 ms-4">
             <p className="flex items-center font-medium text-[#000000] truncate dark:text-white font-poppins font-[16px]/[19.36px]">
@@ -43,7 +48,7 @@ function Experience() {
         <hr className="text-[#E0E0E0] w-[80%]" />
         <div className="flex items-center">
           <div className="flex-shrink-0">
-            <img className="w-[55px] h-[51px]" src="/infosys.jpg" alt="" />
+            <img className="w-[55px] h-[51px]" src={infosys} alt="" />
           </div>
           <div className="flex-1 min-w-0 ms-4">
             <p className="font-medium flex items-center text-[#000000] truncate dark:text-white font-poppins font-[16px]/[19.36px]">
@@ -66,7 +71,7 @@ function Experience() {
         <hr className="text-[#E0E0E0] w-[80%]" />
         <div className="flex items-center">
           <div className="flex-shrink-0">
-            <img className="w-[55px] h-[51px]" src="/perficient.jpg" alt="" />
+            <img className="w-[55px] h-[51px]" src={perficient} alt="" />
           </div>
           <div className="flex-1 min-w-0 ms-4">
             <p className="font-medium flex items-center text-[#000000] truncate dark:text-white font-poppins font-[16px]/[19.36px]">
@@ -103,7 +108,7 @@ function Experience() {
           <div className="flex justify-between items-center w-[100%] mt-5">
             <div className="flex items-center gap-3">
               <img
-                src="/google.jpg"
+                src={google}
                 alt=""
                 className="w-[45px] h-[45px] rounded-[21px] object-cover"
               />
@@ -130,7 +135,7 @@ function Experience() {
           <div className="flex justify-between items-center mb-4 w-[100%]">
             <div className="flex items-center gap-3">
               <img
-                src="/google.jpg"
+                src={google}
                 alt=""
                 className="w-[45px] h-[45px] rounded-[21px] object-cover"
               />
@@ -167,7 +172,7 @@ function Experience() {
         </div>
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <img src="/pdf_logo.png" className="w-[51px] h-[53px]" alt="" />
+            <img src={pdf_logo} className="w-[51px] h-[53px]" alt="" />
             <p className="font-poppins font-medium text-[16px]/[24px] text-[#000000]">
               resume_ninad_UI/UX.pdf
             </p>
@@ -179,7 +184,7 @@ function Experience() {
         </div>
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <img src="/pdf_logo.png" className="w-[51px] h-[53px]" alt="" />
+            <img src={pdf_logo} className="w-[51px] h-[53px]" alt="" />
             <p className="font-poppins font-medium text-[16px]/[24px] text-[#000000]">
               resume_ninad_graphics.pdf
             </p>
