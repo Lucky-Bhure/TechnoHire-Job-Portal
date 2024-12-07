@@ -10,12 +10,23 @@ import Savedjobs from "./pages/modules/Savedjobs/Savedjobs";
 import Scheduleinterview from "./pages/modules/Scheduleinterview/Scheduleinterview";
 import Setting from "./pages/modules/Settings/Setting";
 import Feedback from "./pages/modules/Feedback/Feedback";
-import BasicDetails from "./pages/modules/BasicDetails/BasicDetails";
+import Login from "./components/login/Login";
+import ResetPassword from "./pages/auth/resetPassword/resetPassword"
+import ForgotPassword from "./pages/auth/forgotPassword/ForgotPassword";
+import ResetSuccess from "./pages/auth/passwordReset/passwordResetSuccess"
+import Homepage from "./pages/modules/Homepage/Homepage";
+import Findjob from "./pages/modules/Findajob/Findjob";
+import Findemployee from "./pages/modules/FindEmplyee/Findemployee";
+import Jobalerts from "./pages/modules/Jobalerts/Jobalerts";
+import Customersupport from "./pages/modules/Customersupports/Customersupport";
 
 function App() {
   return (
     <div>
       <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/homePage" element={<Homepage/>}/>
         <Route path="/" element={<Overview />} />
         <Route path="/login" element={<Login />} />
         <Route path="/reset-password" element={<ResetPassword />} />
@@ -27,10 +38,30 @@ function App() {
         <Route path="/scheduled-interview" element={<Scheduleinterview />} />
         <Route path="/settings" element={<Setting />} />
         <Route path="/feedback" element={<Feedback />} />
-        <Route path="/basicDetails" element={<BasicDetails/>}/>
+        <Route path="*" element={<div>Page Not Found</div>} />
+        <Route path="/" element={<Login />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/forget-password" element={<ForgotPassword />} />
+        <Route path="/resetSuccess-password" element={<ResetSuccess />} />
+        <Route path="/" element={<Homepage />} />
+        <Route path="/find-job" element={<Findjob />} />
+        <Route path="/find-employers" element={<Findemployee />} />
+        <Route path="/job-alerts" element={<Jobalerts />} />
+        <Route path="/customer-supports" element={<Customersupport />} />
+        <Route path="/dashboard" element={<Overview />} />
+        <Route path="/dashboard/overview" element={<Overview />} />
+        <Route path="/dashboard/my-profile" element={<Myprofile />} />
+        <Route path="/dashboard/applied-jobs" element={<Aplliedjobs />} />
+        <Route path="/dashboard/saved-jobs" element={<Savedjobs />} />
+        <Route
+          path="/dashboard/scheduled-interview"
+          element={<Scheduleinterview />}
+        />
+        <Route path="/dashboard/settings" element={<Setting />} />
+        <Route path="/dashboard/feedback" element={<Feedback />} />
       </Routes>
     </div>
   );
-}
+};
 
 export default App;

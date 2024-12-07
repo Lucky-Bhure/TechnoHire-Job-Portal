@@ -2,8 +2,8 @@ import React from "react";
 import { HiOutlineRectangleStack } from "react-icons/hi2";
 import { FiUser } from "react-icons/fi";
 import { TfiBag } from "react-icons/tfi";
-import { GiKnightBanner } from "react-icons/gi";
 import { GoClock } from "react-icons/go";
+import { FaBookmark } from "react-icons/fa6";
 import { IoSettingsOutline } from "react-icons/io5";
 import { VscFeedback } from "react-icons/vsc";
 import { NavLink } from "react-router-dom";
@@ -17,7 +17,7 @@ const Sidebar = () => {
       <div className="grid grid-rows-7 mt-5  ">
         {/* Dashboard Links */}
         <NavLink
-          to="/"
+          to="/dashboard/overview"
           className={({ isActive }) =>
             `flex items-center pl-5 py-3 mx-4  ${
               isActive
@@ -31,7 +31,7 @@ const Sidebar = () => {
         </NavLink>
 
         <NavLink
-          to="/my-profile"
+          to="/dashboard/my-profile"
           className={({ isActive }) =>
             `flex items-center pl-5 py-3 mx-4  ${
               isActive
@@ -45,7 +45,7 @@ const Sidebar = () => {
         </NavLink>
 
         <NavLink
-          to="/applied-jobs"
+          to="/dashboard/applied-jobs"
           className={({ isActive }) =>
             `flex items-center pl-5 py-3 mx-4  ${
               isActive
@@ -59,7 +59,7 @@ const Sidebar = () => {
         </NavLink>
 
         <NavLink
-          to="/saved-jobs"
+          to="/dashboard/saved-jobs"
           className={({ isActive }) =>
             `flex items-center pl-5 py-3 mx-4  ${
               isActive
@@ -68,12 +68,12 @@ const Sidebar = () => {
             }`
           }
         >
-          <GiKnightBanner size={30} />
+          <FaBookmark size={25} />
           <span className="pl-4">Saved Jobs</span>
         </NavLink>
 
         <NavLink
-          to="/scheduled-interview"
+          to="/dashboard/scheduled-interview"
           className={({ isActive }) =>
             `flex items-center pl-5 py-3 mx-4  ${
               isActive
@@ -87,7 +87,7 @@ const Sidebar = () => {
         </NavLink>
 
         <NavLink
-          to="/settings"
+          to="/dashboard/settings"
           className={({ isActive }) =>
             `flex items-center pl-5 py-3 mx-4  ${
               isActive
@@ -101,7 +101,7 @@ const Sidebar = () => {
         </NavLink>
 
         <NavLink
-          to="/feedback"
+          to="/dashboard/feedback"
           className={({ isActive }) =>
             `flex items-center pl-5 py-3 mx-4  ${
               isActive
