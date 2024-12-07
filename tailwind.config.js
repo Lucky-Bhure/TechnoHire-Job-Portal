@@ -7,9 +7,10 @@ export default {
   ],
   theme: {
     fontFamily: {
-      inter: ["Inter", ""],
-      poppins: ["Poppins", ""],
-      lato: ["Lato", ""],
+      inter: ['Inter', ''],
+      poppins: ['Poppins', ''],
+      lato: ['Lato', ''],
+      urbanist: ['Urbanist', '']
     },
     extend: {},
   },
