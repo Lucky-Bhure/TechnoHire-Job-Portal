@@ -8,7 +8,9 @@ import Scheduleinterview from "./pages/modules/Scheduleinterview/Scheduleintervi
 import Setting from "./pages/modules/Settings/Setting";
 import Feedback from "./pages/modules/Feedback/Feedback";
 import Login from "./components/login/Login";
-import ForgotPasswordDialog from "./components/Dialog/ForgotPasswordDialog";
+import ResetPassword from "./pages/auth/resetPassword/resetPassword"
+import ForgotPassword from "./pages/auth/forgotPassword/ForgotPassword";
+import ResetSuccess from "./pages/auth/passwordReset/passwordResetSuccess"
 
 const App = () => {
   return (
@@ -24,6 +26,10 @@ const App = () => {
         <Route path="/settings" element={<Setting />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="*" element={<div>Page Not Found</div>} />
+        <Route path="/" element={<Login />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/forget-password" element={<ForgotPassword />} />
+        <Route path="/resetSuccess-password" element={<ResetSuccess />} />
       </Routes>
     </>
   );
