@@ -2,6 +2,7 @@
 export default {
   content: [
     "./index.html",
+    "node_modules/primereact/**/*.{js,jsx,ts,tsx}", // Include PrimeReact components
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
@@ -14,5 +15,7 @@ export default {
     extend: {},
   },
   plugins: [],
-}
-
+  corePlugins: {
+    preflight: true, // Ensure Tailwind's preflight does not override styles
+  },
+};
