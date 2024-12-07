@@ -6,6 +6,8 @@ import Terms from "./Terms";
 import { RiUserSettingsFill } from "react-icons/ri";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import { BiSupport } from "react-icons/bi";
+import { CgNotes } from "react-icons/cg";
+
 
 const tabsData = [
   {
@@ -25,7 +27,7 @@ const tabsData = [
   },
   {
     tabName: "Terms & Services",
-    iconLeft: "",
+    iconLeft: <CgNotes />,
     component: <Terms />,
   },
 ];
