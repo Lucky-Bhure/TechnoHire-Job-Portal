@@ -6,6 +6,8 @@ import ULogo from '../../../assets/ULogo.png';
 import appleLogo from '../../../assets/appleLogo.png';
 import GoogleLogo from '../../../assets/GoogleLogo.png';
 import EmployersLogo from '../../../assets/EmployersLogo.png';
+// import crown from '../../../assets/crown.png';
+import wheel from '../../../assets/wheel.png';
 
 
 import { FaBandAid, FaSearch } from "react-icons/fa";
@@ -29,6 +31,7 @@ import { FaDatabase } from 'react-icons/fa';
 import { FaMap } from 'react-icons/fa';
 import { FaBookmark } from 'react-icons/fa';
 import { FaCalendar } from 'react-icons/fa';
+
 
 
 
@@ -236,7 +239,7 @@ const Homepage = () => {
             <div className="grid grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 gap-12 p-6">
 
               <div className="flex gap-8 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white ">
-                <FaPenNib  className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+                <FaPenNib className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
                 <span>
                   <h5 className='text-lg font-medium'>Graphics & Design</h5>
                   <p className='text-gray-500'>357 Open position</p>
@@ -307,12 +310,12 @@ const Homepage = () => {
           </div>
         </div>
 
-         <hr className='w-full' /> 
+        <hr className='w-full' />
 
         <div className='h-[800px] w-full pt-10 pl-32 pr-32'>
           <h1 className='font-normal text-[35px] pb-6'>Recents Jobs</h1>
           <div className='flex flex-col gap-5'>
-          <div className="flex gap-10 h-[90px] rounded-lg bg-white border shadow-md ">
+            <div className="flex gap-10 h-[90px] rounded-lg bg-white border shadow-md ">
               <div className="flex items-start p-4">
                 <img className="h-16 w-16" src={UpLogo} alt="UP Logo" />
                 <div className="ml-4 flex-grow">
@@ -354,7 +357,7 @@ const Homepage = () => {
                   <div className="flex justify-between pb-2">
                     <span className="text-xl font-semibold text-[#6712B9]">Software Engineer</span>
                     <button className="px-4 font-medium  text-sm py-1 rounded-full bg-[#F5EBFFB2] text-[#6712B9] ">
-                       Full Time
+                      Full Time
                     </button>
                   </div>
                   <div className="flex gap-5 justify-between">
@@ -416,7 +419,7 @@ const Homepage = () => {
                 </button>
               </div>
             </div>
-          
+
             <div className="flex gap-10 h-[90px] rounded-lg bg-white border shadow-md ">
               <div className="flex items-start p-4">
                 <img className="h-16 w-16" src={ULogo} alt="ULogo" />
@@ -494,7 +497,7 @@ const Homepage = () => {
                   <div className="flex gap-2 justify-between pb-2">
                     <span className="text-xl font-semibold text-gray-800">Interaction Designer</span>
                     <button className="px-2 font-medium  text-sm py-1 rounded-full bg-[#F5EBFFB2] text-[#6712B9] ">
-                     Full Time
+                      Full Time
                     </button>
                   </div>
                   <div className="flex gap-6 justify-between">
@@ -523,7 +526,7 @@ const Homepage = () => {
             </div>
 
           </div>
-        </div> 
+        </div>
 
         <div className='h-[650px] bg-[#FFFF] w-full pl-32 pr-32 pt-10'>
           <div className='flex justify-between'>
@@ -539,6 +542,24 @@ const Homepage = () => {
               </button>
             </div>
           </div>
+
+          <div className="grid grid-cols-1 mt-6 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
+
+            <div className="flex flex-col border-2 gap-6 h-[200px] w-[312px] rounded-lg">
+              <div className="flex justify-start items-start gap-8 p-8 rounded-lg bg-white ">
+                <img className='bg-[#EA4C89] w-[24px] h-[24px]' src={wheel} alt="wheel.png" />
+                <span>
+                  <h5 className='text-lg  font-medium'>Drible</h5>
+                  <p className='text-gray-500'>Pune</p>
+                </span>
+              </div>
+              <button>Open Position</button>
+
+            </div>
+
+
+          </div>
+
         </div>
       </div>
     </>
