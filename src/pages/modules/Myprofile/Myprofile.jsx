@@ -16,16 +16,12 @@ const Myprofile = () => {
     <>
       <Layout>
 
-        <div
-          style={{
-            backgroundColor: theme.backgroundColorfirstforprofile,
-          }}
-        >
           hielo
         <div className="flex">
           <Profile />
           <Experience />
         </div>
+
       </Layout>
     </>
   );
