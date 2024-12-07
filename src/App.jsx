@@ -11,6 +11,7 @@ import Login from "./components/login/Login";
 import ResetPassword from "./pages/auth/resetPassword/resetPassword"
 import ForgotPassword from "./pages/auth/forgotPassword/ForgotPassword";
 import ResetSuccess from "./pages/auth/passwordReset/passwordResetSuccess"
+import Homepage from "./pages/modules/Homepage/Homepage";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/homePage" element={<Homepage/>}/>
         <Route path="/" element={<Overview />} />
         <Route path="/my-profile" element={<Myprofile />} />
         <Route path="/applied-jobs" element={<Aplliedjobs />} />
