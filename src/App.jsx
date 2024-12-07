@@ -39,10 +39,6 @@ function App() {
         <Route path="/settings" element={<Setting />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="*" element={<div>Page Not Found</div>} />
-        <Route path="/" element={<Login />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
-        <Route path="/forget-password" element={<ForgotPassword />} />
-        <Route path="/resetSuccess-password" element={<ResetSuccess />} />
         <Route path="/" element={<Homepage />} />
         <Route path="/find-job" element={<Findjob />} />
         <Route path="/find-employers" element={<Findemployee />} />
