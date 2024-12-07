@@ -7,11 +7,13 @@ import Savedjobs from "./pages/modules/Savedjobs/Savedjobs";
 import Scheduleinterview from "./pages/modules/Scheduleinterview/Scheduleinterview";
 import Setting from "./pages/modules/Settings/Setting";
 import Feedback from "./pages/modules/Feedback/Feedback";
+import Homepage from "./pages/modules/Homepage/Homepage";
 
 const App = () => {
   return (
     <>
       <Routes>
+        <Route path="/homePage" element={<Homepage/>}/>
         <Route path="/" element={<Overview />} />
         <Route path="/my-profile" element={<Myprofile />} />
         <Route path="/applied-jobs" element={<Aplliedjobs />} />
