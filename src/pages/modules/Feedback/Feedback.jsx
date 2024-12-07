@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../../../components/Layout/Layout";
 import { Rate } from "antd";
 
 const Feedback = () => {
+  const [checked, setchecked] = useState(false);
+
+  const handlecheck = () => {
+    setchecked(!checked);
+  };
+
   return (
     <>
       <Layout>
@@ -18,12 +24,12 @@ const Feedback = () => {
             <input
               type="text"
               placeholder="Name"
-              className="border border-gray-300 rounded-md p-3 "
+              className="border border-gray-300 rounded-md p-3 focus:outline-blue-500 "
             />
             <input
               type="email"
               placeholder="Email Address"
-              className="border border-gray-300 rounded-md p-3 "
+              className="border border-gray-300 rounded-md p-3 focus:outline-blue-500 "
             />
 
             <div className="flex items-center border border-gray-300 rounded-md p-3">
@@ -31,13 +37,13 @@ const Feedback = () => {
               <input
                 type="number"
                 placeholder="Contact Number"
-                className="flex-1 "
+                className="flex-1 focus:outline-blue-500 "
               />
             </div>
             <input
               type="text"
               placeholder="Company Name"
-              className="border border-gray-300 rounded-md p-3 "
+              className="border border-gray-300 rounded-md p-3 focus:outline-blue-500 "
             />
           </div>
 
@@ -58,19 +64,26 @@ const Feedback = () => {
             <div className="flex items-center">
               <input
                 type="checkbox"
+                value={checked}
+                onChange={handlecheck}
                 id="privacyPolicy"
                 className="w-5 h-5 text-blue-600 border-gray-300 rounded "
               />
               <label
                 htmlFor="privacyPolicy"
-                className="ml-2 text-sm text-gray-400"
+                className={`ml-2 text-sm ${
+                  checked ? "text-black" : "text-gray-400"
+                } `}
               >
                 I have read and accept the Privacy Policy.
               </label>
             </div>
           </div>
           <div class="flex justify-center items-center my-11">
-            <button class="bg-[#7900BA] text-white font-semibold text-lg py-2 px-36 rounded-lg ">
+            <button
+              disabled={!checked}
+              class="bg-[#7900BA] text-white font-semibold text-lg py-2 px-36 rounded-lg "
+            >
               Submit
             </button>
           </div>

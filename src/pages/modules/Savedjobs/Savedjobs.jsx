@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import Layout from "../../../components/Layout/Layout";
 import { CiLocationOn } from "react-icons/ci";
-import { TiTick } from "react-icons/ti";
 import useTheme from "../../../hooks/theme/useTheme";
 import { themes } from "../../../components/Themes/Theme";
 import { RxCrossCircled } from "react-icons/rx";
 import { CiCalendar } from "react-icons/ci";
 import { FaArrowRight } from "react-icons/fa6";
-import { GiKnightBanner } from "react-icons/gi";
+import { FaBookmark } from "react-icons/fa6";
+import apple from "../../../assets/appleLogo.png";
 
 const Savedjobs = () => {
   const { theme, setTheme } = useTheme();
@@ -77,9 +77,11 @@ const Savedjobs = () => {
           {jobData.map((job) => (
             <div key={job.id}>
               <div className="flex h-20 gap-4 my-2">
-                <div className="ps-1">imges</div>
+                <div className="ps-1">
+                  <img src={apple} width={50} alt="" />
+                </div>
                 <div className="px-1">
-                  <div className="flex py-2">
+                  <div className="flex  py-[3px]">
                     <p className="font-bold">{job.title}</p>
                     <span className="text-xs text-[#7900BA] px-2 bg-[#DCBDED] py-1 ml-4 rounded-xl flex items-center">
                       {job.type}
@@ -117,7 +119,7 @@ const Savedjobs = () => {
                 <div className="ml-auto">
                   <div className="flex">
                     <div className="ps-3 py-7">
-                      <GiKnightBanner color="#7900BA" size={30} />
+                      <FaBookmark color="#7900BA" size={20} />
                     </div>
                     <div className="flex mx-3 my-5">
                       {job.jobtimes === "Job Expired" ? (
