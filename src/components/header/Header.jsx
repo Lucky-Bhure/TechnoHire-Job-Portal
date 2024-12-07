@@ -3,6 +3,7 @@ import { Input, Select, Space } from "antd";
 import { MdOutlineMessage } from "react-icons/md";
 
 import { IoIosNotificationsOutline } from "react-icons/io";
+import MainHeader from "./MainHeader";
 const Header = () => {
   const options = [
     {
@@ -18,6 +19,9 @@ const Header = () => {
     <>
       <div className="container">
         <div className="w-full  h-[100px]">
+          {/* <div>
+            <MainHeader />
+          </div> */}
           <div className="flex">
             <div className=" w-[250px] my-2 mx-5 h-[80px]">
               <div className="flex">

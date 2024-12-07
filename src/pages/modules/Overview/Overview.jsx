@@ -2,7 +2,9 @@ import React, { useEffect } from "react";
 import Layout from "../../../components/Layout/Layout";
 import useTheme from "../../../hooks/theme/useTheme";
 import { LuShoppingBag } from "react-icons/lu";
-import { GiVerticalBanner } from "react-icons/gi";
+
+import { FaBookmark } from "react-icons/fa6";
+import apple from "../../../assets/appleLogo.png";
 import { LuBellRing } from "react-icons/lu";
 import { Flex, Progress } from "antd";
 import { FaArrowRight } from "react-icons/fa6";
@@ -70,7 +72,7 @@ const Overview = () => {
                 </div>
                 <div className="w-20 rounded-md h-[70px] my-3 ms-[185px] bg-white">
                   <div className="px-5 py-4">
-                    <GiVerticalBanner size={40} />
+                    <FaBookmark size={40} />
                   </div>
                 </div>
               </div>
@@ -172,30 +174,27 @@ const Overview = () => {
                   <tr className="border-b-2 border-gray-300">
                     <td className="px-4 py-2 font-medium text-center text-gray-500">
                       <div className="flex">
-                        <div>imges</div>
-                        <div className="flex ps-5">
-                          <p className="text-black">{e.title}</p>
-                          <span
-                            style={{
-                              backgroundColor: "#DCBDED",
-                            }}
-                            className="text-xs px-2 py-1 ml-4 rounded-xl flex items-center"
-                          >
-                            <span
-                              style={{ color: theme.ButtonbgColor }}
-                              className="ml-1"
-                            >
-                              {e.type}
-                            </span>
+                        <img src={apple} width={50} alt="" />
+                        <p className="ps-3">{e.title}</p>
+                        <span
+                          style={{
+                            backgroundColor: "#DCBDED",
+                          }}
+                          className="py-1 px-2 ms-2 h-6 text-xs rounded-xl"
+                        >
+                          <span style={{ color: theme.ButtonbgColor }}>
+                            {e.type}
                           </span>
-                        </div>
+                        </span>
                       </div>
-                      <div className="flex">
-                        <div className="flex py-2 ">
-                          <CiLocationOn className="relative left-[62px] top-1" />
-                          &nbsp;
-                          <p className="ms-16">{e.location}</p>
-                          <div className="ps-10">{e.salary}</div>
+                      <div className="relative bottom-4 left-12">
+                        <div className="flex">
+                          <CiLocationOn
+                            className="relative bottom-[2px] left-2"
+                            size={20}
+                          />
+                          <p className="ps-3 text-sm">{e.location}</p>
+                          <p className="ps-5 text-sm">{e.salary}</p>
                         </div>
                       </div>
                     </td>

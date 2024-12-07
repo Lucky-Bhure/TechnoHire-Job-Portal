@@ -2,8 +2,8 @@ import React from "react";
 import { HiOutlineRectangleStack } from "react-icons/hi2";
 import { FiUser } from "react-icons/fi";
 import { TfiBag } from "react-icons/tfi";
-import { GiKnightBanner } from "react-icons/gi";
 import { GoClock } from "react-icons/go";
+import { FaBookmark } from "react-icons/fa6";
 import { IoSettingsOutline } from "react-icons/io5";
 import { VscFeedback } from "react-icons/vsc";
 import { NavLink } from "react-router-dom";
@@ -68,7 +68,7 @@ const Sidebar = () => {
             }`
           }
         >
-          <GiKnightBanner size={30} />
+          <FaBookmark size={25} />
           <span className="pl-4">Saved Jobs</span>
         </NavLink>
 
