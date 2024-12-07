@@ -17,7 +17,7 @@ const Sidebar = () => {
       <div className="grid grid-rows-7 mt-5  ">
         {/* Dashboard Links */}
         <NavLink
-          to="/"
+          to="/dashboard/overview"
           className={({ isActive }) =>
             `flex items-center pl-5 py-3 mx-4  ${
               isActive
@@ -31,7 +31,7 @@ const Sidebar = () => {
         </NavLink>
 
         <NavLink
-          to="/my-profile"
+          to="/dashboard/my-profile"
           className={({ isActive }) =>
             `flex items-center pl-5 py-3 mx-4  ${
               isActive
@@ -45,7 +45,7 @@ const Sidebar = () => {
         </NavLink>
 
         <NavLink
-          to="/applied-jobs"
+          to="/dashboard/applied-jobs"
           className={({ isActive }) =>
             `flex items-center pl-5 py-3 mx-4  ${
               isActive
@@ -59,7 +59,7 @@ const Sidebar = () => {
         </NavLink>
 
         <NavLink
-          to="/saved-jobs"
+          to="/dashboard/saved-jobs"
           className={({ isActive }) =>
             `flex items-center pl-5 py-3 mx-4  ${
               isActive
@@ -73,7 +73,7 @@ const Sidebar = () => {
         </NavLink>
 
         <NavLink
-          to="/scheduled-interview"
+          to="/dashboard/scheduled-interview"
           className={({ isActive }) =>
             `flex items-center pl-5 py-3 mx-4  ${
               isActive
@@ -87,7 +87,7 @@ const Sidebar = () => {
         </NavLink>
 
         <NavLink
-          to="/settings"
+          to="/dashboard/settings"
           className={({ isActive }) =>
             `flex items-center pl-5 py-3 mx-4  ${
               isActive
@@ -101,7 +101,7 @@ const Sidebar = () => {
         </NavLink>
 
         <NavLink
-          to="/feedback"
+          to="/dashboard/feedback"
           className={({ isActive }) =>
             `flex items-center pl-5 py-3 mx-4  ${
               isActive
