@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import Layout from "../../../components/Layout/Layout";
 import useTheme from "../../../hooks/theme/useTheme";
 import { LuShoppingBag } from "react-icons/lu";
-
 import { FaBookmark } from "react-icons/fa6";
 import apple from "../../../assets/appleLogo.png";
 import { LuBellRing } from "react-icons/lu";
@@ -41,191 +40,167 @@ const Overview = () => {
   ];
 
   return (
-    <>
-      <Layout>
-        <div className="pt-10">
-          <p className="text-xl font-bold ">Hello, Ninad Sathe</p>
-          <p className="text-md text-gray-400">
-            Here is Your Daily activities and job alerts
-          </p>
-          <div className="grid grid-cols-3  mt-4 h-24 gap-5">
-            <div style={{ backgroundColor: theme.backgroundColorfirst }}>
-              <div className="flex">
-                <div className="px-4 py-4">
-                  <p className="text-2xl font-bold">589</p>
+    <Layout>
+      <div className="pt-10 px-4 md:px-8">
+        <p className="text-xl font-bold">Hello, Ninad Sathe</p>
+        <p className="text-md text-gray-400 mb-6">
+          Here is Your Daily activities and job alerts
+        </p>
 
-                  <p>Applied jobs</p>
-                </div>
-                <div className="w-20 rounded-md h-[70px] my-3 ms-44 bg-white">
-                  <div className="px-5 py-4">
-                    <LuShoppingBag size={40} />
-                  </div>
-                </div>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 mb-6">
+          <div className="bg-[#DCBDED] rounded-lg shadow-md p-6">
+            <div className="flex items-center">
+              <div className="flex-1">
+                <p className="text-2xl font-bold">589</p>
+                <p className="text-sm text-gray-500">Applied jobs</p>
               </div>
-            </div>
-            <div style={{ backgroundColor: theme.backgroundColorsecond }}>
-              <div className="flex">
-                <div className="px-4 py-4">
-                  <p className="text-2xl font-bold">238</p>
-
-                  <p>Saved jobs</p>
-                </div>
-                <div className="w-20 rounded-md h-[70px] my-3 ms-[185px] bg-white">
-                  <div className="px-5 py-4">
-                    <FaBookmark size={40} />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              style={{ backgroundColor: theme.backgroundColorThird }}
-              className=""
-            >
-              <div className="flex">
-                <div className="px-4 py-4">
-                  <p className="text-2xl font-bold">5</p>
-
-                  <span>Scheduled Interview</span>
-                </div>
-                <div className="w-20 rounded-md h-[70px] my-3 ms-[119px] bg-white">
-                  <div className="px-5 py-4">
-                    <LuBellRing size={40} />
-                  </div>
-                </div>
+              <div className="w-16 h-16 bg-[#F5F5F5] rounded-md flex items-center justify-center">
+                <LuShoppingBag size={40} />
               </div>
             </div>
           </div>
-          <div
-            style={{ backgroundColor: theme.bgColorforProfile }}
-            className="grid h-[125px] grid-col-3 mt-6 rounded-lg "
-          >
-            <div className="col-span-3 px-10 py-7 flex ">
-              <img
-                className="cursor-pointer w-[70px] h-[70px] object-cover rounded-full hover:border-2 hover:border-black"
-                src="https://plus.unsplash.com/premium_photo-1690086519096-0594592709d3?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-              />
-              <div className=" ms-10 my-3">
-                <p className="font-semibold">
-                  Your Profile editing is not completed
-                </p>
-                <p>complete your profile</p>
+          <div className="bg-[#FFF6E6] rounded-lg shadow-md p-6">
+            <div className="flex items-center">
+              <div className="flex-1">
+                <p className="text-2xl font-bold">238</p>
+                <p className="text-sm text-gray-500">Saved jobs</p>
               </div>
-              <div className="ms-auto ">
-                <Flex wrap gap="small">
-                  <Progress
-                    strokeColor={theme.progressBarcolor}
-                    type="circle"
-                    percent={90}
-                    size={80}
-                  />
-                  <div className="relative right-[78px] top-[10px] ">
-                    <Progress
-                      type="circle"
-                      strokeColor={theme.progressBarcolor}
-                      percent={90}
-                      format={() => null}
-                      size={60}
-                    />
-                  </div>
-                </Flex>
-              </div>
-              <button className="bg-white cursor-pointer my-2 h-[55px] w-[165px]">
-                <div className="px-4 py-[17px]">
-                  <p
-                    className="font-bold"
-                    style={{ color: theme.ButtonbgColor }}
-                  >
-                    Edit Profile
-                  </p>
-                  <div className="relative left-28 bottom-5">
-                    <FaArrowRight color={theme.ButtonbgColor} />
-                  </div>
-                </div>
-              </button>
-            </div>
-          </div>
-          <div className="mt-6 ">
-            <div className="flex justify-between">
-              <p>Recently Applied</p>
-              <div className="flex  pe-4 ">
-                <p style={{ color: "#767F8C" }}>View all</p>
-                <span className="relative top-[4px] left-2">
-                  <FaArrowRight style={{ color: "#767F8C" }} />
-                </span>
+              <div className="w-16 h-16 bg-[#F5F5F5] rounded-md flex items-center justify-center">
+                <FaBookmark size={40} />
               </div>
             </div>
           </div>
-          <div className="p-2 font-light  overflow-x-auto">
-            <table className="table-auto w-full">
-              <thead>
-                <tr style={{ backgroundColor: "#F1F2F4" }}>
-                  <th className="px-6 py-3  text-center">Jobs</th>
-                  <th className="px-6 py-3  text-center">Date Applied</th>
-                  <th className="px-6 py-3  text-center">Status</th>
-                  <th className="px-6 py-3  text-center">Action</th>
-                </tr>
-              </thead>
-              <tr>
-                <td colSpan="13">
-                  <hr className="border-t-2 border-light my-2" />
-                </td>
-              </tr>
-              <tbody>
-                {jobData.map((e) => (
-                  <tr className="border-b-2 border-gray-300">
-                    <td className="px-4 py-2 font-medium text-center text-gray-500">
-                      <div className="flex">
-                        <img src={apple} width={50} alt="" />
-                        <p className="ps-3">{e.title}</p>
-                        <span
-                          style={{
-                            backgroundColor: "#DCBDED",
-                          }}
-                          className="py-1 px-2 ms-2 h-6 text-xs rounded-xl"
-                        >
-                          <span style={{ color: theme.ButtonbgColor }}>
-                            {e.type}
-                          </span>
-                        </span>
-                      </div>
-                      <div className="relative bottom-4 left-12">
-                        <div className="flex">
-                          <CiLocationOn
-                            className="relative bottom-[2px] left-2"
-                            size={20}
-                          />
-                          <p className="ps-3 text-sm">{e.location}</p>
-                          <p className="ps-5 text-sm">{e.salary}</p>
-                        </div>
-                      </div>
-                    </td>
-
-                    <td className="px-4 py-1 font-medium text-center text-gray-500">
-                      {e.dateApplied}
-                    </td>
-                    <td className="px-4 py-1 font-medium text-center text-green-500">
-                      <div className="flex">
-                        <div className="py-1">
-                          <TiTick color="green" />
-                        </div>
-                        <div className="ps-3">{e.status}</div>
-                      </div>
-                    </td>
-
-                    <td className="px-4 py-1 font-medium text-center">
-                      <button className="hover:bg-[#7900BA] hover:text-white text-[#7900BA] bg-[#DCBDED]  w-[130px] text-[15px]  px-2 py-3 cursor-pointer  ">
-                        view Details
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="bg-[#E7F6EA] rounded-lg shadow-md p-6">
+            <div className="flex items-center">
+              <div className="flex-1">
+                <p className="text-2xl font-bold">5</p>
+                <p className="text-sm text-gray-500">Scheduled Interview</p>
+              </div>
+              <div className="w-16 h-16 bg-[#F5F5F5] rounded-md flex items-center justify-center">
+                <LuBellRing size={40} />
+              </div>
+            </div>
           </div>
         </div>
-      </Layout>
-    </>
+
+        <div
+  style={{ backgroundColor: theme.bgColorforProfile }}
+  className="grid grid-cols-1 sm:grid-cols-3 mt-6 rounded-lg overflow-hidden"
+>
+  <div className="col-span-3 px-4 sm:px-10 py-7 flex flex-col sm:flex-row items-center sm:items-start">
+    <img
+      className="cursor-pointer w-[70px] h-[70px] object-cover rounded-full hover:border-2 hover:border-black mb-4 sm:mb-0"
+      src="https://plus.unsplash.com/premium_photo-1690086519096-0594592709d3?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="Profile"
+    />
+    <div className="mt-4 sm:mt-0 sm:ml-10 text-center sm:text-left">
+      <p className="font-semibold text-lg sm:text-xl">
+        Your Profile editing is not completed
+      </p>
+      <p className="text-sm sm:text-base">Complete your profile</p>
+    </div>
+    <div className="ml-auto flex items-center justify-center sm:justify-start mt-4 sm:mt-0">
+      <Flex wrap gap="small">
+        <Progress
+          strokeColor={theme.progressBarcolor}
+          type="circle"
+          percent={90}
+          size={80}
+        />
+        <div className="relative right-[78px] top-[10px]">
+          <Progress
+            type="circle"
+            strokeColor={theme.progressBarcolor}
+            percent={90}
+            format={() => null}
+            size={60}
+          />
+        </div>
+      </Flex>
+    </div>
+    <button className="bg-white cursor-pointer my-2 h-[55px] w-[165px] mx-auto sm:mx-0">
+      <div className="px-4 py-[17px]">
+        <p
+          className="font-bold "
+          style={{ color: theme.ButtonbgColor }}
+        >
+          Edit Profile
+        </p>
+        <div className="relative left-28 bottom-5 sm:left-28 sm:bottom-5">
+          <FaArrowRight color={theme.ButtonbgColor} />
+        </div>
+      </div>
+    </button>
+  </div>
+</div>
+
+        
+
+        <div className="mt-6 mb-4 flex justify-between items-center">
+          <p className="text-lg font-semibold">Recently Applied</p>
+          <div className="flex items-center text-sm text-gray-500">
+            <p>View all</p>
+            <FaArrowRight className="ml-2" />
+          </div>
+        </div>
+
+        <div className="overflow-x-auto bg-white shadow-md rounded-lg">
+        <table className="table-auto w-full">
+  <thead>
+    <tr style={{ backgroundColor: "#F1F2F4" }} className="text-center">
+      <th className="px-6 py-3 text-sm">Jobs</th>
+      <th className="px-6 py-3 text-sm">Date Applied</th>
+      <th className="px-6 py-3 text-sm">Status</th>
+      <th className="px-6 py-3 text-sm">Action</th>
+    </tr>
+  </thead>
+  <tbody className="animate-fade-in">
+    {jobData.map((e) => (
+      <tr className="border-b-2 border-gray-300" key={e.id}>
+        <td className="px-4 py-2 font-medium text-center text-gray-500">
+          <div className="flex items-center">
+            <img src={apple} width={50} alt="Company Logo" />
+            <p className="ml-3 text-sm">{e.title}</p>
+            <span
+              style={{ backgroundColor: "#DCBDED" }}
+              className="py-1 px-2 ml-2 h-6 text-xs rounded-xl"
+            >
+              <span style={{ color: theme.ButtonbgColor }}>
+                {e.type}
+              </span>
+            </span>
+          </div>
+          <div className="flex items-center mt-2">
+            <CiLocationOn className="text-gray-500 mr-2" size={20} />
+            <p className="text-sm">{e.location}</p>
+            <p className="ml-4 text-sm">{e.salary}</p>
+          </div>
+        </td>
+
+        <td className="px-4 py-2 font-medium text-center text-gray-500">
+          {e.dateApplied}
+        </td>
+
+        <td className="px-4 py-2 font-medium text-center text-green-500">
+          <div className="flex items-center">
+            <TiTick color="green" />
+            <p className="ml-2">{e.status}</p>
+          </div>
+        </td>
+
+        <td className="px-4 py-2 text-center">
+          <button className="bg-[#DCBDED] hover:bg-[#7900BA] hover:text-white text-[#7900BA] text-sm px-4 py-2 rounded-lg">
+            View Details
+          </button>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+        </div>
+      </div>
+    </Layout>
   );
 };
 

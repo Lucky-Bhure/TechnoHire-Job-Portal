@@ -3,67 +3,72 @@ import { NavLink } from "react-router-dom";
 
 const MainHeader = () => {
   return (
-    <>
-      <div className="bg-[#F1F2F4] grid py-2 gap-2 grid-cols-3">
-        <div className=" col-span-2 ">
-          <div className="flex ps-2">
+    <header className="bg-[#F1F2F4] w-full">
+      <div className="w-full py-2">
+        <nav className="flex flex-wrap justify-between items-center px-4">
+          <div className="flex flex-wrap gap-4 md:gap-6">
             <NavLink
               className={({ isActive }) =>
-                `inline-block text-[#5E6670] ${
-                  isActive ? "border-b text-blue-600  border-blue-700" : ""
+                `text-[#5E6670] px-2 py-1 text-sm md:px-4 md:py-2 font-medium hover:text-[#7900BA] hover:border-b-2 hover:border-[#7900BA] transition ${
+                  isActive ? "border-b-2 text-[#7900BA] border-[#7900BA]" : ""
                 }`
               }
               to="/dashboard"
             >
-              <span className="pl-4">Dashboard</span>
+              Dashboard
             </NavLink>
+
             <NavLink
               className={({ isActive }) =>
-                `inline-block text-[#5E6670] ${
-                  isActive ? "border-b  text-blue-600 border-blue-700" : ""
+                `text-[#5E6670] px-2 py-1 text-sm md:px-4 md:py-2 font-medium hover:text-[#7900BA] hover:border-b-2 hover:border-[#7900BA] transition ${
+                  isActive ? "border-b-2 text-[#7900BA] border-[#7900BA]" : ""
                 }`
               }
               to="/find-job"
             >
-              <span className="pl-4">find a Job</span>
+              Find a Job
             </NavLink>
+
             <NavLink
               className={({ isActive }) =>
-                `inline-block text-[#5E6670] ${
-                  isActive ? "border-b text-blue-600  border-blue-700" : ""
+                `text-[#5E6670] px-2 py-1 text-sm md:px-4 md:py-2 font-medium hover:text-[#7900BA] hover:border-b-2 hover:border-[#7900BA] transition ${
+                  isActive ? "border-b-2 text-[#7900BA] border-[#7900BA]" : ""
                 }`
               }
               to="/find-employers"
             >
-              <span className="pl-4">find Employers</span>
+              Find Employers
             </NavLink>
+
             <NavLink
               className={({ isActive }) =>
-                `inline-block text-[#5E6670] ${
-                  isActive ? "border-b text-blue-600 border-blue-700" : ""
+                `text-[#5E6670] px-2 py-1 text-sm md:px-4 md:py-2 font-medium hover:text-[#7900BA] hover:border-b-2 hover:border-[#7900BA] transition ${
+                  isActive ? "border-b-2 text-[#7900BA] border-[#7900BA]" : ""
                 }`
               }
               to="/job-alerts"
             >
-              <span className="pl-4">Job Alerts</span>
+              Job Alerts
             </NavLink>
+
             <NavLink
               className={({ isActive }) =>
-                `inline-block text-[#5E6670] ${
-                  isActive ? "border-b text-blue-600  border-blue-700" : ""
+                `text-[#5E6670] px-2 py-1 text-sm md:px-4 md:py-2 font-medium hover:text-[#7900BA] hover:border-b-2 hover:border-[#7900BA] transition ${
+                  isActive ? "border-b-2 text-[#7900BA] border-[#7900BA]" : ""
                 }`
               }
               to="/customer-supports"
             >
-              <span className="pl-4">Customer Supports</span>
+              Customer Support
             </NavLink>
           </div>
-        </div>
-        <div className="">
-          <div></div>
-        </div>
+          <div className="flex items-center mt-2 md:mt-0">
+         
+          </div>
+         
+        </nav>
       </div>
-    </>
+    </header>
   );
 };
 
