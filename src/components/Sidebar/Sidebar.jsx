@@ -22,7 +22,8 @@ const Sidebar = () => {
             `flex items-center pl-5 py-3 mx-4  ${
               isActive
                 ? "bg-blue-300 font-bold  border-blue-600 border-l-4 text-blue-600"
-                : "text-gray-500"
+                : "text-gray-500" 
+                mlfw
             }`
           }
         >
