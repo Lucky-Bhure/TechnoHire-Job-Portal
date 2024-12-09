@@ -16,6 +16,8 @@ import Findemployee from "./pages/modules/FindEmplyee/Findemployee";
 import Jobalerts from "./pages/modules/Jobalerts/Jobalerts";
 import Customersupport from "./pages/modules/Customersupports/Customersupport";
 import BasicDetails from "./pages/modules/BasicDetails/BasicDetails";
+import Inbox from "./pages/modules/Inbox/inbox";
+
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Overview />} />
         <Route path="/homePage" element={<Homepage/>}/>
+        <Route path="/inbox" element={<Inbox/>}/>
         <Route path="/login" element={<Login />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/forget-password" element={<ForgotPassword />} />

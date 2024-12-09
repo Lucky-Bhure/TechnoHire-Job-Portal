@@ -10,9 +10,14 @@ import crownLogo from '../../../assets/crownLogo.png';
 import wheel from '../../../assets/wheel.png';
 import slack from '../../../assets/slackLogo.png';
 import logo from '../../../assets/logo.png';
+import group from '../../../assets/group.png';
+import TestimonialImage from '../../../assets/Testimonial.png';
+
+
 
 
 import { FaBandAid, FaSearch } from "react-icons/fa";
+import { CiLocationOn } from "react-icons/ci";
 import { FaBriefcase } from 'react-icons/fa';
 import { PiBuildingOffice } from 'react-icons/pi';
 import { FaUserPlus } from "react-icons/fa";
@@ -31,7 +36,7 @@ import { FaChartBar } from 'react-icons/fa';
 import { RiFirstAidKitLine } from 'react-icons/ri';
 import { FaDatabase } from 'react-icons/fa';
 import { FaMap } from 'react-icons/fa';
-import { FaBookmark } from 'react-icons/fa';
+import { FaRegBookmark } from "react-icons/fa";
 import { FaCalendar } from 'react-icons/fa';
 import { TiSocialFacebook } from "react-icons/ti";
 import { FaYoutube } from "react-icons/fa";
@@ -39,50 +44,7 @@ import { FiInstagram } from "react-icons/fi";
 import { FaTwitter } from "react-icons/fa";
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
-const testimonials = [
-  {
-    name: 'John Doe',
-    position: 'CEO at Example Inc.',
-    text: 'This is an amazing service! I highly recommend it to everyone.',
-    image: 'https://via.placeholder.com/150',
-    rating: 5
-  },
-  {
-    name: 'Jane Smith',
-    position: 'Marketing Director at Company X',
-    text: '“Exceptional service! The platform made it so easy to find qualified candidates for our team. We hired three talented professionals in just a few weeks!”',
-    image: 'https://via.placeholder.com/150',
-    rating: 5
-  },
-  {
-    name: 'Sam Wilson',
-    position: 'Product Manager at TechWorld',
-    text: 'I saw immediate improvements in our workflow. Highly satisfied with the results!',
-    image: 'https://via.placeholder.com/150',
-    rating: 5
-  },
-  {
-    name: 'Sam',
-    position: 'Product Manager at TechWorld',
-    text: '“As a job seeker, I found it incredibly easy to apply to roles that fit my skills. Within a month, I landed a fantastic job at a great company!”',
-    image: 'https://via.placeholder.com/150',
-    rating: 5
-  },
-  {
-    name: 'Wilson',
-    position: 'Product Manager at TechWorld',
-    text: '“The candidate pool is outstanding, and the application process is user-friendly. This platform has been a game-changer for our recruitment needs!”',
-    image: 'https://via.placeholder.com/150',
-    rating: 5
-  },
-  {
-    name: 'Wilson',
-    position: 'Product Manager at TechWorld',
-    text: 'I saw immediate improvements in our workflow. Highly satisfied with the results!',
-    image: 'https://via.placeholder.com/150',
-    rating: 5
-  }
-];
+
 
 
 
@@ -90,40 +52,40 @@ const Homepage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const testimonials = [
     {
-      name: 'John Doe',
-      position: 'CEO at Example Inc.',
-      text: 'This is an amazing service! I highly recommend it to everyone.',
-      image: 'https://via.placeholder.com/150'
+      name: 'Robert Fox',
+      position: 'Hiring Manager',
+      text: '“Exceptional service! The platform made it so easy to find qualified candidates for our team. We hired three talented professionals in just a few weeks!”',
+      image: TestimonialImage
     }, {
-      name: 'Jane Smith',
-      position: 'Marketing Director at Company X',
-      text: 'A game-changer for our business. The team is fantastic to work with!',
-      image: 'https://via.placeholder.com/150'
+      name: 'Amit K.',
+      position: 'Software Developer',
+      text: '“As a job seeker, I found it incredibly easy to apply to roles that fit my skills. Within a month, I landed a fantastic job at a great company!”',
+      image: TestimonialImage
     },
     {
-      name: 'Sam Wilson',
-      position: 'Product Manager at TechWorld',
-      text: 'I saw immediate improvements in our workflow. Highly satisfied with the results!',
-      image: 'https://via.placeholder.com/150'
+      name: 'Suresh M.',
+      position: 'Project Manager',
+      text: '“The candidate pool is outstanding, and the application process is user-friendly. This platform has been a game-changer for our recruitment needs!”',
+      image: TestimonialImage
     },
     {
-      name: 'Sam',
-      position: 'Product Manager at TechWorld',
-      text: 'I saw immediate improvements in our workflow. Highly satisfied with the results!',
-      image: 'https://via.placeholder.com/150'
+      name: 'Robert Fox',
+      position: 'Hiring Manager',
+      text: '“Exceptional service! The platform made it so easy to find qualified candidates for our team. We hired three talented professionals in just a few weeks!”',
+      image: TestimonialImage
+    }, {
+      name: 'Amit K.',
+      position: 'Software Developer',
+      text: '“As a job seeker, I found it incredibly easy to apply to roles that fit my skills. Within a month, I landed a fantastic job at a great company!”',
+      image: TestimonialImage
     },
     {
-      name: 'Wilson',
-      position: 'Product Manager at TechWorld',
-      text: 'I saw immediate improvements in our workflow. Highly satisfied with the results!',
-      image: 'https://via.placeholder.com/150'
+      name: 'Suresh M.',
+      position: 'Project Manager',
+      text: '“The candidate pool is outstanding, and the application process is user-friendly. This platform has been a game-changer for our recruitment needs!”',
+      image: TestimonialImage
     },
-    {
-      name: 'Wilson',
-      position: 'Product Manager at TechWorld',
-      text: 'I saw immediate improvements in our workflow. Highly satisfied with the results!',
-      image: 'https://via.placeholder.com/150'
-    }
+
   ];
 
   const handleLeftArrow = () => {
@@ -144,13 +106,13 @@ const Homepage = () => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
       stars.push(
-        <span 
-          key={i} 
+        <span
+          key={i}
           className={i <= rating ? 'text-yellow-500' : 'text-gray-300'}
           style={{
-            
-            fontSize: '20px', 
-            marginRight: '3px'
+            width: "28px",
+            height: "28px",
+            color: "#FFAA00"
           }}
         >
           ★
@@ -170,7 +132,7 @@ const Homepage = () => {
               <h1 className='font-medium leading-tight text-[48px]'>Find a job that suits <br /> your interest & skills.</h1>
               <p className='pt-4 text-gray-500'>Explore exciting opportunities tailored to your expertise and <br /> passions. Start your journey toward a career that truly fits you!</p>
 
-              <div className='flex justify-center items-center border-2 mt-6 shadow-md bg-[#fff] rounded-md w-[580px] h-[60px] gap-2 '>
+              <div className='flex justify-center items-center border-2 mt-6 shadow-md bg-[#fff] rounded-md w-[650px] h-[60px] gap-2 '>
                 <div className='relative'>
                   <input
                     className="rounded-[1px] p-2 pl-6  border-none outline-none"
@@ -448,7 +410,7 @@ const Homepage = () => {
                   </div>
                   <div className="flex justify-between">
                     <div className="flex items-center">
-                      <FaMap className="text-gray-400 text-sm" />
+                    <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
                       <span className="font-medium text-gray-400 text-sm">Nagpur</span>
                     </div>
                     <div className="flex items-center">
@@ -463,7 +425,7 @@ const Homepage = () => {
                 </div>
               </div>
               <div className="flex gap-8 items-center  ml-[40%]">
-                <FaBookmark className='text-[#6712B9]' />
+                <FaRegBookmark className='text-[#6712B9]' />
                 <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] rounded-md border-2">
                   <span>View All</span>
                   <FaArrowRight className="ml-2" />
@@ -483,7 +445,7 @@ const Homepage = () => {
                   </div>
                   <div className="flex gap-5 justify-between">
                     <div className="flex items-center">
-                      <FaMap className="text-gray-400 text-sm" />
+                    <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
                       <span className="font-medium text-gray-400 text-sm">Mumbai</span>
                     </div>
                     <div className="flex items-center">
@@ -498,7 +460,7 @@ const Homepage = () => {
                 </div>
               </div>
               <div className="flex gap-8 items-center  ml-[40%]">
-                <FaBookmark className='text-[#6712B9]' />
+                <FaRegBookmark className='text-[#6712B9]' />
                 <button className="flex h-10 pl-4 pr-4 items-center bg-[#6712B9] text-white rounded-md">
                   <span>View All</span>
                   <FaArrowRight className="ml-2" />
@@ -518,7 +480,7 @@ const Homepage = () => {
                   </div>
                   <div className="flex justify-between">
                     <div className="flex items-center">
-                      <FaMap className="text-gray-400 text-sm" />
+                    <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
                       <span className="font-medium text-gray-400 text-sm">Nagpur</span>
                     </div>
                     <div className="flex items-center">
@@ -533,7 +495,7 @@ const Homepage = () => {
                 </div>
               </div>
               <div className="flex gap-8 items-center  ml-[40%]">
-                <FaBookmark className='text-[#6712B9]' />
+                <FaRegBookmark className='text-[#6712B9]' />
                 <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] rounded-md border-2">
                   <span>View All</span>
                   <FaArrowRight className="ml-2" />
@@ -553,7 +515,7 @@ const Homepage = () => {
                   </div>
                   <div className="flex justify-between">
                     <div className="flex items-center">
-                      <FaMap className="text-gray-400 text-sm" />
+                    <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
                       <span className="font-medium text-gray-400 text-sm">Pune</span>
                     </div>
                     <div className="flex items-center">
@@ -568,7 +530,7 @@ const Homepage = () => {
                 </div>
               </div>
               <div className="flex gap-8 items-center  ml-[40%]">
-                <FaBookmark className='text-[#6712B9]' />
+                <FaRegBookmark className='text-[#6712B9]' />
                 <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] rounded-md border-2">
                   <span>View All</span>
                   <FaArrowRight className="ml-2" />
@@ -588,7 +550,7 @@ const Homepage = () => {
                   </div>
                   <div className="flex gap-7  justify-between">
                     <div className="flex items-center">
-                      <FaMap className="text-gray-400 text-sm" />
+                    <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
                       <span className="font-medium text-gray-400 text-sm">Pune</span>
                     </div>
                     <div className="flex items-center">
@@ -603,7 +565,7 @@ const Homepage = () => {
                 </div>
               </div>
               <div className="flex gap-8 items-center  ml-[40%]">
-                <FaBookmark className='text-[#6712B9]' />
+                <FaRegBookmark className='text-[#6712B9]' />
                 <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] rounded-md border-2">
                   <span>View All</span>
                   <FaArrowRight className="ml-2" />
@@ -623,7 +585,7 @@ const Homepage = () => {
                   </div>
                   <div className="flex gap-6 justify-between">
                     <div className="flex items-center">
-                      <FaMap className="text-gray-400 text-sm" />
+                    <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
                       <span className="font-medium text-gray-400 text-sm">Nagpur</span>
                     </div>
                     <div className="flex items-center">
@@ -638,7 +600,7 @@ const Homepage = () => {
                 </div>
               </div>
               <div className="flex gap-8 items-center  ml-[40%]">
-                <FaBookmark className='text-[#6712B9]' />
+                <FaRegBookmark className='text-[#6712B9]' />
                 <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] rounded-md border-2">
                   <span>View All</span>
                   <FaArrowRight className="ml-2" />
@@ -672,7 +634,10 @@ const Homepage = () => {
                 </div>
                 <span>
                   <h5 className='text-lg font-medium'>Drible</h5>
-                  <p className='text-gray-500'>Pune</p>
+                  <div className="flex items-center">
+                      <CiLocationOn className="text-[#939AAD] text-sm" />
+                      <span className="font-medium text-gray-400 text-sm">Pune</span>
+                    </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
@@ -687,7 +652,10 @@ const Homepage = () => {
                 </div>
                 <span>
                   <h5 className='text-lg font-medium'>UpWork</h5>
-                  <p className='text-gray-500'>Mumbai</p>
+                  <div className="flex items-center">
+                      <CiLocationOn className="text-[#939AAD] text-sm" />
+                      <span className="font-medium text-gray-400 text-sm">Mumbai</span>
+                    </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
@@ -702,7 +670,10 @@ const Homepage = () => {
                 </div>
                 <span>
                   <h5 className='text-lg font-medium'>Slack</h5>
-                  <p className='text-gray-500'>Nagpur</p>
+                  <div className="flex items-center">
+                      <CiLocationOn className="text-[#939AAD] text-sm" />
+                      <span className="font-medium text-gray-400 text-sm">Nagpur</span>
+                    </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
@@ -717,7 +688,10 @@ const Homepage = () => {
                 </div>
                 <span>
                   <h5 className='text-lg font-medium'>Freepik</h5>
-                  <p className='text-gray-500'>Nagpur</p>
+                  <div className="flex items-center">
+                      <CiLocationOn className="text-[#939AAD] text-sm" />
+                      <span className="font-medium text-gray-400 text-sm">Nagpur</span>
+                    </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
@@ -736,7 +710,10 @@ const Homepage = () => {
                 </div>
                 <span>
                   <h5 className='text-lg font-medium'>Drible</h5>
-                  <p className='text-gray-500'>Pune</p>
+                  <div className="flex items-center">
+                      <CiLocationOn className="text-[#939AAD] text-sm" />
+                      <span className="font-medium text-gray-400 text-sm">Pune</span>
+                    </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
@@ -751,7 +728,10 @@ const Homepage = () => {
                 </div>
                 <span>
                   <h5 className='text-lg font-medium'>UpWork</h5>
-                  <p className='text-gray-500'>Mumbai</p>
+                  <div className="flex items-center">
+                      <CiLocationOn className="text-[#939AAD] text-sm" />
+                      <span className="font-medium text-gray-400 text-sm">Mumbai</span>
+                    </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
@@ -766,7 +746,10 @@ const Homepage = () => {
                 </div>
                 <span>
                   <h5 className='text-lg font-medium'>Slack</h5>
-                  <p className='text-gray-500'>Nagpur</p>
+                  <div className="flex items-center">
+                      <CiLocationOn className="text-[#939AAD] text-sm" />
+                      <span className="font-medium text-gray-400 text-sm">Nagpur</span>
+                    </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
@@ -781,7 +764,10 @@ const Homepage = () => {
                 </div>
                 <span>
                   <h5 className='text-lg font-medium'>Freepik</h5>
-                  <p className='text-gray-500'>Nagpur</p>
+                  <div className="flex items-center">
+                      <CiLocationOn className="text-[#939AAD] text-sm" />
+                      <span className="font-medium text-gray-400 text-sm">Nagpur</span>
+                    </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
@@ -794,53 +780,77 @@ const Homepage = () => {
 
         {/* testimonial  */}
         <div className="py-16 bg-gray-100">
-      <div className="container mx-auto text-center relative">
-        <h2 className="text-3xl font-semibold text-gray-800 mb-8">Client Testimonial</h2>
+          <div className="container mx-auto text-center relative">
+            <h2 className="text-3xl font-semibold text-gray-800 mb-8">Client Testimonial</h2>
 
-        {/* Left Arrow */}
-        <button
-          onClick={handleLeftArrow}
-          className="absolute left-5 z-10 top-1/2 transform -translate-y-1/2 bg-gray-200 p-2 rounded-full"
-        >
-          &#8592;
-        </button>
+            {/* Left Arrow */}
+            <button
+              onClick={handleLeftArrow}
+              className="absolute left-5 z-10 top-1/2 transform -translate-y-1/2 bg-[#FFFFFF] w-[48px] h-[48px] text-[#6712B9] p-2 rounded-md"
+            >
+              &#8592;
+            </button>
 
-        {/* Testimonial Cards */}
-        <div className="flex gap-8 justify-center">
-          {/* Ensure always three cards are shown */}
-          {testimonials.slice(currentIndex, currentIndex + 3).map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-white p-8 rounded-lg shadow-lg transform transition-all hover:scale-105 w-80 h-80">
-                <div>{renderStars(testimonial.rating)}</div>
-                <p className="text-gray-600">{testimonial.text}</p>
-            <div className='flex'>
-            <img
-                src={testimonial.image}
-                alt={testimonial.name}
-                className="w-24 h-24 rounded-full mx-auto mb-4"
-              />
-             <div>
-             <h3 className="text-xl font-semibold text-gray-700">{testimonial.name}</h3>
-             <p className="text-sm text-gray-500 mb-4">{testimonial.position}</p>
-             </div>
+            {/* Testimonial Cards */}
+            <div className="flex gap-4 pl-32 pr-32 pt-10">
+              {/* Ensure always three cards are shown */}
+              {testimonials.slice(currentIndex, currentIndex + 3).map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="bg-white p-3 pt-6 rounded-lg shadow-lg transform transition-all hover:scale-105 w-[450px] h-[270px]">
+                  <div className='flex justify-start pb-6'>{renderStars(testimonial.rating)}</div>
+
+                  <div className=''>
+                    <p className="text-start pb-10 text-[#464D61] text-sm leading-5">{testimonial.text}</p>
+                  </div>
+
+                  <div className='flex gap-2'>
+                    <div>
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-[48px] h-[48px] border-2 rounded-full"
+                    />
+                    </div>
+                    <div className='flex justify-between gap-20'>
+                      <div>
+                        <h3 className="text-[16px] font-inter font-semibold text-gray-700">{testimonial.name}</h3>
+                        <p className="text-[14px] text-gray-500 mb-4">{testimonial.position}</p>
+                      </div>
+
+                      <div>
+                        <img src={group} alt="" />
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-            </div>
-          ))}
+            {/* dot */}
+            <div className="flex justify-center gap-2 mt-4">
+        {testimonials.map((testimonial, index) => (
+          <div
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`w-3 h-3 rounded-full cursor-pointer ${currentIndex === index ? 'bg-[#6712B9]' : 'bg-[#DBB7FF]'}`}
+          />
+        ))}
+      </div>
+    
+
+            {/* Right Arrow */}
+            <button
+              onClick={handleRightArrow}
+              className="absolute right-5 top-1/2 transform -translate-y-1/2 bg-[#FFFFFF] w-[48px] h-[48px] text-[#6712B9] p-2 rounded-md"
+            >
+              &#8594;
+            </button>
+          </div>
         </div>
 
-        {/* Right Arrow */}
-        <button
-          onClick={handleRightArrow}
-          className="absolute right-5 top-1/2 transform -translate-y-1/2 bg-gray-200 p-2 rounded-full"
-        >
-          &#8594;
-        </button>
-      </div>
-    </div>
 
-
-    <div className='h-[490px] bg-[#FFFF] w-full pl-32 pr-32 pt-10'>
+        <div className='h-[490px] bg-[#FFFF] w-full pl-32 pr-32 pt-10'>
           <div className="flex space-x-4 p-6">
             {/* Box 1 */}
             <div className="flex flex-col gap-[16px] p-[50px] bg-[#E4E5E8] w-[548px] h-[290px] rounded-lg">
@@ -865,6 +875,8 @@ const Homepage = () => {
           </div>
         </div>
 
+
+        {/* Footer  */}
 
         <div className='bg-[#18191C] text-[#FFFFFF] w-full h-[430px] pt-10'>
           <div className='flex gap-16 mb-20 pl-32 pr-32'>
@@ -935,7 +947,7 @@ const Homepage = () => {
 
 
 
-    
+
 
 
 
