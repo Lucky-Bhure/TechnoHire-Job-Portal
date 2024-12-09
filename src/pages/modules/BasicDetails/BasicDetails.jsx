@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import LoginBack from "../../../assets/img/loginBackground.png";
 import BDLogo from "../../../assets/img/basicDetailslogo.png";
+import EduDetailsLogo from "../../../assets/img/educationDetails.png";
+import WorkExpLogo from "../../../assets/img/workExp.png";
+import CertifyLogo from "../../../assets/img/certify.png";
+import SkillPrefLogo from "../../../assets/img/skillPref.png";
+import UploadDocLogo from "../../../assets/img/uploadDoc.png";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 const BasicDetails = () => {
@@ -17,10 +22,20 @@ const BasicDetails = () => {
 
   const steps = [
     "Basic Details",
-    "Contact Info",
-    "Location Info",
-    "Contact Info",
-    " Location"
+    "Education Details",
+    "Work Experience",
+    "Certification",
+    "Skills and Preferences",
+    "Documents"
+  ];
+
+  const logos = [
+    BDLogo,
+    EduDetailsLogo,
+    WorkExpLogo,
+    CertifyLogo,
+    SkillPrefLogo,
+    UploadDocLogo
   ];
 
   const handleInputChange = (e) => {
@@ -56,6 +71,7 @@ const BasicDetails = () => {
       case 1:
         return (
           <>
+            {/* Basic Details Form */}
             <div>
               <input
                 type="text"
@@ -144,9 +160,15 @@ const BasicDetails = () => {
           </>
         );
       case 2:
-        return <p>Contact Info Form</p>;
+        return <p>Education Details Form</p>;
       case 3:
-        return <p>Location Info Form</p>;
+        return <p>Work Experience Form</p>;
+      case 4:
+        return <p>Certification Form</p>;
+      case 5:
+        return <p>Skills and Preferences Form</p>;
+      case 6:
+        return <p>Documents Form</p>;
       default:
         return null;
     }
@@ -163,82 +185,99 @@ const BasicDetails = () => {
       <div>
       {/* For screens smaller than 1400px (Vertical Steps) */}
       <div className="flex flex-col items-start gap-[35px] mt-6 relative xl:hidden">
-        {steps.map((step, index) => (
-          <div className="relative flex items-center space-x-4 bottom-[-15px]" key={index}>
-            {/* Circle */}
-            <div
-              className={`w-10 h-10 flex items-center justify-center rounded-full border-2 font-bold ${
-                currentStep >= index + 1
-                  ? "border-violet-700 bg-violet-700 text-white"
-                  : "border-gray-300 bg-gray-100 text-gray-500"
-              }`}
-            >
-              {index + 1}
-            </div>
-
-            {/* Step Name */}
-            <span
-              className={`font-medium ${
-                currentStep >= index + 1 ? "text-violet-700" : "text-gray-500"
-              }`}
-            >
-              {step}
-            </span>
-
-            {/* Vertical Line */}
-            {index < steps.length - 1 && (
-              <div className="absolute z-[-1] left-[4px] top-[25px] w-[2px] h-[60px] bg-gray-300"></div>
-            )}
-          </div>
-        ))}
+  {steps.map((step, index) => (
+    <div className="relative flex items-center space-x-4 bottom-[-15px]" key={index}>
+      {/* Circle */}
+      <div
+        className={`w-10 h-10 flex items-center justify-center rounded-full border-2 font-bold ${
+          currentStep > index + 1
+            ? "border-violet-700 bg-violet-700 text-white"
+            : currentStep === index + 1
+            ? "border-violet-700 bg-violet-700 text-white"
+            : "border-gray-300 bg-gray-100 text-gray-500"
+        }`}
+      >
+        {currentStep > index + 1 ? (
+          <span className="text-white">✓</span> // Checkmark for completed steps
+        ) : currentStep === index + 1 ? (
+          <span className="text-white">•</span> // Dot for current step
+        ) : null} 
+        {/* // No number for uncompleted steps */}
       </div>
+
+      {/* Step Name */}
+      <span
+        className={`text-sm ${
+          currentStep >= index + 1 ? "text-violet-700" : "text-gray-500"
+        }`}
+      >
+        {step}
+      </span>
+
+      {/* Vertical Line */}
+      {index < steps.length - 1 && (
+        <div className="absolute z-[-1] left-[4px] top-[25px] w-[2px] h-[60px] bg-gray-300"></div>
+      )}
+    </div>
+  ))}
+</div>
 
       {/* For screens larger than 1400px (Horizontal Steps) */}
-      <div className="hidden xl:flex justify-center items-center mb-4 mt-[3rem]">
-        {steps.map((step, index) => (
-          <div key={index} className="relative flex items-center">
-            {/* Circle */}
-            <div
-              className={`w-10 h-10 flex items-center justify-center rounded-full text-white font-bold ${
-                currentStep === index + 1 ? "bg-violet-700" : "bg-gray-300"
-              }`}
-            >
-              {index + 1}
-            </div>
+<div className="hidden xl:flex justify-center items-center mb-4 mt-[3rem]">
+  {steps.map((step, index) => (
+    <div key={index} className="relative flex items-center">
+      {/* Circle */}
+      <div
+        className={`w-8 h-8 flex items-center justify-center rounded-full font-bold ${
+          currentStep > index + 1
+            ? "bg-violet-700 text-white"
+            : currentStep === index + 1
+            ? "bg-violet-700 text-violet-700"
+            : "bg-gray-300 text-gray-500"
+        }`}
+      >
+        {currentStep > index + 1 ? (
+          <span className="text-white">✓</span> // Checkmark for completed steps
+        ) : currentStep === index + 1 ? (
+          <span className="text-white">•</span> // Dot for the current step
+        ) : null} 
+        {/* // No number for future steps */}
+      </div>
 
-            {/* Line Between Circles */}
-            {index < steps.length - 1 && (
-              <div
-                className={`h-1 w-24 bg-gray-300 ${
-                  currentStep > index + 1 ? "bg-violet-700" : ""
-                }`}
-              ></div>
-            )}
+      {/* Line Between Circles */}
+      {index < steps.length - 1 && (
+        <div
+          className={`h-[3px] w-20 ${
+            currentStep > index + 1 ? "bg-violet-700" : "bg-gray-300"
+          }`}
+        ></div>
+      )}
 
-            {/* Step Name Below Circle */}
-            <div className="absolute bottom-[-25px] left-[-25px] text-center w-full">
-              <span
-                className={`text-sm ${
-                  currentStep === index + 1
-                    ? "text-violet-700 font-semibold"
-                    : "text-gray-600"
-                }`}
-              >
-                {step}
-              </span>
-            </div>
-          </div>
-        ))}
+      {/* Step Name Below Circle */}
+      <div className="absolute bottom-[-25px] left-[-25px] text-center w-full">
+        <span
+          className={`text-xs ${
+            currentStep === index + 1
+              ? "text-violet-700 font-semibold"
+              : "text-gray-600"
+          }`}
+        >
+          {step}
+        </span>
       </div>
     </div>
-        <img
-          src={BDLogo}
-          alt="Logo"
+  ))}
+</div>
+
+
+    </div>
+    <img
+          src={logos[currentStep - 1]}
+          alt="Step Logo"
           className="lg:w-[70%] md:w-[75%] h-auto xl:mt-[12rem] lg:mt-[4rem] md:mt-[7rem]"
         />
       </div>
       <div className="bg-white rounded-tl-[0px] rounded-bl-[0px] shadow-lg p-8 w-full max-w-3xl sm:rounded-tl-[80px] sm:rounded-bl-[80px]">
-  {/* Content goes here */}
         <h1 className="text-[32px] font-semibold text-gray-800 text-center mb-4">
           {steps[currentStep - 1]}
         </h1>
