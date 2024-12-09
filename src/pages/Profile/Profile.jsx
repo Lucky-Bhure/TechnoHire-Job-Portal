@@ -5,12 +5,16 @@ import { MdOutlineArrowForward } from "react-icons/md";
 import profile  from '../.../../../assets/Profileassests/profile.jpg'
 import skill_logo from '../.../../../assets/Profileassests/skill_logo.png'
 import university_logo from '../.../../../assets/Profileassests/university_logo.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {  faUser } from '@fortawesome/free-solid-svg-icons';
+
 
 function Profile() {
   return (
-    <div className="flex flex-col	justify-center space-y-7 border-x-[1px] w-[45%]">
+    <div className="flex flex-col	justify-between space-y-7 border-x-[1px] w-[45%]">
       <h1 className="text-2xl text-[#18191C] font-medium font-inter mx-4 mt-4">
         Profile
+        <FontAwesomeIcon icon={faUser} size="1x" color="black" />
       </h1>
       {/* upper part */}
       <div className="flex items-center gap-4 mx-10">
