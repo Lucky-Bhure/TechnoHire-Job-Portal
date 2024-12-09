@@ -12,6 +12,7 @@ import slack from '../../../assets/slackLogo.png';
 import logo from '../../../assets/logo.png';
 import group from '../../../assets/group.png';
 import TestimonialImage from '../../../assets/Testimonial.png';
+import arrow from '../../../assets/arrow.png';
 
 
 
@@ -55,35 +56,42 @@ const Homepage = () => {
       name: 'Robert Fox',
       position: 'Hiring Manager',
       text: '“Exceptional service! The platform made it so easy to find qualified candidates for our team. We hired three talented professionals in just a few weeks!”',
-      image: TestimonialImage
+      image: TestimonialImage,
+      rating:5
     }, {
       name: 'Amit K.',
       position: 'Software Developer',
       text: '“As a job seeker, I found it incredibly easy to apply to roles that fit my skills. Within a month, I landed a fantastic job at a great company!”',
-      image: TestimonialImage
+      image: TestimonialImage,
+      rating:5
+      
     },
     {
       name: 'Suresh M.',
       position: 'Project Manager',
       text: '“The candidate pool is outstanding, and the application process is user-friendly. This platform has been a game-changer for our recruitment needs!”',
-      image: TestimonialImage
+      image: TestimonialImage,
+      rating:5
     },
     {
       name: 'Robert Fox',
       position: 'Hiring Manager',
       text: '“Exceptional service! The platform made it so easy to find qualified candidates for our team. We hired three talented professionals in just a few weeks!”',
-      image: TestimonialImage
+      image: TestimonialImage,
+      rating:5
     }, {
       name: 'Amit K.',
       position: 'Software Developer',
       text: '“As a job seeker, I found it incredibly easy to apply to roles that fit my skills. Within a month, I landed a fantastic job at a great company!”',
-      image: TestimonialImage
+      image: TestimonialImage,
+      rating:5
     },
     {
       name: 'Suresh M.',
       position: 'Project Manager',
       text: '“The candidate pool is outstanding, and the application process is user-friendly. This platform has been a game-changer for our recruitment needs!”',
-      image: TestimonialImage
+      image: TestimonialImage,
+      rating:5
     },
 
   ];
@@ -172,21 +180,21 @@ const Homepage = () => {
           <div className="grid grid-cols-1 mt-6 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
 
             <div className="flex gap-10 justify-center items-center  h-[90px] rounded-lg bg-white border shadow-md ">
-              <FaBriefcase className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+              <FaBriefcase className=' text-[#6712B9] bg-gray-100 rounded-md w-14 p-2 h-14' />
               <span>
                 <h5 className='font-bold text-lg'>1,75,324</h5>
                 <p className='text-gray-500'>Live job</p>
               </span>
             </div>
             <div className="flex gap-10 justify-center items-center  h-[90px] rounded-lg bg-white border shadow-md ">
-              <PiBuildingOffice className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+              <PiBuildingOffice className='bg-[#6712B9] text-white rounded-md w-14 p-2 h-14' />
               <span>
                 <h5 className='font-bold text-lg'>97,345</h5>
                 <p className='text-gray-500'>Companies</p>
               </span>
             </div>
             <div className="flex gap-10 justify-center items-center  h-[90px] rounded-lg bg-white border shadow-md ">
-              <FaUsers className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+              <FaUsers className=' text-[#6712B9] bg-gray-100 rounded-md w-14 p-2 h-14' />
               <span>
                 <h5 className='font-bold text-lg'>38,47,154</h5>
                 <p className='text-gray-500'>Candidates</p>
@@ -194,7 +202,7 @@ const Homepage = () => {
             </div>
 
             <div className="flex gap-10 justify-center items-center  h-[90px] rounded-lg bg-white border shadow-md ">
-              <FaBriefcase className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+              <FaBriefcase className=' text-[#6712B9] bg-gray-100 rounded-md w-14 p-2 h-14' />
               <span>
                 <h5 className='font-bold text-lg'>7,532</h5>
                 <p className='text-gray-500'>New Jobs</p>
@@ -276,29 +284,43 @@ const Homepage = () => {
 
         </div>
 
-        <div className='h-[542px] bg-[#F1F2F4] w-full pl-32 pr-32'>
+        <div className='h-[542px] bg-[#F1F2F4] w-full pl-32 pr-32 relative'>
           <h1 className='flex justify-center items-center font-normal text-[35px] pb-2 pt-10'>How TechnoHire work</h1>
 
           <div className="grid grid-cols-1 mt-6 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
 
-            <div className="flex flex-col gap-6 justify-center items-center  h-[244px] w-[250px] rounded-lg">
+            <div className="flex flex-col gap-6 justify-center items-center h-[244px] w-[250px] rounded-lg">
               <FaUserPlus className='w-[40px] h-[40px] mt-4 text-[#6712B9] bg-white p-2 rounded-full ' />
               <h5 className='font-medium text-lg'>Create Account</h5>
-              <p className=' text-gray-400 text-sm p-4 align-middle'>Join us today to unlock a world of<br />
-                career possibilities. Setting up is quick
-                and easy!</p>
+              <p className='text-gray-400 text-sm p-4 align-middle'>
+                Join us today to unlock a world of career possibilities. Setting up is quick and easy!
+              </p>
+
+              {/* Arrow between steps */}
+              <div className="absolute top-[155px] left-[320px]">
+                <img src={arrow} alt="arrow" className="w-[190px] h-8" />
+              </div>
             </div>
 
             <div className="flex flex-col gap-6 justify-center items-center  h-[244px] w-[250px] rounded-lg bg-white">
-              <FaCloudUploadAlt className='w-[40px] h-[40px] mt-4 text-[#6712B9] bg-white p-2 rounded-full ' />
+              <FaCloudUploadAlt className='w-[40px] h-[40px] mt-6 text-[#FFFFFF] bg-[#6712B9] p-2 rounded-full ' />
               <h5 className='font-medium text-lg'>Upload CV/Resume</h5>
               <p className=' text-gray-400 text-sm p-4 align-middle'>Showcase your skills and experience by uploading your latest CV. Let your profile stand out!</p>
+
+              <div className="absolute top-52 left-[580px] rotate-180">
+                <img src={arrow} alt="arrow" className="w-[190px] h-8" />
+              </div>
             </div>
+
+
 
             <div className="flex flex-col gap-6 justify-center items-center  h-[244px] w-[250px] rounded-lg ">
               <FaSearchPlus className='w-[40px] h-[40px] mt-4 text-[#6712B9] p-2 rounded-full ' />
               <h5 className='font-medium text-lg'>Find suitable job</h5>
               <p className=' text-gray-400 text-sm p-4 align-center'>Discover roles that match your skills and career goals. Your perfect fit is just a search away!,</p>
+              <div className="absolute top-[155px] left-[850px]">
+                <img src={arrow} alt="arrow" className="w-[190px] h-8" />
+              </div>
             </div>
 
             <div className="flex flex-col gap-6 justify-center items-center  h-[244px] w-[250px] rounded-lg">
@@ -322,21 +344,21 @@ const Homepage = () => {
             <div className="grid grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 gap-12 p-6">
 
               <div className="flex gap-8 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white ">
-                <FaPenNib className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+                <FaPenNib className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10 rounded-md' />
                 <span>
                   <h5 className='text-lg font-medium'>Graphics & Design</h5>
                   <p className='text-gray-500'>357 Open position</p>
                 </span>
               </div>
               <div className="flex gap-8 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white ">
-                <FaCode className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+                <FaCode className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10 rounded-md' />
                 <span>
                   <h5 className='text-lg font-medium'>Code & Programing</h5>
                   <p className='text-gray-500'>312 Open position</p>
                 </span>
               </div>
               <div className="flex gap-8 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white">
-                <HiOutlineSpeakerphone className='text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+                <HiOutlineSpeakerphone className='text-[#6712B9] bg-gray-100 w-12 p-2 h-10 rounded-md' />
                 <span>
                   <h5 className='text-lg font-medium'>Digital Marketing</h5>
                   <p className='text-gray-500'>297 Open position</p>
@@ -344,7 +366,7 @@ const Homepage = () => {
               </div>
 
               <div className="flex gap-8 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white ">
-                <LuMonitorPlay className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+                <LuMonitorPlay className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10 rounded-md' />
                 <span>
                   <h5 className='text-lg font-medium'>Video & Animation</h5>
                   <p className='text-gray-500'>247 Open position</p>
@@ -358,21 +380,21 @@ const Homepage = () => {
             <div className="grid grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 gap-12 p-6">
 
               <div className="flex gap-8 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white">
-                <FaMusic className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+                <FaMusic className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10 rounded-md' />
                 <span>
                   <h5 className='text-lg font-medium'>Data Science and Analytics</h5>
                   <p className='text-gray-500'>204 Open position</p>
                 </span>
               </div>
               <div className="flex gap-8 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white">
-                <PiBuildingOffice className='text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+                <PiBuildingOffice className='text-[#6712B9] bg-gray-100 w-12 p-2 h-10 rounded-md' />
                 <span>
                   <h5 className='text-lg font-medium'>UI/UX Design</h5>
                   <p className='text-gray-500'>167 Open position</p>
                 </span>
               </div>
               <div className="flex gap-6 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white">
-                <RiFirstAidKitLine className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+                <RiFirstAidKitLine className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10 rounded-md' />
                 <span>
                   <h5 className='text-lg font-medium'>Blockchain Technology</h5>
                   <p className='text-gray-500'>125 Open position</p>
@@ -380,7 +402,7 @@ const Homepage = () => {
               </div>
 
               <div className="flex gap-6 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white border shadow-md ">
-                <FaDatabase className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+                <FaDatabase className=' text-[#FFFFFF] bg-[#6712B9] w-12 p-2 h-10 rounded-md' />
                 <span>
                   <h5 className='text-lg font-medium text-[#6712B9]'>Cybersecurity</h5>
                   <p className='text-gray-500'>57 Open position</p>
@@ -410,7 +432,7 @@ const Homepage = () => {
                   </div>
                   <div className="flex justify-between">
                     <div className="flex items-center">
-                    <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
+                      <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
                       <span className="font-medium text-gray-400 text-sm">Nagpur</span>
                     </div>
                     <div className="flex items-center">
@@ -445,7 +467,7 @@ const Homepage = () => {
                   </div>
                   <div className="flex gap-5 justify-between">
                     <div className="flex items-center">
-                    <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
+                      <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
                       <span className="font-medium text-gray-400 text-sm">Mumbai</span>
                     </div>
                     <div className="flex items-center">
@@ -480,7 +502,7 @@ const Homepage = () => {
                   </div>
                   <div className="flex justify-between">
                     <div className="flex items-center">
-                    <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
+                      <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
                       <span className="font-medium text-gray-400 text-sm">Nagpur</span>
                     </div>
                     <div className="flex items-center">
@@ -515,7 +537,7 @@ const Homepage = () => {
                   </div>
                   <div className="flex justify-between">
                     <div className="flex items-center">
-                    <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
+                      <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
                       <span className="font-medium text-gray-400 text-sm">Pune</span>
                     </div>
                     <div className="flex items-center">
@@ -550,7 +572,7 @@ const Homepage = () => {
                   </div>
                   <div className="flex gap-7  justify-between">
                     <div className="flex items-center">
-                    <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
+                      <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
                       <span className="font-medium text-gray-400 text-sm">Pune</span>
                     </div>
                     <div className="flex items-center">
@@ -585,7 +607,7 @@ const Homepage = () => {
                   </div>
                   <div className="flex gap-6 justify-between">
                     <div className="flex items-center">
-                    <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
+                      <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
                       <span className="font-medium text-gray-400 text-sm">Nagpur</span>
                     </div>
                     <div className="flex items-center">
@@ -635,13 +657,13 @@ const Homepage = () => {
                 <span>
                   <h5 className='text-lg font-medium'>Drible</h5>
                   <div className="flex items-center">
-                      <CiLocationOn className="text-[#939AAD] text-sm" />
-                      <span className="font-medium text-gray-400 text-sm">Pune</span>
-                    </div>
+                    <CiLocationOn className="text-[#939AAD] text-sm" />
+                    <span className="font-medium text-gray-400 text-sm">Pune</span>
+                  </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
-                <button className="bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+                <button className="bg-[#F5EBFFB2] rounded-[3px] border-2 text-[#6712B9] h-[48px] w-[200px]">Open Position</button>
               </div>
             </div>
 
@@ -653,13 +675,13 @@ const Homepage = () => {
                 <span>
                   <h5 className='text-lg font-medium'>UpWork</h5>
                   <div className="flex items-center">
-                      <CiLocationOn className="text-[#939AAD] text-sm" />
-                      <span className="font-medium text-gray-400 text-sm">Mumbai</span>
-                    </div>
+                    <CiLocationOn className="text-[#939AAD] text-sm" />
+                    <span className="font-medium text-gray-400 text-sm">Mumbai</span>
+                  </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
-                <button className="bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+                <button className="bg-[#F5EBFFB2] rounded-[3px] border-2 text-[#6712B9] h-[48px] w-[200px]">Open Position</button>
               </div>
             </div>
 
@@ -671,13 +693,13 @@ const Homepage = () => {
                 <span>
                   <h5 className='text-lg font-medium'>Slack</h5>
                   <div className="flex items-center">
-                      <CiLocationOn className="text-[#939AAD] text-sm" />
-                      <span className="font-medium text-gray-400 text-sm">Nagpur</span>
-                    </div>
+                    <CiLocationOn className="text-[#939AAD] text-sm" />
+                    <span className="font-medium text-gray-400 text-sm">Nagpur</span>
+                  </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
-                <button className="bg-[#6712B9] border-2 text-[#FFFFFF] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+                <button className="bg-[#6712B9]  text-[#FFFFFF] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
               </div>
             </div>
 
@@ -689,13 +711,13 @@ const Homepage = () => {
                 <span>
                   <h5 className='text-lg font-medium'>Freepik</h5>
                   <div className="flex items-center">
-                      <CiLocationOn className="text-[#939AAD] text-sm" />
-                      <span className="font-medium text-gray-400 text-sm">Nagpur</span>
-                    </div>
+                    <CiLocationOn className="text-[#939AAD] text-sm" />
+                    <span className="font-medium text-gray-400 text-sm">Nagpur</span>
+                  </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
-                <button className="bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+                <button className="bg-[#F5EBFFB2] rounded-[3px] border-2 text-[#6712B9] h-[48px] w-[200px]">Open Position</button>
               </div>
             </div>
 
@@ -711,13 +733,13 @@ const Homepage = () => {
                 <span>
                   <h5 className='text-lg font-medium'>Drible</h5>
                   <div className="flex items-center">
-                      <CiLocationOn className="text-[#939AAD] text-sm" />
-                      <span className="font-medium text-gray-400 text-sm">Pune</span>
-                    </div>
+                    <CiLocationOn className="text-[#939AAD] text-sm" />
+                    <span className="font-medium text-gray-400 text-sm">Pune</span>
+                  </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
-                <button className="bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+                <button className="bg-[#F5EBFFB2] rounded-[3px] border-2 text-[#6712B9] h-[48px] w-[200px]">Open Position</button>
               </div>
             </div>
 
@@ -729,13 +751,13 @@ const Homepage = () => {
                 <span>
                   <h5 className='text-lg font-medium'>UpWork</h5>
                   <div className="flex items-center">
-                      <CiLocationOn className="text-[#939AAD] text-sm" />
-                      <span className="font-medium text-gray-400 text-sm">Mumbai</span>
-                    </div>
+                    <CiLocationOn className="text-[#939AAD] text-sm" />
+                    <span className="font-medium text-gray-400 text-sm">Mumbai</span>
+                  </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
-                <button className="bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+                <button className="bg-[#F5EBFFB2] rounded-[3px] border-2 text-[#6712B9] h-[48px] w-[200px]">Open Position</button>
               </div>
             </div>
 
@@ -747,13 +769,13 @@ const Homepage = () => {
                 <span>
                   <h5 className='text-lg font-medium'>Slack</h5>
                   <div className="flex items-center">
-                      <CiLocationOn className="text-[#939AAD] text-sm" />
-                      <span className="font-medium text-gray-400 text-sm">Nagpur</span>
-                    </div>
+                    <CiLocationOn className="text-[#939AAD] text-sm" />
+                    <span className="font-medium text-gray-400 text-sm">Nagpur</span>
+                  </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
-                <button className="bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+                <button className="bg-[#F5EBFFB2] rounded-[3px] border-2 text-[#6712B9] h-[48px] w-[200px]">Open Position</button>
               </div>
             </div>
 
@@ -765,13 +787,13 @@ const Homepage = () => {
                 <span>
                   <h5 className='text-lg font-medium'>Freepik</h5>
                   <div className="flex items-center">
-                      <CiLocationOn className="text-[#939AAD] text-sm" />
-                      <span className="font-medium text-gray-400 text-sm">Nagpur</span>
-                    </div>
+                    <CiLocationOn className="text-[#939AAD] text-sm" />
+                    <span className="font-medium text-gray-400 text-sm">Nagpur</span>
+                  </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
-                <button className="bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+                <button className="bg-[#F5EBFFB2] rounded-[3px] border-2 text-[#6712B9] h-[48px] w-[200px]">Open Position</button>
               </div>
             </div>
 
@@ -806,11 +828,11 @@ const Homepage = () => {
 
                   <div className='flex gap-2'>
                     <div>
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-[48px] h-[48px] border-2 rounded-full"
-                    />
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-[48px] h-[48px] border-2 rounded-full"
+                      />
                     </div>
                     <div className='flex justify-between gap-20'>
                       <div>
@@ -829,15 +851,15 @@ const Homepage = () => {
             </div>
             {/* dot */}
             <div className="flex justify-center gap-2 mt-4">
-        {testimonials.map((testimonial, index) => (
-          <div
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 rounded-full cursor-pointer ${currentIndex === index ? 'bg-[#6712B9]' : 'bg-[#DBB7FF]'}`}
-          />
-        ))}
-      </div>
-    
+              {testimonials.map((testimonial, index) => (
+                <div
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-3 h-3 rounded-full cursor-pointer ${currentIndex === index ? 'bg-[#6712B9]' : 'bg-[#DBB7FF]'}`}
+                />
+              ))}
+            </div>
+
 
             {/* Right Arrow */}
             <button
