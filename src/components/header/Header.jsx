@@ -37,10 +37,11 @@ const Header = () => {
             <div className=" w-[650px] my-2">
               <Space.Compact className="w-[750px] py-4 rounded-none h-[50px] ">
                 <Select
-                  className="h-[50px] w-[250px] font-bold rounded-none "
                   options={options}
-                  defaultValue="india"
+                  style={{ height: "50px" }}
+                  className=" w-[300px]"
                 />
+
                 <Input
                   className="h-[50px]  rounded-none "
                   placeholder="Job title,keyword,company"

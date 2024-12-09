@@ -32,7 +32,7 @@ const passwordResetSuccess = () => {
               type="submit"
               className="w-[90%] py-3 px-4 bg-violet-700 text-white font-bold rounded-lg hover:bg-violet-700"
             >
-             <Link to="/" className="text-lg">
+             <Link to="/login" className="text-lg">
              Log In
              </Link>
             </button>
