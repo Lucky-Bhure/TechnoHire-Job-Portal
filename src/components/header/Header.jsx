@@ -1,71 +1,80 @@
 import React from "react";
 import { Input, Select, Space } from "antd";
 import { MdOutlineMessage } from "react-icons/md";
-
 import { IoIosNotificationsOutline } from "react-icons/io";
+import { FaFlag } from "react-icons/fa";
 import MainHeader from "./MainHeader";
+
 const Header = () => {
   const options = [
     {
       value: "India",
-      label: "India",
+      label: (
+        <div className="flex items-center gap-2">
+          <FaFlag className="text-red-600" /> India
+        </div>
+      ),
     },
     {
       value: "Germany",
-      label: "Germany",
+      label: (
+        <div className="flex items-center gap-2">
+          <FaFlag className="text-black" /> Germany
+        </div>
+      ),
     },
   ];
+
   return (
     <>
-      <div className="container">
+      <div className="w-full">
         <MainHeader />
-        <div className="w-full  h-[100px]">
-          <div className="flex">
-            <div className=" w-[250px] my-2 mx-5 h-[80px]">
-              <div className="flex">
-                <div>
-                  <img src="" alt="img" />
-                </div>
-                <div className="ps-5 py-2">
-                  <p className="font-bold text-2xl">TechnoHire</p>
-                  <p className="text-[7px] text-white bg-blue-600 px-2 py-1 ">
-                    <b> Where Talent Meet Opportunity</b>
+        <div className="w-full h-auto bg-white px-4 sm:px-8">
+          <div className="flex flex-wrap justify-between items-center">
+            {/* Logo Section */}
+            <div className="flex items-center w-full sm:w-auto mb-4 sm:mb-0 justify-start">
+              <div className="flex items-center">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAIAAAD9b0jDAAAB0UlEQVR4Ab3WA4ycURQF4Bu7cePUUaMGte0Gtc2otm3b1tq2bdsY/cbybNbW252c8cw3d857A6obgsNg0Brn+waGaE3QD/4MCQgbNMFJuEjcaaq+QjVXSBosmh8lvprA/9/P8wY+P5EfLGrMVf6tNj+nqnukQcS79n9rdn8gDxCVTZr3Ee4TaZ+pFqjraTMKdb9jMRQon9cPqNOoW9xfkhGgmBQvkOYlvBxhDn4lQ8SY6LfvaE36R96JRBeqRmxGC2gTDfycxDXOixLg4mF93adFjrw/iX5Ui8DNtBcwoOc2S2MDOPW5wvdv80dMNEVSNQI3+WHDKjc20Djy1SnKyEdl/f5ExZIEMX4vBw4zNjaAkbGTpjwwk10F/SrqN4pJ0R0abGkAYy6/xZFzOTJAFGLSUq6lAfT7s4Ajr/IWFOk3mkgiGkCw+m0Wt+ZGogFoY/qNJpAl71bXi1up6LsiDQNBsXt6eqzFmHr+VL/RHjj+42Np3VRh8wImaI1o8044OEM9slQ5tganDFDu7lbtzGJwCDNUebtbv76qMY0uG1S7txppdDE1A1T9sUd/sqrRVc/PsLw/wwzVH8zGyGpBKm5hgyJKlj/L331ww/xnYnjRejF2bTVE4PAdAAAAAElFTkSuQmCC" alt="Logo" className="w-12 h-12 object-contain" />
+                <div className="pl-4">
+                  <p className="font-bold text-xl sm:text-2xl">TechnoHire</p>
+                  <p className="text-xs text-white bg-blue-600 px-2 py-1 rounded">
+                    <b>Where Talent Meets Opportunity</b>
                   </p>
                 </div>
               </div>
             </div>
-            <div className=" w-[650px] my-2">
+
+            {/* Search Section */}
+            <div className=" w-[650px] my-2 justify-center">
               <Space.Compact className="w-[750px] py-4 rounded-none h-[50px] ">
                 <Select
                   options={options}
                   style={{ height: "50px" }}
                   className=" w-[300px]"
                 />
-
                 <Input
                   className="h-[50px]  rounded-none "
                   placeholder="Job title,keyword,company"
                 />
               </Space.Compact>
             </div>
-            <div className=" ms-72  w-[300px] h-[70px] ">
-              <div className="flex py-6 gap-7 mx-12 ">
-                <MdOutlineMessage className="w-[30px]  h-[30px]" />
 
-                <IoIosNotificationsOutline className="w-[30px]  h-[30px]" />
-
+            {/* User Section */}
+            <div className="flex items-center gap-4 w-full sm:w-auto justify-center sm:justify-end">
+              <MdOutlineMessage className="w-6 h-6 text-gray-600 cursor-pointer" />
+              <IoIosNotificationsOutline className="w-6 h-6 text-gray-600 cursor-pointer" />
+              <div className="relative">
                 <img
-                  className="cursor-pointer w-[30px] h-[30px] object-cover rounded-full hover:border-2 hover:border-black"
+                  className="w-8 h-8 object-cover rounded-full cursor-pointer hover:border-2 hover:border-black"
                   src="https://plus.unsplash.com/premium_photo-1690086519096-0594592709d3?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt=""
+                  alt="User Avatar"
                 />
-                {/* User Name */}
-                <p className="relative top-8 right-[51px] text-[12px]">user</p>
+                <p className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 text-xs">User</p>
               </div>
             </div>
           </div>
         </div>
-        <div className="border-b-2 w-full border-grey-400 ..."></div>
+        <div className="border-t-2 border-gray-300 mt-4"></div>
       </div>
     </>
   );
