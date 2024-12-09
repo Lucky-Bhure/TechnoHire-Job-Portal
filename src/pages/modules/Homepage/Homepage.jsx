@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Illustration from '../../../assets/Illustration.png';
 import FbLogo from '../../../assets/FbLogo.png';
 import UpLogo from '../../../assets/UpLogo.png';
@@ -6,6 +6,10 @@ import ULogo from '../../../assets/ULogo.png';
 import appleLogo from '../../../assets/appleLogo.png';
 import GoogleLogo from '../../../assets/GoogleLogo.png';
 import EmployersLogo from '../../../assets/EmployersLogo.png';
+import crownLogo from '../../../assets/crownLogo.png';
+import wheel from '../../../assets/wheel.png';
+import slack from '../../../assets/slackLogo.png';
+import logo from '../../../assets/logo.png';
 
 
 import { FaBandAid, FaSearch } from "react-icons/fa";
@@ -29,13 +33,133 @@ import { FaDatabase } from 'react-icons/fa';
 import { FaMap } from 'react-icons/fa';
 import { FaBookmark } from 'react-icons/fa';
 import { FaCalendar } from 'react-icons/fa';
-
-
-
-
-
+import { TiSocialFacebook } from "react-icons/ti";
+import { FaYoutube } from "react-icons/fa";
+import { FiInstagram } from "react-icons/fi";
+import { FaTwitter } from "react-icons/fa";
 import { FaMapMarkerAlt } from 'react-icons/fa';
+
+const testimonials = [
+  {
+    name: 'John Doe',
+    position: 'CEO at Example Inc.',
+    text: 'This is an amazing service! I highly recommend it to everyone.',
+    image: 'https://via.placeholder.com/150',
+    rating: 5
+  },
+  {
+    name: 'Jane Smith',
+    position: 'Marketing Director at Company X',
+    text: '“Exceptional service! The platform made it so easy to find qualified candidates for our team. We hired three talented professionals in just a few weeks!”',
+    image: 'https://via.placeholder.com/150',
+    rating: 5
+  },
+  {
+    name: 'Sam Wilson',
+    position: 'Product Manager at TechWorld',
+    text: 'I saw immediate improvements in our workflow. Highly satisfied with the results!',
+    image: 'https://via.placeholder.com/150',
+    rating: 5
+  },
+  {
+    name: 'Sam',
+    position: 'Product Manager at TechWorld',
+    text: '“As a job seeker, I found it incredibly easy to apply to roles that fit my skills. Within a month, I landed a fantastic job at a great company!”',
+    image: 'https://via.placeholder.com/150',
+    rating: 5
+  },
+  {
+    name: 'Wilson',
+    position: 'Product Manager at TechWorld',
+    text: '“The candidate pool is outstanding, and the application process is user-friendly. This platform has been a game-changer for our recruitment needs!”',
+    image: 'https://via.placeholder.com/150',
+    rating: 5
+  },
+  {
+    name: 'Wilson',
+    position: 'Product Manager at TechWorld',
+    text: 'I saw immediate improvements in our workflow. Highly satisfied with the results!',
+    image: 'https://via.placeholder.com/150',
+    rating: 5
+  }
+];
+
+
+
 const Homepage = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const testimonials = [
+    {
+      name: 'John Doe',
+      position: 'CEO at Example Inc.',
+      text: 'This is an amazing service! I highly recommend it to everyone.',
+      image: 'https://via.placeholder.com/150'
+    }, {
+      name: 'Jane Smith',
+      position: 'Marketing Director at Company X',
+      text: 'A game-changer for our business. The team is fantastic to work with!',
+      image: 'https://via.placeholder.com/150'
+    },
+    {
+      name: 'Sam Wilson',
+      position: 'Product Manager at TechWorld',
+      text: 'I saw immediate improvements in our workflow. Highly satisfied with the results!',
+      image: 'https://via.placeholder.com/150'
+    },
+    {
+      name: 'Sam',
+      position: 'Product Manager at TechWorld',
+      text: 'I saw immediate improvements in our workflow. Highly satisfied with the results!',
+      image: 'https://via.placeholder.com/150'
+    },
+    {
+      name: 'Wilson',
+      position: 'Product Manager at TechWorld',
+      text: 'I saw immediate improvements in our workflow. Highly satisfied with the results!',
+      image: 'https://via.placeholder.com/150'
+    },
+    {
+      name: 'Wilson',
+      position: 'Product Manager at TechWorld',
+      text: 'I saw immediate improvements in our workflow. Highly satisfied with the results!',
+      image: 'https://via.placeholder.com/150'
+    }
+  ];
+
+  const handleLeftArrow = () => {
+    // Ensure the index wraps around properly, showing the previous 3 testimonials
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? testimonials.length - 3 : prevIndex - 1
+    );
+  };
+
+  const handleRightArrow = () => {
+    // Ensure the index wraps around properly, showing the next 3 testimonials
+    setCurrentIndex((prevIndex) =>
+      prevIndex === testimonials.length - 3 ? 0 : prevIndex + 1
+    );
+  };
+
+  const renderStars = (rating) => {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+      stars.push(
+        <span 
+          key={i} 
+          className={i <= rating ? 'text-yellow-500' : 'text-gray-300'}
+          style={{
+            
+            fontSize: '20px', 
+            marginRight: '3px'
+          }}
+        >
+          ★
+        </span>
+      );
+    }
+    return stars;
+  };
+
 
   return (
     <>
@@ -210,7 +334,7 @@ const Homepage = () => {
             </div>
 
             <div className="flex flex-col gap-6 justify-center items-center  h-[244px] w-[250px] rounded-lg ">
-              <FaSearchPlus className='w-[40px] h-[40px] mt-4 text-[#6712B9] bg- p-2 rounded-full ' />
+              <FaSearchPlus className='w-[40px] h-[40px] mt-4 text-[#6712B9] p-2 rounded-full ' />
               <h5 className='font-medium text-lg'>Find suitable job</h5>
               <p className=' text-gray-400 text-sm p-4 align-center'>Discover roles that match your skills and career goals. Your perfect fit is just a search away!,</p>
             </div>
@@ -236,7 +360,7 @@ const Homepage = () => {
             <div className="grid grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 gap-12 p-6">
 
               <div className="flex gap-8 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white ">
-                <FaPenNib  className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+                <FaPenNib className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
                 <span>
                   <h5 className='text-lg font-medium'>Graphics & Design</h5>
                   <p className='text-gray-500'>357 Open position</p>
@@ -307,12 +431,12 @@ const Homepage = () => {
           </div>
         </div>
 
-         <hr className='w-full' /> 
+        <hr className='w-full' />
 
         <div className='h-[800px] w-full pt-10 pl-32 pr-32'>
           <h1 className='font-normal text-[35px] pb-6'>Recents Jobs</h1>
           <div className='flex flex-col gap-5'>
-          <div className="flex gap-10 h-[90px] rounded-lg bg-white border shadow-md ">
+            <div className="flex gap-10 h-[90px] rounded-lg bg-white border shadow-md ">
               <div className="flex items-start p-4">
                 <img className="h-16 w-16" src={UpLogo} alt="UP Logo" />
                 <div className="ml-4 flex-grow">
@@ -354,7 +478,7 @@ const Homepage = () => {
                   <div className="flex justify-between pb-2">
                     <span className="text-xl font-semibold text-[#6712B9]">Software Engineer</span>
                     <button className="px-4 font-medium  text-sm py-1 rounded-full bg-[#F5EBFFB2] text-[#6712B9] ">
-                       Full Time
+                      Full Time
                     </button>
                   </div>
                   <div className="flex gap-5 justify-between">
@@ -416,7 +540,7 @@ const Homepage = () => {
                 </button>
               </div>
             </div>
-          
+
             <div className="flex gap-10 h-[90px] rounded-lg bg-white border shadow-md ">
               <div className="flex items-start p-4">
                 <img className="h-16 w-16" src={ULogo} alt="ULogo" />
@@ -494,7 +618,7 @@ const Homepage = () => {
                   <div className="flex gap-2 justify-between pb-2">
                     <span className="text-xl font-semibold text-gray-800">Interaction Designer</span>
                     <button className="px-2 font-medium  text-sm py-1 rounded-full bg-[#F5EBFFB2] text-[#6712B9] ">
-                     Full Time
+                      Full Time
                     </button>
                   </div>
                   <div className="flex gap-6 justify-between">
@@ -523,7 +647,7 @@ const Homepage = () => {
             </div>
 
           </div>
-        </div> 
+        </div>
 
         <div className='h-[650px] bg-[#FFFF] w-full pl-32 pr-32 pt-10'>
           <div className='flex justify-between'>
@@ -539,7 +663,282 @@ const Homepage = () => {
               </button>
             </div>
           </div>
+
+          <div className="grid grid-cols-1 mt-6 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
+            <div className="flex flex-col border-2  gap-6 h-[200px] w-[250px] rounded-lg">
+              <div className="flex justify-start items-center gap-8 p-6 rounded-lg bg-white">
+                <div className='bg-[#EA4C89] pt-2 pr-4 pb-2 pl-4'>
+                  <img className='w-[26px] h-[26px]' src={wheel} alt="wheel.png" />
+                </div>
+                <span>
+                  <h5 className='text-lg font-medium'>Drible</h5>
+                  <p className='text-gray-500'>Pune</p>
+                </span>
+              </div>
+              <div className='flex justify-center items-center'>
+                <button className="bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+              </div>
+            </div>
+
+            <div className="flex flex-col border-2 gap-6 h-[200px] w-[250px] rounded-lg">
+              <div className="flex justify-start items-center gap-8 p-6 rounded-lg bg-white">
+                <div className='bg-[#6FDA44] pt-2 pr-4 pb-2 pl-4'>
+                  <img className='w-[32px] h-[32px]' src={UpLogo} alt="UpLogo.png" />
+                </div>
+                <span>
+                  <h5 className='text-lg font-medium'>UpWork</h5>
+                  <p className='text-gray-500'>Mumbai</p>
+                </span>
+              </div>
+              <div className='flex justify-center items-center'>
+                <button className="bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+              </div>
+            </div>
+
+            <div className="flex flex-col border-2 border-[#6712B9] shadow-lg  gap-6 h-[200px] w-[250px] rounded-lg">
+              <div className="flex justify-start items-center gap-8 p-6 rounded-lg bg-white">
+                <div className='bg-[#ebe8e9] pt-2 pr-4 pb-2 pl-4'>
+                  <img className='w-[26px] h-[26px]' src={slack} alt="wheel.png" />
+                </div>
+                <span>
+                  <h5 className='text-lg font-medium'>Slack</h5>
+                  <p className='text-gray-500'>Nagpur</p>
+                </span>
+              </div>
+              <div className='flex justify-center items-center'>
+                <button className="bg-[#6712B9] border-2 text-[#FFFFFF] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+              </div>
+            </div>
+
+            <div className="flex flex-col border-2 gap-6 h-[200px] w-[250px] rounded-lg">
+              <div className="flex justify-start items-center gap-8 p-6 rounded-lg bg-white">
+                <div className='bg-[#1E60C6] pt-2 pr-4 pb-2 pl-4'>
+                  <img className='w-[26px] h-[26px]' src={crownLogo} alt="crown.png" />
+                </div>
+                <span>
+                  <h5 className='text-lg font-medium'>Freepik</h5>
+                  <p className='text-gray-500'>Nagpur</p>
+                </span>
+              </div>
+              <div className='flex justify-center items-center'>
+                <button className="bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+              </div>
+            </div>
+
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
+
+            <div className="flex flex-col border-2 gap-6 h-[200px] w-[250px] rounded-lg">
+              <div className="flex justify-start items-center gap-8 p-6 rounded-lg bg-white">
+                <div className='bg-[#EA4C89] pt-2 pr-4 pb-2 pl-4'>
+                  <img className='w-[26px] h-[26px]' src={wheel} alt="wheel.png" />
+                </div>
+                <span>
+                  <h5 className='text-lg font-medium'>Drible</h5>
+                  <p className='text-gray-500'>Pune</p>
+                </span>
+              </div>
+              <div className='flex justify-center items-center'>
+                <button className="bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+              </div>
+            </div>
+
+            <div className="flex flex-col border-2  gap-6 h-[200px] w-[250px] rounded-lg">
+              <div className="flex justify-start items-center gap-8 p-6 rounded-lg bg-white">
+                <div className='bg-[#6FDA44] pt-2 pr-4 pb-2 pl-4'>
+                  <img className='w-[32px] h-[32px]' src={UpLogo} alt="UpLogo.png" />
+                </div>
+                <span>
+                  <h5 className='text-lg font-medium'>UpWork</h5>
+                  <p className='text-gray-500'>Mumbai</p>
+                </span>
+              </div>
+              <div className='flex justify-center items-center'>
+                <button className="bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+              </div>
+            </div>
+
+            <div className="flex flex-col border-2  gap-6 h-[200px] w-[250px] rounded-lg">
+              <div className="flex justify-start items-center gap-8 p-6 rounded-lg bg-white">
+                <div className='bg-[#ebe8e9] pt-2 pr-4 pb-2 pl-4'>
+                  <img className='w-[26px] h-[26px]' src={slack} alt="wheel.png" />
+                </div>
+                <span>
+                  <h5 className='text-lg font-medium'>Slack</h5>
+                  <p className='text-gray-500'>Nagpur</p>
+                </span>
+              </div>
+              <div className='flex justify-center items-center'>
+                <button className="bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+              </div>
+            </div>
+
+            <div className="flex flex-col border-2   gap-6 h-[200px] w-[250px] rounded-lg">
+              <div className="flex justify-start items-center gap-8 p-6 rounded-lg bg-white">
+                <div className='bg-[#1E60C6] pt-2 pr-4 pb-2 pl-4'>
+                  <img className='w-[26px] h-[26px]' src={crownLogo} alt="crown.png" />
+                </div>
+                <span>
+                  <h5 className='text-lg font-medium'>Freepik</h5>
+                  <p className='text-gray-500'>Nagpur</p>
+                </span>
+              </div>
+              <div className='flex justify-center items-center'>
+                <button className="bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+              </div>
+            </div>
+
+          </div>
         </div>
+
+        {/* testimonial  */}
+        <div className="py-16 bg-gray-100">
+      <div className="container mx-auto text-center relative">
+        <h2 className="text-3xl font-semibold text-gray-800 mb-8">Client Testimonial</h2>
+
+        {/* Left Arrow */}
+        <button
+          onClick={handleLeftArrow}
+          className="absolute left-5 z-10 top-1/2 transform -translate-y-1/2 bg-gray-200 p-2 rounded-full"
+        >
+          &#8592;
+        </button>
+
+        {/* Testimonial Cards */}
+        <div className="flex gap-8 justify-center">
+          {/* Ensure always three cards are shown */}
+          {testimonials.slice(currentIndex, currentIndex + 3).map((testimonial, index) => (
+            <div
+              key={index}
+              className="bg-white p-8 rounded-lg shadow-lg transform transition-all hover:scale-105 w-80 h-80">
+                <div>{renderStars(testimonial.rating)}</div>
+                <p className="text-gray-600">{testimonial.text}</p>
+            <div className='flex'>
+            <img
+                src={testimonial.image}
+                alt={testimonial.name}
+                className="w-24 h-24 rounded-full mx-auto mb-4"
+              />
+             <div>
+             <h3 className="text-xl font-semibold text-gray-700">{testimonial.name}</h3>
+             <p className="text-sm text-gray-500 mb-4">{testimonial.position}</p>
+             </div>
+            </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Right Arrow */}
+        <button
+          onClick={handleRightArrow}
+          className="absolute right-5 top-1/2 transform -translate-y-1/2 bg-gray-200 p-2 rounded-full"
+        >
+          &#8594;
+        </button>
+      </div>
+    </div>
+
+
+    <div className='h-[490px] bg-[#FFFF] w-full pl-32 pr-32 pt-10'>
+          <div className="flex space-x-4 p-6">
+            {/* Box 1 */}
+            <div className="flex flex-col gap-[16px] p-[50px] bg-[#E4E5E8] w-[548px] h-[290px] rounded-lg">
+              <h3 className="text-[32px] leading-[40px] font-inter">Become a Candidate</h3>
+              <p className="text-[14px] leading-[24px] text-[#636A80]">Take the first step toward your next career opportunity. Join us as a candidate to connect with top employers and make your profile stand out in the competitive job market!</p>
+              <button className="flex  bg-[#FFFFFF] h-[48px] w-[188px] items-center justify-center text-[#6712B9] rounded-[3px] outline-none border-none">
+                <span className="text-[16px] font-inter">Register Now</span>
+                <FaArrowRight className="ml-2" />
+              </button>
+            </div>
+
+            {/* Box 2 */}
+            <div className="flex flex-col gap-[16px] p-[50px] bg-[#6712B9] w-[548px] h-[290px] text-[#FFFFFF] rounded-lg">
+              <h3 className="text-[32px] leading-[40px] font-inter">Become an Employer</h3>
+              <p className="text-[14px] text-[#FFFFFF] leading-[24px]">Find the talent your business needs to succeed. Join us as an employer to connect with skilled candidates ready to make an impact!</p>
+              <button className="flex bg-[#FFFFFF] h-[48px] w-[188px] items-center justify-center text-[#6712B9] rounded-[3px] outline-none border-none">
+                <span className="text-[16px] font-inter">Register Now</span>
+                <FaArrowRight className="ml-2" />
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div className='bg-[#18191C] text-[#FFFFFF] w-full h-[430px] pt-10'>
+          <div className='flex gap-16 mb-20 pl-32 pr-32'>
+            <div className="flex flex-col gap-4 mt-10">
+              <img className='w-[183px] h-[60px]' src={logo} alt="logo.png" />
+              <p className='text-[18px]'><span className="text-[#5E6670] text-[18px]">Call now:</span> +91 8956992803</p>
+              <p className="text-[#5E6670] text-[14px]">4th floor, Prince Complex, Chatrapati Nagar,<br /> Nagpur, Maharashtra 440015</p>
+            </div>
+            <div className='flex flex-col gap-4 mt-10'>
+              <h5 className="text-[20px] leading-[32px]">Quick Link</h5>
+              <p className='text-[#5E6670] text-[16px]'>About</p>
+              <div className="flex items-center space-x-4">
+                {/* Arrow */}
+                <div className="flex justify-center items-center h-[5.83px] w-[11.67px]">
+                  <FaArrowRight />
+                </div>
+                <div>
+                  <a className="text-[16px] text-white">
+                    Contact
+                  </a>
+                </div>
+              </div>
+              <p className='text-[#5E6670] text-[16px]'>Pricing</p>
+              <p className='text-[#5E6670] text-[16px]'>Blog</p>
+            </div>
+            <div className='flex flex-col gap-4 mt-10'>
+              <h5 className="text-[20px] leading-[32px]">Candidate</h5>
+              <p className="text-[#5E6670] text-[14px]">Browse Jobs</p>
+              <p className="text-[#5E6670] text-[14px]">Browse Employers</p>
+              <p className="text-[#5E6670] text-[14px]">Candidate Dashboard</p>
+              <p className="text-[#5E6670] text-[14px]">Saved Jobs</p>
+            </div>
+
+            <div className='flex flex-col gap-4 mt-10'>
+              <h5 className="text-[20px] leading-[32px]">Employers</h5>
+              <p className="text-[#5E6670] text-[14px]">Post a Job</p>
+              <p className="text-[#5E6670] text-[14px]">Browse Candidates</p>
+              <p className="text-[#5E6670] text-[14px]">Employers Dashboard</p>
+              <p className="text-[#5E6670] text-[14px]">Applications</p>
+            </div>
+
+            <div className="flex flex-col gap-4 mt-10">
+              <h5 className="text-[20px] leading-[32px]">Support</h5>
+              <p className="text-[#5E6670] text-[14px]">Faqs</p>
+              <p className="text-[#5E6670] text-[14px]">Privacy Policy</p>
+              <p className="text-[#5E6670] text-[14px]">Terms & Conditions</p>
+            </div>
+          </div>
+
+          <hr className='w-full border-t-2 border-[#2F3338]' />
+          <div className="flex justify-between items-center pt-5 gap-16 pl-32 pr-32">
+            <div>
+              <p className='text-[14px] text-[#767F8C]'>@ 2024 TechnoHire - Job Portal. All rights Reserved</p>
+            </div>
+            <div className="flex gap-10 text-[#767F8C]">
+              <a href=""><TiSocialFacebook className='w-[20px] h-[20px]' /></a>
+              <a href=""><FaYoutube className='w-[20px] h-[20px]' /></a>
+              <a href=""><FiInstagram className='w-[20px] h-[20px]' /></a>
+              <a href=""><FaTwitter className='w-[20px] h-[20px]' /></a>
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+    
+
+
+
       </div>
     </>
   )

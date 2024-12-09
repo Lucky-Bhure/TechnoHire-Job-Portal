@@ -3,6 +3,7 @@ import LoginBack from "../../../assets/img/loginBackground.png";
 import LoginLogo from "../../../assets/img/loginLogo.png";
 import { FaFacebookF, FaGoogle, FaLinkedinIn } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { AiOutlineArrowRight } from "react-icons/ai";
 
 const ForgotPassword = () => {
   const [forgetPass, setForgetPass] = useState(false);
@@ -33,7 +34,7 @@ const ForgotPassword = () => {
               Go back to {" "}
               <Link
                 href="#"
-                to="/"
+                to="/login"
                 className="text-violet-700 hover:underline font-semibold"
               >
                 Login
@@ -47,7 +48,7 @@ const ForgotPassword = () => {
               className="w-[65%] py-3 px-4 bg-violet-700 text-white font-bold rounded-lg hover:bg-violet-700 flex items-center justify-center"
             >
               <span className="text-lg">Reset Password</span>
-              <i className="fa-solid fa-arrow-right mx-3 text-lg" />
+              <AiOutlineArrowRight className="mx-3 "/>
             </Link>
           </div>
         </form>
