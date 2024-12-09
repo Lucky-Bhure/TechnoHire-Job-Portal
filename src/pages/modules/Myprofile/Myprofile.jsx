@@ -15,13 +15,10 @@ const Myprofile = () => {
   return (
     <>
       <Layout>
-
-          hielo
         <div className="flex">
           <Profile />
           <Experience />
         </div>
-
       </Layout>
     </>
   );
