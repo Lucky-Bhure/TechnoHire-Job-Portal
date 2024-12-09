@@ -3,6 +3,8 @@ import { PiFaders } from "react-icons/pi";
 import { PiGridFourFill } from "react-icons/pi";
 import { IoReorderTwoSharp } from "react-icons/io5";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import Filterlocation from "./FilterEmplyee/Filterlocation";
+import Companycards from "./FilterEmplyee/Companycards";
 
 function FilterEmployer() {
   return (
@@ -33,6 +35,10 @@ function FilterEmployer() {
         </div>
       </div>
       {/*  */}
+      <div className="flex gap-5">
+        <Filterlocation />
+        <Companycards />
+      </div>
     </div>
   );
 }
