@@ -2,7 +2,9 @@ import React from "react";
 import { GoPencil } from "react-icons/go";
 import { FiPlus } from "react-icons/fi";
 import { MdOutlineArrowForward } from "react-icons/md";
-
+import profile  from '../.../../../assets/Profileassests/profile.jpg'
+import skill_logo from '../.../../../assets/Profileassests/skill_logo.png'
+import university_logo from '../.../../../assets/Profileassests/university_logo.png'
 
 function Profile() {
   return (
@@ -14,7 +16,7 @@ function Profile() {
       <div className="flex items-center gap-4 mx-10">
         <img
           className="w-[75.51px] h-[77.25px] rounded-full border-[1px]"
-          src="./profile.jpg"
+          src={profile}
           alt=""
         />
         <div className="font-medium  font-poppins">
@@ -71,7 +73,7 @@ function Profile() {
           <p className="flex gap-[10px] items-center">
             <img
               className="w-4 h-[14px] text-[#0000007A]"
-              src="./skill_logo.png"
+              src={skill_logo}
               alt=""
             />
             Top skills
@@ -98,7 +100,7 @@ function Profile() {
           <div className="flex-shrink-0">
             <img
               className="w-10 h-10 rounded-full"
-              src="./university_logo.png"
+              src={university_logo}
               alt=""
             />
           </div>
@@ -116,7 +118,7 @@ function Profile() {
           <div className="flex-shrink-0">
             <img
               className="w-10 h-10 rounded-full"
-              src="./university_logo.png"
+              src={university_logo}
               alt=""
             />
           </div>
