@@ -35,7 +35,7 @@ const tabsData = [
 function Settings() {
   const [tabIndex, setTabIndex] = useState(0);
   return (
-    <div className="w-[80%]">
+    <div className="w-full h-auto">
       <div className="flex justify-center items-center border-b-[1px] gap-28">
         {tabsData.map((data, index) => (
           <div

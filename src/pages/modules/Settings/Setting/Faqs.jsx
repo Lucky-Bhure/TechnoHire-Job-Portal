@@ -56,7 +56,7 @@ function Faqs() {
           <FiPlus className="w-[14px] text-[#9199A3] h-[14px]" />
         </div>
 
-        <div className="flex justify-between m-auto items-center w-[758px] h-[68px] border-[1px] rounded-lg border-[#E4E5E8] pl-14 pr-12">
+        <div className="flex justify-between m-auto items-center w-[758px] h-[68px] border-[1px] rounded-lg border-[#E4E5E8] pl-14 pr-12 mb-32">
           <p className="font-inter font-normal text-[18px]/[28px] text-[#18191C]">
             How do I upload my resume to the portal?
           </p>

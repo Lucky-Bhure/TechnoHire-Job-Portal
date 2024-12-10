@@ -5,7 +5,7 @@ import { LuSquarePen } from "react-icons/lu";
 
 function General() {
   return (
-    <div className="">
+    <div className="w-full">
       <h1 className="font-poppins font-medium text-[22px]/[64px] mt-6 mb-3">
         App preferences
       </h1>
@@ -34,8 +34,8 @@ function General() {
       <h1 className="font-poppins font-medium text-[22px]/[64px] mt-6 mb-5">
         Notifications
       </h1>
-      <div className="flex justify-between items-center flex-wrap gap-5 w-[90%]">
-        <div class="flex items-center gap-2">
+      <div className="flex justify-between items-center flex-wrap gap-5 w-[70%]">
+        <div class="flex items-center gap-3">
           <input
             // id="default-checkbox"
             type="checkbox"
@@ -181,7 +181,7 @@ function General() {
             <button className="text-white font-medium">Change</button>
           </div>
         </div>
-        <div className="text-[#7900BA] font-inter font-normal text-[16px]/[19.36px]">
+        <div className="text-[#7900BA] font-inter font-normal text-[16px]/[19.36px] mb-32 ">
           <p>Forget Password?</p>
         </div>
       </div>
