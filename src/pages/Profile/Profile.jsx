@@ -12,7 +12,7 @@ function Profile() {
     <div className="flex flex-col	justify-between space-y-7 border-x-[1px] w-[45%] mb-30">
       <h1 className="text-2xl text-[#18191C] font-medium font-inter mx-4 mt-4">
         Profile
-      
+        
       </h1>
       {/* upper part */}
       <div className="flex items-center gap-4 mx-10">

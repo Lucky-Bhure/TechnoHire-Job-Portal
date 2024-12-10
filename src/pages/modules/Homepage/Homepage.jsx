@@ -10,9 +10,17 @@ import crownLogo from '../../../assets/crownLogo.png';
 import wheel from '../../../assets/wheel.png';
 import slack from '../../../assets/slackLogo.png';
 import logo from '../../../assets/logo.png';
+import group from '../../../assets/group.png';
+import TestimonialImage from '../../../assets/Testimonial.png';
+import arrow from '../../../assets/arrow.png';
 
 
+
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FaStar } from "react-icons/fa6";
 import { FaBandAid, FaSearch } from "react-icons/fa";
+import { CiLocationOn } from "react-icons/ci";
 import { FaBriefcase } from 'react-icons/fa';
 import { PiBuildingOffice } from 'react-icons/pi';
 import { FaUserPlus } from "react-icons/fa";
@@ -31,7 +39,7 @@ import { FaChartBar } from 'react-icons/fa';
 import { RiFirstAidKitLine } from 'react-icons/ri';
 import { FaDatabase } from 'react-icons/fa';
 import { FaMap } from 'react-icons/fa';
-import { FaBookmark } from 'react-icons/fa';
+import { FaRegBookmark } from "react-icons/fa";
 import { FaCalendar } from 'react-icons/fa';
 import { TiSocialFacebook } from "react-icons/ti";
 import { FaYoutube } from "react-icons/fa";
@@ -39,92 +47,87 @@ import { FiInstagram } from "react-icons/fi";
 import { FaTwitter } from "react-icons/fa";
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
-const testimonials = [
-  {
-    name: 'John Doe',
-    position: 'CEO at Example Inc.',
-    text: 'This is an amazing service! I highly recommend it to everyone.',
-    image: 'https://via.placeholder.com/150',
-    rating: 5
-  },
-  {
-    name: 'Jane Smith',
-    position: 'Marketing Director at Company X',
-    text: '“Exceptional service! The platform made it so easy to find qualified candidates for our team. We hired three talented professionals in just a few weeks!”',
-    image: 'https://via.placeholder.com/150',
-    rating: 5
-  },
-  {
-    name: 'Sam Wilson',
-    position: 'Product Manager at TechWorld',
-    text: 'I saw immediate improvements in our workflow. Highly satisfied with the results!',
-    image: 'https://via.placeholder.com/150',
-    rating: 5
-  },
-  {
-    name: 'Sam',
-    position: 'Product Manager at TechWorld',
-    text: '“As a job seeker, I found it incredibly easy to apply to roles that fit my skills. Within a month, I landed a fantastic job at a great company!”',
-    image: 'https://via.placeholder.com/150',
-    rating: 5
-  },
-  {
-    name: 'Wilson',
-    position: 'Product Manager at TechWorld',
-    text: '“The candidate pool is outstanding, and the application process is user-friendly. This platform has been a game-changer for our recruitment needs!”',
-    image: 'https://via.placeholder.com/150',
-    rating: 5
-  },
-  {
-    name: 'Wilson',
-    position: 'Product Manager at TechWorld',
-    text: 'I saw immediate improvements in our workflow. Highly satisfied with the results!',
-    image: 'https://via.placeholder.com/150',
-    rating: 5
-  }
-];
+
+{/* <FontAwesomeIcon icon={faUser} size="1x" color="black" /> */}
+
 
 
 
 const Homepage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  
   const testimonials = [
     {
-      name: 'John Doe',
-      position: 'CEO at Example Inc.',
-      text: 'This is an amazing service! I highly recommend it to everyone.',
-      image: 'https://via.placeholder.com/150'
+      name: 'Robert Fox',
+      position: 'Hiring Manager',
+      text: '“Exceptional service! The platform made it so easy to find qualified candidates for our team. We hired three talented professionals in just a few weeks!”',
+      image: TestimonialImage,
+      rating: 5
     }, {
-      name: 'Jane Smith',
-      position: 'Marketing Director at Company X',
-      text: 'A game-changer for our business. The team is fantastic to work with!',
-      image: 'https://via.placeholder.com/150'
+      name: 'Amit K.',
+      position: 'Software Developer',
+      text: '“As a job seeker, I found it incredibly easy to apply to roles that fit my skills. Within a month, I landed a fantastic job at a great company!”',
+      image: TestimonialImage,
+      rating: 5
+
     },
     {
-      name: 'Sam Wilson',
-      position: 'Product Manager at TechWorld',
-      text: 'I saw immediate improvements in our workflow. Highly satisfied with the results!',
-      image: 'https://via.placeholder.com/150'
+      name: 'Suresh M.',
+      position: 'Project Manager',
+      text: '“The candidate pool is outstanding, and the application process is user-friendly. This platform has been a game-changer for our recruitment needs!”',
+      image: TestimonialImage,
+      rating: 5
     },
     {
-      name: 'Sam',
-      position: 'Product Manager at TechWorld',
-      text: 'I saw immediate improvements in our workflow. Highly satisfied with the results!',
-      image: 'https://via.placeholder.com/150'
+      name: 'Ankit',
+      position: 'Hiring Manager',
+      text: '“Exceptional service! The platform made it so easy to find qualified candidates for our team. We hired three talented professionals in just a few weeks!”',
+      image: TestimonialImage,
+      rating: 5
+    }, 
+    {
+      name: 'anil.',
+      position: 'Software Developer',
+      text: '“As a job seeker, I found it incredibly easy to apply to roles that fit my skills. Within a month, I landed a fantastic job at a great company!”',
+      image: TestimonialImage,
+      rating: 5
     },
     {
-      name: 'Wilson',
-      position: 'Product Manager at TechWorld',
-      text: 'I saw immediate improvements in our workflow. Highly satisfied with the results!',
-      image: 'https://via.placeholder.com/150'
+      name: 'ABhay',
+      position: 'Project Manager',
+      text: '“The candidate pool is outstanding, and the application process is user-friendly. This platform has been a game-changer for our recruitment needs!”',
+      image: TestimonialImage,
+      rating: 5
     },
     {
-      name: 'Wilson',
-      position: 'Product Manager at TechWorld',
-      text: 'I saw immediate improvements in our workflow. Highly satisfied with the results!',
-      image: 'https://via.placeholder.com/150'
-    }
+      name: 'Sandeep',
+      position: 'Project Manager',
+      text: '“The candidate pool is outstanding, and the application process is user-friendly. This platform has been a game-changer for our recruitment needs!”',
+      image: TestimonialImage,
+      rating: 5
+    },
+
+    {
+      name: 'Suraj',
+      position: 'Project Manager',
+      text: '“The candidate pool is outstanding, and the application process is user-friendly. This platform has been a game-changer for our recruitment needs!”',
+      image: TestimonialImage,
+      rating: 5
+    },
+
+    {
+      name: 'Abhinash',
+      position: 'Project Manager',
+      text: '“The candidate pool is outstanding, and the application process is user-friendly. This platform has been a game-changer for our recruitment needs!”',
+      image: TestimonialImage,
+      rating: 5
+    },
+
+
   ];
+   
+
 
   const handleLeftArrow = () => {
     // Ensure the index wraps around properly, showing the previous 3 testimonials
@@ -134,30 +137,36 @@ const Homepage = () => {
   };
 
   const handleRightArrow = () => {
-    // Ensure the index wraps around properly, showing the next 3 testimonials
-    setCurrentIndex((prevIndex) =>
-      prevIndex === testimonials.length - 3 ? 0 : prevIndex + 1
-    );
+    setCurrentIndex((prevIndex) => {
+      // Check if we are at the last set of 3 cards
+      if (prevIndex + 3 >= testimonials.length) {
+        return 0; // Reset to the first set of cards
+      }
+      return prevIndex + 3; // Otherwise, move to the next set of 3 cards
+    });
   };
+    // Function to handle dot click to navigate to a specific testimonial
+  const handleDotClick = (index) => {
+    setCurrentIndex(index); // Directly set to the testimonial index
+  };
+  
 
   const renderStars = (rating) => {
-    const stars = [];
+    let stars = [];
     for (let i = 1; i <= 5; i++) {
       stars.push(
-        <span 
-          key={i} 
-          className={i <= rating ? 'text-yellow-500' : 'text-gray-300'}
+        <span
+          key={i}
           style={{
-            
-            fontSize: '20px', 
-            marginRight: '3px'
+            color: i <= rating ? '#FFAA00' : 'gray',
           }}
         >
-          ★
+          <FaStar />
         </span>
       );
     }
     return stars;
+
   };
 
 
@@ -170,10 +179,10 @@ const Homepage = () => {
               <h1 className='font-medium leading-tight text-[48px]'>Find a job that suits <br /> your interest & skills.</h1>
               <p className='pt-4 text-gray-500'>Explore exciting opportunities tailored to your expertise and <br /> passions. Start your journey toward a career that truly fits you!</p>
 
-              <div className='flex justify-center items-center border-2 mt-6 shadow-md bg-[#fff] rounded-md w-[580px] h-[60px] gap-2 '>
+              <div className='flex justify-center items-center border-2 mt-6 shadow-md bg-[#fff] rounded-md w-[670px] h-[80px] gap-2 '>
                 <div className='relative'>
                   <input
-                    className="rounded-[1px] p-2 pl-6  border-none outline-none"
+                    className="rounded-[1px] p-2 pl-6 order-none outline-none"
                     type="text"
                     placeholder='Job tittle,keyword...' />
                   <FaSearch className="absolute left-0 top-5 transform -translate-y-1/2 text-[#6712B9]" />
@@ -187,16 +196,16 @@ const Homepage = () => {
                     type='text' />
                   <FaMapMarkerAlt className="absolute left-0 top-5 transform -translate-y-1/2 text-[#6712B9]" />
                 </div>
-                <button type='button' className='bg-[#6712B9] p-2 pl-4 pr-4 rounded-[4px] text-white'>Find Job</button>
+                <button type='button' className='bg-[#6712B9] w-[100px] h-[56px] p-2 pl-4 pr-4 rounded-[4px] text-white'>Find Job</button>
               </div>
               <p className='flex gap-1 pt-4 pb-10 text-sm font-medium text-gray-600'> <span className='text-gray-400'>Suggestion:</span>Designer, Programming,<span className='text-[#6712B9]'>Digita Marketing</span>,Video,Animation</p>
 
               <div className='flex gap-6'>
                 <button
-                  className='border-2 border-[#3E1654] shadow-md text-[#6712B9] text-medium rounded-[15px] p-3'
+                  className='border-2 border-[#3E1654] shadow-md text-[#6712B9] w-[243px] h-[55px] text-medium rounded-[15px] p-3'
                   type='button'>
                   Become a Cadidate</button>
-                <button className='border-2 border-[#3E1654] shadow-md text-[#6712B9]  rounded-[15px] p-3'>Become an Employer</button>
+                <button className='border-2 border-[#3E1654] shadow-md text-[#6712B9] w-[243px] h-[55px] rounded-[15px] p-3'>Become an Employer</button>
               </div>
             </div>
 
@@ -210,21 +219,21 @@ const Homepage = () => {
           <div className="grid grid-cols-1 mt-6 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
 
             <div className="flex gap-10 justify-center items-center  h-[90px] rounded-lg bg-white border shadow-md ">
-              <FaBriefcase className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+              <FaBriefcase className=' text-[#6712B9] bg-gray-100 rounded-md w-14 p-2 h-14' />
               <span>
                 <h5 className='font-bold text-lg'>1,75,324</h5>
                 <p className='text-gray-500'>Live job</p>
               </span>
             </div>
             <div className="flex gap-10 justify-center items-center  h-[90px] rounded-lg bg-white border shadow-md ">
-              <PiBuildingOffice className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+              <PiBuildingOffice className='bg-[#6712B9] text-white rounded-md w-14 p-2 h-14' />
               <span>
                 <h5 className='font-bold text-lg'>97,345</h5>
                 <p className='text-gray-500'>Companies</p>
               </span>
             </div>
             <div className="flex gap-10 justify-center items-center  h-[90px] rounded-lg bg-white border shadow-md ">
-              <FaUsers className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+              <FaUsers className=' text-[#6712B9] bg-gray-100 rounded-md w-14 p-2 h-14' />
               <span>
                 <h5 className='font-bold text-lg'>38,47,154</h5>
                 <p className='text-gray-500'>Candidates</p>
@@ -232,7 +241,7 @@ const Homepage = () => {
             </div>
 
             <div className="flex gap-10 justify-center items-center  h-[90px] rounded-lg bg-white border shadow-md ">
-              <FaBriefcase className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+              <FaBriefcase className=' text-[#6712B9] bg-gray-100 rounded-md w-14 p-2 h-14' />
               <span>
                 <h5 className='font-bold text-lg'>7,532</h5>
                 <p className='text-gray-500'>New Jobs</p>
@@ -314,29 +323,43 @@ const Homepage = () => {
 
         </div>
 
-        <div className='h-[542px] bg-[#F1F2F4] w-full pl-32 pr-32'>
+        <div className='h-[542px] bg-[#F1F2F4] w-full pl-32 pr-32 relative'>
           <h1 className='flex justify-center items-center font-normal text-[35px] pb-2 pt-10'>How TechnoHire work</h1>
 
           <div className="grid grid-cols-1 mt-6 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
 
-            <div className="flex flex-col gap-6 justify-center items-center  h-[244px] w-[250px] rounded-lg">
+            <div className="flex flex-col gap-6 justify-center items-center h-[244px] w-[250px] rounded-lg">
               <FaUserPlus className='w-[40px] h-[40px] mt-4 text-[#6712B9] bg-white p-2 rounded-full ' />
               <h5 className='font-medium text-lg'>Create Account</h5>
-              <p className=' text-gray-400 text-sm p-4 align-middle'>Join us today to unlock a world of<br />
-                career possibilities. Setting up is quick
-                and easy!</p>
+              <p className='text-gray-400 text-sm p-4 align-middle'>
+                Join us today to unlock a world of career possibilities. Setting up is quick and easy!
+              </p>
+
+              {/* Arrow between steps */}
+              <div className="absolute top-[155px] left-[320px]">
+                <img src={arrow} alt="arrow" className="w-[190px] h-8" />
+              </div>
             </div>
 
             <div className="flex flex-col gap-6 justify-center items-center  h-[244px] w-[250px] rounded-lg bg-white">
-              <FaCloudUploadAlt className='w-[40px] h-[40px] mt-4 text-[#6712B9] bg-white p-2 rounded-full ' />
+              <FaCloudUploadAlt className='w-[40px] h-[40px] mt-6 text-[#FFFFFF] bg-[#6712B9] p-2 rounded-full ' />
               <h5 className='font-medium text-lg'>Upload CV/Resume</h5>
               <p className=' text-gray-400 text-sm p-4 align-middle'>Showcase your skills and experience by uploading your latest CV. Let your profile stand out!</p>
+
+              <div className="absolute top-52 left-[580px] rotate-180">
+                <img src={arrow} alt="arrow" className="w-[190px] h-8" />
+              </div>
             </div>
+
+
 
             <div className="flex flex-col gap-6 justify-center items-center  h-[244px] w-[250px] rounded-lg ">
               <FaSearchPlus className='w-[40px] h-[40px] mt-4 text-[#6712B9] p-2 rounded-full ' />
               <h5 className='font-medium text-lg'>Find suitable job</h5>
               <p className=' text-gray-400 text-sm p-4 align-center'>Discover roles that match your skills and career goals. Your perfect fit is just a search away!,</p>
+              <div className="absolute top-[155px] left-[850px]">
+                <img src={arrow} alt="arrow" className="w-[190px] h-8" />
+              </div>
             </div>
 
             <div className="flex flex-col gap-6 justify-center items-center  h-[244px] w-[250px] rounded-lg">
@@ -360,21 +383,21 @@ const Homepage = () => {
             <div className="grid grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 gap-12 p-6">
 
               <div className="flex gap-8 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white ">
-                <FaPenNib className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+                <FaPenNib className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10 rounded-md' />
                 <span>
                   <h5 className='text-lg font-medium'>Graphics & Design</h5>
                   <p className='text-gray-500'>357 Open position</p>
                 </span>
               </div>
               <div className="flex gap-8 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white ">
-                <FaCode className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+                <FaCode className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10 rounded-md' />
                 <span>
                   <h5 className='text-lg font-medium'>Code & Programing</h5>
                   <p className='text-gray-500'>312 Open position</p>
                 </span>
               </div>
               <div className="flex gap-8 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white">
-                <HiOutlineSpeakerphone className='text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+                <HiOutlineSpeakerphone className='text-[#6712B9] bg-gray-100 w-12 p-2 h-10 rounded-md' />
                 <span>
                   <h5 className='text-lg font-medium'>Digital Marketing</h5>
                   <p className='text-gray-500'>297 Open position</p>
@@ -382,7 +405,7 @@ const Homepage = () => {
               </div>
 
               <div className="flex gap-8 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white ">
-                <LuMonitorPlay className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+                <LuMonitorPlay className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10 rounded-md' />
                 <span>
                   <h5 className='text-lg font-medium'>Video & Animation</h5>
                   <p className='text-gray-500'>247 Open position</p>
@@ -396,21 +419,21 @@ const Homepage = () => {
             <div className="grid grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 gap-12 p-6">
 
               <div className="flex gap-8 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white">
-                <FaMusic className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+                <FaMusic className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10 rounded-md' />
                 <span>
                   <h5 className='text-lg font-medium'>Data Science and Analytics</h5>
                   <p className='text-gray-500'>204 Open position</p>
                 </span>
               </div>
               <div className="flex gap-8 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white">
-                <PiBuildingOffice className='text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+                <PiBuildingOffice className='text-[#6712B9] bg-gray-100 w-12 p-2 h-10 rounded-md' />
                 <span>
                   <h5 className='text-lg font-medium'>UI/UX Design</h5>
                   <p className='text-gray-500'>167 Open position</p>
                 </span>
               </div>
               <div className="flex gap-6 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white">
-                <RiFirstAidKitLine className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+                <RiFirstAidKitLine className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10 rounded-md' />
                 <span>
                   <h5 className='text-lg font-medium'>Blockchain Technology</h5>
                   <p className='text-gray-500'>125 Open position</p>
@@ -418,7 +441,7 @@ const Homepage = () => {
               </div>
 
               <div className="flex gap-6 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white border shadow-md ">
-                <FaDatabase className=' text-[#6712B9] bg-gray-100 w-12 p-2 h-10' />
+                <FaDatabase className=' text-[#FFFFFF] bg-[#6712B9] w-12 p-2 h-10 rounded-md' />
                 <span>
                   <h5 className='text-lg font-medium text-[#6712B9]'>Cybersecurity</h5>
                   <p className='text-gray-500'>57 Open position</p>
@@ -448,7 +471,7 @@ const Homepage = () => {
                   </div>
                   <div className="flex justify-between">
                     <div className="flex items-center">
-                      <FaMap className="text-gray-400 text-sm" />
+                      <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
                       <span className="font-medium text-gray-400 text-sm">Nagpur</span>
                     </div>
                     <div className="flex items-center">
@@ -463,7 +486,7 @@ const Homepage = () => {
                 </div>
               </div>
               <div className="flex gap-8 items-center  ml-[40%]">
-                <FaBookmark className='text-[#6712B9]' />
+                <FaRegBookmark className='text-[#6712B9]' />
                 <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] rounded-md border-2">
                   <span>View All</span>
                   <FaArrowRight className="ml-2" />
@@ -483,7 +506,7 @@ const Homepage = () => {
                   </div>
                   <div className="flex gap-5 justify-between">
                     <div className="flex items-center">
-                      <FaMap className="text-gray-400 text-sm" />
+                      <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
                       <span className="font-medium text-gray-400 text-sm">Mumbai</span>
                     </div>
                     <div className="flex items-center">
@@ -498,7 +521,7 @@ const Homepage = () => {
                 </div>
               </div>
               <div className="flex gap-8 items-center  ml-[40%]">
-                <FaBookmark className='text-[#6712B9]' />
+                <FaRegBookmark className='text-[#6712B9]' />
                 <button className="flex h-10 pl-4 pr-4 items-center bg-[#6712B9] text-white rounded-md">
                   <span>View All</span>
                   <FaArrowRight className="ml-2" />
@@ -518,7 +541,7 @@ const Homepage = () => {
                   </div>
                   <div className="flex justify-between">
                     <div className="flex items-center">
-                      <FaMap className="text-gray-400 text-sm" />
+                      <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
                       <span className="font-medium text-gray-400 text-sm">Nagpur</span>
                     </div>
                     <div className="flex items-center">
@@ -533,7 +556,7 @@ const Homepage = () => {
                 </div>
               </div>
               <div className="flex gap-8 items-center  ml-[40%]">
-                <FaBookmark className='text-[#6712B9]' />
+                <FaRegBookmark className='text-[#6712B9]' />
                 <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] rounded-md border-2">
                   <span>View All</span>
                   <FaArrowRight className="ml-2" />
@@ -553,7 +576,7 @@ const Homepage = () => {
                   </div>
                   <div className="flex justify-between">
                     <div className="flex items-center">
-                      <FaMap className="text-gray-400 text-sm" />
+                      <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
                       <span className="font-medium text-gray-400 text-sm">Pune</span>
                     </div>
                     <div className="flex items-center">
@@ -568,7 +591,7 @@ const Homepage = () => {
                 </div>
               </div>
               <div className="flex gap-8 items-center  ml-[40%]">
-                <FaBookmark className='text-[#6712B9]' />
+                <FaRegBookmark className='text-[#6712B9]' />
                 <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] rounded-md border-2">
                   <span>View All</span>
                   <FaArrowRight className="ml-2" />
@@ -588,7 +611,7 @@ const Homepage = () => {
                   </div>
                   <div className="flex gap-7  justify-between">
                     <div className="flex items-center">
-                      <FaMap className="text-gray-400 text-sm" />
+                      <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
                       <span className="font-medium text-gray-400 text-sm">Pune</span>
                     </div>
                     <div className="flex items-center">
@@ -603,7 +626,7 @@ const Homepage = () => {
                 </div>
               </div>
               <div className="flex gap-8 items-center  ml-[40%]">
-                <FaBookmark className='text-[#6712B9]' />
+                <FaRegBookmark className='text-[#6712B9]' />
                 <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] rounded-md border-2">
                   <span>View All</span>
                   <FaArrowRight className="ml-2" />
@@ -623,7 +646,7 @@ const Homepage = () => {
                   </div>
                   <div className="flex gap-6 justify-between">
                     <div className="flex items-center">
-                      <FaMap className="text-gray-400 text-sm" />
+                      <CiLocationOn className="text-[#C5C9D6] text-md font-bold" />
                       <span className="font-medium text-gray-400 text-sm">Nagpur</span>
                     </div>
                     <div className="flex items-center">
@@ -638,7 +661,7 @@ const Homepage = () => {
                 </div>
               </div>
               <div className="flex gap-8 items-center  ml-[40%]">
-                <FaBookmark className='text-[#6712B9]' />
+                <FaRegBookmark className='text-[#6712B9]' />
                 <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] rounded-md border-2">
                   <span>View All</span>
                   <FaArrowRight className="ml-2" />
@@ -672,11 +695,14 @@ const Homepage = () => {
                 </div>
                 <span>
                   <h5 className='text-lg font-medium'>Drible</h5>
-                  <p className='text-gray-500'>Pune</p>
+                  <div className="flex items-center">
+                    <CiLocationOn className="text-[#939AAD] text-sm" />
+                    <span className="font-medium text-gray-400 text-sm">Pune</span>
+                  </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
-                <button className="bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+                <button className="bg-[#F5EBFFB2] rounded-[3px] border-2 text-[#6712B9] h-[48px] w-[200px]">Open Position</button>
               </div>
             </div>
 
@@ -687,11 +713,14 @@ const Homepage = () => {
                 </div>
                 <span>
                   <h5 className='text-lg font-medium'>UpWork</h5>
-                  <p className='text-gray-500'>Mumbai</p>
+                  <div className="flex items-center">
+                    <CiLocationOn className="text-[#939AAD] text-sm" />
+                    <span className="font-medium text-gray-400 text-sm">Mumbai</span>
+                  </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
-                <button className="bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+                <button className="bg-[#F5EBFFB2] rounded-[3px] border-2 text-[#6712B9] h-[48px] w-[200px]">Open Position</button>
               </div>
             </div>
 
@@ -702,11 +731,14 @@ const Homepage = () => {
                 </div>
                 <span>
                   <h5 className='text-lg font-medium'>Slack</h5>
-                  <p className='text-gray-500'>Nagpur</p>
+                  <div className="flex items-center">
+                    <CiLocationOn className="text-[#939AAD] text-sm" />
+                    <span className="font-medium text-gray-400 text-sm">Nagpur</span>
+                  </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
-                <button className="bg-[#6712B9] border-2 text-[#FFFFFF] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+                <button className="bg-[#6712B9]  text-[#FFFFFF] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
               </div>
             </div>
 
@@ -717,11 +749,14 @@ const Homepage = () => {
                 </div>
                 <span>
                   <h5 className='text-lg font-medium'>Freepik</h5>
-                  <p className='text-gray-500'>Nagpur</p>
+                  <div className="flex items-center">
+                    <CiLocationOn className="text-[#939AAD] text-sm" />
+                    <span className="font-medium text-gray-400 text-sm">Nagpur</span>
+                  </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
-                <button className="bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+                <button className="bg-[#F5EBFFB2] rounded-[3px] border-2 text-[#6712B9] h-[48px] w-[200px]">Open Position</button>
               </div>
             </div>
 
@@ -736,11 +771,14 @@ const Homepage = () => {
                 </div>
                 <span>
                   <h5 className='text-lg font-medium'>Drible</h5>
-                  <p className='text-gray-500'>Pune</p>
+                  <div className="flex items-center">
+                    <CiLocationOn className="text-[#939AAD] text-sm" />
+                    <span className="font-medium text-gray-400 text-sm">Pune</span>
+                  </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
-                <button className="bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+                <button className="bg-[#F5EBFFB2] rounded-[3px] border-2 text-[#6712B9] h-[48px] w-[200px]">Open Position</button>
               </div>
             </div>
 
@@ -751,11 +789,14 @@ const Homepage = () => {
                 </div>
                 <span>
                   <h5 className='text-lg font-medium'>UpWork</h5>
-                  <p className='text-gray-500'>Mumbai</p>
+                  <div className="flex items-center">
+                    <CiLocationOn className="text-[#939AAD] text-sm" />
+                    <span className="font-medium text-gray-400 text-sm">Mumbai</span>
+                  </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
-                <button className="bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+                <button className="bg-[#F5EBFFB2] rounded-[3px] border-2 text-[#6712B9] h-[48px] w-[200px]">Open Position</button>
               </div>
             </div>
 
@@ -766,11 +807,14 @@ const Homepage = () => {
                 </div>
                 <span>
                   <h5 className='text-lg font-medium'>Slack</h5>
-                  <p className='text-gray-500'>Nagpur</p>
+                  <div className="flex items-center">
+                    <CiLocationOn className="text-[#939AAD] text-sm" />
+                    <span className="font-medium text-gray-400 text-sm">Nagpur</span>
+                  </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
-                <button className="bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+                <button className="bg-[#F5EBFFB2] rounded-[3px] border-2 text-[#6712B9] h-[48px] w-[200px]">Open Position</button>
               </div>
             </div>
 
@@ -781,11 +825,14 @@ const Homepage = () => {
                 </div>
                 <span>
                   <h5 className='text-lg font-medium'>Freepik</h5>
-                  <p className='text-gray-500'>Nagpur</p>
+                  <div className="flex items-center">
+                    <CiLocationOn className="text-[#939AAD] text-sm" />
+                    <span className="font-medium text-gray-400 text-sm">Nagpur</span>
+                  </div>
                 </span>
               </div>
               <div className='flex justify-center items-center'>
-                <button className="bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">Open Position</button>
+                <button className="bg-[#F5EBFFB2] rounded-[3px] border-2 text-[#6712B9] h-[48px] w-[200px]">Open Position</button>
               </div>
             </div>
 
@@ -794,53 +841,81 @@ const Homepage = () => {
 
         {/* testimonial  */}
         <div className="py-16 bg-gray-100">
-      <div className="container mx-auto text-center relative">
-        <h2 className="text-3xl font-semibold text-gray-800 mb-8">Client Testimonial</h2>
+          <div className="container mx-auto text-center relative">
+            <h2 className="text-3xl font-semibold text-gray-800 mb-8">Client Testimonial</h2>
 
-        {/* Left Arrow */}
-        <button
-          onClick={handleLeftArrow}
-          className="absolute left-5 z-10 top-1/2 transform -translate-y-1/2 bg-gray-200 p-2 rounded-full"
-        >
-          &#8592;
-        </button>
+            {/* Left Arrow */}
+            <button
+              onClick={handleLeftArrow}
+              className="absolute left-5 z-10 top-1/2 transform -translate-y-1/2 bg-[#FFFFFF] w-[48px] h-[48px] text-[#6712B9] p-2 rounded-md"
+            >
+              &#8592;
+            </button>
 
-        {/* Testimonial Cards */}
-        <div className="flex gap-8 justify-center">
-          {/* Ensure always three cards are shown */}
-          {testimonials.slice(currentIndex, currentIndex + 3).map((testimonial, index) => (
+            {/* Testimonial Cards */}
+            <div className="flex gap-4 pl-32 pr-32 pt-10">
+              {/* Ensure always three cards are shown */}
+              {testimonials.slice(currentIndex, currentIndex + 3).map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="bg-white p-3 pt-6 rounded-lg shadow-lg transform transition-all hover:scale-105 w-[450px] h-[270px]">
+                  <div className='flex gap-2 justify-start pb-6'>{renderStars(testimonial.rating)}</div>
+
+                  <div className=''>
+                    <p className="text-start pb-10 text-[#464D61] text-sm leading-5">{testimonial.text}</p>
+                  </div>
+
+                  <div className='flex gap-2'>
+                    <div>
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-[48px] h-[48px] border-2 rounded-full"
+                      />
+                    </div>
+                    <div className='flex justify-between gap-20'>
+                      <div>
+                        <h3 className="text-[16px] font-inter font-semibold text-gray-700">{testimonial.name}</h3>
+                        <p className="text-[14px] text-gray-500 mb-4">{testimonial.position}</p>
+                      </div>
+
+                      <div>
+                        <img src={group} alt="" />
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+           
+
+
+            {/* Right Arrow */}
+            <button
+              onClick={handleRightArrow}
+              className="absolute right-5 top-1/2 transform -translate-y-1/2 bg-[#FFFFFF] w-[48px] h-[48px] text-[#6712B9] p-2 rounded-md"
+            >
+              &#8594;
+            </button>
+             {/* Dot Navigation */}
+        {/* Dot Navigation */}
+        <div className="flex justify-center gap-2 pt-6">
+          {testimonials.map((_, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-lg shadow-lg transform transition-all hover:scale-105 w-80 h-80">
-                <div>{renderStars(testimonial.rating)}</div>
-                <p className="text-gray-600">{testimonial.text}</p>
-            <div className='flex'>
-            <img
-                src={testimonial.image}
-                alt={testimonial.name}
-                className="w-24 h-24 rounded-full mx-auto mb-4"
-              />
-             <div>
-             <h3 className="text-xl font-semibold text-gray-700">{testimonial.name}</h3>
-             <p className="text-sm text-gray-500 mb-4">{testimonial.position}</p>
-             </div>
-            </div>
-            </div>
+              onClick={() => handleDotClick(index)}
+              className={`w-3 h-3 rounded-full cursor-pointer transition-all ${
+                currentIndex === index ? 'bg-[#8000FC]' : 'bg-[#DBB7FF]'
+              }`}
+            ></div>
           ))}
         </div>
-
-        {/* Right Arrow */}
-        <button
-          onClick={handleRightArrow}
-          className="absolute right-5 top-1/2 transform -translate-y-1/2 bg-gray-200 p-2 rounded-full"
-        >
-          &#8594;
-        </button>
-      </div>
-    </div>
+          </div>
+        </div>
 
 
-    <div className='h-[490px] bg-[#FFFF] w-full pl-32 pr-32 pt-10'>
+        <div className='h-[490px] bg-[#FFFF] w-full pl-32 pr-32 pt-10'>
           <div className="flex space-x-4 p-6">
             {/* Box 1 */}
             <div className="flex flex-col gap-[16px] p-[50px] bg-[#E4E5E8] w-[548px] h-[290px] rounded-lg">
@@ -865,6 +940,8 @@ const Homepage = () => {
           </div>
         </div>
 
+
+        {/* Footer  */}
 
         <div className='bg-[#18191C] text-[#FFFFFF] w-full h-[430px] pt-10'>
           <div className='flex gap-16 mb-20 pl-32 pr-32'>
@@ -935,7 +1012,7 @@ const Homepage = () => {
 
 
 
-    
+
 
 
 
