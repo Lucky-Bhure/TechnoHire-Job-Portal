@@ -17,6 +17,8 @@ import arrow from '../../../assets/arrow.png';
 
 
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FaStar } from "react-icons/fa6";
 import { FaBandAid, FaSearch } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
 import { FaBriefcase } from 'react-icons/fa';
@@ -46,55 +48,86 @@ import { FaTwitter } from "react-icons/fa";
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
 
+{/* <FontAwesomeIcon icon={faUser} size="1x" color="black" /> */}
+
 
 
 
 const Homepage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  
   const testimonials = [
     {
       name: 'Robert Fox',
       position: 'Hiring Manager',
       text: '“Exceptional service! The platform made it so easy to find qualified candidates for our team. We hired three talented professionals in just a few weeks!”',
       image: TestimonialImage,
-      rating:5
+      rating: 5
     }, {
       name: 'Amit K.',
       position: 'Software Developer',
       text: '“As a job seeker, I found it incredibly easy to apply to roles that fit my skills. Within a month, I landed a fantastic job at a great company!”',
       image: TestimonialImage,
-      rating:5
-      
+      rating: 5
+
     },
     {
       name: 'Suresh M.',
       position: 'Project Manager',
       text: '“The candidate pool is outstanding, and the application process is user-friendly. This platform has been a game-changer for our recruitment needs!”',
       image: TestimonialImage,
-      rating:5
+      rating: 5
     },
     {
-      name: 'Robert Fox',
+      name: 'Ankit',
       position: 'Hiring Manager',
       text: '“Exceptional service! The platform made it so easy to find qualified candidates for our team. We hired three talented professionals in just a few weeks!”',
       image: TestimonialImage,
-      rating:5
-    }, {
-      name: 'Amit K.',
+      rating: 5
+    }, 
+    {
+      name: 'anil.',
       position: 'Software Developer',
       text: '“As a job seeker, I found it incredibly easy to apply to roles that fit my skills. Within a month, I landed a fantastic job at a great company!”',
       image: TestimonialImage,
-      rating:5
+      rating: 5
     },
     {
-      name: 'Suresh M.',
+      name: 'ABhay',
       position: 'Project Manager',
       text: '“The candidate pool is outstanding, and the application process is user-friendly. This platform has been a game-changer for our recruitment needs!”',
       image: TestimonialImage,
-      rating:5
+      rating: 5
+    },
+    {
+      name: 'Sandeep',
+      position: 'Project Manager',
+      text: '“The candidate pool is outstanding, and the application process is user-friendly. This platform has been a game-changer for our recruitment needs!”',
+      image: TestimonialImage,
+      rating: 5
     },
 
+    {
+      name: 'Suraj',
+      position: 'Project Manager',
+      text: '“The candidate pool is outstanding, and the application process is user-friendly. This platform has been a game-changer for our recruitment needs!”',
+      image: TestimonialImage,
+      rating: 5
+    },
+
+    {
+      name: 'Abhinash',
+      position: 'Project Manager',
+      text: '“The candidate pool is outstanding, and the application process is user-friendly. This platform has been a game-changer for our recruitment needs!”',
+      image: TestimonialImage,
+      rating: 5
+    },
+
+
   ];
+   
+
 
   const handleLeftArrow = () => {
     // Ensure the index wraps around properly, showing the previous 3 testimonials
@@ -104,30 +137,36 @@ const Homepage = () => {
   };
 
   const handleRightArrow = () => {
-    // Ensure the index wraps around properly, showing the next 3 testimonials
-    setCurrentIndex((prevIndex) =>
-      prevIndex === testimonials.length - 3 ? 0 : prevIndex + 1
-    );
+    setCurrentIndex((prevIndex) => {
+      // Check if we are at the last set of 3 cards
+      if (prevIndex + 3 >= testimonials.length) {
+        return 0; // Reset to the first set of cards
+      }
+      return prevIndex + 3; // Otherwise, move to the next set of 3 cards
+    });
   };
+    // Function to handle dot click to navigate to a specific testimonial
+  const handleDotClick = (index) => {
+    setCurrentIndex(index); // Directly set to the testimonial index
+  };
+  
 
   const renderStars = (rating) => {
-    const stars = [];
+    let stars = [];
     for (let i = 1; i <= 5; i++) {
       stars.push(
         <span
           key={i}
-          className={i <= rating ? 'text-yellow-500' : 'text-gray-300'}
           style={{
-            width: "28px",
-            height: "28px",
-            color: "#FFAA00"
+            color: i <= rating ? '#FFAA00' : 'gray',
           }}
         >
-          ★
+          <FaStar />
         </span>
       );
     }
     return stars;
+
   };
 
 
@@ -140,10 +179,10 @@ const Homepage = () => {
               <h1 className='font-medium leading-tight text-[48px]'>Find a job that suits <br /> your interest & skills.</h1>
               <p className='pt-4 text-gray-500'>Explore exciting opportunities tailored to your expertise and <br /> passions. Start your journey toward a career that truly fits you!</p>
 
-              <div className='flex justify-center items-center border-2 mt-6 shadow-md bg-[#fff] rounded-md w-[650px] h-[60px] gap-2 '>
+              <div className='flex justify-center items-center border-2 mt-6 shadow-md bg-[#fff] rounded-md w-[670px] h-[80px] gap-2 '>
                 <div className='relative'>
                   <input
-                    className="rounded-[1px] p-2 pl-6  border-none outline-none"
+                    className="rounded-[1px] p-2 pl-6 order-none outline-none"
                     type="text"
                     placeholder='Job tittle,keyword...' />
                   <FaSearch className="absolute left-0 top-5 transform -translate-y-1/2 text-[#6712B9]" />
@@ -157,16 +196,16 @@ const Homepage = () => {
                     type='text' />
                   <FaMapMarkerAlt className="absolute left-0 top-5 transform -translate-y-1/2 text-[#6712B9]" />
                 </div>
-                <button type='button' className='bg-[#6712B9] p-2 pl-4 pr-4 rounded-[4px] text-white'>Find Job</button>
+                <button type='button' className='bg-[#6712B9] w-[100px] h-[56px] p-2 pl-4 pr-4 rounded-[4px] text-white'>Find Job</button>
               </div>
               <p className='flex gap-1 pt-4 pb-10 text-sm font-medium text-gray-600'> <span className='text-gray-400'>Suggestion:</span>Designer, Programming,<span className='text-[#6712B9]'>Digita Marketing</span>,Video,Animation</p>
 
               <div className='flex gap-6'>
                 <button
-                  className='border-2 border-[#3E1654] shadow-md text-[#6712B9] text-medium rounded-[15px] p-3'
+                  className='border-2 border-[#3E1654] shadow-md text-[#6712B9] w-[243px] h-[55px] text-medium rounded-[15px] p-3'
                   type='button'>
                   Become a Cadidate</button>
-                <button className='border-2 border-[#3E1654] shadow-md text-[#6712B9]  rounded-[15px] p-3'>Become an Employer</button>
+                <button className='border-2 border-[#3E1654] shadow-md text-[#6712B9] w-[243px] h-[55px] rounded-[15px] p-3'>Become an Employer</button>
               </div>
             </div>
 
@@ -820,7 +859,7 @@ const Homepage = () => {
                 <div
                   key={index}
                   className="bg-white p-3 pt-6 rounded-lg shadow-lg transform transition-all hover:scale-105 w-[450px] h-[270px]">
-                  <div className='flex justify-start pb-6'>{renderStars(testimonial.rating)}</div>
+                  <div className='flex gap-2 justify-start pb-6'>{renderStars(testimonial.rating)}</div>
 
                   <div className=''>
                     <p className="text-start pb-10 text-[#464D61] text-sm leading-5">{testimonial.text}</p>
@@ -849,16 +888,7 @@ const Homepage = () => {
                 </div>
               ))}
             </div>
-            {/* dot */}
-            <div className="flex justify-center gap-2 mt-4">
-              {testimonials.map((testimonial, index) => (
-                <div
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-3 h-3 rounded-full cursor-pointer ${currentIndex === index ? 'bg-[#6712B9]' : 'bg-[#DBB7FF]'}`}
-                />
-              ))}
-            </div>
+           
 
 
             {/* Right Arrow */}
@@ -868,6 +898,19 @@ const Homepage = () => {
             >
               &#8594;
             </button>
+             {/* Dot Navigation */}
+        {/* Dot Navigation */}
+        <div className="flex justify-center gap-2 pt-6">
+          {testimonials.map((_, index) => (
+            <div
+              key={index}
+              onClick={() => handleDotClick(index)}
+              className={`w-3 h-3 rounded-full cursor-pointer transition-all ${
+                currentIndex === index ? 'bg-[#8000FC]' : 'bg-[#DBB7FF]'
+              }`}
+            ></div>
+          ))}
+        </div>
           </div>
         </div>
 
