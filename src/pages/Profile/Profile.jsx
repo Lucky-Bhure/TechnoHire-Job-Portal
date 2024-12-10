@@ -17,7 +17,7 @@ function Profile() {
   const [aboutModal, setAboutModal] = useState(false);
 
   return (
-    <div className="flex flex-col	justify-between space-y-7 border-x-[1px] w-[45%] relative">
+    <div className="flex flex-col	justify-between space-y-7 border-x-[1px] w-[500px] relative">
       <h1 className="text-2xl text-[#18191C] font-medium font-inter mx-4 mt-4">
         Profile
       </h1>
