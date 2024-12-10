@@ -2,7 +2,7 @@ import React from "react";
 import { IoMdClose } from "react-icons/io";
 function Aboutmodal({ setAboutModal }) {
   return (
-    <div className="fixed top-32 left-96 z-50 border-2 rounded-[10px] bg-white py-5 w-[500px] px-6">
+    <div className="fixed top-40 left-80 z-50 border-2 rounded-[10px] bg-white py-5 w-[500px] px-6">
       <h1 className="font-inter font-semibold text-[30px]/[36.31px] text-[#4E4E4E]">About</h1>
       <div className="w-[450px] h-[220px] border-[1px] rounded-[10px] border-[#0000004D] p-3 my-5">
         <p className="font-inter font-normal text-[18px]/[27px] text-[#22202C]">

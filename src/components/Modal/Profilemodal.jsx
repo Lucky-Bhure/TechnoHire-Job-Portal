@@ -4,7 +4,7 @@ import { IoMdClose } from "react-icons/io";
 
 function Profilemodal({ setProfileModal }) {
   return (
-    <div className="fixed top-32 left-96 z-50 border-2 rounded-[10px] bg-white py-5 w-[600px]">
+    <div className="fixed top-32 left-60 z-50 border-2 rounded-[10px] bg-white py-5 w-[600px]">
       <h1 className="text-center text-[#000000] font-poppins font-medium text-[15px]/[22.5px]">
         Profile Photo
       </h1>
