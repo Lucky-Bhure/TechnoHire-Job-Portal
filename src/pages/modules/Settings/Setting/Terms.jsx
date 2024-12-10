@@ -6,7 +6,7 @@ function Terms() {
       <h1 className="font-poppins font-medium text-[22px]/[64px] mt-5 text-[#000000]">
         Terms & Services
       </h1>
-      <div className="font-inter font-normal text-[20px]/[50px] text-[#666666] text-opacity-[0.7] w-[900px]">
+      <div className="font-inter font-normal text-[20px]/[50px] text-[#666666] text-opacity-[0.7] w-[90%]">
         <p className="flex gap-2">
           <span>1)</span>
           <span>
