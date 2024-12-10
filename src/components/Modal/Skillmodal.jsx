@@ -2,7 +2,7 @@ import React from "react";
 import { IoMdClose } from "react-icons/io";
 function Skillmodal({ setSkillModal }) {
   return (
-    <div className="fixed top-32 left-96 z-50 border-2 rounded-[10px] bg-white py-2 w-[650px]">
+    <div className="fixed top-40 left-80 z-50 border-2 rounded-[10px] bg-white py-2 w-[650px]">
       <h1 className="font-inter font-semibold text-[25px]/[30.26px] text-[#4E4E4E] ml-5">
         Top Skills
       </h1>
