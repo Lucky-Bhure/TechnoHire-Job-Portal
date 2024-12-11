@@ -18,6 +18,7 @@ import Customersupport from "./pages/modules/Customersupports/Customersupport";
 import BasicDetails from "./pages/modules/BasicDetails/BasicDetails";
 import Inbox from "./pages/modules/Inbox/inbox";
 import SingleEmployers from "./pages/modules/FindEmplyee/FindEmployers/SingleEmployers";
+import Notification from "./pages/modules/Notification/Notification";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
         />
         <Route path="/dashboard/settings" element={<Setting />} />
         <Route path="/dashboard/feedback" element={<Feedback />} />
+        <Route path="/notification" element={<Notification/>} />
       </Routes>
     </div>
   );

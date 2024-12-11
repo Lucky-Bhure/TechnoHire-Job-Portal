@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Input, Select, Space } from "antd";
 import { MdOutlineMessage } from "react-icons/md";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { FaFlag } from "react-icons/fa";
 import MainHeader from "./MainHeader";
+import Notification from "../../pages/modules/Notification/Notification";
 
 const Header = () => {
+
+  const [isOpen, setIsOpen] = useState(false);
+
   const options = [
     {
       value: "India",
@@ -62,7 +67,13 @@ const Header = () => {
             {/* User Section */}
             <div className="flex items-center gap-4 w-full sm:w-auto justify-center sm:justify-end">
               <MdOutlineMessage className="w-6 h-6 text-gray-600 cursor-pointer" />
-              <IoIosNotificationsOutline className="w-6 h-6 text-gray-600 cursor-pointer" />
+              <div>
+              <button onClick={()=>setIsOpen(true)} > 
+                <Link to ="/notification">
+              <IoIosNotificationsOutline  className='w-6 h-6 text-gray-600 cursor-pointer'/></Link>
+
+              </button>
+              </div>
               <div className="relative">
                 <img
                   className="w-8 h-8 object-cover rounded-full cursor-pointer hover:border-2 hover:border-black"
@@ -75,7 +86,11 @@ const Header = () => {
           </div>
         </div>
         <div className="border-t-2 border-gray-300 mt-4"></div>
+
+
       </div>
+
+
     </>
   );
 };

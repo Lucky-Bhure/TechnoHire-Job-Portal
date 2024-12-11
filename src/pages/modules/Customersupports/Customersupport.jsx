@@ -1,10 +1,11 @@
 import React from "react";
 import MainHeader from "../../../components/header/MainHeader";
+import Header from "../../../components/header/Header";
 
 const Customersupport = () => {
   return (
     <div>
-      <MainHeader />
+      <Header/>
       customers Supports
     </div>
   );
