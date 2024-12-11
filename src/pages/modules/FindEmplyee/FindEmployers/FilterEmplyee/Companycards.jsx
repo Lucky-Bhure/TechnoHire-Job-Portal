@@ -14,6 +14,7 @@ import dribbble from "../.../../../../../../assets/dribbble.png";
 import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 import { SlLocationPin } from "react-icons/sl";
 import { PiBriefcaseLight } from "react-icons/pi";
+import { useNavigate } from "react-router-dom";
 
 const companyData = [
   {
@@ -79,6 +80,7 @@ const companyData = [
 ];
 
 function Companycards() {
+  const navigate = useNavigate();
   return (
     <div className="w-[90%]">
       <div>
@@ -102,7 +104,10 @@ function Companycards() {
                 </div>
               </div>
             </div>
-            <div className="flex items-center justify-between w-44 bg-[#DCBDED] px-5 py-3 rounded text-[#7900BA] font-inter font-semibold text-[16px]/[24px]">
+            <div
+              onClick={() => navigate("/single-employee")}
+              className="flex items-center justify-between w-44 bg-[#DCBDED] px-5 py-3 rounded text-[#7900BA] font-inter font-semibold text-[16px]/[24px]"
+            >
               <p>Open Position</p>
               <GrLinkNext />
             </div>

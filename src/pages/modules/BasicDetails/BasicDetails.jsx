@@ -155,7 +155,6 @@ const BasicDetails = () => {
           </>
         );
       case 2:
-      case 2:
         return (
           <>
             <EducationDetails />
