@@ -24,6 +24,7 @@ import { CgToggleOff } from "react-icons/cg";
 import { GiCrossedChains } from "react-icons/gi";
 
 const FindJob = () => {
+
   return (
     <>
       <Header />
@@ -76,8 +77,6 @@ const FindJob = () => {
                   <TfiEmail className="mr-2" /> career@instagram.com
                 </p>
               </div>
-
-              {/* Job Expiry */}
             </div>
           </div>
 
@@ -101,7 +100,7 @@ const FindJob = () => {
           <div>
             <section className="mb-5">
               <h3 className="font-bold text-lg">Job Description</h3>
-              <p>Job Description</p>
+
               <br />
               <p className="text-[#5E6670]">
                 As a Senior UI/UX Designer, you will craft intuitive and
