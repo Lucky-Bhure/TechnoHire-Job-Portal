@@ -11,7 +11,7 @@ function Support() {
       <h1 className="font-poppins font-medium text-[22px]/[64px] mt-5 text-[#000000]">
         Contact Us
       </h1>
-      <div className="flex justify-between">
+      <div className="grid grid-cols-2 gap-2 ">
         <div className="w-[400px] h-[384px]">
           <p className="text-[#7900BA] font-inter font-medium text-[16px]/[24px] my-3">
             Who we are

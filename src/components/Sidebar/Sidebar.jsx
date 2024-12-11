@@ -16,7 +16,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={`min-h-full w-${isOpen ? "[22%]" : "[5%]"} transition-all`}>
+    <div className={`min-h-full w-${isOpen ? "[400px]" : "[6%]"} transition-all`}>
       <div className="flex justify-between items-center pl-4 pt-4">
         <p
           className={`text-gray-400 uppercase text-sm ${!isOpen && "hidden"}`}

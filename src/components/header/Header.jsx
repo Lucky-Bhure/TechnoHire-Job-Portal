@@ -49,6 +49,7 @@ const Header = () => {
               <Space.Compact className="w-[750px] py-4 rounded-none h-[50px] ">
                 <Select
                   options={options}
+                  defaultValue={options[0]?.value}
                   style={{ height: "50px" }}
                   className=" w-[300px]"
                 />
