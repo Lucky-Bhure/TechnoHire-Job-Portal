@@ -120,10 +120,17 @@ const Inbox = () => {
          </div>
         </div>
         <div className='border-2 w-[340px] h-[248px] rounded-lg'>
-             <h4>Get hire faster with Premium</h4>
+          <h4 className='text-[18px] text-[#000000] font-inter font-normal leading-[28px]'>Get hire faster with Premium</h4>
              <p>Premium InMail is 4.6x more effective in hearing back than cold email.</p>
-            <div>
-              
+             <div>
+              <div>
+                <div>
+                    <img src={InboxImg_1} alt="" />
+                    <p>Rekha and millions of other members use Premium</p>
+                </div>
+                <button>Try Premium for</button>
+                <p>1-month free trial. We’ll send you a reminder 7 days <br />before your trial ends</p>
+              </div>
             </div>
         </div>
       </div>
