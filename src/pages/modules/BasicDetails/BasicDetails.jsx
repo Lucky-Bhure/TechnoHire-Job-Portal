@@ -31,21 +31,22 @@ const BasicDetails = () => {
 
   const steps = [
     "Basic Details",
-    "Education",
-    "Work Experience",
+    "Education ",
+    " Experience",
     "Certification",
-    "Skills",
-    "Documents"
+    "Skills ",
+    " Documents ",
+    "GettingStarted"
   ];
-  const steps2 = [
-    "Basic Details",
-    "Education",
-    "Work Experience",
-    "Certification",
-    "Skills",
-    "Documents",
-    "Getting started"
-  ];
+  // const steps2 = [
+  //   "Basic Details",
+  //   "Education",
+  //   "Work Experience",
+  //   "Certification",
+  //   "Skills",
+  //   "Documents",
+  //   "Getting started"
+  // ];
 
   const formsName = [
     "Basic Details",
@@ -87,7 +88,7 @@ const BasicDetails = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      if (currentStep < steps2.length) {
+      if (currentStep < steps.length) {
         setCurrentStep((prev) => prev + 1);
       }
     }
@@ -210,164 +211,208 @@ const BasicDetails = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row h-screen overflow-y-hidden">
-      {steps2 === "Getting Started" ? (
-       
-        <div className="xl:flex justify-center items-center mb-4 mt-[3rem]">
-        {steps2.map((step, index) => (
-          <div key={index} className="relative flex items-center">
-            {/* Circle */}
-            <div
-              className={`w-[35px] h-[35px] 2xl:w-[3rem] 2xl:h-[3rem] flex items-center justify-center rounded-full font-bold ${currentStep > index + 1
-                ? "bg-violet-700 text-white"
-                : currentStep === index + 1
-                  ? "bg-violet-700 text-violet-700"
-                  : "bg-gray-300 text-gray-500"}`}
-            >
-              {currentStep > index + 1 ? (
-                <span className="text-white">✓</span> // Checkmark for completed steps2
-              ) : currentStep === index + 1 ? (
-                <span className="text-white">•</span> // Dot for the current step
-              ) : null}
-              {/* // No number for future steps2 */}
-            </div>
-
-            {/* Line Between Circles */}
-            {index < steps2.length - 1 && (
-              <div
-                className={`h-[3px] md:w-[4rem] ${currentStep > index + 1 ? "bg-violet-700" : "bg-gray-300"}`}
-              ></div>
-            )}
-
-            {/* Step Name Below Circle */}
-            <div className="absolute bottom-[-25px] left-[-25px] text-center w-full">
-              <span
-                className={`text-xs ${currentStep >= index + 1 ? "text-violet-700 font-semibold" : "text-gray-600"}`}
-              >
-                {step}
-              </span>
-            </div>
-            
-          </div>
-          
-        ))}
-      </div>
-      ) : (
-         <>
-          <div className="hidden md:flex w-full h-full flex-col items-center bg-cover bg-center" style={{
+    <div
+      className={`flex flex-col md:flex-row h-screen overflow-hidden ${
+        currentStep === steps.length ? "w-full" : ""
+      }`}
+    >
+      {/* Conditionally hide left side on the last step */}
+      {currentStep < steps.length && (
+        <div
+          className="hidden md:flex w-full h-full flex-col items-center bg-cover bg-center"
+          style={{
             backgroundImage: `url(${LoginBack})`
-          }}>
-            <div>
-              {/* For screens smaller than 1400px (Vertical Steps) */}
-              <div className="flex flex-col items-start gap-[35px] mt-6 relative xl:hidden">
-                {steps.map((step, index) => (
-                  <div className="relative flex items-center space-x-4 bottom-[-15px]" key={index}>
-                    {/* Circle */}
-                    <div
-                      className={`w-10 h-10 flex items-center justify-center rounded-full border-2 font-bold ${currentStep > index + 1
+          }}
+        >
+          <div>
+            {/* Vertical Steps */}
+            <div className="flex flex-col items-start gap-[35px] mt-6 relative xl:hidden">
+              {steps.map((step, index) => (
+                <div
+                  className="relative flex items-center space-x-4 bottom-[-15px]"
+                  key={index}
+                >
+                  <div
+                    className={`w-10 h-10 flex items-center justify-center rounded-full border-2 font-bold ${
+                      currentStep > index + 1
                         ? "border-violet-700 bg-violet-700 text-white"
                         : currentStep === index + 1
-                          ? "border-violet-700 bg-violet-700 text-white"
-                          : "border-gray-300 bg-gray-100 text-gray-500"}`}
-                    >
-                      {currentStep > index + 1 ? (
-                        <span className="text-white">✓</span> // Checkmark for completed steps
-                      ) : currentStep === index + 1 ? (
-                        <span className="text-white">•</span> // Dot for current step
-                      ) : null}
-                      {/* // No number for uncompleted steps */}
-                    </div>
-  
-                    {/* Step Name */}
-                    <span className={`text-sm ${currentStep >= index + 1 ? "text-violet-700" : "text-gray-500"}`}>
-                      {step}
-                    </span>
-  
-                    {/* Vertical Line */}
-                    {index < steps.length - 1 && (
-                      <div className="absolute z-[-1] left-[4px] top-[25px] w-[2px] h-[60px] bg-gray-300"></div>
-                    )}
+                        ? "border-violet-700 bg-violet-700 text-white"
+                        : "border-gray-300 bg-gray-100 text-gray-500"
+                    }`}
+                  >
+                    {currentStep > index + 1 ? (
+                      <span className="text-white">✓</span>
+                    ) : currentStep === index + 1 ? (
+                      <span className="text-white">•</span>
+                    ) : null}
                   </div>
-                ))}
-              </div>
-  
-              {/* For screens larger than 1400px (Horizontal Steps) */}
-              <div className="hidden xl:flex justify-center items-center mb-4 mt-[3rem]">
-                {steps.map((step, index) => (
-                  <div key={index} className="relative flex items-center">
-                    {/* Circle */}
-                    <div
-                      className={`w-[35px] h-[35px] 2xl:w-[3rem] 2xl:h-[3rem] flex items-center justify-center rounded-full font-bold ${currentStep > index + 1
+                  <span
+                    className={`text-sm ${
+                      currentStep >= index + 1
+                        ? "text-violet-700"
+                        : "text-gray-500"
+                    }`}
+                  >
+                    {step}
+                  </span>
+                  {index < steps.length - 1 && (
+                    <div className="absolute z-[-1] left-[4px] top-[25px] w-[2px] h-[60px] bg-gray-300"></div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Horizontal Steps for larger screens */}
+            <div className="hidden xl:flex justify-center items-center mb-4 mt-[3rem]">
+              {steps.map((step, index) => (
+                <div key={index} className="relative flex items-center">
+                  <div
+                    className={`xl:w-[50px] xl:h-[50px] ${currentStep === steps.length ?"xl:w-[50px] xl:h-[50px]" : "xl:w-[2rem] xl:h-[2rem]"} 2xl:w-[3rem] 2xl:h-[3rem] flex items-center justify-center rounded-full font-bold ${
+                      currentStep > index + 1
                         ? "bg-violet-700 text-white"
                         : currentStep === index + 1
-                          ? "bg-violet-700 text-violet-700"
-                          : "bg-gray-300 text-gray-500"}`}
-                    >
-                      {currentStep > index + 1 ? (
-                        <span className="text-white">✓</span> // Checkmark for completed steps
-                      ) : currentStep === index + 1 ? (
-                        <span className="text-white">•</span> // Dot for the current step
-                      ) : null}
-                      {/* // No number for future steps */}
-                    </div>
-  
-                    {/* Line Between Circles */}
-                    {index < steps.length - 1 && (
-                      <div className={`h-[3px] md:w-[4rem] ${currentStep > index + 1 ? "bg-violet-700" : "bg-gray-300"}`}></div>
-                    )}
-  
-                    {/* Step Name Below Circle */}
-                    <div className="absolute bottom-[-25px] left-[-25px] text-center w-full">
-                      <span className={`text-xs ${currentStep >= index + 1 ? "text-violet-700 font-semibold" : "text-gray-600"}`}>
-                        {step}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <img
-              src={logos[currentStep - 1]}
-              alt="Step Logo"
-              className="2xl:w-[55%] xl:w-[65%] lg:w-[65%] md:w-[75%] h-auto xl:mt-[12rem] xl:mt-[10rem] lg:mt-[4rem] md:mt-[7rem]"
-            />
-          </div>
-  
-          <div className="bg-white rounded-tl-[0px] rounded-bl-[0px] shadow-lg shadow-gray-500 p-8 w-full sm:w-full ml-auto lg:max-w-[45rem] 2xl:max-w-[55rem] sm:rounded-tl-[80px] sm:rounded-bl-[80px]"
-            style={{ height: "calc(103vh - 20px)" }}
-          >
-            <div>
-              <h1 className="text-[32px] font-semibold text-gray-800 text-center mb-4">
-                {formsName[currentStep - 1]}
-              </h1>
-              <p className="text-center text-gray-500 mb-8">
-                {subhead[currentStep - 1]}
-              </p>
-            </div>
-  
-            <div
-              className="overflow-y-auto"
-              style={{ maxHeight: "calc(100vh - 150px)" }} // Adjust height based on your layout
-            >
-              <form onSubmit={handleSubmit} className="space-y-6 w-[80%] m-auto">
-                {renderFormContent()}
-                <div className="text-center pb-[13px]">
-                  <button
-                    type="submit"
-                    className="py-[1rem] flex justify-center items-center w-full bg-violet-700 text-white py-3 rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500"
+                        ? "bg-violet-700 text-violet-700"
+                        : "bg-gray-300 text-gray-500"
+                    }`}
                   >
-                    Save and Continue
-                    <AiOutlineArrowRight className="mx-3 " />
-                  </button>
+                    {currentStep > index + 1 ? (
+                      <span className="text-white">✓</span>
+                    ) : currentStep === index + 1 ? (
+                      <span className="text-white">•</span>
+                    ) : null}
+                  </div>
+
+                  {index < steps.length - 1 && (
+                    <div
+                      className={` ${currentStep === steps.length ? "h-[3px] md:w-[6rem]" : "h-[3px] md:w-[60px]"} ${
+                        currentStep > index + 1
+                          ? "bg-violet-700"
+                          : "bg-gray-300"
+                      }`}
+                    ></div>
+                  )}
+
+                  <div className="absolute bottom-[-25px] left-[-25px] text-center w-full">
+                    <span
+                      className={`text-xs ${
+                        currentStep >= index + 1
+                          ? "text-violet-700 font-semibold"
+                          : "text-gray-600"
+                      }`}
+                    >
+                      {step}
+                    </span>
+                  </div>
                 </div>
-              </form>
+              ))}
             </div>
           </div>
-        </>
+          <img
+            src={logos[currentStep - 1]}
+            alt="Step Logo"
+            className="2xl:w-[55%] xl:w-[65%] lg:w-[65%] md:w-[75%] h-auto xl:mt-[12rem] xl:mt-[10rem] lg:mt-[4rem] md:mt-[7rem]"
+          />
+        </div>
       )}
+
+      {/* Right side (form content) */}
+      <div
+        className={` sm:rounded-tl-[80px] sm:rounded-bl-[80px] ${
+          currentStep === steps.length
+            ? "w-full h-screen"
+            : "bg-white rounded-tl-[0px] rounded-bl-[0px] shadow-lg shadow-gray-500 p-8 w-full sm:w-full ml-auto lg:max-w-[45rem] 2xl:max-w-[55rem]"
+        }`}
+        style={{
+          height: currentStep === steps.length ? "100vh" : "calc(103vh - 20px)"
+        }}
+      >
+        <div>
+          <h1 className="text-[32px] font-semibold text-gray-800 text-center mb-4">
+            {formsName[currentStep - 1]}
+          </h1>
+          <p className="text-center text-gray-500 mb-8">
+            {subhead[currentStep - 1]}
+          </p>
+        </div>
+
+        {currentStep === steps.length ? (
+          // Horizontal Steps for larger screens
+          <div className="hidden xl:flex justify-center items-center mb-4 mt-[3rem]">
+            {steps.map((step, index) => (
+              <div key={index} className="relative flex items-center">
+                <div
+                  className={`w-[35px] h-[35px] 2xl:w-[3rem] 2xl:h-[3rem] flex items-center justify-center rounded-full font-bold ${
+                    index === steps.length - 1 && currentStep === steps.length // Last step logic
+                      ? "bg-[#198038] text-white"
+                      : currentStep > index + 1
+                      ? "bg-violet-700 text-white"
+                      : currentStep === index + 1
+                      ? "bg-violet-700 text-white"
+                      : "bg-gray-300 text-gray-500"
+                  }`}
+                >
+                  {index === steps.length - 1 &&
+                  currentStep === steps.length ? (
+                    <span className="text-white">✓</span> // Checkmark for last step
+                  ) : currentStep > index + 1 ? (
+                    <span className="text-white">✓</span> // Checkmark for completed steps
+                  ) : currentStep === index + 1 ? (
+                    <span className="text-white">•</span> // Dot for current step
+                  ) : null}
+                </div>
+
+                {index < steps.length - 1 && (
+                  <div
+                    className={`h-[3px] md:w-[5rem] ${
+                      currentStep > index + 1 ? "bg-violet-700" : "bg-gray-300"
+                    }`}
+                  ></div>
+                )}
+
+                <div className="absolute bottom-[-25px] left-[-25px] text-center w-full">
+                  <span
+                    className={`text-xs ${
+                      index === steps.length - 1 && currentStep === steps.length
+                        ? "text-[#198038] font-semibold" // Last step name in green
+                        : currentStep >= index + 1
+                        ? "text-violet-700 font-semibold" // Completed steps in violet
+                        : "text-gray-600" // Remaining steps in gray
+                    }`}
+                  >
+                    {step}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : null}
+
+        <div
+          className={`${
+            currentStep === steps.length ? "none" : "overflow-y-auto"
+          }`}
+          style={{ maxHeight: "calc(100vh - 150px)" }}
+        >
+          <form onSubmit={handleSubmit} className="space-y-6 w-[80%] m-auto">
+            {renderFormContent()}
+            {/* Only show this button if it is not the last step */}
+            {currentStep < steps.length && (
+              <div className="text-center pb-[13px]">
+                <button
+                  type="submit"
+                  className="py-[1rem] flex justify-center items-center w-full bg-violet-700 text-white py-3 rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500"
+                >
+                  Save and Continue
+                  <AiOutlineArrowRight className="mx-3 " />
+                </button>
+              </div>
+            )}
+          </form>
+        </div>
+      </div>
     </div>
   );
-  
 };
 
 export default BasicDetails;
