@@ -17,20 +17,21 @@ import Jobalerts from "./pages/modules/Jobalerts/Jobalerts";
 import Customersupport from "./pages/modules/Customersupports/Customersupport";
 import BasicDetails from "./pages/modules/BasicDetails/BasicDetails";
 import Inbox from "./pages/modules/Inbox/inbox";
-
+import SingleEmployers from "./pages/modules/FindEmplyee/FindEmployers/SingleEmployers";
 
 function App() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Overview />} />
-        <Route path="/homePage" element={<Homepage/>}/>
-        <Route path="/inbox" element={<Inbox/>}/>
+        <Route path="/homePage" element={<Homepage />} />
+        <Route path="/inbox" element={<Inbox />} />
         <Route path="/login" element={<Login />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/forget-password" element={<ForgotPassword />} />
         <Route path="/resetSuccess-password" element={<ResetSuccess />} />
         <Route path="/my-profile" element={<Myprofile />} />
+        <Route path="/single-employee" element={<SingleEmployers />} />
         <Route path="/applied-jobs" element={<Aplliedjobs />} />
         <Route path="/saved-jobs" element={<Savedjobs />} />
         <Route path="/scheduled-interview" element={<Scheduleinterview />} />
@@ -46,7 +47,7 @@ function App() {
         <Route path="/dashboard/my-profile" element={<Myprofile />} />
         <Route path="/dashboard/applied-jobs" element={<Aplliedjobs />} />
         <Route path="/dashboard/saved-jobs" element={<Savedjobs />} />
-        <Route path="/basicDetails" element={<BasicDetails />}/>
+        <Route path="/basicDetails" element={<BasicDetails />} />
         <Route
           path="/dashboard/scheduled-interview"
           element={<Scheduleinterview />}
