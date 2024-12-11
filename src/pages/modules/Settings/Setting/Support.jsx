@@ -7,7 +7,7 @@ import { BiSupport } from "react-icons/bi";
 
 function Support() {
   return (
-    <div className="">
+    <div className="w-[85%]">
       <h1 className="font-poppins font-medium text-[22px]/[64px] mt-5 text-[#000000]">
         Contact Us
       </h1>

@@ -1,28 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { GoPencil } from "react-icons/go";
 import { FiPlus } from "react-icons/fi";
 import { MdOutlineArrowForward } from "react-icons/md";
-import profile  from '../.../../../assets/Profileassests/profile.jpg'
-import skill_logo from '../.../../../assets/Profileassests/skill_logo.png'
-import university_logo from '../.../../../assets/Profileassests/university_logo.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  faUser } from '@fortawesome/free-solid-svg-icons';
-
+import profile from "../.../../../assets/Profileassests/profile.jpg";
+import skill_logo from "../.../../../assets/Profileassests/skill_logo.png";
+import university_logo from "../.../../../assets/Profileassests/university_logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import Profilemodal from "../../components/Modal/Profilemodal";
+import Skillmodal from "../../components/Modal/Skillmodal";
+import Aboutmodal from "../../components/Modal/Aboutmodal";
 
 function Profile() {
+  const [profileModal, setProfileModal] = useState(false);
+  const [skillModal, setSkillModal] = useState(false);
+  const [aboutModal, setAboutModal] = useState(false);
+
   return (
-    <div className="flex flex-col	justify-between space-y-7 border-x-[1px] w-[45%]">
+    <div className="flex flex-1 flex-col	justify-between space-y-7 border-x-[1px] w-[500px] relative">
       <h1 className="text-2xl text-[#18191C] font-medium font-inter mx-4 mt-4">
         Profile
-        
       </h1>
       {/* upper part */}
       <div className="flex items-center gap-4 mx-10">
-        <img
-          className="w-[75.51px] h-[77.25px] rounded-full border-[1px]"
-          src={profile}
-          alt=""
-        />
+        <div className="relative">
+          <img
+            className="w-[75.51px] h-[77.25px] rounded-full border-[1px] border-[#2F1547]"
+            src={profile}
+            alt=""
+          />
+          <span
+            onClick={() => setProfileModal(true)}
+            className="absolute right-1 top-[60px] font-medium text-center bg-[#7900BA] flex justify-center items-center rounded-full text-white w-[18px] h-[18px]"
+          >
+            +
+          </span>
+        </div>
         <div className="font-medium  font-poppins">
           <h1 className="text-2xl/[36px] text-[#3E1654] font-semibold">
             Ninad Sathe
@@ -56,7 +69,7 @@ function Profile() {
       <div className="w-[70%] font-inter mx-10">
         <div className="flex justify-between items-center text-[16px]/[19.36px] font-medium">
           <h className="text-[#484747]">About</h>
-          <GoPencil className="text-[#3E1654]" />
+          <GoPencil className="text-[#3E1654]" onClick={()=> setAboutModal(true)} />
         </div>
         <div className="font-inter font-normal font-[16px]/[24.64px] text-[#00000099]">
           <p>
@@ -82,7 +95,10 @@ function Profile() {
             />
             Top skills
           </p>
-          <GoPencil className="text-[#3E1654]" />
+          <GoPencil
+            className="text-[#3E1654]"
+            onClick={() => setSkillModal(true)}
+          />
         </div>
         <p className="text-center mt-2 font-normal text-[16px]/[19.36px] text-[#000000B8] font-inter">
           Figma, Canva, Photoshop, Adobe XD
@@ -140,9 +156,15 @@ function Profile() {
 
       {/* show all education */}
       <div className="flex items-center gap-3 mx-10">
-        <p className="font-poppins font-medium text-[#0000009E] text-[16px]/[24px]">Show all educations</p>
+        <p className="font-poppins font-medium text-[#0000009E] text-[16px]/[24px]">
+          Show all educations
+        </p>
         <MdOutlineArrowForward className="text-[#616161]" />
       </div>
+
+      {profileModal && <Profilemodal setProfileModal={setProfileModal} />}
+      {skillModal && <Skillmodal setSkillModal={setSkillModal} />}
+      {aboutModal && <Aboutmodal setAboutModal={setAboutModal} />}
     </div>
   );
 }

@@ -34,7 +34,7 @@ function General() {
       <h1 className="font-poppins font-medium text-[22px]/[64px] mt-6 mb-5">
         Notifications
       </h1>
-      <div className="flex justify-between items-center flex-wrap gap-5 w-[90%]">
+      <div className="flex justify-between items-center flex-wrap gap-[13px] w-[80%]">
         <div class="flex items-center gap-2">
           <input
             // id="default-checkbox"
