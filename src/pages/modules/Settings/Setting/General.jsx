@@ -3,9 +3,9 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { GrLinkNext } from "react-icons/gr";
 import { LuSquarePen } from "react-icons/lu";
 
-function General() {
+function General({ setHistory }) {
   return (
-    <div className="">
+    <div className="w-full">
       <h1 className="font-poppins font-medium text-[22px]/[64px] mt-6 mb-3">
         App preferences
       </h1>
@@ -27,15 +27,18 @@ function General() {
           <p className="text-[#8391A1] font-urbanist font-medium text-[15px]/[18.75px]">
             Search history
           </p>
-          <GrLinkNext className="text-[#00000078]" />
+          <GrLinkNext
+            className="text-[#00000078]"
+            onClick={() => setHistory(false)}
+          />
         </div>
       </div>
 
       <h1 className="font-poppins font-medium text-[22px]/[64px] mt-6 mb-5">
         Notifications
       </h1>
-      <div className="flex justify-between items-center flex-wrap gap-[13px] w-[80%]">
-        <div class="flex items-center gap-2">
+      <div className="flex justify-between items-center flex-wrap gap-5 w-[70%]">
+        <div class="flex items-center gap-3">
           <input
             // id="default-checkbox"
             type="checkbox"
@@ -181,7 +184,7 @@ function General() {
             <button className="text-white font-medium">Change</button>
           </div>
         </div>
-        <div className="text-[#7900BA] font-inter font-normal text-[16px]/[19.36px]">
+        <div className="text-[#7900BA] font-inter font-normal text-[16px]/[19.36px] mb-32 ">
           <p>Forget Password?</p>
         </div>
       </div>
