@@ -11,6 +11,7 @@ import EducationDetails from "./EducationDetails";
 import WorkExp from "./WorkExp";
 import Certify from "./Certify";
 import UploadDoc from "./UploadDoc";
+import SkillsPref from "./skillsPref";
 
 const BasicDetails = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -176,13 +177,13 @@ const BasicDetails = () => {
       case 5:
         return (
           <>
-            <UploadDoc />
+            <SkillsPref />
           </>
         );
       case 6:
         return (
           <>
-            <EducationDetails />
+            <UploadDoc />
           </>
         );
       default:
