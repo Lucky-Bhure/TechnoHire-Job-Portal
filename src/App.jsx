@@ -17,6 +17,7 @@ import Jobalerts from "./pages/modules/Jobalerts/Jobalerts";
 import Customersupport from "./pages/modules/Customersupports/Customersupport";
 import BasicDetails from "./pages/modules/BasicDetails/BasicDetails";
 import Inbox from "./pages/modules/Inbox/inbox";
+import GettingStarted from "./pages/modules/BasicDetails/GettingStarted";
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
         <Route path="/dashboard/applied-jobs" element={<Aplliedjobs />} />
         <Route path="/dashboard/saved-jobs" element={<Savedjobs />} />
         <Route path="/basicDetails" element={<BasicDetails />}/>
+        <Route path="/gettingStarted" element={<GettingStarted />}/>
         <Route
           path="/dashboard/scheduled-interview"
           element={<Scheduleinterview />}
