@@ -3,7 +3,7 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { GrLinkNext } from "react-icons/gr";
 import { LuSquarePen } from "react-icons/lu";
 
-function General() {
+function General({ setHistory }) {
   return (
     <div className="">
       <h1 className="font-poppins font-medium text-[22px]/[64px] mt-6 mb-3">
@@ -27,7 +27,10 @@ function General() {
           <p className="text-[#8391A1] font-urbanist font-medium text-[15px]/[18.75px]">
             Search history
           </p>
-          <GrLinkNext className="text-[#00000078]" />
+          <GrLinkNext
+            className="text-[#00000078]"
+            onClick={() => setHistory(false)}
+          />
         </div>
       </div>
 
