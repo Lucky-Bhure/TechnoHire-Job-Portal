@@ -171,7 +171,7 @@ const Overview = () => {
                         </span>
                       </span>
                     </div>
-                    <div className="flex items-center ms-14">
+                    <div className="flex items-center   ms-14">
                       <CiLocationOn className="text-gray-500 mr-2" size={20} />
                       <p className="text-sm">{e.location}</p>
                       <p className="ml-4 text-sm">{e.salary}</p>
