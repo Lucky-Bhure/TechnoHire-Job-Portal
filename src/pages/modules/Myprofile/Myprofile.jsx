@@ -4,6 +4,7 @@ import useTheme from "../../../hooks/theme/useTheme";
 import { themes } from "../../../components/Themes/Theme";
 import Profile from "../../Profile/Profile";
 import Experience from "../../Profile/Experience";
+import Detailstabs from "./Profile/Detailstabs/Detailstabs";
 
 
 const Myprofile = () => {
@@ -15,10 +16,11 @@ const Myprofile = () => {
   return (
     <>
       <Layout>
-        <div className="flex">
+        {/* <div className="flex">
           <Profile />
           <Experience />
-        </div>
+        </div> */}
+        <Detailstabs />
       </Layout>
     </>
   );
