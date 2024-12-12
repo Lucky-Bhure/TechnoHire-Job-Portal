@@ -1,8 +1,17 @@
 import React, { useState } from "react";
 
-const WorkExp = ({ formik, jobs = [] }) => { // default value of jobs is an empty array
+const WorkExp = () => {
   const [isFresher, setIsFresher] = useState(false);
-  
+  const [jobs, setJobs] = useState([
+    {
+      jobTitle: "",
+      companyName: "",
+      startDate: "",
+      endDate: "",
+      currentlyWorking: false,
+      responsibilities: ""
+    }
+  ]);
 
   const handleFresherChange = () => {
     setIsFresher(!isFresher);
@@ -57,37 +66,25 @@ const WorkExp = ({ formik, jobs = [] }) => { // default value of jobs is an empt
 
       {!isFresher &&
         jobs.map((job, index) => (
-          <div key={index} className="py-4 space-y-6" style={{ marginTop: "0px" }}>
-            <div className="">
-              <input
-                type="text"
-                placeholder="Job Title"
-                value={job.jobTitle}
-                onChange={(e) =>
-                  handleJobChange(index, "jobTitle", e.target.value)
-                }
-                {...formik.getFieldProps("jobTitle")}
-                className="w-full bg-gray-100 px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
-              />
-              {formik.touched.jobTitle && formik.errors.jobTitle && (
-                <p className="text-red-500">{formik.errors.jobTitle}</p>
-              )}
-            </div>
-            <div className="">
-              <input
-                type="text"
-                placeholder="Company Name"
-                value={job.companyName}
-                onChange={(e) =>
-                  handleJobChange(index, "companyName", e.target.value)
-                }
-                {...formik.getFieldProps("companyName")}
-                className="w-full bg-gray-100 px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
-              />
-              {formik.touched.companyName && formik.errors.companyName && (
-                <p className="text-red-500">{formik.errors.companyName}</p>
-              )}
-            </div>
+          <div key={index} className="py-4 space-y-6"style={{marginTop:"0px"}}>
+            <input
+              type="text"
+              placeholder="Job Title"
+              value={job.jobTitle}
+              onChange={(e) =>
+                handleJobChange(index, "jobTitle", e.target.value)
+              }
+              className="w-full bg-gray-100 px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+            />
+            <input
+              type="text"
+              placeholder="Company Name"
+              value={job.companyName}
+              onChange={(e) =>
+                handleJobChange(index, "companyName", e.target.value)
+              }
+              className="w-full bg-gray-100 px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+            />
             <input
               type="text"
               value={job.startDate}
@@ -96,14 +93,9 @@ const WorkExp = ({ formik, jobs = [] }) => { // default value of jobs is an empt
               onChange={(e) =>
                 handleJobChange(index, "startDate", e.target.value)
               }
-              {...formik.getFieldProps("startDate")}
               placeholder="Start Date"
               className="w-full bg-gray-100 px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
             />
-            {formik.touched.startDate && formik.errors.startDate && (
-              <p className="text-red-500">{formik.errors.startDate}</p>
-            )}
-
             <input
               type="text"
               value={job.endDate}
@@ -114,12 +106,8 @@ const WorkExp = ({ formik, jobs = [] }) => { // default value of jobs is an empt
               }
               placeholder="End Date"
               disabled={job.currentlyWorking}
-              {...formik.getFieldProps("endDate")}
               className="w-full bg-gray-100 px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
             />
-            {formik.touched.endDate && formik.errors.endDate && (
-              <p className="text-red-500">{formik.errors.endDate}</p>
-            )}
 
             <div className="flex items-center space-x-4">
               <input
@@ -129,11 +117,7 @@ const WorkExp = ({ formik, jobs = [] }) => { // default value of jobs is an empt
                   handleJobChange(index, "currentlyWorking", e.target.checked)
                 }
                 className="w-5 h-5"
-                // {...formik.getFieldProps("currentlyWorking")}
               />
-              {formik.touched.currentlyWorking && formik.errors.currentlyWorking && (
-                <p className="text-red-500">{formik.errors.currentlyWorking}</p>
-              )}
               <span className="text-gray-700 text-sm">Currently Working Here</span>
             </div>
             <textarea
@@ -142,12 +126,8 @@ const WorkExp = ({ formik, jobs = [] }) => { // default value of jobs is an empt
               onChange={(e) =>
                 handleJobChange(index, "responsibilities", e.target.value)
               }
-              {...formik.getFieldProps("responsibilities")}
               className="w-full bg-gray-100 px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
             ></textarea>
-            {formik.touched.responsibilities && formik.errors.responsibilities && (
-              <p className="text-red-500">{formik.errors.responsibilities}</p>
-            )}
           </div>
         ))}
 

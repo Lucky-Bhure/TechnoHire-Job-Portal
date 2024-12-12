@@ -20,7 +20,6 @@ const BasicDetails = () => {
   const [currentStep, setCurrentStep] = useState(1);
 
   const validationSchemas = [
-    // Basic Details validation
     Yup.object().shape({
       fullName: Yup.string().required("Full Name is required"),
       dob: Yup.date().required("Date of Birth is required"),
@@ -31,23 +30,17 @@ const BasicDetails = () => {
       email: Yup.string().email("Invalid email format").required("Email is required"),
       location: Yup.string().required("Location is required"),
     }),
-  
-    // Education Details validation
+    
     Yup.object().shape({
+      // Education Details validation schema
       degree: Yup.string().required("Degree is required"),
       institution: Yup.string().required("Institution is required"),
       graduationYear: Yup.number().required("Graduation Year is required"),
+      
     }),
-  
-    // Work Experience validation
-    Yup.object({
-        jobTitle: Yup.string().required('Job title is required'),
-        companyName: Yup.string().required('Company name is required'),
-        startDate: Yup.date().required('Start date is required'),
-        endDate: Yup.date().required('End date is required'),
-        responsibilities: Yup.string().required('Responsibilities are required'),
-      }),
   ];
+  
+  
 
   const formik = useFormik({
     initialValues: {
@@ -63,19 +56,8 @@ const BasicDetails = () => {
       institution: "",
       graduationYear: "",
       specialization: "",
-      // Work Experience fields (initialize with one job)
-      jobs: [
-        {
-          jobTitle: "",
-          companyName: "",
-          startDate: "",
-          endDate: "",
-          currentlyWorking: false,
-          responsibilities: "",
-        },
-      ],
     },
-    validationSchema: validationSchemas[currentStep - 1], // Select validation schema based on current step
+    validationSchema: validationSchemas[currentStep - 1],
     onSubmit: (values) => {
       if (currentStep < steps.length) {
         setCurrentStep((prev) => prev + 1);
@@ -254,7 +236,7 @@ const BasicDetails = () => {
       case 6:
         return <UploadDoc formik={formik} />;
       case 7:
-        return <GettingStarted />;
+        return <GettingStarted formik={formik} />;
       default:
         return null;
     }
