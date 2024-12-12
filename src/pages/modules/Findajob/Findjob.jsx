@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../../components/header/Header";
 import {
   FaArrowLeft,
@@ -22,8 +22,10 @@ import { GrLocation } from "react-icons/gr";
 import { IoLogoYoutube } from "react-icons/io";
 import { CgToggleOff } from "react-icons/cg";
 import { GiCrossedChains } from "react-icons/gi";
+import Applypopup from "../../../components/Dialog/Applypopup";
 
 const FindJob = () => {
+  const [showmodal, setshowmodal] = useState(false);
 
   return (
     <>
@@ -84,7 +86,10 @@ const FindJob = () => {
           <div className="flex gap-3 items-center">
             <FaBookmark className="text-purple-600" size={20} />
             <FiFlag className="text-purple-600" size={20} />
-            <button className="bg-[#7900BA] text-white px-16 py-2 rounded hover:bg-purple-600 hover:text-white">
+            <button
+              onClick={() => setshowmodal(true)}
+              className="bg-[#7900BA] text-white px-16 py-2 rounded hover:bg-purple-600 hover:text-white"
+            >
               Apply Now
             </button>
           </div>
@@ -563,6 +568,7 @@ const FindJob = () => {
           </div>
         </div>
       </div>
+      {showmodal && <Applypopup setshowmodal={setshowmodal} />}
     </>
   );
 };
