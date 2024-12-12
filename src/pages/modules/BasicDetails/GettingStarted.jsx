@@ -26,6 +26,7 @@ const GettingStarted = () => {
           alt="Getting Started"
           className="w-[20%] h-auto mx-auto my-8"
         />
+        
 
         {/* Paragraph */}
         <p className="text-lg text-gray-600 text-center mb-8 px-4">

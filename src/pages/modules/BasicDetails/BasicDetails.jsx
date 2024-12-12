@@ -13,30 +13,87 @@ import Certify from "./Certify";
 import UploadDoc from "./UploadDoc";
 import SkillsPref from "./skillsPref";
 import GettingStarted from "./GettingStarted";
-import GettingStartedImage from "../../../assets/img/gettingstart.png"; // Import the getting started image
-import { BsArrowLeft } from "react-icons/bs";
-import { BsArrowRight } from "react-icons/bs";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const BasicDetails = () => {
   const [currentStep, setCurrentStep] = useState(1);
-  const [formData, setFormData] = useState({
-    fullName: "",
-    dob: "",
-    gender: "",
-    contact: "",
-    email: "",
-    location: ""
+
+  const validationSchemas = [
+    // Basic Details validation
+    Yup.object().shape({
+      fullName: Yup.string().required("Full Name is required"),
+      dob: Yup.date().required("Date of Birth is required"),
+      gender: Yup.string().required("Gender is required"),
+      contact: Yup.string()
+        .matches(/^[0-9]{10}$/, "Contact Number must be 10 digits")
+        .required("Contact Number is required"),
+      email: Yup.string().email("Invalid email format").required("Email is required"),
+      location: Yup.string().required("Location is required"),
+    }),
+  
+    // Education Details validation
+    Yup.object().shape({
+      degree: Yup.string().required("Degree is required"),
+      institution: Yup.string().required("Institution is required"),
+      graduationYear: Yup.number().required("Graduation Year is required"),
+    }),
+  
+    // Work Experience validation
+    Yup.object({
+        jobTitle: Yup.string().required('Job title is required'),
+        companyName: Yup.string().required('Company name is required'),
+        startDate: Yup.date().required('Start date is required'),
+        endDate: Yup.date().required('End date is required'),
+        responsibilities: Yup.string().required('Responsibilities are required'),
+      }),
+  ];
+
+  const formik = useFormik({
+    initialValues: {
+      // Basic Details fields
+      fullName: "",
+      dob: "",
+      gender: "",
+      contact: "",
+      email: "",
+      location: "",
+      // Education Details fields
+      degree: "",
+      institution: "",
+      graduationYear: "",
+      specialization: "",
+      // Work Experience fields (initialize with one job)
+      jobs: [
+        {
+          jobTitle: "",
+          companyName: "",
+          startDate: "",
+          endDate: "",
+          currentlyWorking: false,
+          responsibilities: "",
+        },
+      ],
+    },
+    validationSchema: validationSchemas[currentStep - 1], // Select validation schema based on current step
+    onSubmit: (values) => {
+      if (currentStep < steps.length) {
+        setCurrentStep((prev) => prev + 1);
+      } else {
+        console.log("Final Submission", values);
+      }
+    },
   });
-  const [errors, setErrors] = useState({});
+  
 
   const steps = [
     "Basic Details",
     "Education ",
-    " Experience",
+    "Work Experience",
     "Certification",
     "Skills ",
-    " Documents ",
-    "GettingStarted"
+    "Documents ",
+    "Finish"
   ];
   // const steps2 = [
   //   "Basic Details",
@@ -101,114 +158,108 @@ const BasicDetails = () => {
           <>
             {/* Basic Details Form */}
             <div>
-              <input
-                type="text"
-                id="fullName"
-                placeholder="Full Name"
-                value={formData.fullName}
-                onChange={handleInputChange}
-                className="w-full bg-[#ece9e99c] px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
-              />
-            </div>
-            <div>
-              <input
-                type="date"
-                id="dob"
-                value={formData.dob}
-                onChange={handleInputChange}
-                className="w-full bg-[#ece9e99c] px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
-              />
-            </div>
-            <div>
-              <select
-                id="gender"
-                value={formData.gender}
-                onChange={handleInputChange}
-                className="w-full bg-[#ece9e99c] px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
-              >
-                <option value="">Select Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div>
-              <input
-                type="tel"
-                id="contact"
-                placeholder="Contact Number"
-                value={formData.contact}
-                onChange={handleInputChange}
-                className="w-full bg-[#ece9e99c] px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
-              />
-            </div>
-            <div>
-              <input
-                type="email"
-                id="email"
-                placeholder="Email Address"
-                value={formData.email}
-                onChange={handleInputChange}
-                className="w-full bg-[#ece9e99c] px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
-              />
-            </div>
-            <div>
-              <select
-                id="location"
-                value={formData.location}
-                onChange={handleInputChange}
-                className="w-full bg-[#ece9e99c] px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
-              >
-                <option value="">Location</option>
-                <option value="newyork">New York</option>
-                <option value="losangeles">Los Angeles</option>
-                <option value="chicago">Chicago</option>
-                <option value="houston">Houston</option>
-                <option value="miami">Miami</option>
-              </select>
-            </div>
+        <input
+          type="text"
+          id="fullName"
+          placeholder="Full Name"
+          {...formik.getFieldProps("fullName")}
+          className="w-full bg-[#ece9e99c] px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+        />
+        {formik.touched.fullName && formik.errors.fullName && (
+          <p className="text-red-500">{formik.errors.fullName}</p>
+        )}
+      </div>
+
+      <div>
+        <input
+          type="date"
+          id="dob"
+          {...formik.getFieldProps("dob")}
+          className="w-full bg-[#ece9e99c] px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+        />
+        {formik.touched.dob && formik.errors.dob && (
+          <p className="text-red-500">{formik.errors.dob}</p>
+        )}
+      </div>
+
+      <div>
+        <select
+          id="gender"
+          {...formik.getFieldProps("gender")}
+          className="w-full bg-[#ece9e99c] px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+        >
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+        {formik.touched.gender && formik.errors.gender && (
+          <p className="text-red-500">{formik.errors.gender}</p>
+        )}
+      </div>
+
+      <div>
+        <input
+          type="tel"
+          id="contact"
+          placeholder="Contact Number"
+          {...formik.getFieldProps("contact")}
+          className="w-full bg-[#ece9e99c] px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+        />
+        {formik.touched.contact && formik.errors.contact && (
+          <p className="text-red-500">{formik.errors.contact}</p>
+        )}
+      </div>
+
+      <div>
+        <input
+          type="email"
+          id="email"
+          placeholder="Email Address"
+          {...formik.getFieldProps("email")}
+          className="w-full bg-[#ece9e99c] px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+        />
+        {formik.touched.email && formik.errors.email && (
+          <p className="text-red-500">{formik.errors.email}</p>
+        )}
+      </div>
+
+      <div>
+        <select
+          id="location"
+          {...formik.getFieldProps("location")}
+          className="w-full bg-[#ece9e99c] px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+        >
+          <option value="">Location</option>
+          <option value="newyork">New York</option>
+          <option value="losangeles">Los Angeles</option>
+          <option value="chicago">Chicago</option>
+          <option value="houston">Houston</option>
+          <option value="miami">Miami</option>
+        </select>
+        {formik.touched.location && formik.errors.location && (
+          <p className="text-red-500">{formik.errors.location}</p>
+        )}
+      </div>
           </>
         );
       case 2:
-        return (
-          <>
-            <EducationDetails />
-          </>
-        );
+        return <EducationDetails formik={formik} />;
       case 3:
-        return (
-          <>
-            <WorkExp />
-          </>
-        );
+        return <WorkExp formik={formik} />;
       case 4:
-        return (
-          <>
-            <Certify />
-          </>
-        );
+        return <Certify formik={formik} />;
       case 5:
-        return (
-          <>
-            <SkillsPref />
-          </>
-        );
+        return <SkillsPref formik={formik} />;
       case 6:
-        return (
-          <>
-            <UploadDoc />
-          </>
-        );
+        return <UploadDoc formik={formik} />;
       case 7:
-        return (
-          <>
-            <GettingStarted />
-          </>
-        );
+        return <GettingStarted />;
       default:
         return null;
     }
   };
+  
 
   return (
     <div
@@ -229,11 +280,11 @@ const BasicDetails = () => {
             <div className="flex flex-col items-start gap-[35px] mt-6 relative xl:hidden">
               {steps.map((step, index) => (
                 <div
-                  className="relative flex items-center space-x-4 bottom-[-15px]"
+                  className="relative flex items-center space-x-4 "
                   key={index}
                 >
                   <div
-                    className={`w-10 h-10 flex items-center justify-center rounded-full border-2 font-bold ${
+                    className={`w-8 h-8 flex items-center justify-center rounded-full border-2 font-bold ${
                       currentStep > index + 1
                         ? "border-violet-700 bg-violet-700 text-white"
                         : currentStep === index + 1
@@ -248,7 +299,7 @@ const BasicDetails = () => {
                     ) : null}
                   </div>
                   <span
-                    className={`text-sm ${
+                    className={`text-xs ${
                       currentStep >= index + 1
                         ? "text-violet-700"
                         : "text-gray-500"
@@ -257,18 +308,18 @@ const BasicDetails = () => {
                     {step}
                   </span>
                   {index < steps.length - 1 && (
-                    <div className="absolute z-[-1] left-[4px] top-[25px] w-[2px] h-[60px] bg-gray-300"></div>
+                    <div className="absolute z-[-1]  top-[25px] w-[2px] h-[60px] bg-gray-300"></div>
                   )}
                 </div>
               ))}
             </div>
 
             {/* Horizontal Steps for larger screens */}
-            <div className="hidden xl:flex justify-center items-center mb-4 mt-[3rem]">
+            <div className="hidden xl:flex justify-center items-center mb-4 mt-[7rem]">
               {steps.map((step, index) => (
                 <div key={index} className="relative flex items-center">
                   <div
-                    className={`xl:w-[50px] xl:h-[50px] ${currentStep === steps.length ?"xl:w-[50px] xl:h-[50px]" : "xl:w-[2rem] xl:h-[2rem]"} 2xl:w-[3rem] 2xl:h-[3rem] flex items-center justify-center rounded-full font-bold ${
+                    className={`xl:w-[40px] xl:h-[40px] ${currentStep === steps.length ?"xl:w-[50px] xl:h-[50px]" : "xl:w-[2rem] xl:h-[2rem]"} 2xl:w-[3rem] 2xl:h-[3rem] flex items-center justify-center rounded-full font-bold ${
                       currentStep > index + 1
                         ? "bg-violet-700 text-white"
                         : currentStep === index + 1
@@ -311,7 +362,7 @@ const BasicDetails = () => {
           <img
             src={logos[currentStep - 1]}
             alt="Step Logo"
-            className="2xl:w-[55%] xl:w-[65%] lg:w-[65%] md:w-[75%] h-auto xl:mt-[12rem] xl:mt-[10rem] lg:mt-[4rem] md:mt-[7rem]"
+            className="2xl:w-[55%] xl:w-[65%] lg:w-[65%] md:w-[75%] h-auto xl:mt-[10rem] xl:mt-[10rem] lg:mt-[4rem] md:mt-[4rem]"
           />
         </div>
       )}
@@ -394,7 +445,7 @@ const BasicDetails = () => {
           }`}
           style={{ maxHeight: "calc(100vh - 150px)" }}
         >
-          <form onSubmit={handleSubmit} className="space-y-6 w-[80%] m-auto">
+          <form onSubmit={formik.handleSubmit} className="space-y-6 w-[80%] m-auto">
             {renderFormContent()}
             {/* Only show this button if it is not the last step */}
             {currentStep < steps.length && (
