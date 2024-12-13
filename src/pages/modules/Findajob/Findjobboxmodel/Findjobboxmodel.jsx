@@ -125,7 +125,7 @@ const Findjobboxmodel = () => {
         <div className="px-9 flex flex-wrap gap-[2%] mx-52  mb-[10rem]  " >
         {companydetails.map((items ,idx)=>(
 
-         <div key={idx} className="flex flex-col  items-start mt-12 p-4 bg-[#EDEFF5] hover:bg-white hover:border hover:border-blue-400   w-[32%] rounded-md" >
+         <div  className="flex flex-col  items-start mt-12 p-4 bg-[#EDEFF5] hover:bg-white hover:border hover:border-blue-400   w-[32%] rounded-md" >
              <div className="flex gap-2 " > 
              <div>  <img src={items.image} alt="pic" /></div>
               <div className=" flex flex-col gap-2" >

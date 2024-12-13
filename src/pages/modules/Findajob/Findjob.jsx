@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import Header from "../../../components/header/Header";
 import Findjobsfilterheader from "./Findjobsfilterheader/Findjobsfilterheader";
 import {RiArrowDropDownLine} from "react-icons/ri";
@@ -8,6 +8,8 @@ import Findjobboxmodel from "./Findjobboxmodel/Findjobboxmodel";
 
 
 const FindJob = () => {
+
+  const [model, setModel] = useState(second)
 
   return (
     <>
@@ -21,7 +23,7 @@ const FindJob = () => {
             <p className=" flex items-center gap-1  hover:border-[0.3px]  hover:border-blue-500 p-1 px-2 font-light text-[15px] rounded-md " >Latest
               <h1 >  <RiArrowDropDownLine className="font-semibold text-lg"   color="#5E667089" /></h1>   </p> 
             <p className=" flex items-center gap-1  hover:border-[0.3px]  hover:border-blue-500 p-1 px-2 font-light text-[15px] rounded-md ">12 </p>
-            <p className=" flex items-center gap-1  hover:border-[0.3px]  hover:border-blue-500 p-1 px-2 font-light text-[15px] rounded-md ">box</p>
+            <p  className=" flex items-center gap-1  hover:border-[0.3px]  hover:border-blue-500 p-1 px-2 font-light text-[15px] rounded-md ">box</p>
             <p className=" flex items-center gap-1  hover:border-[0.3px]  hover:border-blue-500 p-1 px-2 font-light text-[15px] rounded-md ">linear</p>
             </div>
           </div>
