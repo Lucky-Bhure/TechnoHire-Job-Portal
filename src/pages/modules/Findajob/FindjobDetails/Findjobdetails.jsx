@@ -22,12 +22,15 @@ import { GrLocation } from "react-icons/gr";
 import { IoLogoYoutube } from "react-icons/io";
 import { CgToggleOff } from "react-icons/cg";
 import { GiCrossedChains } from "react-icons/gi";
+import Header from "../../../../components/header/Header";
 
 const Findjobdetails = () => {
   const [showmodal, setshowmodal] = useState(false);
 
   return (
     <div>
+          <Header/>
+
       <div className="bg-[#F1F2F4] p-4 ">
         <div className="flex">
           <div className="ms-8">

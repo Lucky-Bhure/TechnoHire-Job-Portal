@@ -52,7 +52,7 @@ const BasicDetails = () => {
   ];
 
   const subhead = [
-    "Let’s Start with the Basics",
+    "Let's Start with the Basics",
     "Your Educational Background",
     "Tell us your Work Experience",
     "Do you Have Certifications?",
@@ -292,7 +292,7 @@ const BasicDetails = () => {
         <img
           src={logos[currentStep - 1]}
           alt="Step Logo"
-          className="2xl:w-[55%] xl:w-[65%] lg:w-[65%] md:w-[75%] h-auto xl:mt-[12rem] xl:mt-[10rem] lg:mt-[4rem] md:mt-[7rem]"
+          className="2xl:w-[55%] xl:w-[65%] lg:w-[65%] md:w-[75%] h-auto xl:mt-12rem xl:mt-[10rem] lg:mt-[4rem] md:mt-[7rem]"
         />
       </div>
       <div
@@ -317,7 +317,7 @@ const BasicDetails = () => {
             <div className="text-center pb-[13px]">
               <button
                 type="submit"
-                className="py-[1rem] flex justify-center items-center w-full bg-violet-700 text-white py-3 rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500"
+                className="py-1rem flex justify-center items-center w-full bg-violet-700 text-white py-3 rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500"
               >
                 Save and Continue
                 <AiOutlineArrowRight className="mx-3 " />
