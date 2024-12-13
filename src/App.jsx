@@ -20,6 +20,7 @@ import Inbox from "./pages/modules/Inbox/inbox";
 import SingleEmployers from "./pages/modules/FindEmplyee/FindEmployers/SingleEmployers";
 import Applicationdetails from "./pages/modules/ApplicationDetails/Applicationdetails";
 import Applicationsubmit from "./pages/modules/ApplicationDetails/Applicationsubmit";
+import Notification from "./pages/modules/Notification/Notification";
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
         />
         <Route path="/dashboard/settings" element={<Setting />} />
         <Route path="/dashboard/feedback" element={<Feedback />} />
+        <Route path="/notification" element={<Notification/>} />
       </Routes>
     </div>
   );

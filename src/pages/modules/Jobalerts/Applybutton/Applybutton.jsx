@@ -65,7 +65,7 @@ const ApplyButton = ({ isVisible , onclose}) => {
 
                             <div className='w-full'>
                                 <button  onClick={()=> setEditSuccessfully(true)}
-                                type='Submit' name='' id='name' className='w-full bg-blue-700 space-y-7 py-3 px-9 text-white text-xl font-semibold mb-2'  
+                                type="" name='' id='name' className='w-full bg-blue-700 space-y-7 py-3 px-9 text-white text-xl font-semibold mb-2'  
                                  > Save Changes</button>
 
                             </div>
