@@ -25,7 +25,7 @@ function Emptyprofile() {
       <div className="flex space-y-5 flex-col">
         <div className="bg-[#DCBDEDB2] m-auto flex justify-center items-center rounded-[20px] w-[500px] h-[105px]">
           <p className="px-[54px] text-[#3E1654] font-inter font-normal text-[18px]/[30px]">
-            It looks like you haven&39;t completed your profile yet. Please provide
+            It looks like you haven&#39;t completed your profile yet. Please provide
             your details to get started!
           </p>
         </div>
