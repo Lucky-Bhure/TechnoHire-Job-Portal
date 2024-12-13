@@ -45,6 +45,60 @@ const Inbox = () => {
       isSpam: false,
       isStarred: true,
     },
+    {
+      name: "Alex Cary",
+      image: InboxImg_1,
+      position: "Software Engineer",
+      content: "Dear Employer, Are you tired of the endless search for the perfect candidate? Stop wasting time! Our revolutionary platform connects you with top-tier professionals tailored to your needs. 💼 Key Features: Access to over 10 million verified resumes AI-powered candidate matching Affordable subscription plans Act now and receive a FREE trial to see the difference for yourself. 👉 Don’t wait—your dream team is just a click away! Best regards,",
+      isUnread: true,
+      isSpam: false, // Marking as not spam initially
+      isStarred: false, // Marking as not spam initially
+    },
+    {
+      name: "Alex Cary",
+      image: InboxImg_1,
+      position: "Software Engineer",
+      content: "Dear Employer, Are you tired of the endless search for the perfect candidate? Stop wasting time! Our revolutionary platform connects you with top-tier professionals tailored to your needs. 💼 Key Features: Access to over 10 million verified resumes AI-powered candidate matching Affordable subscription plans Act now and receive a FREE trial to see the difference for yourself. 👉 Don’t wait—your dream team is just a click away! Best regards,",
+      isUnread: true,
+      isSpam: true, // Marking as not spam initially
+      isStarred: false, // Marking as not spam initially
+    },
+    {
+      name: "Harsh Agarwal",
+      image: InboxImg_3,
+      position: "Product Manager",
+      content: "Hi, Good Night",
+      isUnread: false,
+      isSpam: false,
+      isStarred: true,
+    },
+    {
+      name: "Alex Cary",
+      image: InboxImg_1,
+      position: "Software Engineer",
+      content: "Dear Employer, Are you tired of the endless search for the perfect candidate? Stop wasting time! Our revolutionary platform connects you with top-tier professionals tailored to your needs. 💼 Key Features: Access to over 10 million verified resumes AI-powered candidate matching Affordable subscription plans Act now and receive a FREE trial to see the difference for yourself. 👉 Don’t wait—your dream team is just a click away! Best regards,",
+      isUnread: true,
+      isSpam: false, // Marking as not spam initially
+      isStarred: false, // Marking as not spam initially
+    },
+    {
+      name: "Harsh Agarwal",
+      image: InboxImg_3,
+      position: "Product Manager",
+      content: "Hi, Good Night",
+      isUnread: false,
+      isSpam: false,
+      isStarred: true,
+    },
+    {
+      name: "Alex Cary",
+      image: InboxImg_1,
+      position: "Software Engineer",
+      content: "Dear Employer, Are you tired of the endless search for the perfect candidate? Stop wasting time! Our revolutionary platform connects you with top-tier professionals tailored to your needs. 💼 Key Features: Access to over 10 million verified resumes AI-powered candidate matching Affordable subscription plans Act now and receive a FREE trial to see the difference for yourself. 👉 Don’t wait—your dream team is just a click away! Best regards,",
+      isUnread: true,
+      isSpam: true, // Marking as not spam initially
+      isStarred: false, // Marking as not spam initially
+    },
    
   ]);
 
