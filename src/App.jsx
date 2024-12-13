@@ -18,13 +18,17 @@ import Customersupport from "./pages/modules/Customersupports/Customersupport";
 import BasicDetails from "./pages/modules/BasicDetails/BasicDetails";
 import Inbox from "./pages/modules/Inbox/inbox";
 import SingleEmployers from "./pages/modules/FindEmplyee/FindEmployers/SingleEmployers";
-import Notification from "./pages/modules/Notification/Notification";
+import Applicationdetails from "./pages/modules/ApplicationDetails/Applicationdetails";
+import Applicationsubmit from "./pages/modules/ApplicationDetails/Applicationsubmit";
+import Findjobdetails from "./pages/modules/Findajob/FindjobDetails/Findjobdetails";
 
 function App() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Overview />} />
+        <Route path="/application-details" element={<Applicationdetails />} />
+        <Route path="/application-submit" element={<Applicationsubmit />} />
         <Route path="/homePage" element={<Homepage />} />
         <Route path="/inbox" element={<Inbox />} />
         <Route path="/login" element={<Login />} />
@@ -55,7 +59,7 @@ function App() {
         />
         <Route path="/dashboard/settings" element={<Setting />} />
         <Route path="/dashboard/feedback" element={<Feedback />} />
-        <Route path="/notification" element={<Notification/>} />
+        <Route path="/jobdetails" element={<Findjobdetails/>}/>
       </Routes>
     </div>
   );

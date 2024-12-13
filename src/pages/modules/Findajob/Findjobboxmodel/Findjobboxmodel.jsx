@@ -12,6 +12,8 @@ import job from "../../../../assets/job.png"
 import fb from "../../../../assets/FbLogo.png"
 import uplogo from "../../../../assets/UpLogo.png"
 import apple from "../../../../assets/appleLogo.png"
+import { Link } from 'react-router-dom';
+
 const companydetails= [
     {
         name:"Dribbble",
@@ -119,35 +121,39 @@ const companydetails= [
 
 ]
 const Findjobboxmodel = () => {
+    
   return (
     <div>
-            
-        <div className="px-9 flex flex-wrap gap-[2%] mx-52  mb-[10rem]  " >
+       
+
+        <div className="px-9 flex flex-wrap gap-[2%] mx-52   mb-[10rem]  " >
         {companydetails.map((items ,idx)=>(
 
-         <div  className="flex flex-col  items-start mt-12 p-4 bg-[#EDEFF5] hover:bg-white hover:border hover:border-blue-400   w-[32%] rounded-md" >
+         <div key={idx}  className="flex flex-col  items-start mt-12 p-4 bg-[#EDEFF5] hover:bg-white hover:border hover:border-blue-400  w-[32%] rounded-md" >
+        <Link to="/jobdetails">
+
              <div className="flex gap-2 " > 
              <div>  <img src={items.image} alt="pic" /></div>
               <div className=" flex flex-col gap-2" >
 
             <h1 className= " px-3 font-inter font-medium text-xl text-[#18191C]" >{items.name}</h1> 
-               <p className="flex px-2  text-lg font-inter font-normal  text-[#939AAD]" ><TfiLocationPin className=" text-lg font-inter font-normal text-[#939AAD]  " size={20} />
+               <p className="flex px-2    h-12 text-sm font-inter font-normal  text-[#939AAD]" ><TfiLocationPin className=" text-lg font-inter font-normal text-[#939AAD]  " size={20} />
                {items.location}</p>
             </div>
              </div>
         
-            <div className="px-2 font-inter font-medium text-xl mt-7 h-8 text-[#191F33] " >{items.role}</div>
-            <div className="flex items-start justify-between px-2 w-[55%] mt-3  font-inter font-light  text-[#636A80] " >
-                    <p>{items.jobtype}</p>
+            <div className="px-2 font-inter font-medium text-xl mt-2 h-8 text-[#191F33] " >{items.role}</div>
+            <div className="flex items-start gap-16 px-2  mt-3  font-inter font-light  text-[#636A80] " >
+                    <p className='' >{items.jobtype}</p>
                     <p>{items.salary}</p>
              </div>
+             </Link>
+
         </div>
-
-))}
-
+            ))}
+            
          </div> 
-   
-  </div>
+         </div>
   )
 }
 
