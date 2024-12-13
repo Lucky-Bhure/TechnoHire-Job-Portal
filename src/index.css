@@ -10,3 +10,7 @@
   @tailwind components;
   @tailwind utilities;
 }
+
+.bg-violet{
+  background-color: #7900BA !important;
+}

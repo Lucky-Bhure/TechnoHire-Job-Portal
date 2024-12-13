@@ -18,6 +18,8 @@ import Customersupport from "./pages/modules/Customersupports/Customersupport";
 import BasicDetails from "./pages/modules/BasicDetails/BasicDetails";
 import Inbox from "./pages/modules/Inbox/inbox";
 import GettingStarted from "./pages/modules/BasicDetails/GettingStarted";
+import LandingScreen1 from "./pages/modules/LandingScreens/LandingScreen1";
+import LandingScreen2 from "./pages/modules/LandingScreens/LandingScreen2";
 
 
 function App() {
@@ -49,6 +51,8 @@ function App() {
         <Route path="/dashboard/saved-jobs" element={<Savedjobs />} />
         <Route path="/basicDetails" element={<BasicDetails />}/>
         <Route path="/gettingStarted" element={<GettingStarted />}/>
+        <Route path="/landingScreen1" element={<LandingScreen1 />}/>
+        <Route path="/landingScreen2" element={<LandingScreen2 />}/>
         <Route
           path="/dashboard/scheduled-interview"
           element={<Scheduleinterview />}
