@@ -10,9 +10,11 @@ import { FaArrowRight } from "react-icons/fa6";
 import { CiLocationOn } from "react-icons/ci";
 import { TiTick } from "react-icons/ti";
 import { themes } from "../../../components/Themes/Theme";
+import { useNavigate } from "react-router-dom";
 
 const Overview = () => {
   const { theme, setTheme } = useTheme();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setTheme(themes.OverviewThemes);
@@ -118,7 +120,10 @@ const Overview = () => {
                 </div>
               </Flex>
             </div>
-            <button className="bg-white cursor-pointer my-2 h-[55px] w-[165px] mx-auto sm:mx-0">
+            <button
+              onClick={() => navigate("/dashboard/my-profile")}
+              className="bg-white cursor-pointer my-2 h-[55px] w-[165px] mx-auto sm:mx-0"
+            >
               <div className="px-4 py-[17px]">
                 <p
                   className="font-bold "
@@ -190,7 +195,10 @@ const Overview = () => {
                   </td>
 
                   <td className="px-4 py-2 text-center">
-                    <button className="bg-[#DCBDED] hover:bg-[#7900BA] hover:text-white text-[#7900BA] text-sm px-4 py-2 rounded-lg">
+                    <button
+                      onClick={() => navigate("/application-details")}
+                      className="bg-[#DCBDED] hover:bg-[#7900BA] hover:text-white text-[#7900BA] text-sm px-4 py-2 rounded-lg"
+                    >
                       View Details
                     </button>
                   </td>
