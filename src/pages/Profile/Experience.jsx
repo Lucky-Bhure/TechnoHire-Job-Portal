@@ -12,8 +12,8 @@ import pdf_logo from '../.../../../assets/Profileassests/pdf_logo.png'
 
 function Experience() {
   return (
-    <div className="">
-      <div className="w-[100%] mt-5 mx-10 space-y-3">
+    <div className="flex-1">
+      <div className="w-[90%] mt-5 mx-10 space-y-3">
         <div className="flex justify-between items-center">
           <p className="font-poppins font-medium text-[16px]/[24px]">
             Experience
@@ -93,7 +93,7 @@ function Experience() {
         </div>
       </div>
 
-      <div className="ml-10 w-[100%] space-y-3">
+      <div className="ml-10 w-[90%] space-y-3">
         <div className=" mt-14">
           <div className="flex justify-between items-center">
             <p className="font-poppins font-medium text-[#484747] text-[16px]/[24px]">
@@ -160,7 +160,7 @@ function Experience() {
         </div>
       </div>
 
-      <div className="w-[100%] mt-14 mx-10 space-y-5">
+      <div className="w-[90%] mt-14 mx-10 space-y-5">
         <div className="flex justify-between items-center">
           <p className="font-poppins font-medium text-[16px]/[24px] text-[#484747]">
             Resume

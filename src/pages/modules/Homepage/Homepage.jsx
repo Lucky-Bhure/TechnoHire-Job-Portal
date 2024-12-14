@@ -13,21 +13,21 @@ import logo from '../../../assets/logo.png';
 import group from '../../../assets/group.png';
 import TestimonialImage from '../../../assets/Testimonial.png';
 import arrow from '../../../assets/arrow.png';
+import arrow_2 from '../../../assets/Arrows-2.png';
+import circle_wavy from '../../../assets/circle-wavy.png';
+import search from '../../../assets/search.png';
+import user_plus from '../../../assets/user-Plus.png';
+import briefcase from '../../../assets/briefcase.png';
+import buildingIcon from '../../../assets/buildingIcon.png';
+import userIcon  from '../../../assets/user_icon.png';
 
 
 
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FaStar } from "react-icons/fa6";
-import { FaBandAid, FaSearch } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
-import { FaBriefcase } from 'react-icons/fa';
 import { PiBuildingOffice } from 'react-icons/pi';
-import { FaUserPlus } from "react-icons/fa";
-import { FaUsers } from 'react-icons/fa';
 import { FaCloudUploadAlt } from 'react-icons/fa';
-import { FaSearchPlus } from 'react-icons/fa';
-import { FaRegCheckCircle } from "react-icons/fa";
 import { FaArrowRight } from 'react-icons/fa';
 import { FaArrowLeft } from 'react-icons/fa';
 import { FaPenNib } from 'react-icons/fa';
@@ -219,21 +219,22 @@ const Homepage = () => {
           <div className="grid grid-cols-1 mt-6 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
 
             <div className="flex gap-10 justify-center items-center  h-[90px] rounded-lg bg-white border shadow-md ">
-              <FaBriefcase className=' text-[#6712B9] bg-gray-100 rounded-md w-14 p-2 h-14' />
+              <img className=' text-[#6712B9] bg-gray-100 rounded-md w-14 p-2 h-14' src={briefcase} alt="" />
               <span>
                 <h5 className='font-bold text-lg'>1,75,324</h5>
                 <p className='text-gray-500'>Live job</p>
               </span>
             </div>
             <div className="flex gap-10 justify-center items-center  h-[90px] rounded-lg bg-white border shadow-md ">
-              <PiBuildingOffice className='bg-[#6712B9] text-white rounded-md w-14 p-2 h-14' />
+            <img className=' text-[#6712B9] bg-gray-100 rounded-md w-14 p-2 h-14' src={buildingIcon} alt="" />
               <span>
                 <h5 className='font-bold text-lg'>97,345</h5>
                 <p className='text-gray-500'>Companies</p>
               </span>
             </div>
             <div className="flex gap-10 justify-center items-center  h-[90px] rounded-lg bg-white border shadow-md ">
-              <FaUsers className=' text-[#6712B9] bg-gray-100 rounded-md w-14 p-2 h-14' />
+            <img className=' text-[#6712B9] bg-gray-100 rounded-md w-14 p-2 h-14' src={userIcon} alt="" />
+              {/* <FontAwesomeIcon icon={faUserGroup} /> */}
               <span>
                 <h5 className='font-bold text-lg'>38,47,154</h5>
                 <p className='text-gray-500'>Candidates</p>
@@ -241,7 +242,7 @@ const Homepage = () => {
             </div>
 
             <div className="flex gap-10 justify-center items-center  h-[90px] rounded-lg bg-white border shadow-md ">
-              <FaBriefcase className=' text-[#6712B9] bg-gray-100 rounded-md w-14 p-2 h-14' />
+            <img className=' text-[#6712B9] bg-gray-100 rounded-md w-14 p-2 h-14' src={briefcase} alt="" />
               <span>
                 <h5 className='font-bold text-lg'>7,532</h5>
                 <p className='text-gray-500'>New Jobs</p>
@@ -323,47 +324,58 @@ const Homepage = () => {
 
         </div>
 
+          {/* How Technohire Work  */}
+
         <div className='h-[542px] bg-[#F1F2F4] w-full pl-32 pr-32 relative'>
           <h1 className='flex justify-center items-center font-normal text-[35px] pb-2 pt-10'>How TechnoHire work</h1>
 
           <div className="grid grid-cols-1 mt-6 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
 
-            <div className="flex flex-col gap-6 justify-center items-center h-[244px] w-[250px] rounded-lg">
-              <FaUserPlus className='w-[40px] h-[40px] mt-4 text-[#6712B9] bg-white p-2 rounded-full ' />
+            <div className="flex flex-col gap-6 justify-center items-center h-[300px] w-[250px] rounded-lg">
+            <div className='p-4 mt-10 bg-[#FFFFFF] rounded-full'>
+               <img className='w-[40px] h-[40px]' src={user_plus} alt="" />
+            </div>
               <h5 className='font-medium text-lg'>Create Account</h5>
               <p className='text-gray-400 text-sm p-4 align-middle'>
                 Join us today to unlock a world of career possibilities. Setting up is quick and easy!
               </p>
 
               {/* Arrow between steps */}
-              <div className="absolute top-[155px] left-[320px]">
+              <div className="absolute top-[185px] left-[320px]">
                 <img src={arrow} alt="arrow" className="w-[190px] h-8" />
               </div>
             </div>
 
-            <div className="flex flex-col gap-6 justify-center items-center  h-[244px] w-[250px] rounded-lg bg-white">
-              <FaCloudUploadAlt className='w-[40px] h-[40px] mt-6 text-[#FFFFFF] bg-[#6712B9] p-2 rounded-full ' />
+            <div className="flex flex-col gap-6 justify-center items-center  h-[300px] w-[250px] rounded-lg bg-white">
+              <div className='bg-[#6712B9] p-4 mt-10 rounded-full'>
+              <FaCloudUploadAlt className='w-[40px] h-[40px] text-[#FFFFFF] '/>
+              </div>
+              
               <h5 className='font-medium text-lg'>Upload CV/Resume</h5>
               <p className=' text-gray-400 text-sm p-4 align-middle'>Showcase your skills and experience by uploading your latest CV. Let your profile stand out!</p>
 
-              <div className="absolute top-52 left-[580px] rotate-180">
-                <img src={arrow} alt="arrow" className="w-[190px] h-8" />
+              <div className="absolute top-64 left-[580px]">
+                <img src={arrow_2} alt="arrow" className="w-[190px] h-8" />
               </div>
             </div>
 
 
 
-            <div className="flex flex-col gap-6 justify-center items-center  h-[244px] w-[250px] rounded-lg ">
-              <FaSearchPlus className='w-[40px] h-[40px] mt-4 text-[#6712B9] p-2 rounded-full ' />
+            <div className="flex flex-col gap-6 justify-center items-center  h-[300px] w-[250px] rounded-lg ">
+            <div className='p-2 mt-10 bg-[#FFFFFF] rounded-full'>
+               <img className='w-[60px] h-[60px]' src={search} alt="" />
+            </div>
               <h5 className='font-medium text-lg'>Find suitable job</h5>
               <p className=' text-gray-400 text-sm p-4 align-center'>Discover roles that match your skills and career goals. Your perfect fit is just a search away!,</p>
-              <div className="absolute top-[155px] left-[850px]">
+              <div className="absolute top-[185px] left-[850px]">
                 <img src={arrow} alt="arrow" className="w-[190px] h-8" />
               </div>
             </div>
 
-            <div className="flex flex-col gap-6 justify-center items-center  h-[244px] w-[250px] rounded-lg">
-              <FaRegCheckCircle className='w-[40px] h-[40px] mt-4 text-[#6712B9] bg-white p-2 rounded-full ' />
+            <div className="flex flex-col gap-6 justify-center items-center  h-[300px] w-[250px] rounded-lg">
+            <div className='p-4 mt-10 bg-[#FFFFFF] rounded-full'>
+               <img className='w-[40px] h-[40px]' src={circle_wavy} alt="" />
+            </div>
               <h5 className='font-medium text-lg'>Apply Job</h5>
               <p className=' text-gray-400 text-sm p-4 align-center'>Ready to take the next step? Submit your application with a click and get closer to your dream job!</p>
             </div>

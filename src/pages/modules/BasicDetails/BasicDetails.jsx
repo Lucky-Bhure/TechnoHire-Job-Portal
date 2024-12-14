@@ -106,7 +106,7 @@ const BasicDetails = () => {
   ];
 
   const subhead = [
-    "Let’s Start with the Basics",
+    "Let's Start with the Basics",
     "Your Educational Background",
     "Tell us your Work Experience",
     "Do you Have Certifications?",
