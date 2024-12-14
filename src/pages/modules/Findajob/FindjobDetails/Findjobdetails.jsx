@@ -1,32 +1,37 @@
-import React from 'react'
-
+import React, { useState } from "react";
+import Applypopup from "../../../../components/Dialog/Applypopup";
 import {
-    FaArrowLeft,
-    FaArrowRight,
-    FaBookmark,
-    FaFacebookF,
-    FaTwitter,
-  } from "react-icons/fa";
-  import { FiFlag, FiPhone } from "react-icons/fi";
-  import { RiFacebookFill } from "react-icons/ri";
-  import { BsTwitter } from "react-icons/bs";
-  import { FaInstagram } from "react-icons/fa6";
-  import { TbBrandWhatsapp } from "react-icons/tb";
-  import { CiLocationOn } from "react-icons/ci";
-  import apple from "../../../../assets/appleLogo.png";
-  import { CiCalendar } from "react-icons/ci";
-  import { CiStopwatch } from "react-icons/ci";
-  import { TfiBag, TfiEmail } from "react-icons/tfi";
-  import { PiWallet } from "react-icons/pi";
-  import { GrLocation } from "react-icons/gr";
-  import { IoLogoYoutube } from "react-icons/io";
-  import { CgToggleOff } from "react-icons/cg";
-  import { GiCrossedChains } from "react-icons/gi";
+  FaArrowLeft,
+  FaArrowRight,
+  FaBookmark,
+  FaFacebookF,
+  FaTwitter,
+} from "react-icons/fa";
+import { FiFlag, FiPhone } from "react-icons/fi";
+import { RiFacebookFill } from "react-icons/ri";
+import { BsTwitter } from "react-icons/bs";
+import { FaInstagram } from "react-icons/fa6";
+import { TbBrandWhatsapp } from "react-icons/tb";
+import { CiLocationOn } from "react-icons/ci";
+import apple from "../../../../assets/appleLogo.png";
+import { CiCalendar } from "react-icons/ci";
+import { CiStopwatch } from "react-icons/ci";
+import { TfiBag, TfiEmail } from "react-icons/tfi";
+import { PiWallet } from "react-icons/pi";
+import { GrLocation } from "react-icons/gr";
+import { IoLogoYoutube } from "react-icons/io";
+import { CgToggleOff } from "react-icons/cg";
+import { GiCrossedChains } from "react-icons/gi";
+import Header from "../../../../components/header/Header";
 
 const Findjobdetails = () => {
+  const [showmodal, setshowmodal] = useState(false);
+
   return (
-    <>
-    <div className="bg-[#F1F2F4] p-4 ">
+    <div>
+          <Header/>
+
+      <div className="bg-[#F1F2F4] p-4 ">
         <div className="flex">
           <div className="ms-8">
             <p className="font-semibold text-lg">Job Details</p>
@@ -82,7 +87,10 @@ const Findjobdetails = () => {
           <div className="flex gap-3 items-center">
             <FaBookmark className="text-purple-600" size={20} />
             <FiFlag className="text-purple-600" size={20} />
-            <button className="bg-[#7900BA] text-white px-16 py-2 rounded hover:bg-purple-600 hover:text-white">
+            <button
+              onClick={() => setshowmodal(true)}
+              className="bg-[#7900BA] text-white px-16 py-2 rounded hover:bg-purple-600 hover:text-white"
+            >
               Apply Now
             </button>
           </div>
@@ -561,8 +569,9 @@ const Findjobdetails = () => {
           </div>
         </div>
       </div>
-    </>
-  )
-}
+      {showmodal && <Applypopup setshowmodal={setshowmodal} />}
+    </div>
+  );
+};
 
-export default Findjobdetails
+export default Findjobdetails;

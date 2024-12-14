@@ -1,4 +1,4 @@
-import React ,{useState} from "react";
+import React ,{ useState } from "react";
 import { BiEditAlt } from "react-icons/bi";
 import { TbCurrencyRupee } from "react-icons/tb";
 import { CiCalendar } from "react-icons/ci";
@@ -87,7 +87,7 @@ const Jobalerts = () => {
     <>
       <Header/>
                <div className=" flex justify-around ml-32 pb-2" >
-                <h1 class="text-xl font-medium">Job Alerts<span className=" text-base text-[#5E6670]">( 3 new jobs)</span></h1>
+                <h1 className="text-xl font-medium">Job Alerts<span className=" text-base text-[#5E6670]">( 3 new jobs)</span></h1>
                 <h3 className="text-l flex items-center gap-1 text-[#5E6670]"><span className="text-xl"><BiEditAlt/></span>Edit job alert</h3>
                 </div>
   
