@@ -19,7 +19,7 @@ import search from '../../../assets/search.png';
 import user_plus from '../../../assets/user-Plus.png';
 import briefcase from '../../../assets/briefcase.png';
 import buildingIcon from '../../../assets/buildingIcon.png';
-import userIcon  from '../../../assets/user_icon.png';
+import userIcon from '../../../assets/user_icon.png';
 
 
 
@@ -48,7 +48,7 @@ import { FaTwitter } from "react-icons/fa";
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
 
-{/* <FontAwesomeIcon icon={faUser} size="1x" color="black" /> */}
+{/* <FontAwesomeIcon icon={faUser} size="1x" color="black" /> */ }
 
 
 
@@ -56,7 +56,7 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 const Homepage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  
+
   const testimonials = [
     {
       name: 'Robert Fox',
@@ -85,7 +85,7 @@ const Homepage = () => {
       text: '“Exceptional service! The platform made it so easy to find qualified candidates for our team. We hired three talented professionals in just a few weeks!”',
       image: TestimonialImage,
       rating: 5
-    }, 
+    },
     {
       name: 'anil.',
       position: 'Software Developer',
@@ -126,7 +126,7 @@ const Homepage = () => {
 
 
   ];
-   
+
 
 
   const handleLeftArrow = () => {
@@ -145,11 +145,11 @@ const Homepage = () => {
       return prevIndex + 3; // Otherwise, move to the next set of 3 cards
     });
   };
-    // Function to handle dot click to navigate to a specific testimonial
+  // Function to handle dot click to navigate to a specific testimonial
   const handleDotClick = (index) => {
     setCurrentIndex(index); // Directly set to the testimonial index
   };
-  
+
 
   const renderStars = (rating) => {
     let stars = [];
@@ -226,14 +226,14 @@ const Homepage = () => {
               </span>
             </div>
             <div className="flex gap-10 justify-center items-center  h-[90px] rounded-lg bg-white border shadow-md ">
-            <img className=' text-[#6712B9] bg-gray-100 rounded-md w-14 p-2 h-14' src={buildingIcon} alt="" />
+              <img className=' text-[#6712B9] bg-gray-100 rounded-md w-14 p-2 h-14' src={buildingIcon} alt="" />
               <span>
                 <h5 className='font-bold text-lg'>97,345</h5>
                 <p className='text-gray-500'>Companies</p>
               </span>
             </div>
             <div className="flex gap-10 justify-center items-center  h-[90px] rounded-lg bg-white border shadow-md ">
-            <img className=' text-[#6712B9] bg-gray-100 rounded-md w-14 p-2 h-14' src={userIcon} alt="" />
+              <img className=' text-[#6712B9] bg-gray-100 rounded-md w-14 p-2 h-14' src={userIcon} alt="" />
               {/* <FontAwesomeIcon icon={faUserGroup} /> */}
               <span>
                 <h5 className='font-bold text-lg'>38,47,154</h5>
@@ -242,7 +242,7 @@ const Homepage = () => {
             </div>
 
             <div className="flex gap-10 justify-center items-center  h-[90px] rounded-lg bg-white border shadow-md ">
-            <img className=' text-[#6712B9] bg-gray-100 rounded-md w-14 p-2 h-14' src={briefcase} alt="" />
+              <img className=' text-[#6712B9] bg-gray-100 rounded-md w-14 p-2 h-14' src={briefcase} alt="" />
               <span>
                 <h5 className='font-bold text-lg'>7,532</h5>
                 <p className='text-gray-500'>New Jobs</p>
@@ -324,7 +324,7 @@ const Homepage = () => {
 
         </div>
 
-          {/* How Technohire Work  */}
+        {/* How Technohire Work  */}
 
         <div className='h-[542px] bg-[#F1F2F4] w-full pl-32 pr-32 relative'>
           <h1 className='flex justify-center items-center font-normal text-[35px] pb-2 pt-10'>How TechnoHire work</h1>
@@ -332,9 +332,9 @@ const Homepage = () => {
           <div className="grid grid-cols-1 mt-6 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
 
             <div className="flex flex-col gap-6 justify-center items-center h-[300px] w-[250px] rounded-lg">
-            <div className='p-4 mt-10 bg-[#FFFFFF] rounded-full'>
-               <img className='w-[40px] h-[40px]' src={user_plus} alt="" />
-            </div>
+              <div className='p-4 mt-10 bg-[#FFFFFF] rounded-full'>
+                <img className='w-[40px] h-[40px]' src={user_plus} alt="" />
+              </div>
               <h5 className='font-medium text-lg'>Create Account</h5>
               <p className='text-gray-400 text-sm p-4 align-middle'>
                 Join us today to unlock a world of career possibilities. Setting up is quick and easy!
@@ -345,13 +345,13 @@ const Homepage = () => {
                 <img src={arrow} alt="arrow" className="w-[190px] h-8" />
               </div>
             </div>
-         
+
 
             <div className="flex flex-col gap-6 justify-center items-center  h-[300px] w-[250px] rounded-lg bg-white">
               <div className='bg-[#6712B9] p-4 mt-10 rounded-full'>
-              <FaCloudUploadAlt className='w-[40px] h-[40px] text-[#FFFFFF] '/>
+                <FaCloudUploadAlt className='w-[40px] h-[40px] text-[#FFFFFF] ' />
               </div>
-              
+
               <h5 className='font-medium text-lg'>Upload CV/Resume</h5>
               <p className=' text-gray-400 text-sm p-4 align-middle'>Showcase your skills and experience by uploading your latest CV. Let your profile stand out!</p>
 
@@ -363,9 +363,9 @@ const Homepage = () => {
 
 
             <div className="flex flex-col gap-6 justify-center items-center  h-[300px] w-[250px] rounded-lg ">
-            <div className='p-2 mt-10 bg-[#FFFFFF] rounded-full'>
-               <img className='w-[60px] h-[60px]' src={search} alt="" />
-            </div>
+              <div className='p-2 mt-10 bg-[#FFFFFF] rounded-full'>
+                <img className='w-[60px] h-[60px]' src={search} alt="" />
+              </div>
               <h5 className='font-medium text-lg'>Find suitable job</h5>
               <p className=' text-gray-400 text-sm p-4 align-center'>Discover roles that match your skills and career goals. Your perfect fit is just a search away!,</p>
               <div className="absolute top-[185px] left-[850px]">
@@ -374,9 +374,9 @@ const Homepage = () => {
             </div>
 
             <div className="flex flex-col gap-6 justify-center items-center  h-[300px] w-[250px] rounded-lg">
-            <div className='p-4 mt-10 bg-[#FFFFFF] rounded-full'>
-               <img className='w-[40px] h-[40px]' src={circle_wavy} alt="" />
-            </div>
+              <div className='p-4 mt-10 bg-[#FFFFFF] rounded-full'>
+                <img className='w-[40px] h-[40px]' src={circle_wavy} alt="" />
+              </div>
               <h5 className='font-medium text-lg'>Apply Job</h5>
               <p className=' text-gray-400 text-sm p-4 align-center'>Ready to take the next step? Submit your application with a click and get closer to your dream job!</p>
             </div>
@@ -901,7 +901,7 @@ const Homepage = () => {
                 </div>
               ))}
             </div>
-           
+
 
 
             {/* Right Arrow */}
@@ -911,19 +911,18 @@ const Homepage = () => {
             >
               &#8594;
             </button>
-             {/* Dot Navigation */}
-        {/* Dot Navigation */}
-        <div className="flex justify-center gap-2 pt-6">
-          {testimonials.map((_, index) => (
-            <div
-              key={index}
-              onClick={() => handleDotClick(index)}
-              className={`w-3 h-3 rounded-full cursor-pointer transition-all ${
-                currentIndex === index ? 'bg-[#8000FC]' : 'bg-[#DBB7FF]'
-              }`}
-            ></div>
-          ))}
-        </div>
+            {/* Dot Navigation */}
+            {/* Dot Navigation */}
+            <div className="flex justify-center gap-2 pt-6">
+              {testimonials.map((_, index) => (
+                <div
+                  key={index}
+                  onClick={() => handleDotClick(index)}
+                  className={`w-3 h-3 rounded-full cursor-pointer transition-all ${currentIndex === index ? 'bg-[#8000FC]' : 'bg-[#DBB7FF]'
+                    }`}
+                ></div>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -965,42 +964,73 @@ const Homepage = () => {
             </div>
             <div className='flex flex-col gap-4 mt-10'>
               <h5 className="text-[20px] leading-[32px]">Quick Link</h5>
-              <p className='text-[#5E6670] text-[16px]'>About</p>
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-4 cursor-pointer group">
                 {/* Arrow */}
-                <div className="flex justify-center items-center h-[5.83px] w-[11.67px]">
+                <div className="flex justify-center mb-2 items-center h-[5.83px] w-[11.67px] group-hover:block hidden">
                   <FaArrowRight />
                 </div>
                 <div>
-                  <a className="text-[16px] text-white">
+                  <a className="text-[#5E6670] text-[14px] group-hover:text-[14px] group-hover:text-white">
+                    About
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4 cursor-pointer group">
+                {/* Arrow */}
+                <div className="flex justify-center items-center mb-2 h-[5.83px] w-[11.67px] group-hover:block hidden">
+                  <FaArrowRight />
+                </div>
+                <div>
+                  <a className="text-[#5E6670] text-[14px] group-hover:text-[14px] group-hover:text-white">
                     Contact
                   </a>
                 </div>
               </div>
-              <p className='text-[#5E6670] text-[16px]'>Pricing</p>
-              <p className='text-[#5E6670] text-[16px]'>Blog</p>
+              <div className="flex items-center space-x-4 cursor-pointer group">
+                {/* Arrow */}
+                <div className="flex justify-center mb-2 items-center h-[5.83px] w-[11.67px] group-hover:block hidden">
+                  <FaArrowRight />
+                </div>
+                <div>
+                  <a className="text-[#5E6670] text-[14px] group-hover:text-[14px] group-hover:text-white">
+                    Pricing
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4 cursor-pointer group">
+                {/* Arrow */}
+                <div className="flex justify-center items-center mb-2  h-[5.83px] w-[11.67px] group-hover:block hidden">
+                  <FaArrowRight />
+                </div>
+                <div>
+                  <a className="text-[#5E6670] text-[14px] group-hover:text-[14px] group-hover:text-white">
+                    Blog
+                  </a>
+                </div>
+              </div>
             </div>
             <div className='flex flex-col gap-4 mt-10'>
               <h5 className="text-[20px] leading-[32px]">Candidate</h5>
-              <p className="text-[#5E6670] text-[14px]">Browse Jobs</p>
-              <p className="text-[#5E6670] text-[14px]">Browse Employers</p>
-              <p className="text-[#5E6670] text-[14px]">Candidate Dashboard</p>
-              <p className="text-[#5E6670] text-[14px]">Saved Jobs</p>
+              <a href="#" className="text-[#5E6670] text-[14px]">Browse Jobs</a>
+              <a href="#" className="text-[#5E6670] text-[14px]">Browse Employers</a>
+              <a href="#" className="text-[#5E6670] text-[14px]">Candidate Dashboard</a>
+              <a href="#" className="text-[#5E6670] text-[14px]">Saved Jobs</a>
             </div>
 
             <div className='flex flex-col gap-4 mt-10'>
               <h5 className="text-[20px] leading-[32px]">Employers</h5>
-              <p className="text-[#5E6670] text-[14px]">Post a Job</p>
-              <p className="text-[#5E6670] text-[14px]">Browse Candidates</p>
-              <p className="text-[#5E6670] text-[14px]">Employers Dashboard</p>
-              <p className="text-[#5E6670] text-[14px]">Applications</p>
+              <a href="#" className="text-[#5E6670] text-[14px]">Post a Job</a>
+              <a href="#" className="text-[#5E6670] text-[14px]">Browse Candidates</a>
+              <a href="#" className="text-[#5E6670] text-[14px]">Employers Dashboard</a>
+              <a href="#" className="text-[#5E6670] text-[14px]">Applications</a>
             </div>
 
             <div className="flex flex-col gap-4 mt-10">
               <h5 className="text-[20px] leading-[32px]">Support</h5>
-              <p className="text-[#5E6670] text-[14px]">Faqs</p>
-              <p className="text-[#5E6670] text-[14px]">Privacy Policy</p>
-              <p className="text-[#5E6670] text-[14px]">Terms & Conditions</p>
+              <a href="#" className="text-[#5E6670] text-[14px]">Faqs</a>
+              <a href="#" className="text-[#5E6670] text-[14px]">Privacy Policy</a>
+              <a href="#" className="text-[#5E6670] text-[14px]">Terms & Conditions</a>
+
             </div>
           </div>
 
