@@ -3,12 +3,13 @@ import Layout from "../../../components/Layout/Layout";
 import { CiLocationOn } from "react-icons/ci";
 import { TiTick } from "react-icons/ti";
 import apple from "../../../assets/appleLogo.png";
-
 import useTheme from "../../../hooks/theme/useTheme";
 import { themes } from "../../../components/Themes/Theme";
+import { useNavigate } from "react-router-dom";
 
 const Aplliedjobs = () => {
   const { theme, setTheme } = useTheme();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setTheme(themes.OverviewThemes);
@@ -145,7 +146,10 @@ const Aplliedjobs = () => {
                     </td>
 
                     <td className="px-4 py-1 font-medium text-center">
-                      <button className="hover:bg-[#7900BA] hover:text-white text-[#7900BA] bg-[#DCBDED]  w-[130px] text-[15px]  px-2 py-3 cursor-pointer  ">
+                      <button
+                        onClick={() => navigate("/application-details")}
+                        className="hover:bg-[#7900BA] hover:text-white text-[#7900BA] bg-[#DCBDED]  w-[130px] text-[15px]  px-2 py-3 cursor-pointer  "
+                      >
                         view Details
                       </button>
                     </td>

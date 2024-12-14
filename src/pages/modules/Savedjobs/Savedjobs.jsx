@@ -8,9 +8,11 @@ import { CiCalendar } from "react-icons/ci";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaBookmark } from "react-icons/fa6";
 import apple from "../../../assets/appleLogo.png";
+import { useNavigate } from "react-router-dom";
 
 const Savedjobs = () => {
   const { theme, setTheme } = useTheme();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setTheme(themes.OverviewThemes);
@@ -131,7 +133,10 @@ const Savedjobs = () => {
                         </button>
                       ) : (
                         <>
-                          <button className="bg-[#DCBDED] px-7 py-2 text-[#7900BA] hover:bg-[#7900BA] cursor-pointer hover:text-white">
+                          <button
+                            onClick={() => navigate("/find-job")}
+                            className="bg-[#DCBDED] px-7 py-2 text-[#7900BA] hover:bg-[#7900BA] cursor-pointer hover:text-white"
+                          >
                             <b className="pe-2">Apply Now</b>
                           </button>
                           &nbsp;

@@ -19,14 +19,22 @@ import Customersupport from "./pages/modules/Customersupports/Customersupport";
 import BasicDetails from "./pages/modules/BasicDetails/BasicDetails";
 import Inbox from "./pages/modules/Inbox/inbox";
 import SingleEmployers from "./pages/modules/FindEmplyee/FindEmployers/SingleEmployers";
-import Notification from "./pages/modules/Notification/Notification";
+import Applicationdetails from "./pages/modules/ApplicationDetails/Applicationdetails";
+import Applicationsubmit from "./pages/modules/ApplicationDetails/Applicationsubmit";
+import Findjobdetails from "./pages/modules/Findajob/FindjobDetails/Findjobdetails";
 import Emptyprofiles from "./pages/modules/Myprofile/Emptyprofiles";
+import GettingStarted from "./pages/modules/BasicDetails/GettingStarted";
+import LandingScreen1 from "./pages/modules/LandingScreens/LandingScreen1";
+import LandingScreen2 from "./pages/modules/LandingScreens/LandingScreen2";
 
 function App() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Overview />} />
+        <Route path="/application-details" element={<Applicationdetails />} />
+        <Route path="/jobdetails" element={<Findjobdetails />} />
+        <Route path="/application-submit" element={<Applicationsubmit />} />
         <Route path="/homePage" element={<Homepage />} />
         <Route path="/inbox" element={<Inbox />} />
         <Route path="/login" element={<Login />} />
@@ -52,7 +60,10 @@ function App() {
         <Route path="/dashboard/saved-jobs" element={<Savedjobs />} />
         <Route path="/basicDetails" element={<BasicDetails />} />
         <Route path="/dashboard/profile-details" element={<Profiledetails />} />
-        <Route path='/dashboard/empty-profile' element={<Emptyprofiles />} />
+        <Route path="/dashboard/empty-profile" element={<Emptyprofiles />} />
+        <Route path="/gettingStarted" element={<GettingStarted />} />
+        <Route path="/landingScreen1" element={<LandingScreen1 />} />
+        <Route path="/landingScreen2" element={<LandingScreen2 />} />
         <Route
           path="/dashboard/scheduled-interview"
           element={<Scheduleinterview />}
