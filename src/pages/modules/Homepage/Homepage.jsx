@@ -345,6 +345,7 @@ const Homepage = () => {
                 <img src={arrow} alt="arrow" className="w-[190px] h-8" />
               </div>
             </div>
+         
 
             <div className="flex flex-col gap-6 justify-center items-center  h-[300px] w-[250px] rounded-lg bg-white">
               <div className='bg-[#6712B9] p-4 mt-10 rounded-full'>
