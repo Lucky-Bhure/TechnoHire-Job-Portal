@@ -64,6 +64,7 @@ function App() {
         <Route path="/dashboard/settings" element={<Setting />} />
         <Route path="/dashboard/feedback" element={<Feedback />} />
         <Route path="/notification" element={<Notification/>} />
+        <Route path="/jobdetails" element={<Findjobdetails/>}  />
       </Routes>
     </div>
   );
