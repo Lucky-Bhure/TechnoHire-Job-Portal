@@ -7,7 +7,7 @@ import { FaSearch } from "react-icons/fa";
 import MessageList from "./MessageList";
 import MessageDetails from "./MessageDetails";
 
-const Inbox = () => {
+const Inboxes = () => {
   const [messages, setMessages] = useState([
     {
       name: "Alex Cary",
@@ -286,4 +286,4 @@ const Inbox = () => {
   );
 };
 
-export default Inbox;
+export default Inboxes;
