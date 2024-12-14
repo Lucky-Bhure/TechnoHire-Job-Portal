@@ -8,6 +8,11 @@ const Feedback = () => {
   const handlecheck = () => {
     setchecked(!checked);
   };
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Functions to open and close modal
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <>
@@ -81,12 +86,45 @@ const Feedback = () => {
           </div>
           <div class="flex justify-center items-center my-11">
             <button
+              onClick={openModal}
               disabled={!checked}
               class="bg-[#7900BA] text-white font-semibold text-lg py-2 px-36 rounded-lg "
             >
               Submit
             </button>
+            {isModalOpen && (
+         <div className="fixed inset-0 z-10 flex items-center justify-center bg-gray-800 bg-opacity-50">
+         <div className="bg-white w-96 max-w-full rounded-lg shadow-lg relative">
+           {/* Close Button */}
+           <button
+             onClick={closeModal}
+             className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
+           >
+             ✖
+           </button>
+
+           {/* Modal Content */}
+           <div className="p-6 text-center">
+             {/* Title */}
+            
+
+             {/* Illustration */}
+             <div className="mt-4 flex justify-center">
+               <img
+                 src="/src/assets/feedback.png"
+                 alt="Success Illustration"
+                 className="h-auto w-full"
+               />
+             </div>
+
+             {/* Description */}
+            
+           </div>
+         </div>
+       </div>
+      )}
           </div>
+
         </div>
       </Layout>
     </>
