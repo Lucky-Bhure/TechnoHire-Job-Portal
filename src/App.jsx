@@ -17,12 +17,15 @@ import Findemployee from "./pages/modules/FindEmplyee/Findemployee";
 import Jobalerts from "./pages/modules/Jobalerts/Jobalerts";
 import Customersupport from "./pages/modules/Customersupports/Customersupport";
 import BasicDetails from "./pages/modules/BasicDetails/BasicDetails";
-import Inbox from "./pages/modules/Inbox/inbox";
+import Inboxes from "./pages/modules/Inbox/Inboxes";
 import SingleEmployers from "./pages/modules/FindEmplyee/FindEmployers/SingleEmployers";
 import Applicationdetails from "./pages/modules/ApplicationDetails/Applicationdetails";
 import Applicationsubmit from "./pages/modules/ApplicationDetails/Applicationsubmit";
 import Findjobdetails from "./pages/modules/Findajob/FindjobDetails/Findjobdetails";
 import Emptyprofiles from "./pages/modules/Myprofile/Emptyprofiles";
+import GettingStarted from "./pages/modules/BasicDetails/GettingStarted";
+import LandingScreen1 from "./pages/modules/LandingScreens/LandingScreen1";
+import LandingScreen2 from "./pages/modules/LandingScreens/LandingScreen2";
 
 function App() {
   return (
@@ -30,9 +33,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Overview />} />
         <Route path="/application-details" element={<Applicationdetails />} />
+        <Route path="/jobdetails" element={<Findjobdetails />} />
         <Route path="/application-submit" element={<Applicationsubmit />} />
         <Route path="/homePage" element={<Homepage />} />
-        <Route path="/inbox" element={<Inbox />} />
+        <Route path="/inboxes" element={<Inboxes />} />
         <Route path="/login" element={<Login />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/forget-password" element={<ForgotPassword />} />
@@ -56,13 +60,17 @@ function App() {
         <Route path="/dashboard/saved-jobs" element={<Savedjobs />} />
         <Route path="/basicDetails" element={<BasicDetails />} />
         <Route path="/dashboard/profile-details" element={<Profiledetails />} />
-        <Route path='/dashboard/empty-profile' element={<Emptyprofiles />} />
+        <Route path="/dashboard/empty-profile" element={<Emptyprofiles />} />
+        <Route path="/gettingStarted" element={<GettingStarted />} />
+        <Route path="/landingScreen1" element={<LandingScreen1 />} />
+        <Route path="/landingScreen2" element={<LandingScreen2 />} />
         <Route
           path="/dashboard/scheduled-interview"
           element={<Scheduleinterview />}
         />
         <Route path="/dashboard/settings" element={<Setting />} />
         <Route path="/dashboard/feedback" element={<Feedback />} />
+        <Route path="/notification" element={<Notification />} />
         <Route path="/notification" element={<Notification/>} />
         <Route path="/jobdetails" element={<Findjobdetails/>}  />
       </Routes>
