@@ -8,7 +8,7 @@ import GoogleLogo from '../../../assets/GoogleLogo.png';
 import EmployersLogo from '../../../assets/EmployersLogo.png';
 import crownLogo from '../../../assets/crownLogo.png';
 import wheel from '../../../assets/wheel.png';
-import slack from '../../../assets/slackLogo.png';
+import slack from '../../../assets/SlackLogo.png';
 import logo from '../../../assets/logo.png';
 import group from '../../../assets/group.png';
 import TestimonialImage from '../../../assets/Testimonial.png';
