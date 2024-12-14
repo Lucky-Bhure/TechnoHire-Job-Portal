@@ -356,7 +356,7 @@ const Homepage = () => {
               <p className=' text-gray-400 text-sm p-4 align-middle'>Showcase your skills and experience by uploading your latest CV. Let your profile stand out!</p>
 
               <div className="absolute top-[16rem] left-[640px]">
-                <img src={arrow_2} alt="arrow" className="w-[190px] h-8" />
+                <img src={arrow_2} alt="arrow" className="w-[190px] h-8"/>
               </div>
             </div>
 
