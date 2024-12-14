@@ -355,7 +355,7 @@ const Homepage = () => {
               <h5 className='font-medium text-lg'>Upload CV/Resume</h5>
               <p className=' text-gray-400 text-sm p-4 align-middle'>Showcase your skills and experience by uploading your latest CV. Let your profile stand out!</p>
 
-              <div className="absolute top-64 left-[580px]">
+              <div className="absolute top-[16rem] left-[640px]">
                 <img src={arrow_2} alt="arrow" className="w-[190px] h-8" />
               </div>
             </div>
@@ -368,7 +368,7 @@ const Homepage = () => {
               </div>
               <h5 className='font-medium text-lg'>Find suitable job</h5>
               <p className=' text-gray-400 text-sm p-4 align-center'>Discover roles that match your skills and career goals. Your perfect fit is just a search away!,</p>
-              <div className="absolute top-[185px] left-[850px]">
+              <div className="absolute top-[185px] left-[940px]">
                 <img src={arrow} alt="arrow" className="w-[190px] h-8" />
               </div>
             </div>
