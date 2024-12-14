@@ -30,6 +30,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Overview />} />
         <Route path="/application-details" element={<Applicationdetails />} />
+        <Route path="/jobdetails" element={<Findjobdetails />} />
         <Route path="/application-submit" element={<Applicationsubmit />} />
         <Route path="/homePage" element={<Homepage />} />
         <Route path="/inbox" element={<Inbox />} />
