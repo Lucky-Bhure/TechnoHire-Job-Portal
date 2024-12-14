@@ -24,6 +24,8 @@ import Emptyprofiles from "./pages/modules/Myprofile/Emptyprofiles";
 import GettingStarted from "./pages/modules/BasicDetails/GettingStarted";
 import LandingScreen1 from "./pages/modules/LandingScreens/LandingScreen1";
 import LandingScreen2 from "./pages/modules/LandingScreens/LandingScreen2";
+import SignUp from "./components/signUp/SignUp";
+import VerifyAccount from "./pages/modules/VerifyAccount/VerifyAccount"
 
 function App() {
   return (
@@ -59,6 +61,8 @@ function App() {
         <Route path="/gettingStarted" element={<GettingStarted />}/>
         <Route path="/landingScreen1" element={<LandingScreen1 />}/>
         <Route path="/landingScreen2" element={<LandingScreen2 />}/>
+        <Route path="/signUp" element={<SignUp />}/>
+        <Route path="/verify" element={<VerifyAccount />}/>
         <Route
           path="/dashboard/scheduled-interview"
           element={<Scheduleinterview />}

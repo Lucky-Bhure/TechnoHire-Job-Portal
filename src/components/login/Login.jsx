@@ -14,7 +14,7 @@ const [forgetPass, setForgetPass] = useState(false);
       {/* Left Side: Form */}
       <div className="w-full md:w-[60%] h-screen md:h-auto px-6 py-8 md:px-12 lg:px-32 sm:px-32 xs:px-12 rounded-lg">
         <h2 className="text-3xl font-semibold text-gray-800 mb-[45px] text-center">
-          Log In To <span style={{ color: "#7900BA" }}>TechnoHire</span>
+          Log In To <span className="text-violet">TechnoHire</span>
         </h2>
         <form className="space-y-4">
           <div>
@@ -127,9 +127,9 @@ const [forgetPass, setForgetPass] = useState(false);
 
         <p className="mt-[25px] text-center text-gray-600">
           Don't have an account?{" "}
-          <a href="#" className="text-violet-600 hover:underline font-semibold">
+          <Link to="/signUp" className="text-violet-600 hover:underline font-semibold">
             Sign up
-          </a>
+          </Link>
         </p>
       </div>
 
