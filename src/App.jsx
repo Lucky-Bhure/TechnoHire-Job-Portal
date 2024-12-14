@@ -19,9 +19,9 @@ import Customersupport from "./pages/modules/Customersupports/Customersupport";
 import BasicDetails from "./pages/modules/BasicDetails/BasicDetails";
 import Inbox from "./pages/modules/Inbox/inbox";
 import SingleEmployers from "./pages/modules/FindEmplyee/FindEmployers/SingleEmployers";
-import Notification from "./pages/modules/Notification/Notification";
-import ApplicationDetails from "./pages/modules/ApplicationDetails/Applicationdetails";
+import Applicationdetails from "./pages/modules/ApplicationDetails/Applicationdetails";
 import Applicationsubmit from "./pages/modules/ApplicationDetails/Applicationsubmit";
+import Findjobdetails from "./pages/modules/Findajob/FindjobDetails/Findjobdetails";
 import Emptyprofiles from "./pages/modules/Myprofile/Emptyprofiles";
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Overview />} />
-        <Route path="/application-details" element={<ApplicationDetails />} />
+        <Route path="/application-details" element={<Applicationdetails />} />
         <Route path="/application-submit" element={<Applicationsubmit />} />
         <Route path="/homePage" element={<Homepage />} />
         <Route path="/inbox" element={<Inbox />} />

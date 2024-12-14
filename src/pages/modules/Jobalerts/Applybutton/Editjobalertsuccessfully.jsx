@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import EditJobAlert from "../../../../assets/img/EditJobAlerts.png" 
-import Jobalerts from '../Jobalerts';
+import EditJobAlert from "../../../../assets/img/EditJobAlerts.png"
+import Jobalerts from "../Jobalerts"
 
 const Editjobalertsuccessfully = ({active ,onclose , handelClose}) => {
     if(!active) return null;
@@ -29,7 +29,7 @@ const Editjobalertsuccessfully = ({active ,onclose , handelClose}) => {
 
         </div>
     </div>
-`</>
+</>
 
   )
 }

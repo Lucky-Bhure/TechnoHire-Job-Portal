@@ -21,13 +21,14 @@ const Findjobsfilterheader =()=> {
         </div>
       </div>
 
-      <div className=" mx-64 flex justify-between px-1 h-[66px] items-center bg-white rounded-lg border-[1px] border-[#E4E5E8] shadow-[#002C6D0A]">
-        <div className="flex ">
+      <div 
+       className="  mx-64 flex justify-between px-1 h-[66px] items-center bg-white rounded-lg border-[1px] border-[#E4E5E8] shadow-[#002C6D0A]">
+        <div className="flex " >
           <div className="w-[220px] p-3 flex items-center gap-2 border-r-[##9199A3] border-r-[1px]">
           <div className="flex items-center gap-1">
             <IoSearch size={16} color="#7900BA" />
             </div>
-            <input
+            <input onClick={console.log("hello")}
               type="text"
               placeholder="Job title, Keyword..."
               className="placeholder:text-[#9199A3] placeholder:text-base outline-none border-none"
