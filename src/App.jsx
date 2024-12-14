@@ -20,13 +20,16 @@ import BasicDetails from "./pages/modules/BasicDetails/BasicDetails";
 import Inbox from "./pages/modules/Inbox/inbox";
 import SingleEmployers from "./pages/modules/FindEmplyee/FindEmployers/SingleEmployers";
 import Notification from "./pages/modules/Notification/Notification";
+import ApplicationDetails from "./pages/modules/ApplicationDetails/Applicationdetails";
+import Applicationsubmit from "./pages/modules/ApplicationDetails/Applicationsubmit";
+import Emptyprofiles from "./pages/modules/Myprofile/Emptyprofiles";
 
 function App() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Overview />} />
-        <Route path="/application-details" element={<Applicationdetails />} />
+        <Route path="/application-details" element={<ApplicationDetails />} />
         <Route path="/application-submit" element={<Applicationsubmit />} />
         <Route path="/homePage" element={<Homepage />} />
         <Route path="/inbox" element={<Inbox />} />
