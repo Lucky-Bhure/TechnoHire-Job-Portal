@@ -38,7 +38,7 @@ function General({ setHistory }) {
         Notifications
       </h1>
       <div className="flex justify-between items-center flex-wrap gap-5 w-[70%]">
-        <div class="flex items-center gap-3">
+        <div className="flex items-center gap-3">
           <input
             // id="default-checkbox"
             type="checkbox"
@@ -52,7 +52,7 @@ function General({ setHistory }) {
             All Notifications
           </label>
         </div>
-        <div class="flex items-center gap-2">
+        <div className="flex items-center gap-2">
           <input
             // id="default-checkbox"
             type="checkbox"
@@ -66,7 +66,7 @@ function General({ setHistory }) {
             Job Updates
           </label>
         </div>
-        <div class="flex items-center gap-2">
+        <div className="flex items-center gap-2">
           <input
             // id="default-checkbox"
             type="checkbox"
@@ -80,7 +80,7 @@ function General({ setHistory }) {
             Personal Messages
           </label>
         </div>
-        <div class="flex items-center gap-2">
+        <div className="flex items-center gap-2">
           <input
             // id="default-checkbox"
             type="checkbox"
@@ -94,7 +94,7 @@ function General({ setHistory }) {
             Job Recommendations
           </label>
         </div>
-        <div class="flex items-center gap-2">
+        <div className="flex items-center gap-2">
           <input
             // id="default-checkbox"
             type="checkbox"
@@ -108,7 +108,7 @@ function General({ setHistory }) {
             Notify me when hiring person shortlisted me
           </label>
         </div>
-        <div class="flex items-center gap-2">
+        <div className="flex items-center gap-2">
           <input
             // id="default-checkbox"
             type="checkbox"

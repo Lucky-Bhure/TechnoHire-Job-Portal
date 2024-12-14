@@ -42,7 +42,7 @@ const Certify = () => {
             onChange={(e) => handleInputChange(index, "name", e.target.value)}
             placeholder="Certification Name"
             className="w-full bg-gray-100 px-4 py-[14px] mb-5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
-            required
+            
           />
           <input
             type="text"
@@ -52,7 +52,7 @@ const Certify = () => {
             }
             placeholder="Issuing Organization"
             className="w-full bg-gray-100 px-4 py-[14px] mb-5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
-            required
+            
           />
           <input
             type="text"
