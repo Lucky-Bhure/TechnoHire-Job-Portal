@@ -68,7 +68,7 @@ function Profile() {
       {/* about */}
       <div className="w-[70%] font-inter mx-10">
         <div className="flex justify-between items-center text-[16px]/[19.36px] font-medium">
-          <h className="text-[#484747]">About</h>
+          <h4 className="text-[#484747]">About</h4>
           <GoPencil className="text-[#3E1654]" onClick={()=> setAboutModal(true)} />
         </div>
         <div className="font-inter font-normal font-[16px]/[24.64px] text-[#00000099]">

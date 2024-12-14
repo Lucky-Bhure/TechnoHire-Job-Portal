@@ -5,6 +5,7 @@ import ForgotPassword from "./pages/auth/forgotPassword/ForgotPassword";
 import ResetSuccess from "./pages/auth/passwordReset/passwordResetSuccess";
 import Overview from "./pages/modules/Overview/Overview";
 import Myprofile from "./pages/modules/Myprofile/Myprofile";
+import Profiledetails from "./pages/modules/Myprofile/Profiledetails";
 import Aplliedjobs from "./pages/modules/Appliedjobs/Aplliedjobs";
 import Savedjobs from "./pages/modules/Savedjobs/Savedjobs";
 import Scheduleinterview from "./pages/modules/Scheduleinterview/Scheduleinterview";
@@ -21,6 +22,7 @@ import SingleEmployers from "./pages/modules/FindEmplyee/FindEmployers/SingleEmp
 import Applicationdetails from "./pages/modules/ApplicationDetails/Applicationdetails";
 import Applicationsubmit from "./pages/modules/ApplicationDetails/Applicationsubmit";
 import Findjobdetails from "./pages/modules/Findajob/FindjobDetails/Findjobdetails";
+import Emptyprofiles from "./pages/modules/Myprofile/Emptyprofiles";
 
 function App() {
   return (
@@ -53,16 +55,18 @@ function App() {
         <Route path="/dashboard/applied-jobs" element={<Aplliedjobs />} />
         <Route path="/dashboard/saved-jobs" element={<Savedjobs />} />
         <Route path="/basicDetails" element={<BasicDetails />} />
+        <Route path="/dashboard/profile-details" element={<Profiledetails />} />
+        <Route path='/dashboard/empty-profile' element={<Emptyprofiles />} />
         <Route
           path="/dashboard/scheduled-interview"
           element={<Scheduleinterview />}
         />
         <Route path="/dashboard/settings" element={<Setting />} />
         <Route path="/dashboard/feedback" element={<Feedback />} />
-        <Route path="/jobdetails" element={<Findjobdetails/>}/>
+        <Route path="/notification" element={<Notification/>} />
       </Routes>
     </div>
   );
-};
+}
 
 export default App;

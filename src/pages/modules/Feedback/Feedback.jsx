@@ -79,10 +79,10 @@ const Feedback = () => {
               </label>
             </div>
           </div>
-          <div class="flex justify-center items-center my-11">
+          <div className="flex justify-center items-center my-11">
             <button
               disabled={!checked}
-              class="bg-[#7900BA] text-white font-semibold text-lg py-2 px-36 rounded-lg "
+              className="bg-[#7900BA] text-white font-semibold text-lg py-2 px-36 rounded-lg "
             >
               Submit
             </button>
