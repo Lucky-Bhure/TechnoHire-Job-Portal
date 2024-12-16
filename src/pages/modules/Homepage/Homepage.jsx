@@ -966,7 +966,7 @@ const Homepage = () => {
               <h5 className="text-[20px] leading-[32px]">Quick Link</h5>
               <div className="flex items-center space-x-4 cursor-pointer group">
                 {/* Arrow */}
-                <div className="flex justify-center mb-2 items-center h-[5.83px] w-[11.67px] group-hover:block hidden">
+                <div className=" mb-2 h-[5.83px] w-[11.67px] group-hover:block hidden">
                   <FaArrowRight />
                 </div>
                 <div>
@@ -977,7 +977,7 @@ const Homepage = () => {
               </div>
               <div className="flex items-center space-x-4 cursor-pointer group">
                 {/* Arrow */}
-                <div className="flex justify-center items-center mb-2 h-[5.83px] w-[11.67px] group-hover:block hidden">
+                <div className="mb-2 h-[5.83px] w-[11.67px] group-hover:block hidden">
                   <FaArrowRight />
                 </div>
                 <div>
@@ -988,7 +988,7 @@ const Homepage = () => {
               </div>
               <div className="flex items-center space-x-4 cursor-pointer group">
                 {/* Arrow */}
-                <div className="flex justify-center mb-2 items-center h-[5.83px] w-[11.67px] group-hover:block hidden">
+                <div className="mb-2 h-[5.83px] w-[11.67px] group-hover:block hidden">
                   <FaArrowRight />
                 </div>
                 <div>
@@ -999,7 +999,7 @@ const Homepage = () => {
               </div>
               <div className="flex items-center space-x-4 cursor-pointer group">
                 {/* Arrow */}
-                <div className="flex justify-center items-center mb-2  h-[5.83px] w-[11.67px] group-hover:block hidden">
+                <div className="mb-2  h-[5.83px] w-[11.67px] group-hover:block hidden">
                   <FaArrowRight />
                 </div>
                 <div>
