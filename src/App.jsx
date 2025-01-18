@@ -26,6 +26,11 @@ import LandingScreen1 from "./pages/modules/LandingScreens/LandingScreen1";
 import LandingScreen2 from "./pages/modules/LandingScreens/LandingScreen2";
 import SignUp from "./components/signUp/SignUp";
 import VerifyAccount from "./pages/modules/VerifyAccount/VerifyAccount"
+import EmailVerifications from "./pages/modules/EmailVerification/EmailVerifications";
+import EmailVerifySuccess from "./pages/modules/EmailVerification/EmailVerifySuccess";
+import PhoneVerifications from "./pages/modules/PhoneVerification/PhoneVerifications";
+import PhoneVerifySuccess from "./pages/modules/PhoneVerification/PhoneVerifySuccess";
+// import EmailVerifySuccess from
 
 function App() {
   return (
@@ -63,6 +68,10 @@ function App() {
         <Route path="/landingScreen2" element={<LandingScreen2 />}/>
         <Route path="/signUp" element={<SignUp />}/>
         <Route path="/verify" element={<VerifyAccount />}/>
+        <Route path="/emailVerify" element={<EmailVerifications />}/>
+        <Route path="/emailVerifySuccess" element={<EmailVerifySuccess />}/>
+        <Route path="/phoneVerify" element={<PhoneVerifications />}/>
+        <Route path="/phoneVerifySuccess" element={<PhoneVerifySuccess />}/>
         <Route
           path="/dashboard/scheduled-interview"
           element={<Scheduleinterview />}
