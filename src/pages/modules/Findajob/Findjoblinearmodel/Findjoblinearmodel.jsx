@@ -15,6 +15,7 @@ import job from "../../../../assets/job.png"
 import fb from "../../../../assets/FbLogo.png"
 import uplogo from "../../../../assets/UpLogo.png"
 import apple from "../../../../assets/appleLogo.png"
+import { useNavigate } from 'react-router-dom';
 const companydetails= [
     {
         name:"Dribbble",
@@ -137,15 +138,21 @@ const companydetails= [
 
 
 const Findjoblinearmodel = () => {
+
+    const navigate = useNavigate();
+    const applyhandeljobdetails = ()=>{
+        navigate("/jobdetails");
+    }
+
   return (
     <div>
         
     <div className="mx-52 p-7 mb-8  ">
         {companydetails.map((item,idx)=>(
 
-     <div className="mt-6 cursor-defaul">
+     <div  key={idx} className="mt-6 cursor-defaul">
             
-            <div className=" flex justify-between items-center px-4  rounded-md border  shadow-lg hover:border-blue-500 " >
+            <div   className=" flex justify-between items-center px-4  rounded-md border  shadow-lg hover:border-blue-500 " >
                 
                <div className="bg-blue-300" >
                   <img className="bg-blue-300" src={item.image} alt="" />
@@ -161,17 +168,18 @@ const Findjoblinearmodel = () => {
                     <h4 className=" py-1 px-2 rounded-md border border-black " >GIT</h4>
 
                    </div> */}
-                   <div className="flex  justify-start gap-14 text-lg text-[#636A80] font-inter  mt-1 mb-4 ">
-                    <p className="flex items-center w-[160px]"><TfiLocationPin className='' /> {item.location} </p>
-                    <p className="flex items-center"><TbCurrencyRupee/>{item.salary}</p>
-                    <p className="flex items-center"><CiCalendar/>{item.daysago}</p>
+                   <div className="flex  justify-start  items-center  text-[#636A80] font-inter  mt-1 mb-4 ">
+                   <TfiLocationPin className='w-5  text-2xl font-semibold ' /><p className=" text-sm h-11 ml-1 flex items-center w-[160px]"> {item.location} </p>
+                   <TbCurrencyRupee className='w-5  text-2xl font-semibold ' /> <p className=" text-sm h-11 ml-1 flex items-center w-[80px]">{item.salary}</p>
+                   <CiCalendar className='w-5  text-2xl font-semibold ' /><p className=" text-sm h-11 ml-1 flex items-center w-[80px]">{item.daysago}</p>
                     </div>
                 </div>
 
                 <div className="flex items-center justify-between w-[35%] gap-4" >
                      <h1 className="items-center hover:bg-blue-500 text-2xl rounded-sm"><FaRegBookmark/></h1>   
-                     <button 
-                       className="w-44 bg-[#DCBDED] px-5 py-3 rounded text-[#7900BA] font-inter font-semibold text-[16px]/[24px] border  border-blue-500  hover:bg-blue-500" >Apply</button>
+                     <button onClick={applyhandeljobdetails}
+                       className="w-44 bg-[#DCBDED] px-5 py-3 rounded text-[#7900BA] font-inter font-semibold text-[16px]/[24px] border  border-blue-500  hover:bg-blue-500">
+                        Apply</button>
                 </div>
             </div>
         </div>

@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
-import Editjobalertsuccessfully from './Editjobalertsuccessfully';
+import Editjobalertsuccessfully from './Editjobalertsuccessfully'
+
 
 const ApplyButton = ({ isVisible , onclose}) => {
 
