@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import LoginBack from "../../../assets/img/loginBackground.png";
 import LoginLogo from "../../../assets/img/loginLogo.png";
 import { FaFacebookF, FaGoogle, FaLinkedinIn } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import { FiPhone } from "react-icons/fi";
 import { BiEditAlt } from "react-icons/bi";
@@ -10,6 +10,7 @@ import { AiOutlineMail } from "react-icons/ai";
 
 const VerifyAccount = () => {
   const [forgetPass, setForgetPass] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-center max-h-screen bg-white">
@@ -64,14 +65,15 @@ const VerifyAccount = () => {
         </p>
 
         <div className="w-full max-w-[400px] mx-auto mt-6">
-          <button
-            type="submit"
-            className="py-3 flex justify-center items-center w-full bg-violet text-white rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500"
-          >
-            Continue
-            <BsArrowRight className="text-xl mx-2" />
-          </button>
-        </div>
+      <button
+        type="button" // "submit" is used if this is inside a form, otherwise use "button"
+        onClick={() => navigate("/emailVerify")}
+        className="py-3 flex justify-center items-center w-full bg-violet text-white rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500"
+      >
+        Continue
+        <BsArrowRight className="text-xl mx-2" />
+      </button>
+    </div>
       </div>
 
       {/* Right Side: Image */}

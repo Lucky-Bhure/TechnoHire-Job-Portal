@@ -17,7 +17,7 @@ import Findemployee from "./pages/modules/FindEmplyee/Findemployee";
 import Jobalerts from "./pages/modules/Jobalerts/Jobalerts";
 import Customersupport from "./pages/modules/Customersupports/Customersupport";
 import BasicDetails from "./pages/modules/BasicDetails/BasicDetails";
-import Inbox from "./pages/modules/Inbox/inbox";
+import Inbox from "./pages/modules/Inbox/Inboxes";
 import SingleEmployers from "./pages/modules/FindEmplyee/FindEmployers/SingleEmployers";
 import Notification from "./pages/modules/Notification/Notification";
 import Emptyprofiles from "./pages/modules/Myprofile/Emptyprofiles";

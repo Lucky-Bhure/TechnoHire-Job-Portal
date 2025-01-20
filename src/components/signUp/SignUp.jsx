@@ -5,12 +5,14 @@ import LoginBack from "../../assets/img/loginBackground.png";
 import LoginLogo from "../../assets/img/loginLogo.png";
 import { AiFillEyeInvisible } from 'react-icons/ai'
 import { AiFillEye } from 'react-icons/ai'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const navigate = useNavigate(); // Initialize navigate
+
 
   const formik = useFormik({
     initialValues: {
@@ -33,142 +35,144 @@ const SignUp = () => {
     }),
     onSubmit: (values) => {
       console.log("Form data:", values);
+      navigate("/verify");
     },
   });
 
   return (
-<div className="flex flex-col md:flex-row items-start justify-center h-screen bg-white">
+    <div className="flex h-screen bg-gray-100">
   {/* Left Side: Form */}
-  <div className="left-side w-full md:w-[60%] px-8 mt-[3rem] sm:px-10 lg:px-[6rem] min-h-screen overflow-y-auto">
-    <div className="flex flex-col items-center md:items-start">
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 mb-2 text-center">
-        Welcome to <span className="text-violet">Technohire</span>
-      </h2>
-      <p>
-        Already have an account?{" "}
-        <span className="text-violet" style={{ cursor: "pointer" }}>
-          <Link to="/login">Log in</Link>
-        </span>
-      </p>
-    </div>
-
-        {/* Form */}
-        <form onSubmit={formik.handleSubmit} className="w-full mt-6">
-          <div className="mb-4">
-            <input
-              type="text"
-              name="fullName"
-              placeholder="Full Name"
-              className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.fullName}
-            />
-            {formik.touched.fullName && formik.errors.fullName && (
-              <p className="text-red-500 text-sm">{formik.errors.fullName}</p>
-            )}
-          </div>
-          <div className="mb-4">
-            <input
-              type="text"
-              name="username"
-              placeholder="Username"
-              className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.username}
-            />
-            {formik.touched.username && formik.errors.username && (
-              <p className="text-red-500 text-sm">{formik.errors.username}</p>
-            )}
-          </div>
-          <div className="mb-4">
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.email}
-            />
-            {formik.touched.email && formik.errors.email && (
-              <p className="text-red-500 text-sm">{formik.errors.email}</p>
-            )}
-          </div>
-          <div className="mb-4 relative">
-            <input
-              type={showPassword ? "text" : "password"}
-              name="password"
-              placeholder="Password"
-              className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.password}
-            />
-            <button
-              type="button"
-              className="absolute top-2 right-2 text-gray-500"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? <AiFillEye/> : <AiFillEyeInvisible/>}
-            </button>
-            {formik.touched.password && formik.errors.password && (
-              <p className="text-red-500 text-sm">{formik.errors.password}</p>
-            )}
-          </div>
-          <div className="mb-4 relative">
-            <input
-              type={showConfirmPassword ? "text" : "password"}
-              name="confirmPassword"
-              placeholder="Confirm Password"
-              className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.confirmPassword}
-            />
-            <button
-              type="button"
-              className="absolute top-2 right-2 text-gray-500"
-              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-            >
-              {showConfirmPassword ? <AiFillEye/> : <AiFillEyeInvisible/>}
-            </button>
-            {formik.touched.confirmPassword && formik.errors.confirmPassword && (
-              <p className="text-red-500 text-sm">{formik.errors.confirmPassword}</p>
-            )}
-          </div>
-
-          <p className="text-gray-500 text-sm mb-4">
-            By creating an account, you agree to the{" "}
-            <span className="text-violet" style={{ cursor: "pointer" }}>Terms of Use</span>{" "}
-            and <span className="text-violet" style={{ cursor: "pointer" }}>Privacy Policy</span>.
-          </p>
-
-          <button
-            type="submit"
-            className="w-[16rem] h-[64px] flex justify-center items-center my-6 py-3 text-white bg-violet hover:bg-purple-800 rounded-md"
-          >
-            Create an Account
-          </button>
-          <p>
+  <div className="left-side w-full md:w-3/5 overflow-y-auto scrollbar-hide bg-white px-20 pt-8">
+      <div className="flex flex-col items-center md:items-start">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 mb-2 text-center">
+          Welcome to <span className="text-violet">Technohire</span>
+        </h2>
+        <p>
           Already have an account?{" "}
           <span className="text-violet" style={{ cursor: "pointer" }}>
             <Link to="/login">Log in</Link>
           </span>
         </p>
-        </form>
+      </div>
 
-        {/* Social Login */}
-        <div className="w-[55%] my-4 mx-[23%] mb-[25px] flex items-center justify-center">
-          <span className="block w-[40%] border-t border-gray-300" />
-          <span className="text-gray-500 mx-4 font-semibold whitespace-nowrap">
-            Or Login With
-          </span>
-          <span className="block w-[40%] border-t border-gray-300" />
+      <form onSubmit={formik.handleSubmit} className="w-full mt-6">
+        <div className="mb-4">
+          <input
+            type="text"
+            name="fullName"
+            placeholder="Full Name"
+            className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.fullName}
+          />
+          {formik.touched.fullName && formik.errors.fullName && (
+            <p className="text-red-500 text-sm">{formik.errors.fullName}</p>
+          )}
+        </div>
+        <div className="mb-4">
+          <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.username}
+          />
+          {formik.touched.username && formik.errors.username && (
+            <p className="text-red-500 text-sm">{formik.errors.username}</p>
+          )}
+        </div>
+        <div className="mb-4">
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.email}
+          />
+          {formik.touched.email && formik.errors.email && (
+            <p className="text-red-500 text-sm">{formik.errors.email}</p>
+          )}
+        </div>
+        <div className="mb-4 relative">
+          <input
+            type={showPassword ? "text" : "password"}
+            name="password"
+            placeholder="Password"
+            className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.password}
+          />
+          <button
+            type="button"
+            className="absolute top-2 right-2 text-gray-500"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? <AiFillEye /> : <AiFillEyeInvisible />}
+          </button>
+          {formik.touched.password && formik.errors.password && (
+            <p className="text-red-500 text-sm">{formik.errors.password}</p>
+          )}
+        </div>
+        <div className="mb-4 relative">
+          <input
+            type={showConfirmPassword ? "text" : "password"}
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.confirmPassword}
+          />
+          <button
+            type="button"
+            className="absolute top-2 right-2 text-gray-500"
+            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+          >
+            {showConfirmPassword ? <AiFillEye /> : <AiFillEyeInvisible />}
+          </button>
+          {formik.touched.confirmPassword &&
+            formik.errors.confirmPassword && (
+              <p className="text-red-500 text-sm">
+                {formik.errors.confirmPassword}
+              </p>
+            )}
         </div>
 
-        <div className="flex space-x-4 justify-center pb-[3rem]">
+        <p className="text-gray-500 text-sm mb-4">
+          By creating an account, you agree to the{" "}
+          <span className="text-violet" style={{ cursor: "pointer" }}>
+            Terms of Use
+          </span>{" "}
+          and{" "}
+          <span className="text-violet" style={{ cursor: "pointer" }}>
+            Privacy Policy
+          </span>
+          .
+        </p>
+
+        <button
+          type="submit"
+          className="w-[16rem] h-[64px] flex justify-center items-center my-6 py-3 text-white bg-violet hover:bg-purple-800 rounded-md"
+        >
+          Create an Account
+        </button>
+      </form>
+
+      <div className="w-[55%] my-4 mx-auto flex items-center justify-center">
+        <span className="block w-[40%] border-t border-gray-300" />
+        <span className="text-gray-500 mx-4 font-semibold whitespace-nowrap">
+          Or Login With
+        </span>
+        <span className="block w-[40%] border-t border-gray-300" />
+      </div>
+
+      <div className="flex space-x-4 justify-center pb-[3rem]">
           <button className="p-0 bg-gray-100 text-blue-600 rounded-md w-[105px] h-[56px] flex justify-center items-center">
             <svg
               width="26"
@@ -228,7 +232,7 @@ const SignUp = () => {
             </svg>
           </button>
         </div>
-      </div>
+    </div>
 
       {/* Right Side: Image */}
       <div className="hidden md:block md:w-[40%] h-screen relative">

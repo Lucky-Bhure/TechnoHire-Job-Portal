@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import LoginBack from "../../../assets/img/loginBackground.png";
 import LoginLogo from "../../../assets/img/loginLogo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineLeft } from 'react-icons/ai';
 import email from "../../../assets/img/emailVerify.png";
 import { BsArrowRight } from "react-icons/bs";
@@ -9,6 +9,7 @@ import { BsArrowRight } from "react-icons/bs";
 const EmailVerifications = () => {
   const [timer, setTimer] = useState(120);
   const [verificationCode, setVerificationCode] = useState("");
+  const navigate = useNavigate();
 
   // Countdown logic
   useEffect(() => {
@@ -106,6 +107,7 @@ const EmailVerifications = () => {
         <div className="w-full max-w-[400px] mx-auto mt-6">
                   <button
                     type="submit"
+                    onClick={() => navigate("/emailVerifySuccess")}
                     className="py-3 flex justify-center items-center w-full bg-violet text-white rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500"
                   >
                     Verify My Account
