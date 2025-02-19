@@ -4,7 +4,7 @@ export const themes = {
     backgroundColorsecond: "#FFF6E6",
     backgroundColorThird: "#E7F6EA",
     bgColorforProfile: "#7900BA1C",
-    ButtonbgColor: "#7900BA",
+    ButtonbgClassName: "text-violet",
     progressBarcolor: "#3E1654",
     hoverSuccessButton: "#DCBDED",
     SuccessButton: "#7900BA",

@@ -163,7 +163,7 @@ const ApplicationDetails = () => {
             </button>
           </div>
           <div className="my-10">
-            <button>
+            <button onClick={() => navigate("/dashboard")}>
               <div className="border-[#7900BA] border hover:bg-[#7900BA] text-[#7900BA] rounded-lg hover:text-white w-[376px] h-[53px]">
                 <div className="flex">
                   <div className="mx-20 my-[13px] text-[16px]">

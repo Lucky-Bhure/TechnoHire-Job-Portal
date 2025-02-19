@@ -1,20 +1,49 @@
 import React, { useState } from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import LoginBack from "../../assets/img/loginBackground.png";
 import LoginLogo from "../../assets/img/loginLogo.png";
-import { FaFacebookF, FaGoogle, FaLinkedinIn } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { AiFillEyeInvisible } from 'react-icons/ai'
+import { AiFillEye } from 'react-icons/ai'
+import { Link, useNavigate } from "react-router-dom";
 
-const Login = () => {
 
-const [forgetPass, setForgetPass] = useState(false);
+const SignUp = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const navigate = useNavigate(); // Initialize navigate
 
+
+  const formik = useFormik({
+    initialValues: {
+      fullName: "",
+      username: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    },
+    validationSchema: Yup.object({
+      fullName: Yup.string().required("Full Name is required"),
+      username: Yup.string().required("Username is required"),
+      email: Yup.string().email("Invalid email address").required("Email is required"),
+      password: Yup.string()
+        .min(6, "Password must be at least 6 characters")
+        .required("Password is required"),
+      confirmPassword: Yup.string()
+        .oneOf([Yup.ref("password"), null], "Passwords must match")
+        .required("Confirm Password is required"),
+    }),
+    onSubmit: (values) => {
+      console.log("Form data:", values);
+      navigate("/verify");
+    },
+  });
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-white">
-      {/* Left Side: Form */}
-      <div className="w-full md:w-[60%] h-screen md:h-auto px-6 py-8 md:px-12 lg:px-32 sm:px-32 xs:px-12 rounded-lg">
+    <div className="flex h-screen bg-gray-100">
+  <div className="w-full md:w-3/5 overflow-y-auto bg-white px-10 md:px-20 py-8">
         <h2 className="text-3xl font-semibold text-gray-800 mb-[45px] text-center">
-          Log In To <span style={{ color: "#7900BA" }}>TechnoHire</span>
+          Log In To <span className="text-violet">TechnoHire</span>
         </h2>
         <form className="space-y-4">
           <div>
@@ -127,27 +156,24 @@ const [forgetPass, setForgetPass] = useState(false);
 
         <p className="mt-[25px] text-center text-gray-600">
           Don't have an account?{" "}
-          <a href="#" className="text-violet-600 hover:underline font-semibold">
+          <Link to="/signUp" className="text-violet-600 hover:underline font-semibold">
             Sign up
-          </a>
+          </Link>
         </p>
       </div>
 
       {/* Right Side: Image */}
       <div className="hidden md:block md:w-[40%] h-screen relative">
-        {/* Background Image */}
         <img
           src={LoginBack}
-          alt="Tech image"
+          alt="Background"
           className="w-full h-full object-cover"
         />
-
-        {/* Centered Logo */}
         <div className="absolute inset-0 flex items-center justify-center">
           <img
             src={LoginLogo}
             alt="Login Logo"
-            className="lg:w-[550px] md:w-[320px] lg:ml-[4rem]" // Adjust width and height as needed
+            className="max-w-[60%] md:max-w-[70%]"
           />
         </div>
       </div>
@@ -155,4 +181,4 @@ const [forgetPass, setForgetPass] = useState(false);
   );
 };
 
-export default Login;
+export default SignUp;
