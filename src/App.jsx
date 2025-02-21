@@ -32,7 +32,9 @@ import PhoneVerifications from "./pages/modules/PhoneVerification/PhoneVerificat
 import PhoneVerifySuccess from "./pages/modules/PhoneVerification/PhoneVerifySuccess";
 import Applicationdetails from "./pages/modules/ApplicationDetails/Applicationdetails";
 import Applicationsubmit from "./pages/modules/ApplicationDetails/Applicationsubmit";
+import Findjobdetails from "./pages/modules/Findajob/FindjobDetails/Findjobdetails";
 // import EmailVerifySuccess from
+// import Notification from "./pages/modules/Notification/Notification";
 
 function App() {
   return (
@@ -81,6 +83,7 @@ function App() {
         <Route path="/dashboard/settings" element={<Setting />} />
         <Route path="/dashboard/feedback" element={<Feedback />} />
         <Route path="/notification" element={<Notification />} />
+        <Route path="/jobdetails" element={<Findjobdetails/>}  />
       </Routes>
     </div>
   );
