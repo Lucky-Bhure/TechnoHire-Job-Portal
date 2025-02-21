@@ -3,7 +3,10 @@ import Newmessagenotification from "../../../../assets/img/Newmessagenotificatio
 
 const Newmessage = () => {
   return (
-<div className='flex  mx-[330px] items-start mx- border bg-white hover:bg-[#E5E5E5]  rounded-2xl mt-[26px] shadow-lg p-4 gap-1 hover:shadow-2xl	 hover:border-blue-600 hover:rounded-l  cursor-pointer focus:bg-blue-700 ' >  
+    <>
+  <div className="max-w-5xl mx-auto w-full mb-12 " >
+
+      <div className='flex   items-start mx- border bg-white hover:bg-[#E5E5E5]  rounded-2xl mt-[26px] shadow-lg p-4 gap-1 hover:shadow-2xl	 hover:border-blue-600 hover:rounded-l  cursor-pointer focus:bg-blue-700 ' >  
           <div className=' h-full w-14   flex items-center justify-center'>
             <img src={Newmessagenotification} className='h-full w-full object-contain' alt='notification-application-pic' />
           </div>
@@ -20,7 +23,10 @@ const Newmessage = () => {
           <div>
            
           </div>
-        </div>  )
+        </div> 
+        </div>
+        </>     
+     )
 }
 
 export default Newmessage

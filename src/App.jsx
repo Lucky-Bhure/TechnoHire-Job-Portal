@@ -26,6 +26,7 @@ import Emptyprofiles from "./pages/modules/Myprofile/Emptyprofiles";
 import GettingStarted from "./pages/modules/BasicDetails/GettingStarted";
 import LandingScreen1 from "./pages/modules/LandingScreens/LandingScreen1";
 import LandingScreen2 from "./pages/modules/LandingScreens/LandingScreen2";
+import Notification from "./pages/modules/Notification/Notification";
 
 function App() {
   return (
@@ -71,7 +72,6 @@ function App() {
         <Route path="/dashboard/settings" element={<Setting />} />
         <Route path="/dashboard/feedback" element={<Feedback />} />
         <Route path="/notification" element={<Notification />} />
-        <Route path="/notification" element={<Notification/>} />
         <Route path="/jobdetails" element={<Findjobdetails/>}  />
       </Routes>
     </div>
