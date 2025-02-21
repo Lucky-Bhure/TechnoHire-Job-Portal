@@ -92,7 +92,7 @@ function Experience() {
           </div>
         </div>
       </div>
-
+{/* certifications */}
       <div className="ml-10 w-[90%] space-y-3">
         <div className=" mt-14">
           <div className="flex justify-between items-center">
