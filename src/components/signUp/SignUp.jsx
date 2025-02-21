@@ -41,59 +41,138 @@ const SignUp = () => {
 
   return (
     <div className="flex h-screen bg-gray-100">
-  <div className="w-full md:w-3/5 overflow-y-auto bg-white px-10 md:px-20 py-8">
-        <h2 className="text-3xl font-semibold text-gray-800 mb-[45px] text-center">
-          Log In To <span className="text-violet">TechnoHire</span>
+  {/* Left Side: Form */}
+  <div className="left-side w-full md:w-3/5 overflow-y-auto scrollbar-hide bg-white px-20 pt-8">
+      <div className="flex flex-col items-center md:items-start">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 mb-2 text-center">
+          Welcome to <span className="text-violet">Technohire</span>
         </h2>
-        <form className="space-y-4">
-          <div>
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200"
-            />
-          </div>
-          <div>
-            <input
-              type="password"
-              placeholder="Enter your password"
-              className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200"
-            />
-          </div>
-          <div className="flex items-center justify-between">
-            <label className="flex items-center">
-              <input type="checkbox" className="form-checkbox text-blue-600" />
-              <span className="ml-2 text-md text-gray-600 font-normal">
-                Remember me
-              </span>
-            </label>
-            <Link
-              to="/forget-password"
-              className="text-md text-violet-600 hover:underline font-semibold"
-            >
-              Forgot password?
-            </Link>
-
-          </div>
-          <div className="flex justify-center ">
-            <button
-              type="submit"
-              className="w-[65%] py-3 px-4 my-[20px] bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-700"
-            >
-              Log In
-            </button>
-          </div>
-        </form>
-
-        <div className="w-[55%] my-4 mx-[23%] mb-[25px] flex items-center justify-center">
-          <span className="block w-[40%] border-t border-gray-300" />
-          <span className="text-gray-500 mx-4 font-semibold whitespace-nowrap">
-            Or Login With
+        <p>
+          Already have an account?{" "}
+          <span className="text-violet" style={{ cursor: "pointer" }}>
+            <Link to="/login">Log in</Link>
           </span>
-          <span className="block w-[40%] border-t border-gray-300" />
+        </p>
+      </div>
+
+      <form onSubmit={formik.handleSubmit} className="w-full mt-6">
+        <div className="mb-4">
+          <input
+            type="text"
+            name="fullName"
+            placeholder="Full Name"
+            className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.fullName}
+          />
+          {formik.touched.fullName && formik.errors.fullName && (
+            <p className="text-red-500 text-sm">{formik.errors.fullName}</p>
+          )}
+        </div>
+        <div className="mb-4">
+          <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.username}
+          />
+          {formik.touched.username && formik.errors.username && (
+            <p className="text-red-500 text-sm">{formik.errors.username}</p>
+          )}
+        </div>
+        <div className="mb-4">
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.email}
+          />
+          {formik.touched.email && formik.errors.email && (
+            <p className="text-red-500 text-sm">{formik.errors.email}</p>
+          )}
+        </div>
+        <div className="mb-4 relative">
+          <input
+            type={showPassword ? "text" : "password"}
+            name="password"
+            placeholder="Password"
+            className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.password}
+          />
+          <button
+            type="button"
+            className="absolute top-2 right-2 text-gray-500"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? <AiFillEye /> : <AiFillEyeInvisible />}
+          </button>
+          {formik.touched.password && formik.errors.password && (
+            <p className="text-red-500 text-sm">{formik.errors.password}</p>
+          )}
+        </div>
+        <div className="mb-4 relative">
+          <input
+            type={showConfirmPassword ? "text" : "password"}
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.confirmPassword}
+          />
+          <button
+            type="button"
+            className="absolute top-2 right-2 text-gray-500"
+            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+          >
+            {showConfirmPassword ? <AiFillEye /> : <AiFillEyeInvisible />}
+          </button>
+          {formik.touched.confirmPassword &&
+            formik.errors.confirmPassword && (
+              <p className="text-red-500 text-sm">
+                {formik.errors.confirmPassword}
+              </p>
+            )}
         </div>
 
-        <div className="flex space-x-4 justify-center">
+        <p className="text-gray-500 text-sm mb-4">
+          By creating an account, you agree to the{" "}
+          <span className="text-violet" style={{ cursor: "pointer" }}>
+            Terms of Use
+          </span>{" "}
+          and{" "}
+          <span className="text-violet" style={{ cursor: "pointer" }}>
+            Privacy Policy
+          </span>
+          .
+        </p>
+
+        <button
+          type="submit"
+          className="w-[16rem] h-[64px] flex justify-center items-center my-6 py-3 text-white bg-violet hover:bg-purple-800 rounded-md"
+        >
+          Create an Account
+        </button>
+      </form>
+
+      <div className="w-[55%] my-4 mx-auto flex items-center justify-center">
+        <span className="block w-[40%] border-t border-gray-300" />
+        <span className="text-gray-500 mx-4 font-semibold whitespace-nowrap">
+          Or Login With
+        </span>
+        <span className="block w-[40%] border-t border-gray-300" />
+      </div>
+
+      <div className="flex space-x-4 justify-center pb-[3rem]">
           <button className="p-0 bg-gray-100 text-blue-600 rounded-md w-[105px] h-[56px] flex justify-center items-center">
             <svg
               width="26"
@@ -153,14 +232,7 @@ const SignUp = () => {
             </svg>
           </button>
         </div>
-
-        <p className="mt-[25px] text-center text-gray-600">
-          Don't have an account?{" "}
-          <Link to="/signUp" className="text-violet-600 hover:underline font-semibold">
-            Sign up
-          </Link>
-        </p>
-      </div>
+    </div>
 
       {/* Right Side: Image */}
       <div className="hidden md:block md:w-[40%] h-screen relative">
