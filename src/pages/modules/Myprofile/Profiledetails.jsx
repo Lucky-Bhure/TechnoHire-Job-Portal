@@ -6,8 +6,8 @@ import { themes } from "../../../components/Themes/Theme";
 import Detailstabs from "./Profile/Detailstabs/Detailstabs";
 
 const Profiledetails = () => {
-  const { theme, setTheme } = useTheme();
-
+  const { theme, setTheme } = useTheme(); 
+ 
   useEffect(() => {
     setTheme(themes.MyProfileThemes);
   });

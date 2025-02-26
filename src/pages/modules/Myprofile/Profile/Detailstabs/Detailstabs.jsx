@@ -13,6 +13,7 @@ import { HiOutlineDocumentArrowUp } from "react-icons/hi2";
 
 import Skills from "../Skills";
 import Documents from "../Documents";
+// import { useLocation } from "react-router-dom";
 
 const detailsTabs = [
   {
@@ -48,6 +49,9 @@ const detailsTabs = [
 ];
 
 function Detailstabs() {
+  // const location=useLocation()//myline
+  // const queryParams = new URLSearchParams(location.search); //mline
+  // const [tabIndex, setTabsIndex] = useState(parseInt(queryParams.get('index'))); //myline
   const [tabIndex, setTabsIndex] = useState(0);
   return (
     <div>

@@ -10,16 +10,18 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import Profilemodal from "../../components/Modal/Profilemodal";
 import Skillmodal from "../../components/Modal/Skillmodal";
 import Aboutmodal from "../../components/Modal/Aboutmodal";
+import { useNavigate } from "react-router-dom";
 
 function Profile() {
   const [profileModal, setProfileModal] = useState(false);
   const [skillModal, setSkillModal] = useState(false);
   const [aboutModal, setAboutModal] = useState(false);
+  const navigate=useNavigate()
 
   return (
     <div className="flex flex-1 flex-col	justify-between space-y-7 border-x-[1px] w-[500px] relative">
       <h1 className="text-2xl text-[#18191C] font-medium font-inter mx-4 mt-4">
-        Profile
+       Profile
       </h1>
       {/* upper part */}
       <div className="flex items-center gap-4 mx-10">
@@ -112,8 +114,9 @@ function Profile() {
             Education
           </p>
           <div className="flex gap-2 items-center text-[#3E1654]">
-            <FiPlus />
-            <GoPencil />
+          {/* <FiPlus onClick={()=>navigate('/dashboard/profile-details?index=1')}/> */}
+            <FiPlus onClick={()=>navigate('/dashboard/profile-details')}/>
+            <GoPencil onClick={()=>navigate('/dashboard/profile-details')}/>
           </div>
         </div>
         <div className="flex items-center">
@@ -161,7 +164,6 @@ function Profile() {
         </p>
         <MdOutlineArrowForward className="text-[#616161]" />
       </div>
-
       {profileModal && <Profilemodal setProfileModal={setProfileModal} />}
       {skillModal && <Skillmodal setSkillModal={setSkillModal} />}
       {aboutModal && <Aboutmodal setAboutModal={setAboutModal} />}

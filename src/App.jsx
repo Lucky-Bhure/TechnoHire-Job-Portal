@@ -26,7 +26,8 @@ import Emptyprofiles from "./pages/modules/Myprofile/Emptyprofiles";
 import GettingStarted from "./pages/modules/BasicDetails/GettingStarted";
 import LandingScreen1 from "./pages/modules/LandingScreens/LandingScreen1";
 import LandingScreen2 from "./pages/modules/LandingScreens/LandingScreen2";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <div>
@@ -74,6 +75,7 @@ function App() {
         <Route path="/notification" element={<Notification/>} />
         <Route path="/jobdetails" element={<Findjobdetails/>}  />
       </Routes>
+      <ToastContainer/>
     </div>
   );
 }
