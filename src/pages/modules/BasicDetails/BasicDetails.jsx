@@ -15,9 +15,15 @@ import SkillsPref from "./skillsPref";
 import GettingStarted from "./GettingStarted";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import useBasic from "../../../hooks/basicDetails/useBasic";
+import usebasicEducation from "../../../hooks/basicEducation/usebasicEducation";
+
+
 
 const BasicDetails = () => {
+  const{basicDetails}=useBasic()
   const [currentStep, setCurrentStep] = useState(1);
+  const {basicEductaion}=usebasicEducation()
 
   const validationSchemas = [
     Yup.object().shape({
@@ -41,6 +47,7 @@ const BasicDetails = () => {
   ];
   
   
+  
 
   const formik = useFormik({
     initialValues: {
@@ -52,14 +59,40 @@ const BasicDetails = () => {
       email: "",
       location: "",
       // Education Details fields
-      degree: "",
-      institution: "",
-      graduationYear: "",
-      specialization: "",
+      // degree: "",
+      // institution: "",
+      // graduationYear: "",
+      // specialization: "",
     },
     validationSchema: validationSchemas[currentStep - 1],
     onSubmit: (values) => {
+
+      let basicdata={
+        name:formik.values.fullName,
+        dob:formik.values.dob,
+        gender:formik.values.gender,
+        mobile:formik.values.contact,
+        email:formik.values.email,
+        locations:formik.values.location
+      }
+
       if (currentStep < steps.length) {
+        if(currentStep==1){
+          basicDetails(basicdata)
+        }
+
+        if(currentStep==2){
+          let educationndata={
+            education:[{
+            highestDegree:formik.values.degree,
+            institutionName:formik.values.institution,
+            yearOfGraduation:formik.values.graduationYear,
+            specialization:formik.values.specialization
+        }]}
+
+        basicEductaion(educationndata)
+        
+        }
         setCurrentStep((prev) => prev + 1);
       } else {
         console.log("Final Submission", values);
@@ -171,9 +204,9 @@ const BasicDetails = () => {
           className="w-full bg-[#ece9e99c] px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
         >
           <option value="">Select Gender</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="other">Other</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
         </select>
         {formik.touched.gender && formik.errors.gender && (
           <p className="text-red-500">{formik.errors.gender}</p>

@@ -6,13 +6,13 @@ import Landing1 from "../../../assets/img/landingScreen1.png";
 
 const LandingScreen1 = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-white">
+    <div className="flex flex-col md:flex-row items-center justify-center max-h-screen bg-white">
       {/* Left Side: Form */}
-      <div className="w-full md:w-[60%] px-6 py-8 sm:px-10 lg:px-20 flex flex-col items-center md:items-start">
+      <div className="w-full md:w-[60%] px-6 py-8 sm:px-10 lg:px-20 flex flex-col items-center md:items-start h-screen overflow-y-auto">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 mb-6 text-center">
           Your gateway to <br />
-          <span style={{ color: "#7900BA" }}>finding jobs </span>
-          and <span style={{ color: "#7900BA" }}>hiring talent</span>{" "}
+          <span className="text-violet">finding jobs </span>
+          and <span className="text-violet">hiring talent</span>{" "}
           effortlessly
         </h2>
 
@@ -24,8 +24,8 @@ const LandingScreen1 = () => {
           <p className="text-base sm:text-lg lg:text-xl text-gray-600">
             Connecting talented professionals with top opportunities, our
             platform makes{" "}
-            <span style={{ color: "#7900BA" }}>hiring </span> and{" "}
-            <span style={{ color: "#7900BA" }}>job searching </span> seamless
+            <span className="text-violet">hiring </span> and{" "}
+            <span className="text-violet">job searching </span> seamless
             and efficient.
           </p>
         </div>
