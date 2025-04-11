@@ -1,4 +1,4 @@
-import React from "react";
+import{React,useS} from "react";
 import { GoPencil } from "react-icons/go";
 import { FiPlus } from "react-icons/fi";
 import { HiOutlineEye } from "react-icons/hi2";
@@ -9,8 +9,11 @@ import infosys from '../.../../../assets/Profileassests/infosys.jpg'
 import perficient from '../.../../../assets/Profileassests/perficient.jpg'
 import google from '../.../../../assets/Profileassests/google.jpg'
 import pdf_logo from '../.../../../assets/Profileassests/pdf_logo.png'
+import { useNavigate } from "react-router-dom";
+
 
 function Experience() {
+  const navigate=useNavigate()
   return (
     <div className="flex-1">
       <div className="w-[90%] mt-5 mx-10 space-y-3">
@@ -19,8 +22,8 @@ function Experience() {
             Experience
           </p>
           <div className="flex gap-2 items-center text-[#3E1654]">
-            <FiPlus />
-            <GoPencil />
+            <FiPlus  onClick={() => navigate('/dashboard/profile-details')}/>
+            <GoPencil onClick={() => navigate('/dashboard/profile-details')}/>
           </div>
         </div>
         <div className="flex items-center">
@@ -100,8 +103,8 @@ function Experience() {
               Certifications
             </p>
             <div className="flex gap-2 items-center text-[#3E1654]">
-              <FiPlus />
-              <GoPencil />
+              <FiPlus  onClick={() => navigate('/dashboard/profile-details')}/>
+              <GoPencil  onClick={() => navigate('/dashboard/profile-details')}/>
             </div>
           </div>
 
@@ -125,8 +128,8 @@ function Experience() {
               </div>
             </div>
             <div className="flex gap-1">
-              <HiOutlineEye />
-              <MdOutlineFileDownload />
+              <HiOutlineEye  onClick={() => navigate('/dashboard/profile-details')}/>
+              <MdOutlineFileDownload  onClick={() => navigate('/dashboard/profile-details')}/>
             </div>
           </div>
         </div>
@@ -166,7 +169,7 @@ function Experience() {
             Resume
           </p>
           <div className="flex gap-2 items-center text-[#3E1654]">
-            <FiPlus className="w-[14.12px] h-[12.92px]" />
+            <FiPlus className="w-[14.12px] h-[12.92px] "  onClick={() => navigate('/dashboard/profile-details')}/>
             <RiDeleteBin6Line className="w-[15px] h-[16.15px]" />
           </div>
         </div>
@@ -195,6 +198,7 @@ function Experience() {
           </div>
         </div>
       </div>
+   
     </div>
   );
 }

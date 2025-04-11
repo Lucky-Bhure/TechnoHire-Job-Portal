@@ -55,6 +55,7 @@ function Detailstabs() {
   const [tabIndex, setTabsIndex] = useState(0);
   return (
     <div>
+
       <h1 className="font-inter mt-5 font-medium text-[24px]/[32px]">Profile</h1>
       <div className="w-[100%] mt-5">
         <div className="flex justify-center items-center border-b-[1px] gap-12">
@@ -72,6 +73,7 @@ function Detailstabs() {
               <p className="font-inter font-semibold text-[14px]/[20px]">
                 {data.name}
               </p>
+              
             </div>
           ))}
         </div>

@@ -16,8 +16,9 @@ const Myprofile = () => {
     <>
       <Layout>
         <div className="flex">
-          <Profile />
-          <Experience />
+        <Profile />
+         
+          
         </div>
       </Layout>
     </>

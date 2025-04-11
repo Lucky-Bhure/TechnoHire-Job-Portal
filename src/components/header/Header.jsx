@@ -4,12 +4,16 @@ import { Input, Select, Space } from "antd";
 import { MdOutlineMessage } from "react-icons/md";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { FaFlag } from "react-icons/fa";
+import Inboxes from "../../pages/modules/Inbox/Inboxes";
 import MainHeader from "./MainHeader";
 // import Notification from "../../pages/modules/Notification/Notification";
 
 const Header = () => {
 
   const navigate = useNavigate();
+  const handleMessages = () => {
+    navigate("/Inboxes");
+  }
   const handelnotification =()=>{
     navigate("/notification");
   }
@@ -70,7 +74,7 @@ const Header = () => {
 
             {/* User Section */}
             <div className="flex items-center gap-4 w-full sm:w-auto justify-center sm:justify-end">
-              <MdOutlineMessage className="w-6 h-6 text-gray-600 cursor-pointer" />
+             <MdOutlineMessage onClick={handleMessages} className="w-6 h-6 text-gray-600 cursor-pointer"/>  
               {/* <div> */}
               <IoIosNotificationsOutline onClick={handelnotification} className='w-6 h-6 text-gray-600 cursor-pointer'/>
               {/* </div> */}

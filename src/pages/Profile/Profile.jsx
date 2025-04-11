@@ -5,21 +5,31 @@ import { MdOutlineArrowForward } from "react-icons/md";
 import profile from "../.../../../assets/Profileassests/profile.jpg";
 import skill_logo from "../.../../../assets/Profileassests/skill_logo.png";
 import university_logo from "../.../../../assets/Profileassests/university_logo.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+
 import Profilemodal from "../../components/Modal/Profilemodal";
 import Skillmodal from "../../components/Modal/Skillmodal";
 import Aboutmodal from "../../components/Modal/Aboutmodal";
 import { useNavigate } from "react-router-dom";
+import Detailstabs from "../modules/Myprofile/Profile/Detailstabs/Detailstabs";
+import Experience from "./Experience";
+import Education from "../modules/Myprofile/Profile/Education";
+
 
 function Profile() {
   const [profileModal, setProfileModal] = useState(false);
   const [skillModal, setSkillModal] = useState(false);
   const [aboutModal, setAboutModal] = useState(false);
+  const [educationModal, setEducationModal] = useState(false);
   const navigate=useNavigate()
 
   return (
+ <>
+ <div className="flex px-10 ">
+  {!educationModal ? (
+ 
+<div className="flex ">
     <div className="flex flex-1 flex-col	justify-between space-y-7 border-x-[1px] w-[500px] relative">
+    
       <h1 className="text-2xl text-[#18191C] font-medium font-inter mx-4 mt-4">
        Profile
       </h1>
@@ -42,6 +52,7 @@ function Profile() {
           <h1 className="text-2xl/[36px] text-[#3E1654] font-semibold">
             Ninad Sathe
           </h1>
+          
           <h1 className=" text-[#666666] text-[13px]/[19.5px] mb-[6px]">
             UI/UX Designer
           </h1>
@@ -52,8 +63,12 @@ function Profile() {
             Nagpur, Maharashtra, India
           </h1>
         </div>
+      
+      <div className=" items-center text-[16px]/[19.36px] -mt-20  font-medium">
+   
+   <GoPencil className="text-[#3E1654]" onClick={()=> navigate('/dashboard/profile-details')} />
+ </div>
       </div>
-
       {/* progress part */}
       <div className="w-[70%] mx-16">
         <h1 className="text-[10px]/[15px] text-[#8D8D8D] font-medium font-poppins">
@@ -105,60 +120,61 @@ function Profile() {
         <p className="text-center mt-2 font-normal text-[16px]/[19.36px] text-[#000000B8] font-inter">
           Figma, Canva, Photoshop, Adobe XD
         </p>
+  
       </div>
 
       {/* education */}
-      <div className="w-[70%] space-y-3 mx-10">
-        <div className="flex justify-between items-center">
-          <p className="font-poppins font-medium text-[16px]/[24px]">
-            Education
-          </p>
-          <div className="flex gap-2 items-center text-[#3E1654]">
-          {/* <FiPlus onClick={()=>navigate('/dashboard/profile-details?index=1')}/> */}
-            <FiPlus onClick={()=>navigate('/dashboard/profile-details')}/>
-            <GoPencil onClick={()=>navigate('/dashboard/profile-details')}/>
-          </div>
-        </div>
-        <div className="flex items-center">
-          <div className="flex-shrink-0">
-            <img
-              className="w-10 h-10 rounded-full"
-              src={university_logo}
-              alt=""
-            />
-          </div>
-          <div className="flex-1 min-w-0 ms-4">
-            <p className="font-medium text-[#000000] truncate dark:text-white font-poppins font-[16px]/[24px]">
-              Anna University, Chennai, Tamil Nadu
-            </p>
-            <p className="font-medium font-inter text-[12px]/[14.52px] text-[#000000AD]">
-              Master of Technology in Artificial Intelligence
-            </p>
-          </div>
-        </div>
-        <hr className="text-[#E0E0E0]" />
-        <div className="flex items-center">
-          <div className="flex-shrink-0">
-            <img
-              className="w-10 h-10 rounded-full"
-              src={university_logo}
-              alt=""
-            />
-          </div>
-          <div className="flex-1 min-w-0 ms-4">
-            <p className="font-medium text-[#000000] truncate dark:text-white font-poppins font-[16px]/[24px]">
-              Anna University, Chennai, Tamil Nadu
-            </p>
-            <p className="font-medium font-inter text-[12px]/[14.52px] text-[#000000AD]">
-              Master of Technology in Artificial Intelligence
-            </p>
-          </div>
-        </div>
-        <hr className="text-[#E0E0E0]" />
+     
+  <div className="w-[70%] space-y-3 mx-10">
+    <div className="flex justify-between items-center">
+      <p className="font-poppins font-medium text-[16px]/[24px]">
+        Education
+      </p>
+      <div className="flex gap-2 items-center text-[#3E1654]">
+        <FiPlus onClick={() => setEducationModal(true)} className="cursor-pointer" />
+        <GoPencil onClick={() => navigate('/dashboard/profile-details')} className="cursor-pointer" />
       </div>
+    </div>
+
+    {/* Education Cards */}
+    <div className="flex items-center">
+      <div className="flex-shrink-0">
+        <img className="w-10 h-10 rounded-full" src={university_logo} alt="university" />
+      </div>
+      <div className="flex-1 min-w-0 ms-4">
+        <p className="font-medium text-[#000000] truncate dark:text-white font-poppins text-[16px]/[24px]">
+          Anna University, Chennai, Tamil Nadu
+        </p>
+        <p className="font-medium font-inter text-[12px]/[14.52px] text-[#000000AD]">
+          Master of Technology in Artificial Intelligence
+        </p>
+      </div>
+    </div>
+
+    <hr className="text-[#E0E0E0]" />
+
+    <div className="flex items-center">
+      <div className="flex-shrink-0">
+        <img className="w-10 h-10 rounded-full" src={university_logo} alt="university" />
+      </div>
+      <div className="flex-1 min-w-0 ms-4">
+        <p className="font-medium text-[#000000] truncate dark:text-white font-poppins text-[16px]/[24px]">
+          Anna University, Chennai, Tamil Nadu
+        </p>
+        <p className="font-medium font-inter text-[12px]/[14.52px] text-[#000000AD]">
+          Master of Technology in Artificial Intelligence
+        </p>
+      </div>
+    </div>
+
+    <hr className="text-[#E0E0E0]" />
+  </div>
+
+
 
       {/* show all education */}
-      <div className="flex items-center gap-3 mx-10">
+    
+      <div className="flex justify-between items-center gap-3 mx-10">
         <p className="font-poppins font-medium text-[#0000009E] text-[16px]/[24px]">
           Show all educations
         </p>
@@ -167,7 +183,22 @@ function Profile() {
       {profileModal && <Profilemodal setProfileModal={setProfileModal} />}
       {skillModal && <Skillmodal setSkillModal={setSkillModal} />}
       {aboutModal && <Aboutmodal setAboutModal={setAboutModal} />}
+   
+  
+      </div>
+        <div className="ml-20 px-10">
+       
+        <Experience />
+        </div>
+        </div>
+   ) : (
+    <div className=" w-[1100px]">
+      <Detailstabs/>
     </div>
+  )}
+</div>
+
+</>
   );
 }
 

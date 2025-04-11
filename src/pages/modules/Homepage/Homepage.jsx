@@ -20,7 +20,7 @@ import user_plus from '../../../assets/user-Plus.png';
 import briefcase from '../../../assets/briefcase.png';
 import buildingIcon from '../../../assets/buildingIcon.png';
 import userIcon from '../../../assets/user_icon.png';
-
+import Header from "../../../pages/modules/Homepage/Header"
 
 
 import { FaStar } from "react-icons/fa6";
@@ -46,6 +46,8 @@ import { FaYoutube } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
 import { FaTwitter } from "react-icons/fa";
 import { FaMapMarkerAlt } from 'react-icons/fa';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 
 {/* <FontAwesomeIcon icon={faUser} size="1x" color="black" /> */ }
@@ -55,6 +57,7 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 
 const Homepage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const navigate = useNavigate();
 
 
   const testimonials = [
@@ -172,6 +175,7 @@ const Homepage = () => {
 
   return (
     <>
+   <Header/>
       <div className=' bg-white'>
         <div className='bg-[#F1F2F499] w-full pl-32 pr-32  h-[700px] pt-10'>
           <div className='flex justify-center items-center gap-20'>
@@ -201,10 +205,12 @@ const Homepage = () => {
               <p className='flex gap-1 pt-4 pb-10 text-sm font-medium text-gray-600'> <span className='text-gray-400'>Suggestion:</span>Designer, Programming,<span className='text-[#6712B9]'>Digita Marketing</span>,Video,Animation</p>
 
               <div className='flex gap-6'>
+                <Link to="/landingScreen1">
                 <button
                   className='border-2 border-[#3E1654] shadow-md text-[#6712B9] w-[243px] h-[55px] text-medium rounded-[15px] p-3'
-                  type='button'>
+                  type='button' onClick={() => navigate('/login')}>
                   Become a Cadidate</button>
+                </Link>
                 <button className='border-2 border-[#3E1654] shadow-md text-[#6712B9] w-[243px] h-[55px] rounded-[15px] p-3'>Become an Employer</button>
               </div>
             </div>

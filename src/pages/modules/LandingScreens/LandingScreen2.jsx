@@ -8,15 +8,15 @@ const LandingScreen1 = () => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-center max-h-screen bg-white">
       {/* Left Side: Form */}
-      <div className="w-full md:w-[60%] px-6 py-8 sm:px-10 lg:px-20 flex flex-col items-center md:items-start h-screen overflow-y-auto">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 mb-6 text-center">
+      <div className="w-full md:w-[60%] px-6 py-4 sm:px-10 lg:px-20 flex flex-col items-center h-screen overflow-y-hidden">
+        <h2 className="text-2xl sm:text-3xl lg:text-3xl font-semibold text-gray-800 mb-6 ml-15 text-center">
         Find a job that suits your  <br />
           <span className="text-violet">finding jobs Interest </span>
           & <span className="text-violet">Skills</span>
         </h2>
 
         <div className="flex justify-center items-center w-full my-8">
-          <img src={Landing2} className="w-[70%] sm:w-[50%] md:w-[60%] h-auto" alt="Landing" />
+          <img src={Landing2} className="w-[70%] sm:w-[50%] md:w-[60%] h-[300px]" alt="Landing" />
         </div>
 
         <div className="flex flex-col items-center md:items-start text-center mb-8">
@@ -28,12 +28,14 @@ const LandingScreen1 = () => {
         </div>
 
         <div className="w-full sm:w-[70%] md:w-[60%] lg:w-[50%] flex flex-col gap-4 mx-auto">
+         <Link to="/signUp">
           <button
             type="submit"
             className="py-3 flex justify-center items-center w-full bg-violet text-white rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500"
           >
            Get Started
           </button>
+         </Link>
         </div>
       </div>
 
@@ -43,11 +45,11 @@ const LandingScreen1 = () => {
         <img
           src={LoginBack}
           alt="Background"
-          className="w-full h-full object-cover"
+          className=" pl-20 w-[615px]  h-full object-cover"
         />
 
         {/* Centered Logo */}
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute left-20  inset-0 flex items-center justify-center">
           <img
             src={LoginLogo}
             alt="Login Logo"

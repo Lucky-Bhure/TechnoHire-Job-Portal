@@ -1,83 +1,125 @@
-import React,{useState} from 'react'
-import Editjobalertsuccessfully from './Editjobalertsuccessfully'
+import React, { useState } from 'react';
+import Editjobalertsuccessfully from './Editjobalertsuccessfully';
 
+const ApplyButton = ({ isVisible, onclose }) => {
+  const [editSuccessfully, setEditSuccessfully] = useState(false);
 
-const ApplyButton = ({ isVisible , onclose}) => {
+  if (!isVisible && !editSuccessfully) return null;
 
-    const [editSuccessfully, setEditSuccessfully] = useState(false)
+  const handelClose = (e) => {
+    if (e.target.id === 'wraper') onclose();
+  };
 
-
-    if(!isVisible) return null;
-
-    const handelClose = (e)=>{
-        if(e.target.id ==="wraper" ) onclose();
-    }
-
-
+  const handleSave = () => {
+    // Close this popup
+    onclose();
+    // Show success popup
+    setEditSuccessfully(true);
+  };
 
   return (
     <>
-        <div className='fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm
-        flex justify-center items-center ' id='wraper' onClick={handelClose}>
-            <div className='w-[600px]  flex flex-col ' >
-                <button className='text-white text-xl place-self-end *'
-                onClick={()=>onclose()} >X</button>
-                <div className='bg-white p-2 rounded'>
-                    <h1 className='mb-4 text-xl text-center font-medium text-gray' >
-                        Edit Job alerts
-                    </h1>
-                    <form className='space-y-5 px-4' >
-                        <h1>Job Type</h1>
-                            <div className='w-full flex items-center  justify-between'>
-                            <labe><input type='checkbox'/> Full time</labe>
-                             <labe>   <input type='checkbox'/> Part Time</labe>
-                             <labe>   <input type='checkbox'/> Internship</labe>
-                             <labe>   <input type='checkbox'/> Freelancing</labe>
-
-                            </div>
-                            <div className='w-full'>
-                                <input type='text' name='name' id='name' className='bg-[#DCBDED] border border-gray-100
-                                text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  w-full py-4 p-2.5
-                                 ' required
-                                placeholder='Perferred Designation' />
-                            </div>
-                            <div className='w-full'>
-                                <input type='text' name='name' id='name' className='bg-[#DCBDED] border border-gray-100
-                                text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  w-full py-4 p-2.5
-                                 ' required
-                                placeholder='Perferred Location' />
-
-                            </div>
-                              <div>  
-                                <label for="">Desired Salary</label> 
-                                    <div className='w-full   flex gap-2'>
-                                    <input type='number' name='name' id='name' className='bg-[#DCBDED] border border-gray-100
-                                    text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  w-1/2 py-4 p-2.5
-                                    ' required
-                                    placeholder='Min Salary' />
-
-                                    <input type='number' name='name' id='name' className='bg-[#DCBDED] border border-gray-100
-                                    text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  w-1/2 py-4 p-2.5
-                                    ' required
-                                    placeholder='Max Salary' />
-
-                            </div>
-                            </div>
-
-                            <div className='w-full'>
-                                <button  onClick={()=> setEditSuccessfully(true)}
-                                type="" name='' id='name' className='w-full bg-blue-700 space-y-7 py-3 px-9 text-white text-xl font-semibold mb-2'  
-                                 > Save Changes</button>
-
-                            </div>
-                    </form>
+      {isVisible && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center"
+          id="wraper"
+          onClick={handelClose}
+        >
+          <div className="w-[600px] flex flex-col">
+            <button
+              className="text-black text-2xl place-self-end mr-4 mb-2"
+              onClick={onclose}
+            >
+              ×
+            </button>
+            <div className="bg-white p-6 rounded-xl shadow-lg">
+              <h1 className="mb-6 text-2xl text-center font-semibold text-gray-800">
+                Edit Job Alerts
+              </h1>
+              <form className="space-y-6">
+                <div>
+                  <label className="block font-medium mb-2 text-gray-700">Job Type</label>
+                  <div className="grid grid-cols-2 gap-4">
+                    <label className="flex items-center space-x-2">
+                      <input type="checkbox" />
+                      <span>Full Time</span>
+                    </label>
+                    <label className="flex items-center space-x-2">
+                      <input type="checkbox" />
+                      <span>Part Time</span>
+                    </label>
+                    <label className="flex items-center space-x-2">
+                      <input type="checkbox" />
+                      <span>Freelance</span>
+                    </label>
+                    <label className="flex items-center space-x-2">
+                      <input type="checkbox" />
+                      <span>Internship</span>
+                    </label>
+                  </div>
                 </div>
-            </div>
-        </div>
-        <Editjobalertsuccessfully  active={editSuccessfully}   onclose={onclose}  handelClose={handelClose}/>
 
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Preferred Designation"
+                    className="w-full bg-[#F3F3F3] border border-gray-300 text-sm text-gray-800 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <select
+                    className="w-full bg-[#F3F3F3] border border-gray-300 text-sm text-gray-800 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    required
+                  >
+                    <option value="">Preferred Location</option>
+                    <option value="Remote">Remote</option>
+                    <option value="On-site">On-site</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block font-medium mb-2 text-gray-700">Desired Salary Range</label>
+                  <div className="flex gap-4">
+                    <input
+                      type="number"
+                      placeholder="Min"
+                      className="w-1/2 bg-[#F3F3F3] border border-gray-300 text-sm text-gray-800 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      required
+                    />
+                    <input
+                      type="number"
+                      placeholder="Max"
+                      className="w-1/2 bg-[#F3F3F3] border border-gray-300 text-sm text-gray-800 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <button
+                    type="button"
+                    onClick={handleSave}
+                    className="w-full mt-2 bg-purple-700 hover:bg-purple-800 text-white font-semibold text-base py-3 rounded-lg flex justify-center items-center gap-2 transition duration-300"
+                  >
+                    Save and Continue →
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Show the success popup after closing the first one */}
+      <Editjobalertsuccessfully
+        active={editSuccessfully}
+        onclose={() => setEditSuccessfully(false)}
+        handelClose={handelClose}
+      />
     </>
-  )
-}
+  );
+};
 
 export default ApplyButton;

@@ -5,7 +5,7 @@ import LoginBack from "../../assets/img/loginBackground.png";
 import LoginLogo from "../../assets/img/loginLogo.png";
 import { AiFillEyeInvisible } from 'react-icons/ai'
 import { AiFillEye } from 'react-icons/ai'
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Links, useNavigate } from "react-router-dom";
 
 
 const SignUp = () => {
@@ -40,12 +40,12 @@ const SignUp = () => {
   });
 
   return (
-    <div className="flex h-screen bg-gray-100">
-  <div className="w-full md:w-3/5 overflow-y-auto bg-white px-10 md:px-20 py-8">
+    <div className="flex h-screen bg-white">
+  <div className="w-full md:w-3/5 overflow-hidden bg-white px-20 md:px-20 py-8">
         <h2 className="text-3xl font-semibold text-gray-800 mb-[45px] text-center">
           Log In To <span className="text-violet">TechnoHire</span>
         </h2>
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={e => e.preventDefault()}>
           <div>
             <input
               type="email"
@@ -78,6 +78,7 @@ const SignUp = () => {
           <div className="flex justify-center ">
             <button
               type="submit"
+              onClick={() => navigate("/overview")}
               className="w-[65%] py-3 px-4 my-[20px] bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-700"
             >
               Log In
@@ -94,7 +95,8 @@ const SignUp = () => {
         </div>
 
         <div className="flex space-x-4 justify-center">
-          <button className="p-0 bg-gray-100 text-blue-600 rounded-md w-[105px] h-[56px] flex justify-center items-center">
+       <a href="https://www.facebook.com/">
+       <button className="p-0 bg-gray-100 text-blue-600 rounded-md w-[105px] h-[56px] flex justify-center items-center">
             <svg
               width="26"
               height="27"
@@ -108,7 +110,9 @@ const SignUp = () => {
               />
             </svg>
           </button>
-          <button className="p-0 bg-gray-100 text-white rounded-md w-[105px] h-[56px] flex justify-center items-center">
+       </a>
+        <a href="https://accounts.google.co.in/">
+        <button className="p-0 bg-gray-100 text-white rounded-md w-[105px] h-[56px] flex justify-center items-center">
             <svg
               width="26"
               height="27"
@@ -134,7 +138,9 @@ const SignUp = () => {
               />
             </svg>
           </button>
-          <button className="p-0 bg-gray-100 text-white rounded-md w-[105px] h-[56px] flex justify-center items-center">
+        </a>
+         <a href="https://www.linkedin.com/home">
+         <button className="p-0 bg-gray-100 text-white rounded-md w-[105px] h-[56px] flex justify-center items-center">
             <svg
               width="27"
               height="27"
@@ -152,6 +158,7 @@ const SignUp = () => {
               />
             </svg>
           </button>
+         </a>
         </div>
 
         <p className="mt-[25px] text-center text-gray-600">
@@ -167,13 +174,13 @@ const SignUp = () => {
         <img
           src={LoginBack}
           alt="Background"
-          className="w-full h-full object-cover"
+          className="pl-20 w-[615px]  h-full object-cover"
         />
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute left-20 inset-0 flex items-center justify-center">
           <img
             src={LoginLogo}
             alt="Login Logo"
-            className="max-w-[60%] md:max-w-[70%]"
+            className="w-[200px] sm:w-[300px] lg:w-[400px]"
           />
         </div>
       </div>

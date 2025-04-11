@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import ReactQuill from "react-quill";
+import { useNavigate } from "react-router-dom"; // ✅ ADD THIS LINE
 import "react-quill/dist/quill.snow.css";
 
 const Applypopup = ({ setshowmodal }) => {
   const [fileName, setFileName] = useState("");
   const [value, setValue] = useState("");
   const [val, setval] = useState("");
+
+  const navigate = useNavigate(); // ✅ INIT NAVIGATION
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -18,11 +21,15 @@ const Applypopup = ({ setshowmodal }) => {
     document.getElementById("fileInput").value = "";
   };
 
+  // ✅ HANDLE SUBMIT ACTION AND NAVIGATE TO APPLICATION SUBMITTED PAGE
+  const handleApplySubmit = () => {
+    setshowmodal(false); // close the popup
+    navigate("/application-submitted"); // redirect to submitted page
+  };
+
   return (
-    <div className="fixed  inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50">
-      {/* Popup Card */}
-      <div className="bg-white  rounded-lg  m-9 shadow-lg w-[708px] max-w-lg p-6">
-        {/* Header */}
+    <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50">
+      <div className="bg-white rounded-lg m-9 shadow-lg w-[708px] max-w-lg p-6">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-lg font-bold">Apply Job: Senior UX Designer</h2>
           <button
@@ -46,9 +53,7 @@ const Applypopup = ({ setshowmodal }) => {
           </button>
         </div>
 
-        {/* Form */}
         <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
-          {/* Choose Resume */}
           <p>Choose Resume</p>
           <div className="relative border rounded-md h-[48px] flex items-center px-4">
             <span className="text-gray-500">{fileName || "Select..."}</span>
@@ -69,7 +74,6 @@ const Applypopup = ({ setshowmodal }) => {
             )}
           </div>
 
-          {/* Cover Letter */}
           <div>
             <p className="py-1">Cover Letter</p>
             <div className="py-1 mt-2">
@@ -82,7 +86,6 @@ const Applypopup = ({ setshowmodal }) => {
             </div>
           </div>
 
-          {/* Screening Question */}
           <div>
             <p className="py-3">Screening Question</p>
             <p>Why are you a good fit for this role?</p>
@@ -101,14 +104,14 @@ const Applypopup = ({ setshowmodal }) => {
             <button
               type="button"
               onClick={() => setshowmodal(false)}
-              className="px-4 py-2 bg-[#DCBDED] text-[#7900BA] rounded-md "
+              className="px-4 py-2 bg-[#DCBDED] text-[#7900BA] rounded-md"
             >
               Cancel
             </button>
             <button
-              type="submit"
-              onClick={(e) => e.preventDefault()}
-              className="px-4 flex py-2 bg-[#7900BA] text-white rounded-md "
+              type="button" // ✅ Change type to button
+              onClick={handleApplySubmit} // ✅ Call handleApplySubmit
+              className="px-4 flex py-2 bg-[#7900BA] text-white rounded-md"
             >
               Apply Now <FaArrowRight className="my-1 ms-2" />
             </button>

@@ -18,7 +18,7 @@ function Terms() {
           <span>2)</span>
           <span>
             Users must provide accurate and truthful information during
-            registration and when using the App.
+            registration and when u the App.
           </span>
         </p>
         <p className="flex gap-2">

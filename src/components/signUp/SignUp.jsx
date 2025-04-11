@@ -11,6 +11,8 @@ import { Link, useNavigate } from "react-router-dom";
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [showTerms, setShowTerms] = useState(false);
+  const [showPrivacy, setShowPrivacy] = useState(false);
   const navigate = useNavigate(); // Initialize navigate
 
 
@@ -40,11 +42,11 @@ const SignUp = () => {
   });
 
   return (
-    <div className="flex h-screen bg-gray-100">
+    <div className="flex h-screen  bg-white">
   {/* Left Side: Form */}
-  <div className="left-side w-full md:w-3/5 overflow-y-auto scrollbar-hide bg-white px-20 pt-8">
+  <div className="left-side  w-full md:w-3/5 overflow-y-hidden scrollbar-hide  bg-white px-20 pt-5">
       <div className="flex flex-col items-center md:items-start">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 mb-2 text-center">
+        <h2 className="text-2xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 mb-2 text-center">
           Welcome to <span className="text-violet">Technohire</span>
         </h2>
         <p>
@@ -55,7 +57,7 @@ const SignUp = () => {
         </p>
       </div>
 
-      <form onSubmit={formik.handleSubmit} className="w-full mt-6">
+      <form onSubmit={formik.handleSubmit} className="w-full mt-5">
         <div className="mb-4">
           <input
             type="text"
@@ -115,6 +117,34 @@ const SignUp = () => {
           >
             {showPassword ? <AiFillEye /> : <AiFillEyeInvisible />}
           </button>
+          {/* Password Requirements */}
+
+<ul className=" flex gap-10 text-xs text-gray-500 mt-2 ml-1 space-y-1">
+  <li className="flex items-center space-x-1">
+    <span className="text-violet">•</span>
+    <span>Use 8 or more characters</span>
+  </li>
+  <li className="flex items-center space-x-1">
+    <span className="text-violet">•</span>
+    <span>One uppercase character</span>
+  </li>
+  <li className="flex items-center space-x-1">
+    <span className="text-violet">•</span>
+    <span>One lowercase character</span>
+  </li>
+</ul>
+ <ul className=" flex gap-10 text-xs text-gray-500 mt-2  space-y-1">
+ <li className="flex items-center space-x-1">
+    <span className="text-violet">•</span>
+    <span>One special character</span>
+  </li>
+  <li className="flex items-center space-x-1">
+    <span className="text-violet">•</span>
+    <span>One number</span>
+  </li>
+ </ul>
+
+
           {formik.touched.password && formik.errors.password && (
             <p className="text-red-500 text-sm">{formik.errors.password}</p>
           )}
@@ -145,26 +175,67 @@ const SignUp = () => {
         </div>
 
         <p className="text-gray-500 text-sm mb-4">
-          By creating an account, you agree to the{" "}
-          <span className="text-violet" style={{ cursor: "pointer" }}>
-            Terms of Use
-          </span>{" "}
-          and{" "}
-          <span className="text-violet" style={{ cursor: "pointer" }}>
-            Privacy Policy
-          </span>
-          .
-        </p>
+            By creating an account, you agree to the{" "}
+            <button type="button" onClick={() => setShowTerms(true)} className="text-violet underline">
+              Terms of Use
+            </button>{" "}
+            and{" "}
+            <span className="text-violet"  onClick={() => setShowPrivacy(true)} style={{ cursor: "pointer" }}>
+              Privacy Policy
+            </span>.
+          </p>
+          {showTerms && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+              <div className="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded shadow-lg relative">
+                <h2 className="text-lg font-bold mb-4">Terms of Use</h2>
+                <div className="text-sm text-gray-700 max-h-60 overflow-y-auto">
+                  <p>
+                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa, a officia libero, quam deleniti enim id distinctio laudantium amet harum tenetur doloribus ut suscipit odit dolor officiis? Pariatur, illum illo.
+                  </p>
+                 
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setShowTerms(false)}
+                  className="absolute top-2 right-3 text-gray-600 hover:text-black text-xl"
+                >
+                  ✕
+                </button>
+              </div>
+            </div>
+          )}
+  {showPrivacy && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+              <div className="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded shadow-lg relative">
+                <h2 className="text-lg font-bold mb-4">Privacy Policy</h2>
+                <div className="text-sm text-gray-700 max-h-60 overflow-y-auto">
+                  <p>
+                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa, a officia libero, quam deleniti enim id distinctio laudantium amet harum tenetur doloribus ut suscipit odit dolor officiis? Pariatur, illum illo.
+                  </p>
+                 
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setShowPrivacy(false)}
+                  className="absolute top-2 right-3 text-gray-600 hover:text-black text-xl"
+                >
+                  ✕
+                </button>
+              </div>
+            </div>
+          )}
 
         <button
+          onClick={() => navigate("/verify")}
           type="submit"
           className="w-[16rem] h-[64px] flex justify-center items-center my-6 py-3 text-white bg-violet hover:bg-purple-800 rounded-md"
         >
           Create an Account
         </button>
+
       </form>
 
-      <div className="w-[55%] my-4 mx-auto flex items-center justify-center">
+      <div className="w-[55%] my-2 mx-auto flex items-center justify-center">
         <span className="block w-[40%] border-t border-gray-300" />
         <span className="text-gray-500 mx-4 font-semibold whitespace-nowrap">
           Or Login With
@@ -172,8 +243,9 @@ const SignUp = () => {
         <span className="block w-[40%] border-t border-gray-300" />
       </div>
 
-      <div className="flex space-x-4 justify-center pb-[3rem]">
-          <button className="p-0 bg-gray-100 text-blue-600 rounded-md w-[105px] h-[56px] flex justify-center items-center">
+      <div className="flex space-x-4 justify-center">
+       <a href="https://www.facebook.com/">
+       <button className="p-0 bg-gray-100 text-blue-600 rounded-md w-[105px] h-[56px] flex justify-center items-center">
             <svg
               width="26"
               height="27"
@@ -187,7 +259,9 @@ const SignUp = () => {
               />
             </svg>
           </button>
-          <button className="p-0 bg-gray-100 text-white rounded-md w-[105px] h-[56px] flex justify-center items-center">
+       </a>
+        <a href="https://accounts.google.co.in/">
+        <button className="p-0 bg-gray-100 text-white rounded-md w-[105px] h-[56px] flex justify-center items-center">
             <svg
               width="26"
               height="27"
@@ -213,7 +287,9 @@ const SignUp = () => {
               />
             </svg>
           </button>
-          <button className="p-0 bg-gray-100 text-white rounded-md w-[105px] h-[56px] flex justify-center items-center">
+        </a>
+         <a href="https://www.linkedin.com/home">
+         <button className="p-0 bg-gray-100 text-white rounded-md w-[105px] h-[56px] flex justify-center items-center">
             <svg
               width="27"
               height="27"
@@ -231,6 +307,7 @@ const SignUp = () => {
               />
             </svg>
           </button>
+         </a>
         </div>
     </div>
 
@@ -239,9 +316,9 @@ const SignUp = () => {
         <img
           src={LoginBack}
           alt="Background"
-          className="w-full h-full object-cover"
+          className="pl-20 w-[615px] h-full object-cover"
         />
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute left-20 inset-0 flex items-center justify-center">
           <img
             src={LoginLogo}
             alt="Login Logo"

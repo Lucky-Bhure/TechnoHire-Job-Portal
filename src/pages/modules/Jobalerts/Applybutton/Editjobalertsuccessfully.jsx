@@ -25,7 +25,7 @@ const Editjobalertsuccessfully = ({active ,onclose , handelClose}) => {
                 </h1>
                 </div>
                 <button  onClick={()=>onclose()}
-                 className='bg-blue-600 py-5 px-6 font-semibold text-xl text-white mx-6 mb-3' >Go TO Job alert</button>
+                 className='bg-blue-600 py-5 px-6 font-semibold text-xl text-white mx-6 mb-3' >Go to Job Alert</button>
 
         </div>
     </div>

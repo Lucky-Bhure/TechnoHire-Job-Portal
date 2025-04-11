@@ -8,7 +8,7 @@ const LandingScreen1 = () => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-center max-h-screen bg-white">
       {/* Left Side: Form */}
-      <div className="w-full md:w-[60%] px-6 py-8 sm:px-10 lg:px-20 flex flex-col items-center md:items-start h-screen overflow-y-auto">
+      <div className="w-full md:w-[60%] px-6 py-8 sm:px-10 lg:px-20 flex flex-col  text-center">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 mb-6 text-center">
           Your gateway to <br />
           <span className="text-violet">finding jobs </span>
@@ -31,12 +31,16 @@ const LandingScreen1 = () => {
         </div>
 
         <div className="w-full sm:w-[70%] md:w-[60%] lg:w-[50%] flex flex-col gap-4 mx-auto">
+          <Link to="/landingScreen2">
+          
           <button
             type="submit"
             className="py-3 flex justify-center items-center w-full bg-violet text-white rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500"
           >
             I'm a Job Seeker
           </button>
+          </Link>
+          
           <button
             type="submit"
             className="py-3 flex justify-center items-center w-full bg-violet text-white rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500"
@@ -52,11 +56,11 @@ const LandingScreen1 = () => {
         <img
           src={LoginBack}
           alt="Background"
-          className="w-full h-full object-cover"
+          className=" pl-20 w-[615px] h-full object-cover "
         />
 
         {/* Centered Logo */}
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute left-20 inset-0 flex items-center justify-center ">
           <img
             src={LoginLogo}
             alt="Login Logo"

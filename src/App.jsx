@@ -17,7 +17,7 @@ import Findemployee from "./pages/modules/FindEmplyee/Findemployee";
 import Jobalerts from "./pages/modules/Jobalerts/Jobalerts";
 import Customersupport from "./pages/modules/Customersupports/Customersupport";
 import BasicDetails from "./pages/modules/BasicDetails/BasicDetails";
-import Inbox from "./pages/modules/Inbox/Inboxes";
+ import Inbox from "./pages/modules/Inbox/Inboxes";
 import SingleEmployers from "./pages/modules/FindEmplyee/FindEmployers/SingleEmployers";
 import Notification from "./pages/modules/Notification/Notification";
 import Emptyprofiles from "./pages/modules/Myprofile/Emptyprofiles";
@@ -37,6 +37,7 @@ import PhoneVerifySuccess from "./pages/modules/PhoneVerification/PhoneVerifySuc
 import Applicationdetails from "./pages/modules/ApplicationDetails/Applicationdetails";
 import Applicationsubmit from "./pages/modules/ApplicationDetails/Applicationsubmit";
 import Findjobdetails from "./pages/modules/Findajob/FindjobDetails/Findjobdetails";
+ import Inboxes from "./pages/modules/Inbox/Inboxes";
 // import EmailVerifySuccess from
 // import Notification from "./pages/modules/Notification/Notification";
 
@@ -45,9 +46,9 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Overview />} />
-        <Route path="/homePage" element={<Homepage />} />
-        <Route path="/inbox" element={<Inbox />} />
+        <Route path="/" element={<Homepage />} />
+        <Route path="/home" element={<Overview />} />
+        <Route path="/Inboxes" element={<Inboxes />} />
         <Route path="/login" element={<Login />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/forget-password" element={<ForgotPassword />} />
@@ -89,6 +90,9 @@ function App() {
         <Route path="/dashboard/feedback" element={<Feedback />} />
         <Route path="/notification" element={<Notification />} />
         <Route path="/jobdetails" element={<Findjobdetails/>}  />
+        <Route path="/application-submitted" element={<Applicationsubmit />} />
+        <Route path="/application-details" element={<Applicationdetails />} />
+        
       </Routes>
       <ToastContainer/>
     </div>

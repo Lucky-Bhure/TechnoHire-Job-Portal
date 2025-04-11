@@ -46,13 +46,13 @@ const EmailVerifySuccess = () => {
         <img
           src={LoginBack}
           alt="Background"
-          className="w-full h-full object-cover"
+          className="pl-20 w-[615px] h-full object-cover"
         />
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute left-20 inset-0 flex items-center justify-center">
           <img
             src={LoginLogo}
             alt="Login Logo"
-            className="lg:w-[550px] md:w-[320px]"
+            className="w-[200px] sm:w-[300px] lg:w-[400px]"
           />
         </div>
       </div>

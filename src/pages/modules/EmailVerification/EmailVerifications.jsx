@@ -39,7 +39,7 @@ const EmailVerifications = () => {
     <div className="flex flex-col md:flex-row items-center justify-center max-h-screen bg-white">
       {/* Left Side: Form */}
       <div
-        className="w-full md:w-[60%] h-screen md:h-auto px-6 py-8 md:px-12 lg:px-32 rounded-lg overflow-y-auto"
+        className="w-full md:w-[60%] min-h-screen -mt-10 md:px-12 lg:px-32 rounded-lg overflow-y-hidden"
         style={{ maxHeight: "100vh" }}
       >
         <div className="py-10 text-center">
@@ -59,7 +59,7 @@ const EmailVerifications = () => {
         <div className="flex justify-center items-center w-full mb-8">
           <img
             src={email}
-            className="w-[353px] sm:w-[50%] md:w-[353px] h-[340px]"
+            className="w-[353px] sm:w-[40%] md:w-[250px] h-[200px]"
             alt="Landing"
           />
         </div>
@@ -121,13 +121,13 @@ const EmailVerifications = () => {
         <img
           src={LoginBack}
           alt="Tech image"
-          className="w-full h-full object-cover"
+          className="pl-20 w-[615px] h-full object-cover"
         />
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute left-20 inset-0 flex items-center justify-center">
           <img
             src={LoginLogo}
             alt="Login Logo"
-            className="lg:w-[550px] md:w-[320px]"
+            className="w-[200px] sm:w-[300px] lg:w-[400px]"
           />
         </div>
       </div>
