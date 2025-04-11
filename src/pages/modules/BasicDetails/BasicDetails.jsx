@@ -17,6 +17,8 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import useBasic from "../../../hooks/basicDetails/useBasic";
 import usebasicEducation from "../../../hooks/basicEducation/usebasicEducation";
+import { Header } from "antd/es/layout/layout";
+import Navbar from "../../../components/header/Navbar";
 
 
 
@@ -167,6 +169,7 @@ const BasicDetails = () => {
   };
 
   const renderFormContent = () => {
+    
     switch (currentStep) {
       case 1:
         return (
@@ -178,7 +181,7 @@ const BasicDetails = () => {
           id="fullName"
           placeholder="Full Name"
           {...formik.getFieldProps("fullName")}
-          className="w-full bg-[#ece9e99c] px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+          className="w-full bg-[#ece9e99c] px-4 py-[12px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
         />
         {formik.touched.fullName && formik.errors.fullName && (
           <p className="text-red-500">{formik.errors.fullName}</p>
@@ -190,7 +193,7 @@ const BasicDetails = () => {
           type="date"
           id="dob"
           {...formik.getFieldProps("dob")}
-          className="w-full bg-[#ece9e99c] px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+          className="w-full bg-[#ece9e99c] px-4 py-[12px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
         />
         {formik.touched.dob && formik.errors.dob && (
           <p className="text-red-500">{formik.errors.dob}</p>
@@ -201,7 +204,7 @@ const BasicDetails = () => {
         <select
           id="gender"
           {...formik.getFieldProps("gender")}
-          className="w-full bg-[#ece9e99c] px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+          className="w-full bg-[#ece9e99c] px-4 py-[12px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
         >
           <option value="">Select Gender</option>
           <option value="Male">Male</option>
@@ -219,7 +222,7 @@ const BasicDetails = () => {
           id="contact"
           placeholder="Contact Number"
           {...formik.getFieldProps("contact")}
-          className="w-full bg-[#ece9e99c] px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+          className="w-full bg-[#ece9e99c] px-4 py-[12px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
         />
         {formik.touched.contact && formik.errors.contact && (
           <p className="text-red-500">{formik.errors.contact}</p>
@@ -232,7 +235,7 @@ const BasicDetails = () => {
           id="email"
           placeholder="Email Address"
           {...formik.getFieldProps("email")}
-          className="w-full bg-[#ece9e99c] px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+          className="w-full bg-[#ece9e99c] px-4 py-[12px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
         />
         {formik.touched.email && formik.errors.email && (
           <p className="text-red-500">{formik.errors.email}</p>
@@ -243,7 +246,7 @@ const BasicDetails = () => {
         <select
           id="location"
           {...formik.getFieldProps("location")}
-          className="w-full bg-[#ece9e99c] px-4 py-[14px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+          className="w-full bg-[#ece9e99c] px-4 py-[12px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
         >
           <option value="">Location</option>
           <option value="newyork">New York</option>
@@ -277,6 +280,8 @@ const BasicDetails = () => {
   
 
   return (
+    <>
+    <Navbar />
     <div
       className={`flex flex-col md:flex-row h-screen overflow-hidden ${
         currentStep === steps.length ? "w-full" : ""
@@ -285,34 +290,35 @@ const BasicDetails = () => {
       {/* Conditionally hide left side on the last step */}
       {currentStep < steps.length && (
         <div
-          className="hidden md:flex w-full h-full flex-col items-center bg-cover bg-center"
+          className="hidden md:flex w-full min-h-screen flex-col items-center bg-cover bg-center"
           style={{
             backgroundImage: `url(${LoginBack})`
           }}
         >
           <div>
             {/* Vertical Steps */}
-            <div className="flex flex-col items-start gap-[35px] mt-6 relative xl:hidden">
+            <div className="flex flex-col items-start gap-[35px] mt-2 relative xl:hidden">
               {steps.map((step, index) => (
                 <div
                   className="relative flex items-center space-x-4 "
                   key={index}
                 >
                   <div
-                    className={`w-8 h-8 flex items-center justify-center rounded-full border-2 font-bold ${
+                    className={`w-8 h-8 flex items-center justify-center rounded-full border-2 font-bold relative ${
                       currentStep > index + 1
                         ? "border-violet-700 bg-violet-700 text-white"
                         : currentStep === index + 1
-                        ? "border-violet-700 bg-violet-700 text-white"
-                        : "border-gray-300 bg-gray-100 text-gray-500"
+                        ? "border-violet-700 bg-transparent text-violet-700"
+                        : "border-gray-300 bg-transparent text-gray-500"
                     }`}
                   >
                     {currentStep > index + 1 ? (
                       <span className="text-white">✓</span>
                     ) : currentStep === index + 1 ? (
-                      <span className="text-white">•</span>
+                      <div className="w-2 h-2 bg-violet-700 rounded-full" />
                     ) : null}
                   </div>
+
                   <span
                     className={`text-xs ${
                       currentStep >= index + 1
@@ -330,22 +336,22 @@ const BasicDetails = () => {
             </div>
 
             {/* Horizontal Steps for larger screens */}
-            <div className="hidden xl:flex justify-center items-center mb-4 mt-[7rem]">
+            <div className="hidden xl:flex justify-center items-center mb-2 mt-10 relative">
               {steps.map((step, index) => (
                 <div key={index} className="relative flex items-center">
                   <div
                     className={`xl:w-[40px] xl:h-[40px] ${currentStep === steps.length ?"xl:w-[50px] xl:h-[50px]" : "xl:w-[2rem] xl:h-[2rem]"} 2xl:w-[3rem] 2xl:h-[3rem] flex items-center justify-center rounded-full font-bold ${
                       currentStep > index + 1
-                        ? "bg-violet-700 text-white"
+                        ? "bg-violet-700 text-[#7900BA]"
                         : currentStep === index + 1
-                        ? "bg-violet-700 text-violet-700"
-                        : "bg-gray-300 text-gray-500"
+                        ? "bg-transparent border-2 border-[#7900BA]"
+                        : "bg-transparent border-2 border-[#26323880]"
                     }`}
                   >
                     {currentStep > index + 1 ? (
                       <span className="text-white">✓</span>
                     ) : currentStep === index + 1 ? (
-                      <span className="text-white">•</span>
+                      <span className="text-[#7900BA]">•</span>
                     ) : null}
                   </div>
 
@@ -353,8 +359,8 @@ const BasicDetails = () => {
                     <div
                       className={` ${currentStep === steps.length ? "h-[3px] md:w-[6rem]" : "h-[3px] md:w-[60px]"} ${
                         currentStep > index + 1
-                          ? "bg-violet-700"
-                          : "bg-gray-300"
+                          ? "bg-[#7900BA]"
+                          : "bg-[#525C6380]"
                       }`}
                     ></div>
                   )}
@@ -377,7 +383,7 @@ const BasicDetails = () => {
           <img
             src={logos[currentStep - 1]}
             alt="Step Logo"
-            className="2xl:w-[55%] xl:w-[65%] lg:w-[65%] md:w-[75%] h-auto xl:mt-[10rem] xl:mt-[10rem] lg:mt-[4rem] md:mt-[4rem]"
+            className="2xl:w-[50%] xl:w-[60%] lg:w-[60%] md:w-[70%] h-auto xl:mt-[9rem] lg:mt-[3rem] md:mt-[3rem]"
           />
         </div>
       )}
@@ -387,7 +393,7 @@ const BasicDetails = () => {
         className={` sm:rounded-tl-[80px] sm:rounded-bl-[80px] ${
           currentStep === steps.length
             ? "w-full h-screen"
-            : "bg-white rounded-tl-[0px] rounded-bl-[0px] shadow-lg shadow-gray-500 p-8 w-full sm:w-full ml-auto lg:max-w-[45rem] 2xl:max-w-[55rem]"
+            : "rounded-tl-[0px] rounded-bl-[0px] shadow-lg shadow-gray-500 p-8 w-full sm:w-full ml-auto lg:max-w-[45rem] 2xl:max-w-[55rem]"
         }`}
         style={{
           height: currentStep === steps.length ? "100vh" : "calc(103vh - 20px)"
@@ -467,7 +473,7 @@ const BasicDetails = () => {
               <div className="text-center pb-[13px]">
                 <button
                   type="submit"
-                  className="py-[1rem] flex justify-center items-center w-full bg-violet-700 text-white py-3 rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500"
+                  className="py-[1rem] flex justify-center items-center w-full bg-violet-700 text-white rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500"
                 >
                   Save and Continue
                   <AiOutlineArrowRight className="mx-3 " />
@@ -478,6 +484,7 @@ const BasicDetails = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -2,8 +2,20 @@ import React, { useState } from "react";
 import GettingStartedImage from "../../../assets/img/gettingstart.png"; // Import the getting started image
 import { BsArrowLeft } from "react-icons/bs";
 import { BsArrowRight } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const GettingStarted = () => {
+
+  const navigate = useNavigate();
+
+  const handleGoToProfile = () => {
+    navigate("/my-profile"); 
+  };
+
+  const handleBrowseMyJob = () => {
+    navigate("/find-job"); 
+  };
+
   return (
     <div className="">
       <div
@@ -36,11 +48,11 @@ const GettingStarted = () => {
 
         {/* Buttons */}
         <div className="flex justify-center gap-6 mb-6 w-full">
-          <button className="bg-white py-3 text-violet-700 px-[4rem] border border-violet-700 rounded-lg flex items-center justify-center gap-2 hover:bg-violet-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-violet-500">
+          <button onClick={handleGoToProfile} className="bg-white py-3 text-violet-700 px-[4rem] border border-violet-700 rounded-lg flex items-center justify-center gap-2 hover:bg-violet-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-violet-500">
             <BsArrowLeft className="text-xl" />
             <span>Go to my profile</span>
           </button>
-          <button className="bg-violet-700 py-3 text-white px-[4rem] rounded-lg flex items-center justify-center gap-2 hover:text-violet-700 hover:bg-white border hover:border-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500">
+          <button onClick={handleBrowseMyJob} className="bg-violet-700 py-3 text-white px-[4rem] rounded-lg flex items-center justify-center gap-2 hover:text-violet-700 hover:bg-white border hover:border-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500">
             <span>Browse my Jobs</span>
             <BsArrowRight className="text-xl" />
           </button>
