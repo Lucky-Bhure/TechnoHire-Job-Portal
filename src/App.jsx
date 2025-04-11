@@ -47,7 +47,6 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/home" element={<Overview />} />
         <Route path="/Inboxes" element={<Inboxes />} />
         <Route path="/login" element={<Login />} />
         <Route path="/reset-password" element={<ResetPassword />} />

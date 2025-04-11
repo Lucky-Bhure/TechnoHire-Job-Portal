@@ -78,7 +78,7 @@ const SignUp = () => {
           <div className="flex justify-center ">
             <button
               type="submit"
-              onClick={() => navigate("/overview")}
+              onClick={() => navigate("/dashboard")}
               className="w-[65%] py-3 px-4 my-[20px] bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-700"
             >
               Log In
