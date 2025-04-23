@@ -175,8 +175,8 @@ const Homepage = () => {
 
   return (
     <>
-   <Header/>
-      <div className=' bg-white'>
+    <Header/>
+    <div className=' bg-white'>
         <div className='bg-[#F1F2F499] w-full pl-32 pr-32  h-[700px] pt-10'>
           <div className='flex justify-center items-center gap-20'>
             <div className='mt-12'>
@@ -1065,7 +1065,7 @@ const Homepage = () => {
 
 
 
-      </div>
+    </div>
     </>
   )
 }
