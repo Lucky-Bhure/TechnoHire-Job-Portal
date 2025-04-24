@@ -17,9 +17,6 @@ import arrow_2 from "../../../../assets/Arrows-2.png";
 import circle_wavy from "../../../../assets/circle-wavy.png";
 import search from "../../../../assets/search.png";
 import user_plus from "../../../../assets/user-Plus.png";
-import briefcase from "../../../../assets/briefcase.png";
-import buildingIcon from "../../../../assets/buildingIcon.png";
-import userIcon from "../../../../assets/user_icon.png";
 import Header from "./Header";
 
 import { LuSearch } from "react-icons/lu";
