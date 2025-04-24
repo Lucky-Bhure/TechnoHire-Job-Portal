@@ -59,7 +59,7 @@ const EmailVerifications = () => {
         <div className="flex justify-center items-center w-full mb-8">
           <img
             src={email}
-            className="w-[353px] sm:w-[40%] md:w-[250px] h-[200px]"
+            className="w-[353px] sm:w-[40%] md:w-[250px] h-[230px]"
             alt="Landing"
           />
         </div>

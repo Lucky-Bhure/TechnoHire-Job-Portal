@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { FiPhoneCall } from "react-icons/fi";
 const MainHeader = () => {
   return (
-    <header className="bg-[#F1F2F4] w-full px-4">
+    <header className="bg-[#F1F2F4] w-full px-10">
       <div className="w-full flex justify-between py-1">
         <nav className="flex flex-wrap justify-around items-center px-4">
           <div className="flex flex-wrap gap-4 md:gap-6">

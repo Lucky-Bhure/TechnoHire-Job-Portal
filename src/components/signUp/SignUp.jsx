@@ -242,7 +242,7 @@ const url="https://job-portal-candidate-be.onrender.com/v1/registration/"
           )}
 
         <button
-          // onClick={() => navigate("/verify")}
+          onClick={() => navigate("/verify")}
           type="submit"
           className="w-[16rem] h-[64px] flex justify-center items-center my-6 py-3 text-white bg-violet hover:bg-purple-800 rounded-md"
         >

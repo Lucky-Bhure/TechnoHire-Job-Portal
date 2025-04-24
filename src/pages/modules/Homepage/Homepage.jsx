@@ -9,7 +9,7 @@ import EmployersLogo from '../../../assets/EmployersLogo.png';
 import crownLogo from '../../../assets/crownLogo.png';
 import wheel from '../../../assets/wheel.png';
 import slack from '../../../assets/SlackLogo.png';
-import logo from '../../../assets/logo.png';
+import Homelogo from '../../../assets/Homelogo.png';
 import group from '../../../assets/group.png';
 import TestimonialImage from '../../../assets/Testimonial.png';
 import arrow from '../../../assets/arrow.png';
@@ -209,7 +209,7 @@ const Homepage = () => {
                 <button
                   className='border-2 border-[#3E1654] shadow-md text-[#6712B9] w-[243px] h-[55px] text-medium rounded-[15px] p-3'
                   type='button' onClick={() => navigate('/login')}>
-                  Become a Cadidate</button>
+                  Become a Candidate</button>
                 </Link>
                 <button className='border-2 border-[#3E1654] shadow-md text-[#6712B9] w-[243px] h-[55px] rounded-[15px] p-3'>Become an Employer</button>
               </div>
@@ -222,7 +222,7 @@ const Homepage = () => {
 
           </div>
 
-          <div className="grid grid-cols-1 mt-6 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
+          <div className="grid grid-cols-1 mt-6 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6  ">
 
             <div className="flex gap-10 justify-center items-center  h-[90px] rounded-lg bg-white border shadow-md ">
               <img className=' text-[#6712B9] bg-gray-100 rounded-md w-14 p-2 h-14' src={briefcase} alt="" />
@@ -264,8 +264,8 @@ const Homepage = () => {
         <div className='h-[500px] flex flex-col justify-center  bg-[#FFFFFF] w-full pl-32 pr-32'>
 
           <h1 className='font-normal text-[35px] pb-6'>Most Popular Vacancies</h1>
-          <div className='flex gap-10'>
-            <div className='flex flex-col gap-[37px]' >
+          <div className='flex gap-20'>
+            <div className='flex flex-col gap-[40px] ' >
               <div className='pb-4'>
                 <h5 className='font-medium text-lg'>Software Developer / Engineer</h5>
                 <p className='text-sm text-gray-400'>29 Open Positions</p>
@@ -964,7 +964,7 @@ const Homepage = () => {
         <div className='bg-[#18191C] text-[#FFFFFF] w-full h-[430px] pt-10'>
           <div className='flex gap-16 mb-20 pl-32 pr-32'>
             <div className="flex flex-col gap-4 mt-10">
-              <img className='w-[183px] h-[60px]' src={logo} alt="logo.png" />
+              <img className='w-[183px] h-[60px]' src={Homelogo} alt="logo.png" />
               <p className='text-[18px]'><span className="text-[#5E6670] text-[18px]">Call now:</span> +91 8956992803</p>
               <p className="text-[#5E6670] text-[14px]">4th floor, Prince Complex, Chatrapati Nagar,<br /> Nagpur, Maharashtra 440015</p>
             </div>

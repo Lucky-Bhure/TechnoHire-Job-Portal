@@ -37,7 +37,7 @@ const Header = () => {
     <>
       <div className="w-full">
        <MainHeader/>
-        <div className="w-full h-auto bg-white px-4 py-5 sm:px-8 justify-center">
+        <div className="w-full h-auto bg-white  py-5 px-10 justify-center">
           <div className="flex flex-wrap justify-around items-center">
             {/* Logo Section */}
             <div className="flex items-center w-full sm:w-auto mb-4 sm:mb-0 justify-start">
@@ -45,7 +45,7 @@ const Header = () => {
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAIAAAD9b0jDAAAB0UlEQVR4Ab3WA4ycURQF4Bu7cePUUaMGte0Gtc2otm3b1tq2bdsY/cbybNbW252c8cw3d857A6obgsNg0Brn+waGaE3QD/4MCQgbNMFJuEjcaaq+QjVXSBosmh8lvprA/9/P8wY+P5EfLGrMVf6tNj+nqnukQcS79n9rdn8gDxCVTZr3Ee4TaZ+pFqjraTMKdb9jMRQon9cPqNOoW9xfkhGgmBQvkOYlvBxhDn4lQ8SY6LfvaE36R96JRBeqRmxGC2gTDfycxDXOixLg4mF93adFjrw/iX5Ui8DNtBcwoOc2S2MDOPW5wvdv80dMNEVSNQI3+WHDKjc20Djy1SnKyEdl/f5ExZIEMX4vBw4zNjaAkbGTpjwwk10F/SrqN4pJ0R0abGkAYy6/xZFzOTJAFGLSUq6lAfT7s4Ajr/IWFOk3mkgiGkCw+m0Wt+ZGogFoY/qNJpAl71bXi1up6LsiDQNBsXt6eqzFmHr+VL/RHjj+42Np3VRh8wImaI1o8044OEM9slQ5tganDFDu7lbtzGJwCDNUebtbv76qMY0uG1S7txppdDE1A1T9sUd/sqrRVc/PsLw/wwzVH8zGyGpBKm5hgyJKlj/L331ww/xnYnjRejF2bTVE4PAdAAAAAElFTkSuQmCC" alt="Logo" className="w-10 h-10 object-contain" />
                 <div className="pl-4">
                   <p className="font-bold text-xl sm:text-xl">TechnoHire</p>
-                  <p className="text-sm text-white bg-blue-600 px-1 py-1 rounded">
+                  <p className="text-sm text-white bg-[#7900BA] px-1 py-1 rounded">
                     <b>Where Talent Meets Opportunity</b>
                   </p>
                 </div>
