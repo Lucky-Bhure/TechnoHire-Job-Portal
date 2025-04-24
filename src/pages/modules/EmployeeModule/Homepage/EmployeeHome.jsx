@@ -10,7 +10,7 @@ import PostAJob from './PostAJob/PostAJob'
 
 
 
-const Home = () => {
+const EmployeeHome = () => {
   return (
     <div>
 <Header/>
@@ -25,4 +25,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default EmployeeHome
