@@ -5,7 +5,7 @@ import LoginBack from "../../assets/img/loginBackground.png";
 import LoginLogo from "../../assets/img/loginLogo.png";
 import { AiFillEyeInvisible } from 'react-icons/ai'
 import { AiFillEye } from 'react-icons/ai'
-import { Link, useNavigate } from "react-router-dom";
+import { data, Link, useNavigate } from "react-router-dom";
 
 
 const SignUp = () => {
@@ -14,7 +14,7 @@ const SignUp = () => {
   const [showTerms, setShowTerms] = useState(false);
   const [showPrivacy, setShowPrivacy] = useState(false);
   const navigate = useNavigate(); // Initialize navigate
-
+const url="https://job-portal-candidate-be.onrender.com/v1/registration/"
 
   const formik = useFormik({
     initialValues: {
@@ -35,11 +35,27 @@ const SignUp = () => {
         .oneOf([Yup.ref("password"), null], "Passwords must match")
         .required("Confirm Password is required"),
     }),
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       console.log("Form data:", values);
-      navigate("/verify");
-    },
-  });
+      try {
+        const resp = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values),
+        });
+    console.log(resp)
+        const data = await resp.json(); 
+        console.log("Response:", data);
+      } catch (error) {
+        console.error("Error submitting form:", error);
+      }
+    
+      // navigate("/verify");
+    }}
+  )
+ 
 
   return (
     <div className="flex h-screen  bg-white">
@@ -226,7 +242,7 @@ const SignUp = () => {
           )}
 
         <button
-          onClick={() => navigate("/verify")}
+          // onClick={() => navigate("/verify")}
           type="submit"
           className="w-[16rem] h-[64px] flex justify-center items-center my-6 py-3 text-white bg-violet hover:bg-purple-800 rounded-md"
         >

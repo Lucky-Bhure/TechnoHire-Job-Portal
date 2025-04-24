@@ -38,6 +38,7 @@ import Applicationdetails from "./pages/modules/ApplicationDetails/Applicationde
 import Applicationsubmit from "./pages/modules/ApplicationDetails/Applicationsubmit";
 import Findjobdetails from "./pages/modules/Findajob/FindjobDetails/Findjobdetails";
  import Inboxes from "./pages/modules/Inbox/Inboxes";
+import EmployeeModule from "./pages/modules/EmployeeModule/EmployeeModule";
 // import EmailVerifySuccess from
 // import Notification from "./pages/modules/Notification/Notification";
 
@@ -85,6 +86,7 @@ function App() {
           path="/dashboard/scheduled-interview"
           element={<Scheduleinterview />}
         />
+            <Route path="/employeemodule" element={<EmployeeModule />} />
         <Route path="/dashboard/settings" element={<Setting />} />
         <Route path="/dashboard/feedback" element={<Feedback />} />
         <Route path="/notification" element={<Notification />} />

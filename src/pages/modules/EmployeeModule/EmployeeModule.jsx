@@ -1,9 +1,10 @@
 import React from 'react'
-
+import EmployeeHome from './Homepage/EmployeeHome'
 const EmployeeModule = () => {
   return (
-    <div>
-      
+    <div className='bg-red-500'>
+   
+     <EmployeeHome/>
     </div>
   )
 }
