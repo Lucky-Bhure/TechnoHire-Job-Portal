@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
+import 'react-quill/dist/quill.snow.css';
 
 createRoot(document.getElementById("root")).render(
   <RecoilRoot>

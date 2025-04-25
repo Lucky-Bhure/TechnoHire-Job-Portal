@@ -106,7 +106,7 @@ function Companycards() {
             </div>
             <div
               onClick={() => navigate("/single-employee")}
-              className="flex items-center justify-between w-44 bg-[#DCBDED] px-5 py-3 rounded text-[#7900BA] font-inter font-semibold text-[16px]/[24px]"
+              className="flex items-center justify-between w-44 bg-[#DCBDED] px-5 py-3 rounded text-[#7900BA] font-inter font-semibold text-[16px]/[24px] cursor-pointer"
             >
               <p>Open Position</p>
               <GrLinkNext />

@@ -227,7 +227,7 @@ const Homepage = () => {
               <p className="flex gap-1 pt-4 pb-10 text-sm font-medium text-gray-600">
                 <span className="text-gray-400 font-[400]">Suggestion:</span> Designer,
                 Programming,
-                <span className="text-[#8000FC] font-[500]">Digita Marketing</span>
+                <span className="text-[#8000FC] font-[500]">Digital Marketing</span>
                 , Video, Animation
               </p>
 
@@ -238,7 +238,7 @@ const Homepage = () => {
                     type="button"
                     onClick={() => navigate("/login")}
                   >
-                    Become a Cadidate
+                    Become a Candidate
                   </button>
                 </Link>
                 <button className="border-2 font-[500] border-[#3E1654] shadow-md text-[#3E1654] w-[243px] h-[55px] rounded-[15px] p-3">

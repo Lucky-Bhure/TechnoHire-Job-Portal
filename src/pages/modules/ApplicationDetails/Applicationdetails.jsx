@@ -109,51 +109,14 @@ const ApplicationDetails = () => {
         </div>
 
         {/* Action Buttons */}
-        <div className="  mx-44 my-10  grid grid-cols-3 ">
-          <button>
-            <div className="bg-[#7900BA] rounded-lg text-white w-[376px] h-[53px]">
-              <div className="flex">
-                <div className="mx-20 my-[13px] text-[16px]">
-                  <p>Applicant Information</p>
-                </div>
-                <div className="my-[18px]">
-                  <RiArrowDownSLine />
-                </div>
-              </div>
-            </div>
-          </button>
-          <button>
-            <div className="bg-[#7900BA] rounded-lg text-white w-[376px] h-[53px]">
-              <div className="flex">
-                <div className="mx-20 my-[13px] text-[16px]">
-                  <p>Applicant Progress</p>
-                </div>
-                <div className="my-[18px]">
-                  <RiArrowDownSLine />
-                </div>
-              </div>
-            </div>
-          </button>
-          <button onClick={() => navigate("/application-submit")}>
-            <div className="bg-[#7900BA] rounded-lg text-white w-[376px] h-[53px]">
-              <div className="flex">
-                <div className="mx-20 my-[13px] text-[16px]">
-                  <p>Submitted Documents</p>
-                </div>
-                <div className="my-[18px]">
-                  <RiArrowDownSLine />
-                </div>
-              </div>
-            </div>
-          </button>
-        </div>
-        <div className="grid grid-cols-2 mx-96 gap-8 ">
+       
+        <div className="grid grid-cols-2 mx-96 gap-8 mt-10">
           <div className="my-10">
             <button>
               <div className="border-[#7900BA] border hover:bg-[#7900BA] hover:text-white rounded-lg text-[#7900BA] w-[376px] h-[53px]">
                 <div className="flex">
                   <div className="mx-20 my-[13px] text-[16px]">
-                    <p>View More Jobs</p>
+                    <p onClick={() => navigate('/find-job')} className="cursor-pointer">View More Jobs</p>
                   </div>
                   <div className="my-[16px]">
                     <FaArrowRight />

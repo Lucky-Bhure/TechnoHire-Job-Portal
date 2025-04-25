@@ -8,6 +8,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { VscFeedback } from "react-icons/vsc";
 import { NavLink } from "react-router-dom";
 import { BsChevronRight, BsChevronLeft } from "react-icons/bs"; 
+import { MdLogout } from "react-icons/md";
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true); 
 
@@ -129,7 +130,22 @@ const Sidebar = () => {
           <VscFeedback size={30} />
           {isOpen && <span className="pl-4">Feedback</span>}
         </NavLink>
+
       </div>
+
+      <NavLink
+          to="/landingScreen1"
+          className={({ isActive }) =>
+            `flex items-center pl-5 py-3 mx-4 mt-25 ${
+              isActive
+                ? "bg-[#DCBDED] border-[#7900BA] border-l-4 font-bold text-[#7900BA]" 
+                : "text-gray-500"
+            }`
+          }
+        > 
+          <MdLogout size={30} />
+          {isOpen && <span className="pl-4">Log Out</span>}
+        </NavLink>
     </div>
   );
 };
