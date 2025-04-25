@@ -41,7 +41,7 @@ const SignUp = () => {
 
   return (
     <div className="flex h-screen bg-white">
-  <div className="w-full md:w-3/5 overflow-hidden bg-white px-20 md:px-20 py-8">
+  <div className="w-full md:w-3/5 overflow-hidden bg-white px-20 md:px-20 py-20">
         <h2 className="text-3xl font-semibold text-gray-800 mb-[45px] text-center">
           Log In To <span className="text-violet">TechnoHire</span>
         </h2>
@@ -79,7 +79,7 @@ const SignUp = () => {
             <button
               type="submit"
               onClick={() => navigate("/basicDetails")}
-              className="w-[65%] py-3 px-4 my-[20px] bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-700"
+              className="w-[65%] py-3 px-4 my-[20px] bg-[#6712B9]  text-white font-bold rounded-lg"
             >
               Log In
             </button>
