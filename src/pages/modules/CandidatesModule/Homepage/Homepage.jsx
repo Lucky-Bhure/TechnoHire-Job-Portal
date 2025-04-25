@@ -10,6 +10,7 @@ import crownLogo from "../../../../assets/crownLogo.png";
 import wheel from "../../../../assets/wheel.png";
 import slack from "../../../../assets/SlackLogo.png";
 import homelogo from "../../../../assets/homelogo.png";
+import logo2 from "../../../../assets/logo2.png";
 import group from "../../../../assets/group.png";
 import TestimonialImage from "../../../../assets/Testimonial.png";
 import arrow from "../../../../assets/arrow.png";
@@ -191,10 +192,23 @@ const Homepage = () => {
         
         {/* HeroSection */}
         <div className="bg-[#f1f2f499] w-full px-32 h-fit pt-6">
+        <div className="w-fit h-fit gap-2 flex items-center">
+                <img
+                  src={logo2}
+                  alt="Logo"
+                  className="w-20 h-20 object-contain"
+                />
+                <div className="w-fit -ml-5 mt-3">
+                  <p className="font-[500] text-2xl sm:text-2xl">TechnoHire</p>
+                  <p className="text-[8px] text-white bg-[#8b008d] px-1 py-1">
+                    Where Talent Meets Opportunity{" "}
+                  </p>
+                </div>
+              </div>
           <div className="w-full h-fit flex justify-between">
             <div className="w-[56%] mt-12">
-              <h1 className="font-medium leading-tight text-[#18191C] text-[48px]">
-                Find a job that suits <br /> your interest & skills.
+              <h1 className="font-medium leading-tight text-[#18191C] text-[35px]">
+               Your one-stop job portal to connect <br /> top talent with the best<br/>opportunities.
               </h1>
               <p className="pt-4 text-[#5E6670]">
                 Explore exciting opportunities tailored to your expertise and{" "}
@@ -202,30 +216,7 @@ const Homepage = () => {
                 fits you!
               </p>
 
-              <div className="flex justify-around py-4 items-center mt-6 shadow-md px-4 bg-[#fff] rounded-xl w-full gap-2 ">
-                <div className="w-fit gap-2 flex items-center">
-                  <LuSearch size={24} className="text-[#6712B9]" />
-                  <input
-                    className="p-2 order-none outline-none text-md"
-                    type="text"
-                    placeholder="Job tittle,keyword..."
-                  />
-                </div>
-                <div className="w-fit gap-2 flex items-center">
-                  <SlLocationPin size={24} className="text-[#6712B9]" />
-                  <input
-                    className="p-2 order-none outline-none text-md"
-                    placeholder="Your Location"
-                    type="text"
-                  />
-                </div>
-                <button
-                  type="button"
-                  className="bg-[#6712B9] py-3 px-6 w-fit rounded text-white"
-                >
-                  Find Job
-                </button>
-              </div>
+             
               <p className="flex gap-1 pt-4 pb-10 text-sm font-medium text-gray-600">
                 <span className="text-gray-400 font-[400]">Suggestion:</span> Designer,
                 Programming,
@@ -582,7 +573,7 @@ const Homepage = () => {
               </div>
               <div className="flex gap-8 items-center  ml-[40%]">
                 <FaRegBookmark className="text-[#6712B9]" />
-                <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9]  rounded-md transition transform hover:bg-[#6712B9] hover:text-white">
+                <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] border rounded-md transition transform hover:bg-[#6712B9] hover:text-white">
                   <span>View All</span>
                   <FaArrowRight className="ml-2" />
                 </button>

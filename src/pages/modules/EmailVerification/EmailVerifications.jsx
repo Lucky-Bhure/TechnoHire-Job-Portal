@@ -56,16 +56,16 @@ const EmailVerifications = () => {
           </span>
         </div>
 
-        <div className="flex justify-center items-center w-full mb-8">
+        <div className="flex justify-center items-center w-full mb-2">
           <img
             src={email}
-            className="w-[353px] sm:w-[40%] md:w-[250px] h-[200px]"
+            className="w-[353px] sm:w-[40%] md:w-[250px] h-[300px]"
             alt="Landing"
           />
         </div>
 
         {/* Verification Code Input */}
-        <div className="flex flex-col items-center w-full mb-6">
+        <div className="flex flex-col items-center w-full mb-2">
           
           <input
             type="text"
@@ -78,7 +78,7 @@ const EmailVerifications = () => {
         </div>
 
         {/* Resend Code Section */}
-        <div className="text-center text-gray-600 mt-4">
+        <div className="text-center text-gray-600 mt-2">
           <p className="text-right">
             Didn’t receive any code?{" "}
             <button
@@ -91,10 +91,10 @@ const EmailVerifications = () => {
               Resend Code
             </button>
           </p>
-          <p className="text-lg font-semibold mt-2">{formatTime(timer)}</p>
+          <p className="text-lg font-semibold mt-1">{formatTime(timer)}</p>
         </div>
 
-        <p className="mt-8 text-center text-gray-600 text-lg">
+        <p className="mt-2 text-center text-gray-600 text-lg">
           Go back to{" "}
           <Link
             to="/login"
@@ -108,7 +108,7 @@ const EmailVerifications = () => {
                   <button
                     type="submit"
                     onClick={() => navigate("/emailVerifySuccess")}
-                    className="py-3 flex justify-center items-center w-full bg-violet text-white rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500"
+                    className="py-3 flex justify-center items-center w-full bg-[#6712B9]  text-white rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500"
                   >
                     Verify My Account
                     <BsArrowRight className="text-xl mx-2" />
