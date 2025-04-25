@@ -7,15 +7,7 @@ const MainHeader = () => {
       <div className="w-full flex justify-between">
         <nav className="flex flex-wrap justify-around items-center px-4">
           <div className="flex flex-wrap gap-4 md:gap-6">
-            <NavLink
-              className={({ isActive }) =>
-                `text-[#5E6670] px-2 py-1 text-sm md:px-4 md:py-2 font-medium hover:text-[#7900BA] hover:border-b-2 hover:border-[#7900BA] transition ${isActive ? "border-b-2 text-[#7900BA] border-[#7900BA]" : ""
-                }`
-              }
-              to="/"
-            >
-              Home
-            </NavLink>
+           
 
             <NavLink
               className={({ isActive }) =>
