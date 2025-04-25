@@ -31,7 +31,7 @@ const Sidebar = () => {
           {isOpen ? <BsChevronLeft size={20} /> : <BsChevronRight size={20} />}
         </button>
       </div>
-      <div className="grid grid-rows-7 mt-5">
+      <div className="grid grid-rows-7 mt-5 justify-between">
         {/* Dashboard Links */}
         <NavLink
           to="/dashboard/overview"
@@ -133,6 +133,7 @@ const Sidebar = () => {
 
       </div>
 
+      
       <NavLink
           to="/landingScreen1"
           className={({ isActive }) =>
