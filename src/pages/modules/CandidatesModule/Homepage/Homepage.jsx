@@ -24,7 +24,6 @@ import { SlLocationPin } from "react-icons/sl";
 
 import { Icon as IconifyIcon } from "@iconify/react";
 import { FaStar } from "react-icons/fa6";
-import { FaSearch } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
 import { PiBuildingOffice } from "react-icons/pi";
 import { FaCloudUploadAlt } from "react-icons/fa";
