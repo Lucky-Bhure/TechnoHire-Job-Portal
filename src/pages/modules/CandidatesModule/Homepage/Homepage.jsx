@@ -229,7 +229,7 @@ const Homepage = () => {
               <p className="flex gap-1 pt-4 pb-10 text-sm font-medium text-gray-600">
                 <span className="text-gray-400 font-[400]">Suggestion:</span> Designer,
                 Programming,
-                <span className="text-[#8000FC] font-[500]">Digita Marketing</span>
+                <span className="text-[#8000FC] font-[500]">Digital Marketing</span>
                 , Video, Animation
               </p>
 

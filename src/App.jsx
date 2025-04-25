@@ -41,6 +41,7 @@ import Applicationdetails from "./pages/modules/ApplicationDetails/Applicationde
 import Applicationsubmit from "./pages/modules/ApplicationDetails/Applicationsubmit";
 import Findjobdetails from "./pages/modules/Findajob/FindjobDetails/Findjobdetails";
  import Inboxes from "./pages/modules/Inbox/Inboxes";
+import SpamBox from "./pages/modules/FindEmplyee/FindEmployers/SpamBox";
 
 
 function App() {
@@ -92,7 +93,7 @@ function App() {
         <Route path="/jobdetails" element={<Findjobdetails/>}  />
         <Route path="/application-submitted" element={<Applicationsubmit />} />
         <Route path="/application-details" element={<Applicationdetails />} />
-        
+        <Route path="/spam" element={<SpamBox />} />
       </Routes>
       <ToastContainer/>
     </div>
