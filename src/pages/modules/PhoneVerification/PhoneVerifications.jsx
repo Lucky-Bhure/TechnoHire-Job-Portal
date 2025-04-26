@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import LoginBack from "../../../assets/img/loginBackground.png";
 import LoginLogo from "../../../assets/img/loginLogo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineLeft } from 'react-icons/ai';
 import email from "../../../assets/img/emailVerify.png"; // Replace with appropriate phone verification image
 import { BsArrowRight } from "react-icons/bs";
@@ -9,6 +9,8 @@ import { BsArrowRight } from "react-icons/bs";
 const PhoneVerifications = () => {
   const [timer, setTimer] = useState(120);
   const [verificationCode, setVerificationCode] = useState("");
+
+  const navigate = useNavigate();
 
   // Countdown logic
   useEffect(() => {
@@ -92,6 +94,18 @@ const PhoneVerifications = () => {
           <p className="text-lg font-semibold mt-2">{formatTime(timer)}</p>
         </div>
 
+        
+
+        <div className="w-full max-w-[400px] mx-auto mt-6">
+          <button
+            type="submit"
+            className="py-3 flex justify-center items-center w-full bg-violet text-white rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500" onClick={() => navigate("/phoneVerifySuccess")}
+          >
+            Verify My Account
+            <BsArrowRight className="text-xl mx-2" />
+          </button>
+        </div>
+
         <p className="mt-8 text-center text-gray-600 text-lg">
           Go back to {" "}
           <Link
@@ -101,16 +115,6 @@ const PhoneVerifications = () => {
             Login
           </Link>
         </p>
-
-        <div className="w-full max-w-[400px] mx-auto mt-6">
-          <button
-            type="submit"
-            className="py-3 flex justify-center items-center w-full bg-violet text-white rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500"
-          >
-            Verify My Account
-            <BsArrowRight className="text-xl mx-2" />
-          </button>
-        </div>
       </div>
 
       {/* Right Side: Image */}
