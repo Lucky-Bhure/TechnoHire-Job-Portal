@@ -2,7 +2,7 @@ import MainHeader from "../../../components/header/MainHeader";
 import React from "react";
 import { ArrowRight } from "lucide-react";
 
-const Customersupport = () => {
+const CustomerSupport = () => {
   return (
     <>
       <MainHeader />
@@ -159,4 +159,4 @@ const Customersupport = () => {
   );
 };
 
-export default Customersupport;
+export default CustomerSupport;
