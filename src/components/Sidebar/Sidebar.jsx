@@ -135,7 +135,7 @@ const Sidebar = () => {
 
       
       <NavLink
-          to="/landingScreen1"
+          to="/"
           className={({ isActive }) =>
             `flex items-center pl-5 py-3 mx-4 mt-25 ${
               isActive

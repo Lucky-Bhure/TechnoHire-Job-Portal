@@ -225,15 +225,13 @@ const Homepage = () => {
               </p>
 
               <div className="flex gap-6">
-                <Link to="/landingScreen1">
                   <button
                     className="border-2 font-[500] border-[#3E1654] shadow-md text-[#3E1654] w-[243px] h-[55px] text-medium rounded-[15px] p-3"
                     type="button"
-                    onClick={() => navigate("/login")}
+                    onClick={() => navigate("/landingScreen1")}
                   >
                     Become a Candidate
                   </button>
-                </Link>
                 <button className="border-2 font-[500] border-[#3E1654] shadow-md text-[#3E1654] w-[243px] h-[55px] rounded-[15px] p-3">
                   Become an Employer
                 </button>
