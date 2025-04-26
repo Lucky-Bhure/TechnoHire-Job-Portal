@@ -147,7 +147,6 @@ const Sidebar = () => {
           <MdLogout size={30} />
           {isOpen && <span className="pl-4">Log Out</span>}
         </NavLink>
-      </div>
     </div>
   );
 };
