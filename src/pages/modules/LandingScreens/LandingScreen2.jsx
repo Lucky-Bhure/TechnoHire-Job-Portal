@@ -8,7 +8,7 @@ const LandingScreen1 = () => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-center max-h-screen bg-white">
       {/* Left Side: Form */}
-      <div className="w-full md:w-[60%] px-6 py-4 sm:px-10 lg:px-20 flex flex-col items-center h-screen overflow-y-hidden">
+      <div className="w-full md:w-[60%] px-6 py-12 sm:px-10 lg:px-20 flex flex-col items-center h-screen overflow-y-hidden">
         <h2 className="text-2xl sm:text-3xl lg:text-3xl font-semibold text-gray-800 mb-6 ml-15 text-center">
         Find a job that suits your  <br />
           <span className="text-violet">finding jobs Interest </span>

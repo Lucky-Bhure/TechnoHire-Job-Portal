@@ -6,6 +6,8 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 import { FaFlag } from "react-icons/fa";
 import Inboxes from "../../pages/modules/Inbox/Inboxes";
 import MainHeader from "./MainHeader";
+import { TbMessage2 } from "react-icons/tb";
+import { PiBellRingingBold } from "react-icons/pi";
 // import Notification from "../../pages/modules/Notification/Notification";
 
 const Header = () => {
@@ -14,8 +16,11 @@ const Header = () => {
   const handleMessages = () => {
     navigate("/Inboxes");
   }
-  const handelnotification =()=>{
+  const handelNotification =()=>{
     navigate("/notification");
+  }
+  const handleUser = () => {
+    navigate('/my-profile')
   }
 
   const options = [
@@ -23,7 +28,7 @@ const Header = () => {
       value: "India",
       label: (
         <div className="flex items-center gap-2">
-          <FaFlag className="text-red-600" /> India
+          <FaFlag className="text-orange-600" /> India
         </div>
       ),
     },
@@ -31,7 +36,7 @@ const Header = () => {
       value: "Germany",
       label: (
         <div className="flex items-center gap-2">
-          <FaFlag className="text-black" /> Germany
+          <FaFlag className="text-blue-600" /> Germany
         </div>
       ),
     },
@@ -49,7 +54,7 @@ const Header = () => {
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAIAAAD9b0jDAAAB0UlEQVR4Ab3WA4ycURQF4Bu7cePUUaMGte0Gtc2otm3b1tq2bdsY/cbybNbW252c8cw3d857A6obgsNg0Brn+waGaE3QD/4MCQgbNMFJuEjcaaq+QjVXSBosmh8lvprA/9/P8wY+P5EfLGrMVf6tNj+nqnukQcS79n9rdn8gDxCVTZr3Ee4TaZ+pFqjraTMKdb9jMRQon9cPqNOoW9xfkhGgmBQvkOYlvBxhDn4lQ8SY6LfvaE36R96JRBeqRmxGC2gTDfycxDXOixLg4mF93adFjrw/iX5Ui8DNtBcwoOc2S2MDOPW5wvdv80dMNEVSNQI3+WHDKjc20Djy1SnKyEdl/f5ExZIEMX4vBw4zNjaAkbGTpjwwk10F/SrqN4pJ0R0abGkAYy6/xZFzOTJAFGLSUq6lAfT7s4Ajr/IWFOk3mkgiGkCw+m0Wt+ZGogFoY/qNJpAl71bXi1up6LsiDQNBsXt6eqzFmHr+VL/RHjj+42Np3VRh8wImaI1o8044OEM9slQ5tganDFDu7lbtzGJwCDNUebtbv76qMY0uG1S7txppdDE1A1T9sUd/sqrRVc/PsLw/wwzVH8zGyGpBKm5hgyJKlj/L331ww/xnYnjRejF2bTVE4PAdAAAAAElFTkSuQmCC" alt="Logo" className="w-12 h-12 object-contain" />
                 <div className="pl-4">
                   <p className="font-bold text-xl sm:text-2xl">TechnoHire</p>
-                  <p className="text-xs text-white bg-blue-600 px-2 py-1 rounded">
+                  <p className="text-xs text-white bg-[#B13589] px-2 py-1 rounded">
                     <b>Where Talent Meets Opportunity</b>
                   </p>
                 </div>
@@ -74,12 +79,13 @@ const Header = () => {
 
             {/* User Section */}
             <div className="flex items-center gap-4 w-full sm:w-auto justify-center sm:justify-end">
-             <MdOutlineMessage onClick={handleMessages} className="w-6 h-6 text-gray-600 cursor-pointer"/>  
-              {/* <div> */}
-              <IoIosNotificationsOutline onClick={handelnotification} className='w-6 h-6 text-gray-600 cursor-pointer'/>
-              {/* </div> */}
+             <TbMessage2 onClick={handleMessages} className="w-6 h-6 text-gray-600 cursor-pointer"/>  
+              <div className="relative"> 
+                <PiBellRingingBold onClick={handelNotification} className='w-6 h-6 text-gray-600 cursor-pointer'/>
+                <span className="absolute top-0 right-0 w-2.5 h-2.5 bg-red-500 rounded-full"></span>
+              </div>
               <div className="relative">
-                <img
+                <img onClick={handleUser}
                   className="w-8 h-8 object-cover rounded-full cursor-pointer hover:border-2 hover:border-black"
                   src="https://plus.unsplash.com/premium_photo-1690086519096-0594592709d3?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="User Avatar"

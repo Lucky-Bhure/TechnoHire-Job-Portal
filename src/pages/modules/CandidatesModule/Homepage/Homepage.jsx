@@ -9,7 +9,8 @@ import EmployersLogo from "../../../../assets/EmployersLogo.png";
 import crownLogo from "../../../../assets/crownLogo.png";
 import wheel from "../../../../assets/wheel.png";
 import slack from "../../../../assets/SlackLogo.png";
-import logo from "../../../../assets/logo.png";
+import homelogo from "../../../../assets/homelogo.png";
+import logo2 from "../../../../assets/logo2.png";
 import group from "../../../../assets/group.png";
 import TestimonialImage from "../../../../assets/Testimonial.png";
 import arrow from "../../../../assets/arrow.png";
@@ -17,13 +18,18 @@ import arrow_2 from "../../../../assets/Arrows-2.png";
 import circle_wavy from "../../../../assets/circle-wavy.png";
 import search from "../../../../assets/search.png";
 import user_plus from "../../../../assets/user-Plus.png";
+import briefcase from "../../../../assets/briefcase.png";
+import buildingIcon from "../../../../assets/buildingIcon.png";
+import userIcon from "../../../../assets/user_icon.png";
 import Header from "./Header";
-
+import { HiUserPlus } from "react-icons/hi2";
+import { FaSearchPlus } from "react-icons/fa";
 import { LuSearch } from "react-icons/lu";
 import { SlLocationPin } from "react-icons/sl";
-
-import { Icon as IconifyIcon } from "@iconify/react";
+import { MdVerified } from "react-icons/md";
+import { Icon as IconifyIcon} from "@iconify/react";
 import { FaStar } from "react-icons/fa6";
+import { FaSearch } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
 import { PiBuildingOffice } from "react-icons/pi";
 import { FaCloudUploadAlt } from "react-icons/fa";
@@ -181,14 +187,28 @@ const Homepage = () => {
 
   return (
     <>
-      <Header />
+    
       <div className="w-full bg-white">
+        
         {/* HeroSection */}
         <div className="bg-[#f1f2f499] w-full px-32 h-fit pt-6">
+        <div className="w-fit h-fit gap-2 flex items-center">
+                <img
+                  src={logo2}
+                  alt="Logo"
+                  className="w-20 h-20 object-contain"
+                />
+                <div className="w-fit -ml-5 mt-3">
+                  <p className="font-[500] text-2xl sm:text-2xl">TechnoHire</p>
+                  <p className="text-[8px] text-white bg-[#8b008d] px-1 py-1">
+                    Where Talent Meets Opportunity{" "}
+                  </p>
+                </div>
+              </div>
           <div className="w-full h-fit flex justify-between">
             <div className="w-[56%] mt-12">
-              <h1 className="font-medium leading-tight text-[#18191C] text-[48px]">
-                Find a job that suits <br /> your interest & skills.
+              <h1 className="font-medium leading-tight text-[#18191C] text-[35px]">
+               Your one-stop job portal to connect <br /> top talent with the best<br/>opportunities.
               </h1>
               <p className="pt-4 text-[#5E6670]">
                 Explore exciting opportunities tailored to your expertise and{" "}
@@ -196,34 +216,11 @@ const Homepage = () => {
                 fits you!
               </p>
 
-              <div className="flex justify-around py-4 items-center mt-6 shadow-md px-4 bg-[#fff] rounded-xl w-full gap-2 ">
-                <div className="w-fit gap-2 flex items-center">
-                  <LuSearch size={24} className="text-[#6712B9]" />
-                  <input
-                    className="p-2 order-none outline-none text-md"
-                    type="text"
-                    placeholder="Job tittle,keyword..."
-                  />
-                </div>
-                <div className="w-fit gap-2 flex items-center">
-                  <SlLocationPin size={24} className="text-[#6712B9]" />
-                  <input
-                    className="p-2 order-none outline-none text-md"
-                    placeholder="Your Location"
-                    type="text"
-                  />
-                </div>
-                <button
-                  type="button"
-                  className="bg-[#6712B9] py-3 px-6 w-fit rounded text-white"
-                >
-                  Find Job
-                </button>
-              </div>
+             
               <p className="flex gap-1 pt-4 pb-10 text-sm font-medium text-gray-600">
                 <span className="text-gray-400 font-[400]">Suggestion:</span> Designer,
                 Programming,
-                <span className="text-[#8000FC] font-[500]">Digita Marketing</span>
+                <span className="text-[#8000FC] font-[500]">Digital Marketing</span>
                 , Video, Animation
               </p>
 
@@ -234,7 +231,7 @@ const Homepage = () => {
                     type="button"
                     onClick={() => navigate("/login")}
                   >
-                    Become a Cadidate
+                    Become a Candidate
                   </button>
                 </Link>
                 <button className="border-2 font-[500] border-[#3E1654] shadow-md text-[#3E1654] w-[243px] h-[55px] rounded-[15px] p-3">
@@ -265,7 +262,7 @@ const Homepage = () => {
           <h1 className="font-normal text-[35px] pb-6">
             Most Popular Vacancies
           </h1>
-          <div className="flex gap-10">
+          <div className="flex gap-20">
             <div className="flex flex-col gap-[37px]">
               <div className="pb-4">
                 <h5 className="font-medium text-lg">
@@ -350,10 +347,10 @@ const Homepage = () => {
           </h1>
 
           <div className="grid grid-cols-1 mt-6 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
-            <div className="flex flex-col gap-6 justify-center items-center h-[300px] w-[250px] rounded-lg">
-              <div className="p-4 mt-10 bg-[#FFFFFF] rounded-full">
-                <img className="w-[40px] h-[40px]" src={user_plus} alt="" />
-              </div>
+            <div className="flex flex-col gap-6 justify-center items-center h-[300px] w-[250px] rounded-lg ">
+              <div className="p-4 mt-10 bg-[#FFFFFF] rounded-full hover:bg-[#6712B9]">
+              <HiUserPlus className="w-[40px] h-[40px] p-1 ml-1 text-[#6712B9]   hover:text-[#FFFFFF]"/>
+         </div>
               <h5 className="font-medium text-lg">Create Account</h5>
               <p className="text-gray-400 text-sm p-4 align-middle">
                 Join us today to unlock a world of career possibilities. Setting
@@ -367,8 +364,8 @@ const Homepage = () => {
             </div>
 
             <div className="flex flex-col gap-6 justify-center items-center  h-[300px] w-[250px] rounded-lg bg-white">
-              <div className="bg-[#6712B9] p-4 mt-10 rounded-full">
-                <FaCloudUploadAlt className="w-[40px] h-[40px] text-[#FFFFFF] " />
+              <div className="bg-[#FFFFFF]  p-4 mt-10 rounded-full hover:bg-[#6712B9] ">
+                <FaCloudUploadAlt className="w-[40px] h-[40px] text-[#6712B9]  hover:text-white" />
               </div>
 
               <h5 className="font-medium text-lg">Upload CV/Resume</h5>
@@ -383,8 +380,8 @@ const Homepage = () => {
             </div>
 
             <div className="flex flex-col gap-6 justify-center items-center  h-[300px] w-[250px] rounded-lg ">
-              <div className="p-2 mt-10 bg-[#FFFFFF] rounded-full">
-                <img className="w-[60px] h-[60px]" src={search} alt="" />
+              <div className="p-3 mt-10 bg-[#FFFFFF] rounded-full  hover:bg-[#6712B9]">
+              <FaSearchPlus  className="w-[40px] h-[40px] px-1 text-[#6712B9]  hover:text-white" />
               </div>
               <h5 className="font-medium text-lg">Find suitable job</h5>
               <p className=" text-gray-400 text-sm p-4 align-center">
@@ -397,8 +394,8 @@ const Homepage = () => {
             </div>
 
             <div className="flex flex-col gap-6 justify-center items-center  h-[300px] w-[250px] rounded-lg">
-              <div className="p-4 mt-10 bg-[#FFFFFF] rounded-full">
-                <img className="w-[40px] h-[40px]" src={circle_wavy} alt="" />
+              <div className="p-4 mt-10 bg-[#FFFFFF] rounded-full  hover:bg-[#6712B9]">
+              <MdVerified  className="w-[40px] h-[40px] px-1 text-[#6712B9]  hover:text-white" />
               </div>
               <h5 className="font-medium text-lg">Apply Job</h5>
               <p className=" text-gray-400 text-sm p-4 align-center">
@@ -420,30 +417,32 @@ const Homepage = () => {
 
           <div>
             <div className="grid grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 gap-12 p-6">
-              <div className="flex gap-8 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white ">
-                <FaPenNib className=" text-[#6712B9] bg-gray-100 w-12 p-2 h-10 rounded-md" />
+              <div  className="flex gap-8 justify-center items-center h-[90px] w-[260px] rounded-lg bg-white  transition transform hover:scale-105 hover:shadow-xl hover:text-[#6712B9]">
+             
+               <FaPenNib className=" text-[#6712B9] bg-gray-100 hover:bg-[#6712B9] hover:text-gray-100 w-12 p-2 h-10 rounded-md" />
+            
                 <span>
                   <h5 className="text-lg font-medium">Graphics & Design</h5>
                   <p className="text-gray-500">357 Open position</p>
                 </span>
               </div>
-              <div className="flex gap-8 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white ">
-                <FaCode className=" text-[#6712B9] bg-gray-100 w-12 p-2 h-10 rounded-md" />
+              <div  className="flex gap-8 justify-center items-center h-[90px] w-[260px] rounded-lg bg-white  transition transform hover:scale-105 hover:shadow-xl hover:text-[#6712B9]">
+                <FaCode className=" text-[#6712B9] bg-gray-100 hover:bg-[#6712B9] hover:text-gray-100  w-12 p-2 h-10 rounded-md" />
                 <span>
                   <h5 className="text-lg font-medium">Code & Programing</h5>
                   <p className="text-gray-500">312 Open position</p>
                 </span>
               </div>
-              <div className="flex gap-8 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white">
-                <HiOutlineSpeakerphone className="text-[#6712B9] bg-gray-100 w-12 p-2 h-10 rounded-md" />
+              <div   className="flex gap-8 justify-center items-center h-[90px] w-[260px] rounded-lg bg-white  transition transform hover:scale-105 hover:shadow-xl hover:text-[#6712B9]">
+                <HiOutlineSpeakerphone className="text-[#6712B9] bg-gray-100 hover:bg-[#6712B9] hover:text-gray-100  w-12 p-2 h-10 rounded-md" />
                 <span>
                   <h5 className="text-lg font-medium">Digital Marketing</h5>
                   <p className="text-gray-500">297 Open position</p>
                 </span>
               </div>
 
-              <div className="flex gap-8 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white ">
-                <LuMonitorPlay className=" text-[#6712B9] bg-gray-100 w-12 p-2 h-10 rounded-md" />
+              <div className="flex gap-8 justify-center items-center h-[90px] w-[260px] rounded-lg bg-white  transition transform hover:scale-105 hover:shadow-xl hover:text-[#6712B9]">
+                <LuMonitorPlay className=" text-[#6712B9] bg-gray-100 hover:bg-[#6712B9] hover:text-gray-100  w-12 p-2 h-10 rounded-md" />
                 <span>
                   <h5 className="text-lg font-medium">Video & Animation</h5>
                   <p className="text-gray-500">247 Open position</p>
@@ -452,8 +451,8 @@ const Homepage = () => {
             </div>
 
             <div className="grid grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 gap-12 p-6">
-              <div className="flex gap-8 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white">
-                <FaMusic className=" text-[#6712B9] bg-gray-100 w-12 p-2 h-10 rounded-md" />
+              <div  className="flex gap-8 justify-center items-center h-[90px] w-[260px] rounded-lg bg-white  transition transform hover:scale-105 hover:shadow-xl hover:text-[#6712B9]">
+                <FaMusic className=" text-[#6712B9] bg-gray-100 hover:bg-[#6712B9] hover:text-gray-100  w-12 p-2 h-10 rounded-md" />
                 <span>
                   <h5 className="text-lg font-medium">
                     Data Science and Analytics
@@ -461,25 +460,25 @@ const Homepage = () => {
                   <p className="text-gray-500">204 Open position</p>
                 </span>
               </div>
-              <div className="flex gap-8 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white">
-                <PiBuildingOffice className="text-[#6712B9] bg-gray-100 w-12 p-2 h-10 rounded-md" />
+              <div  className="flex gap-8 justify-center items-center h-[90px] w-[260px] rounded-lg bg-white  transition transform hover:scale-105 hover:shadow-xl hover:text-[#6712B9]">
+                <PiBuildingOffice className="text-[#6712B9] bg-gray-100 hover:bg-[#6712B9] hover:text-gray-100  w-12 p-2 h-10 rounded-md" />
                 <span>
                   <h5 className="text-lg font-medium">UI/UX Design</h5>
                   <p className="text-gray-500">167 Open position</p>
                 </span>
               </div>
-              <div className="flex gap-6 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white">
-                <RiFirstAidKitLine className=" text-[#6712B9] bg-gray-100 w-12 p-2 h-10 rounded-md" />
+              <div   className="flex gap-8 justify-center items-center h-[90px] w-[260px] rounded-lg bg-white px-5 transition transform hover:scale-105 hover:shadow-xl hover:text-[#6712B9]">
+                <RiFirstAidKitLine className=" text-[#6712B9] bg-gray-100 hover:bg-[#6712B9] hover:text-gray-100  w-12 p-2 h-10 rounded-md" />
                 <span>
-                  <h5 className="text-lg font-medium">Blockchain Technology</h5>
+                  <h5 className="text-lg font-medium  ">Blockchain Technology</h5>
                   <p className="text-gray-500">125 Open position</p>
                 </span>
               </div>
 
-              <div className="flex gap-6 justify-center items-center  h-[90px] w-[260px] rounded-lg bg-white border shadow-md ">
-                <FaDatabase className=" text-[#FFFFFF] bg-[#6712B9] w-12 p-2 h-10 rounded-md" />
+              <div   className="flex gap-8 justify-center items-center h-[90px] w-[260px] rounded-lg bg-white  transition transform hover:scale-105 hover:shadow-xl hover:text-[#6712B9]">
+                <FaDatabase className=" text-[#6712B9] bg-gray-100 hover:bg-[#6712B9] hover:text-gray-100  w-12 p-2 h-10 rounded-md" />
                 <span>
-                  <h5 className="text-lg font-medium text-[#6712B9]">
+                  <h5 className="text-lg font-medium">
                     Cybersecurity
                   </h5>
                   <p className="text-gray-500">57 Open position</p>
@@ -495,7 +494,7 @@ const Homepage = () => {
         <div className="h-[800px] w-full pt-10 pl-32 pr-32">
           <h1 className="font-normal text-[35px] pb-6">Recents Jobs</h1>
           <div className="flex flex-col gap-5">
-            <div className="flex gap-10 h-[90px] rounded-lg bg-white border shadow-md ">
+            <div className="flex gap-10 h-[90px] rounded-lg bg-white  transition transform hover:scale-105 hover:shadow-xl ">
               <div className="flex items-start p-4">
                 <img className="h-16 w-16" src={UpLogo} alt="UP Logo" />
                 <div className="ml-4 flex-grow">
@@ -531,14 +530,14 @@ const Homepage = () => {
               </div>
               <div className="flex gap-8 items-center  ml-[40%]">
                 <FaRegBookmark className="text-[#6712B9]" />
-                <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] rounded-md border-2">
+                <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] rounded-md border-2 transition transform hover:bg-[#6712B9] hover:text-white">
                   <span>View All</span>
                   <FaArrowRight className="ml-2" />
                 </button>
               </div>
             </div>
 
-            <div className="flex gap-10 h-[90px] rounded-lg bg-white border shadow-md ">
+            <div className="flex gap-10 h-[90px] rounded-lg bg-white  transition transform hover:scale-105 hover:shadow-xl ">
               <div className="flex items-start p-4">
                 <img className="h-16 w-16" src={appleLogo} alt="UP Logo" />
                 <div className="ml-4 flex-grow">
@@ -574,14 +573,14 @@ const Homepage = () => {
               </div>
               <div className="flex gap-8 items-center  ml-[40%]">
                 <FaRegBookmark className="text-[#6712B9]" />
-                <button className="flex h-10 pl-4 pr-4 items-center bg-[#6712B9] text-white rounded-md">
+                <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] border rounded-md transition transform hover:bg-[#6712B9] hover:text-white">
                   <span>View All</span>
                   <FaArrowRight className="ml-2" />
                 </button>
               </div>
             </div>
 
-            <div className="flex gap-10 h-[90px] rounded-lg bg-white border shadow-md ">
+            <div className="flex gap-10 h-[90px] rounded-lg bg-white  transition transform hover:scale-105 hover:shadow-xl ">
               <div className="flex items-start p-4">
                 <img
                   className="h-16 w-16"
@@ -621,14 +620,14 @@ const Homepage = () => {
               </div>
               <div className="flex gap-8 items-center  ml-[40%]">
                 <FaRegBookmark className="text-[#6712B9]" />
-                <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] rounded-md border-2">
+                <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] rounded-md border-2 transition transform hover:bg-[#6712B9] hover:text-white">
                   <span>View All</span>
                   <FaArrowRight className="ml-2" />
                 </button>
               </div>
             </div>
 
-            <div className="flex gap-10 h-[90px] rounded-lg bg-white border shadow-md ">
+            <div className="flex gap-10 h-[90px] rounded-lg bg-white  transition transform hover:scale-105 hover:shadow-xl ">
               <div className="flex items-start p-4">
                 <img className="h-16 w-16" src={ULogo} alt="ULogo" />
                 <div className="ml-4 flex-grow">
@@ -664,14 +663,14 @@ const Homepage = () => {
               </div>
               <div className="flex gap-8 items-center  ml-[40%]">
                 <FaRegBookmark className="text-[#6712B9]" />
-                <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] rounded-md border-2">
+                <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] rounded-md border-2 transition transform hover:bg-[#6712B9] hover:text-white">
                   <span>View All</span>
                   <FaArrowRight className="ml-2" />
                 </button>
               </div>
             </div>
 
-            <div className="flex gap-10 h-[90px] rounded-lg bg-white border shadow-md ">
+            <div className="flex gap-10 h-[90px] rounded-lg bg-white  transition transform hover:scale-105 hover:shadow-xl ">
               <div className="flex items-start p-4">
                 <img className="h-16 w-16" src={FbLogo} alt="FbLogo" />
                 <div className="ml-4 flex-grow">
@@ -707,14 +706,14 @@ const Homepage = () => {
               </div>
               <div className="flex gap-8 items-center  ml-[40%]">
                 <FaRegBookmark className="text-[#6712B9]" />
-                <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] rounded-md border-2">
+                <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] rounded-md border-2 transition transform hover:bg-[#6712B9] hover:text-white">
                   <span>View All</span>
                   <FaArrowRight className="ml-2" />
                 </button>
               </div>
             </div>
 
-            <div className="flex gap-10 h-[90px] rounded-lg bg-white border shadow-md ">
+            <div className="flex gap-10 h-[90px] rounded-lg bg-white transition transform hover:scale-105 hover:shadow-xl ">
               <div className="flex items-start p-4">
                 <img
                   className="bg-gray-300 h-16 w-16 p-3"
@@ -752,9 +751,9 @@ const Homepage = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex gap-8 items-center  ml-[40%]">
+              <div className="flex gap-8 items-center  ml-[40%] ">
                 <FaRegBookmark className="text-[#6712B9]" />
-                <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] rounded-md border-2">
+                <button className="flex h-10 pl-4 pr-4 items-center text-[#6712B9] rounded-md border-2 transition transform hover:bg-[#6712B9] hover:text-white">
                   <span>View All</span>
                   <FaArrowRight className="ml-2" />
                 </button>
@@ -781,7 +780,7 @@ const Homepage = () => {
           </div>
 
           <div className="grid grid-cols-1 mt-6 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
-            <div className="flex flex-col border-2  gap-6 h-[200px] w-[250px] rounded-lg">
+            <div className="flex flex-col border-2  gap-6 h-[200px] w-[250px] rounded-lg transition transform hover:scale-105 hover:shadow-xl hover:border-[#6712B9] ">
               <div className="flex justify-start items-center gap-8 p-6 rounded-lg bg-white">
                 <div className="bg-[#EA4C89] pt-2 pr-4 pb-2 pl-4">
                   <img
@@ -801,13 +800,13 @@ const Homepage = () => {
                 </span>
               </div>
               <div className="flex justify-center items-center">
-                <button className="bg-[#F5EBFFB2] rounded-[3px] border-2 text-[#6712B9] h-[48px] w-[200px]">
+                <button className="hover:bg-[#6712B9] hover:text-white bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px]">
                   Open Position
                 </button>
               </div>
             </div>
 
-            <div className="flex flex-col border-2 gap-6 h-[200px] w-[250px] rounded-lg">
+            <div className="flex flex-col border-2 gap-6 h-[200px] w-[250px] rounded-lg transition transform hover:scale-105 hover:shadow-xl hover:border-[#6712B9]">
               <div className="flex justify-start items-center gap-8 p-6 rounded-lg bg-white">
                 <div className="bg-[#6FDA44] pt-2 pr-4 pb-2 pl-4">
                   <img
@@ -827,13 +826,13 @@ const Homepage = () => {
                 </span>
               </div>
               <div className="flex justify-center items-center">
-                <button className="bg-[#F5EBFFB2] rounded-[3px] border-2 text-[#6712B9] h-[48px] w-[200px]">
+                <button className="hover:bg-[#6712B9] hover:text-white bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px]">
                   Open Position
                 </button>
               </div>
             </div>
 
-            <div className="flex flex-col border-2 border-[#6712B9] shadow-lg  gap-6 h-[200px] w-[250px] rounded-lg">
+            <div className="flex flex-col border-2    gap-6 h-[200px] w-[250px] rounded-lg transition transform hover:scale-105 hover:shadow-xl hover:border-[#6712B9]">
               <div className="flex justify-start items-center gap-8 p-6 rounded-lg bg-white">
                 <div className="bg-[#ebe8e9] pt-2 pr-4 pb-2 pl-4">
                   <img
@@ -853,13 +852,13 @@ const Homepage = () => {
                 </span>
               </div>
               <div className="flex justify-center items-center">
-                <button className="bg-[#6712B9]  text-[#FFFFFF] h-[48px] w-[200px] rounded-[4px]">
+                <button className="hover:bg-[#6712B9] hover:text-white bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px] rounded-[4px]">
                   Open Position
                 </button>
               </div>
             </div>
 
-            <div className="flex flex-col border-2 gap-6 h-[200px] w-[250px] rounded-lg">
+            <div className="flex flex-col border-2 gap-6 h-[200px] w-[250px] rounded-lg transition transform hover:scale-105 hover:shadow-xl hover:border-[#6712B9]">
               <div className="flex justify-start items-center gap-8 p-6 rounded-lg bg-white">
                 <div className="bg-[#1E60C6] pt-2 pr-4 pb-2 pl-4">
                   <img
@@ -879,7 +878,7 @@ const Homepage = () => {
                 </span>
               </div>
               <div className="flex justify-center items-center">
-                <button className="bg-[#F5EBFFB2] rounded-[3px] border-2 text-[#6712B9] h-[48px] w-[200px]">
+                <button className="hover:bg-[#6712B9] hover:text-white bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px]">
                   Open Position
                 </button>
               </div>
@@ -887,7 +886,7 @@ const Homepage = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
-            <div className="flex flex-col border-2 gap-6 h-[200px] w-[250px] rounded-lg">
+            <div className="flex flex-col border-2 gap-6 h-[200px] w-[250px] rounded-lg transition transform hover:scale-105 hover:shadow-xl hover:border-[#6712B9]">
               <div className="flex justify-start items-center gap-8 p-6 rounded-lg bg-white">
                 <div className="bg-[#EA4C89] pt-2 pr-4 pb-2 pl-4">
                   <img
@@ -907,13 +906,13 @@ const Homepage = () => {
                 </span>
               </div>
               <div className="flex justify-center items-center">
-                <button className="bg-[#F5EBFFB2] rounded-[3px] border-2 text-[#6712B9] h-[48px] w-[200px]">
+                <button className="hover:bg-[#6712B9] hover:text-white bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px]">
                   Open Position
                 </button>
               </div>
             </div>
 
-            <div className="flex flex-col border-2  gap-6 h-[200px] w-[250px] rounded-lg">
+            <div className="flex flex-col border-2  gap-6 h-[200px] w-[250px] rounded-lg transition transform hover:scale-105 hover:shadow-xl hover:border-[#6712B9]">
               <div className="flex justify-start items-center gap-8 p-6 rounded-lg bg-white">
                 <div className="bg-[#6FDA44] pt-2 pr-4 pb-2 pl-4">
                   <img
@@ -933,13 +932,13 @@ const Homepage = () => {
                 </span>
               </div>
               <div className="flex justify-center items-center">
-                <button className="bg-[#F5EBFFB2] rounded-[3px] border-2 text-[#6712B9] h-[48px] w-[200px]">
+                <button className="hover:bg-[#6712B9] hover:text-white bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px]">
                   Open Position
                 </button>
               </div>
             </div>
 
-            <div className="flex flex-col border-2  gap-6 h-[200px] w-[250px] rounded-lg">
+            <div className="flex flex-col border-2  gap-6 h-[200px] w-[250px] rounded-lg transition transform hover:scale-105 hover:shadow-xl hover:border-[#6712B9]">
               <div className="flex justify-start items-center gap-8 p-6 rounded-lg bg-white">
                 <div className="bg-[#ebe8e9] pt-2 pr-4 pb-2 pl-4">
                   <img
@@ -959,13 +958,13 @@ const Homepage = () => {
                 </span>
               </div>
               <div className="flex justify-center items-center">
-                <button className="bg-[#F5EBFFB2] rounded-[3px] border-2 text-[#6712B9] h-[48px] w-[200px]">
+                <button className="hover:bg-[#6712B9] hover:text-white bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px]">
                   Open Position
                 </button>
               </div>
             </div>
 
-            <div className="flex flex-col border-2   gap-6 h-[200px] w-[250px] rounded-lg">
+            <div className="flex flex-col border-2   gap-6 h-[200px] w-[250px] rounded-lg transition transform hover:scale-105 hover:shadow-xl hover:border-[#6712B9]">
               <div className="flex justify-start items-center gap-8 p-6 rounded-lg bg-white">
                 <div className="bg-[#1E60C6] pt-2 pr-4 pb-2 pl-4">
                   <img
@@ -985,7 +984,7 @@ const Homepage = () => {
                 </span>
               </div>
               <div className="flex justify-center items-center">
-                <button className="bg-[#F5EBFFB2] rounded-[3px] border-2 text-[#6712B9] h-[48px] w-[200px]">
+                <button className="hover:bg-[#6712B9] hover:text-white bg-[#F5EBFFB2] border-2 text-[#6712B9] h-[48px] w-[200px]">
                   Open Position
                 </button>
               </div>
@@ -1119,7 +1118,7 @@ const Homepage = () => {
         <div className="bg-[#18191C] text-[#FFFFFF] w-full h-[430px] pt-10">
           <div className="flex gap-16 mb-20 pl-32 pr-32">
             <div className="flex flex-col gap-4 mt-10">
-              <img className="w-[183px] h-[60px]" src={logo} alt="logo.png" />
+              <img className="w-[183px] h-[60px]" src={homelogo} alt="logo.png" />
               <p className="text-[18px]">
                 <span className="text-[#5E6670] text-[18px]">Call now:</span>{" "}
                 +91 8956992803

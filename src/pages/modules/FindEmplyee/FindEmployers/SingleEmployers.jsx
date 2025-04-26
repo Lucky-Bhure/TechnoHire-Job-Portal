@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../../../components/header/Header";
 import instagram from "../../../../assets/Profileassests/instagrm.jpg";
 import insta from "../../../../assets/instagram.png";
 import { TfiBag, TfiEmail } from "react-icons/tfi";
-import { FiPhone } from "react-icons/fi";
+import { FiFlag, FiPhone } from "react-icons/fi";
 import {
   FaArrowRight,
   FaFacebookF,
@@ -17,8 +17,14 @@ import { LuPhoneCall } from "react-icons/lu";
 import { IoLogoYoutube, IoMdStopwatch } from "react-icons/io";
 import { CiLocationOn } from "react-icons/ci";
 import { PiWallet } from "react-icons/pi";
+import SpamBox from "./SpamBox";
+import { useNavigate } from "react-router-dom";
 
 const SingleEmployers = () => {
+
+  const navigate = useNavigate();
+  const [showSpamBox, setShowSpamBox] = useState(false);
+
   return (
     <>
       <Header />
@@ -54,11 +60,16 @@ const SingleEmployers = () => {
               <div>
                 <div className="flex">
                   <div className="flex px-4 py-4">
-                    <TfiEmail color="#7900BA" className="ms-2" /> &nbsp;{" "}
-                    <FiPhone color="#7900BA" className="ms-3" />
+                    <FiFlag color="#FF0000" className="ms-3 cursor-pointer" onClick={() => setShowSpamBox(true)} /> 
+                      {showSpamBox && (
+                        <SpamBox onClose={() => setShowSpamBox(false)} />
+                      )}
+                      &nbsp;{" "}
+                    <TfiEmail color="#7900BA" className="ms-2 cursor-pointer" /> &nbsp;{" "}
+                    <FiPhone color="#7900BA" className="ms-3 cursor-pointer" />
                   </div>
                   <div>
-                    <button className="flex bg-[#7900BA] text-white p-3 me-7">
+                    <button onClick={() => navigate('/find-job')} className="flex bg-[#7900BA] text-white p-3 me-7">
                       View Open position &nbsp;{" "}
                       <FaArrowRight className="relative top-1" />
                     </button>
