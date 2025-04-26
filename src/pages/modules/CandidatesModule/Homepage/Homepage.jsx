@@ -225,15 +225,13 @@ const Homepage = () => {
               </p>
 
               <div className="flex gap-6">
-                <Link to="/landingScreen1">
                   <button
                     className="border-2 font-[500] border-[#3E1654] shadow-md text-[#3E1654] w-[243px] h-[55px] text-medium rounded-[15px] p-3"
                     type="button"
-                    onClick={() => navigate("/login")}
+                    onClick={() => navigate("/landingScreen1")}
                   >
                     Become a Candidate
                   </button>
-                </Link>
                 <button className="border-2 font-[500] border-[#3E1654] shadow-md text-[#3E1654] w-[243px] h-[55px] rounded-[15px] p-3">
                   Become an Employer
                 </button>
@@ -348,8 +346,8 @@ const Homepage = () => {
 
           <div className="grid grid-cols-1 mt-6 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
             <div className="flex flex-col gap-6 justify-center items-center h-[300px] w-[250px] rounded-lg ">
-              <div className="p-4 mt-10 bg-[#FFFFFF] rounded-full hover:bg-[#6712B9]">
-              <HiUserPlus className="w-[40px] h-[40px] p-1 ml-1 text-[#6712B9]   hover:text-[#FFFFFF]"/>
+              <div className="p-4 mt-10 bg-[#FFFFFF] rounded-full hover:bg-[#6712B9] text-[#6712B9]   hover:text-[#FFFFFF]">
+              <HiUserPlus className="w-[40px] h-[40px] p-1 ml-1"/>
          </div>
               <h5 className="font-medium text-lg">Create Account</h5>
               <p className="text-gray-400 text-sm p-4 align-middle">
@@ -364,8 +362,8 @@ const Homepage = () => {
             </div>
 
             <div className="flex flex-col gap-6 justify-center items-center  h-[300px] w-[250px] rounded-lg bg-white">
-              <div className="bg-[#FFFFFF]  p-4 mt-10 rounded-full hover:bg-[#6712B9] ">
-                <FaCloudUploadAlt className="w-[40px] h-[40px] text-[#6712B9]  hover:text-white" />
+              <div className="bg-[#FFFFFF]  p-4 mt-10 rounded-full hover:bg-[#6712B9] text-[#6712B9]   hover:text-[#FFFFFF]">
+                <FaCloudUploadAlt className="w-[40px] h-[40px]" />
               </div>
 
               <h5 className="font-medium text-lg">Upload CV/Resume</h5>
@@ -380,8 +378,8 @@ const Homepage = () => {
             </div>
 
             <div className="flex flex-col gap-6 justify-center items-center  h-[300px] w-[250px] rounded-lg ">
-              <div className="p-3 mt-10 bg-[#FFFFFF] rounded-full  hover:bg-[#6712B9]">
-              <FaSearchPlus  className="w-[40px] h-[40px] px-1 text-[#6712B9]  hover:text-white" />
+              <div className="p-3 mt-10 bg-[#FFFFFF] rounded-full  hover:bg-[#6712B9] text-[#6712B9]   hover:text-[#FFFFFF]">
+              <FaSearchPlus  className="w-[40px] h-[40px] px-1" />
               </div>
               <h5 className="font-medium text-lg">Find suitable job</h5>
               <p className=" text-gray-400 text-sm p-4 align-center">
@@ -394,8 +392,8 @@ const Homepage = () => {
             </div>
 
             <div className="flex flex-col gap-6 justify-center items-center  h-[300px] w-[250px] rounded-lg">
-              <div className="p-4 mt-10 bg-[#FFFFFF] rounded-full  hover:bg-[#6712B9]">
-              <MdVerified  className="w-[40px] h-[40px] px-1 text-[#6712B9]  hover:text-white" />
+              <div className="p-4 mt-10 bg-[#FFFFFF] rounded-full  hover:bg-[#6712B9] text-[#6712B9]   hover:text-[#FFFFFF]">
+              <MdVerified  className="w-[40px] h-[40px] px-1" />
               </div>
               <h5 className="font-medium text-lg">Apply Job</h5>
               <p className=" text-gray-400 text-sm p-4 align-center">
@@ -450,9 +448,9 @@ const Homepage = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 gap-12 p-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-12 p-6">
               <div  className="flex gap-8 justify-center items-center h-[90px] w-[260px] rounded-lg bg-white  transition transform hover:scale-105 hover:shadow-xl hover:text-[#6712B9]">
-                <FaMusic className=" text-[#6712B9] bg-gray-100 hover:bg-[#6712B9] hover:text-gray-100  w-12 p-2 h-10 rounded-md" />
+                <FaMusic className=" text-[#6712B9] bg-gray-100 hover:bg-[#6712B9] hover:text-gray-100 w-12 p-2 h-10 rounded-md" />
                 <span>
                   <h5 className="text-lg font-medium">
                     Data Science and Analytics

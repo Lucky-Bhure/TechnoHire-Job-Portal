@@ -94,15 +94,7 @@ const EmailVerifications = () => {
           <p className="text-lg font-semibold mt-1">{formatTime(timer)}</p>
         </div>
 
-        <p className="mt-2 text-center text-gray-600 text-lg">
-          Go back to{" "}
-          <Link
-            to="/login"
-            className="text-violet hover:underline font-semibold"
-          >
-            Login
-          </Link>
-        </p>
+        
 
         <div className="w-full max-w-[400px] mx-auto mt-6">
                   <button
@@ -114,6 +106,16 @@ const EmailVerifications = () => {
                     <BsArrowRight className="text-xl mx-2" />
                   </button>
                 </div>
+
+                <p className="mt-2 text-center text-gray-600 text-lg">
+          Go back to{" "}
+          <Link
+            to="/login"
+            className="text-violet hover:underline font-semibold"
+          >
+            Login
+          </Link>
+        </p>
       </div>
 
       {/* Right Side: Image */}

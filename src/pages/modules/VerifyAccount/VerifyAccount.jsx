@@ -50,7 +50,7 @@ const VerifyAccount = () => {
                 onClick={() => setEditPhone(!editPhone)}
               />
             </div>
-            <button className="py-2 px-6 w-[190px] h-[41px] bg-violet text-white rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500">
+            <button className="py-2 px-6 w-[190px] h-[41px] bg-violet text-white rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500" onClick={() => navigate("/phoneVerify")}>
               Select
             </button>
           </div>
@@ -74,7 +74,7 @@ const VerifyAccount = () => {
                 onClick={() => setEditEmail(!editEmail)}
               />
             </div>
-            <button className="py-2 px-6 w-[190px] h-[41px] bg-violet text-white rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500">
+            <button className="py-2 px-6 w-[190px] h-[41px] bg-violet text-white rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500" onClick={() => navigate("/emailVerify")}>
               Select
             </button>
           </div>
@@ -86,17 +86,6 @@ const VerifyAccount = () => {
             Login
           </Link>
         </p>
-
-        <div className="w-full max-w-[400px] mx-auto mt-6">
-          <button
-            type="button"
-            onClick={() => navigate("/emailVerify")}
-            className="py-3 flex justify-center items-center w-full bg-violet text-white rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500"
-          >
-            Continue
-            <BsArrowRight className="text-xl mx-2" />
-          </button>
-        </div>
       </div>
 
       {/* Right Side: Image */}
