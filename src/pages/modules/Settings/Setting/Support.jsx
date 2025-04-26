@@ -33,7 +33,7 @@ function Support() {
         {/* D3D3D39C */}
         {/* F7F8F9 */}
         <div className="w-[376px] h-[56px] space-y-4">
-          <h1 className="text-[#7900BA] font-inter font-medium text-[16px]/[24px] mb-3">React Out@</h1>
+          <h1 className="text-[#7900BA] font-inter font-medium text-[16px]/[24px] mb-3">Reach Out@</h1>
           <div className="bg-[#F7F8F9] flex justify-between items-center rounded-lg border-[#D3D3D39C] px-5 py-5">
             <div className="flex items-center gap-2">
               <BsGlobe className="text-[#7900BAAB] w-[16.67px] h-[16.67px] " />

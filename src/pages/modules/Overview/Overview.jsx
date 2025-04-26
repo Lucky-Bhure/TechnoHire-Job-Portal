@@ -10,7 +10,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import { CiLocationOn } from "react-icons/ci";
 import { TiTick } from "react-icons/ti";
 import { themes } from "../../../components/Themes/Theme";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Overview = () => {
   const { theme, setTheme } = useTheme();
@@ -51,26 +51,32 @@ const Overview = () => {
         </p>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 mb-6">
-          <div className="bg-[#DCBDED] rounded-lg shadow-md p-6">
+        <div className="bg-[#DCBDED] rounded-lg shadow-md p-6">
             <div className="flex items-center">
               <div className="flex-1">
                 <p className="text-2xl font-bold">589</p>
                 <p className="text-sm text-gray-500">Applied jobs</p>
               </div>
+        <NavLink to="/applied-jobs">
               <div className="w-16 h-16 bg-[#F5F5F5] rounded-md flex items-center justify-center">
                 <LuShoppingBag size={40} />
               </div>
+            </NavLink>
             </div>
           </div>
+        
           <div className="bg-[#FFF6E6] rounded-lg shadow-md p-6">
             <div className="flex items-center">
               <div className="flex-1">
                 <p className="text-2xl font-bold">238</p>
                 <p className="text-sm text-gray-500">Saved jobs</p>
               </div>
+              <NavLink to="/saved-jobs">
               <div className="w-16 h-16 bg-[#F5F5F5] rounded-md flex items-center justify-center">
                 <FaBookmark size={40} />
               </div>
+              </NavLink>
+              
             </div>
           </div>
           <div className="bg-[#E7F6EA] rounded-lg shadow-md p-6">
@@ -79,9 +85,11 @@ const Overview = () => {
                 <p className="text-2xl font-bold">5</p>
                 <p className="text-sm text-gray-500">Scheduled Interview</p>
               </div>
-              <div className="w-16 h-16 bg-[#F5F5F5] rounded-md flex items-center justify-center">
+             <NavLink to="/scheduled-interview">
+             <div className="w-16 h-16 bg-[#F5F5F5] rounded-md flex items-center justify-center">
                 <LuBellRing size={40} />
               </div>
+             </NavLink>
             </div>
           </div>
         </div>
