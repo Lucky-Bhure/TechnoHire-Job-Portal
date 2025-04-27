@@ -25,7 +25,7 @@ const Chat = () => {
 
   return (  
     <div className="flex flex-col h-screen bg-gray-100">  
-      {/* Header */}  
+
       <div className="flex items-center justify-between p-4 bg-white shadow">  
         <div className="flex items-center gap-2">  
           <button className="text-gray-600">&larr;</button>  
@@ -33,10 +33,10 @@ const Chat = () => {
         </div>  
         <div className="flex gap-4 text-gray-600">  
           <button>  
-            <MdVideocam className="text-xl" /> {/* Video icon */}  
+            <MdVideocam className="text-xl" />   
           </button>  
           <button>  
-            <MdPhone className="text-xl" /> {/* Phone icon */}  
+            <MdPhone className="text-xl" />  
           </button>  
         </div>  
       </div>  
