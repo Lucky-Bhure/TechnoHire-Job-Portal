@@ -39,6 +39,7 @@ import Applicationsubmit from "./pages/modules/ApplicationDetails/Applicationsub
 import Findjobdetails from "./pages/modules/Findajob/FindjobDetails/Findjobdetails";
  import Inboxes from "./pages/modules/Inbox/Inboxes";
 import SpamBox from "./pages/modules/FindEmplyee/FindEmployers/SpamBox";
+// import Chat from "./pages/modules/Settings/Setting/Chat";
 
 
 function App() {
@@ -62,7 +63,7 @@ function App() {
         <Route path="/find-job" element={<Findjob />} />
         <Route path="/find-employers" element={<Findemployee />} />
         <Route path="/job-alerts" element={<Jobalerts />} />
-        <Route path="/customer-supports" element={<Customersupport />} />
+        {/* <Route path="/customer-support" element={<Customersupport />} /> */}
         <Route path="/dashboard" element={<Overview />} />
         <Route path="/dashboard/overview" element={<Overview />} />
         <Route path="/dashboard/my-profile" element={<Myprofile />} />
@@ -80,6 +81,7 @@ function App() {
         <Route path="/emailVerifySuccess" element={<EmailVerifySuccess />}/>
         <Route path="/phoneVerify" element={<PhoneVerifications />}/>
         <Route path="/phoneVerifySuccess" element={<PhoneVerifySuccess />}/>
+        {/* <Route path="/chat" element={<Chat />} /> */}
         <Route
           path="/dashboard/scheduled-interview"
           element={<Scheduleinterview />}
