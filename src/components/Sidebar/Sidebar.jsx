@@ -18,7 +18,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={`h-screen w-${isOpen ? "[400px]" : "[6%]"} transition-all flex flex-col justify-between bg-white`}>
+    <div className={`h-[80vh] w-${isOpen ? "[400px]" : "[6%]"} transition-all flex flex-col justify-between bg-white`}>
       {/* Header + Nav */}
       <div>
         <div className="flex justify-between items-center pl-4 pt-4">

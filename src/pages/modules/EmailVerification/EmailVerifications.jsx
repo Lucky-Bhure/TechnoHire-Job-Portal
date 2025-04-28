@@ -82,8 +82,8 @@ const EmailVerifications = () => {
           <p className="text-right">
             Didn’t receive any code?{" "}
             <button
-              onClick={() => setTimer(120)} // Reset timer on Resend
-              disabled={timer > 0} // Disable button while timer is active
+              onClick={() => setTimer(120)} 
+              disabled={timer > 0} 
               className={`font-semibold ${
                 timer > 0 ? "text-violet cursor-not-allowed" : "text-violet hover:underline"
               }`}
