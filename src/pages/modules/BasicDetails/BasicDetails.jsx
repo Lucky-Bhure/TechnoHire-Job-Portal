@@ -282,41 +282,43 @@ const BasicDetails = () => {
 
   return (
     <>
-      <Navbar />
-      <div
-        className={`flex flex-col md:flex-row h-[88vh] overflow-hidden ${currentStep === steps.length ? "w-full" : ""
-          }`}
-      >
-        {/* Conditionally hide left side on the last step */}
-        {currentStep < steps.length && (
-          <div
-            className="hidden md:flex w-full min-h-screen flex-col items-center bg-cover bg-center"
-            style={{
-              backgroundImage: `url(${LoginBack})`
-            }}
-          >
-            <div>
-              {/* Vertical Steps */}
-              <div className="flex flex-col items-start gap-[35px] mt-2 relative xl:hidden">
-                {steps.map((step, index) => (
+    <Navbar />
+    <div
+      className={`flex flex-col md:flex-row h-screen overflow-hidden ${
+        currentStep === steps.length ? "w-full" : ""
+      }`}
+    >
+      {/* Conditionally hide left side on the last step */}
+      {currentStep < steps.length && (
+        <div
+          className="hidden md:flex w-full min-h-screen flex-col items-center bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${LoginBack})`
+          }}
+        >
+          <div>
+            {/* Vertical Steps */}
+            <div className="flex flex-col items-start gap-[35px] mt-2 relative xl:hidden">
+              {steps.map((step, index) => (
+                <div
+                  className="relative flex items-center space-x-4 "
+                  key={index}
+                >
                   <div
-                    className="relative flex items-center space-x-4"
-                    key={index}
+                    className={`w-8 h-8 flex items-center justify-center rounded-full border-2 font-bold relative ${
+                      currentStep > index + 1
+                        ? "border-violet-700 bg-violet-700 text-white"
+                        : currentStep === index + 1
+                        ? "border-violet-700 bg-transparent text-violet-700"
+                        : "border-gray-300 bg-transparent text-gray-500"
+                    }`}
                   >
-                    <div
-                      className={`w-8 h-8 flex items-center justify-center rounded-full border-2 font-bold relative ${currentStep > index + 1
-                          ? "border-violet-700 bg-violet-700 text-white"
-                          : currentStep === index + 1
-                            ? "border-violet-700 bg-transparent text-violet-700"
-                            : "border-gray-300 bg-transparent text-gray-500"
-                        }`}
-                    >
-                      {currentStep > index + 1 ? (
-                        <span className="text-white">✓</span>
-                      ) : currentStep === index + 1 ? (
-                        <div className="w-2 h-2 bg-violet-700 rounded-full" />
-                      ) : null}
-                    </div>
+                    {currentStep > index + 1 ? (
+                      <span className="text-white">✓</span>
+                    ) : currentStep === index + 1 ? (
+                      <div className="w-2 h-2 bg-violet-700 rounded-full" />
+                    ) : null}
+                  </div>
 
                     <span
                       className={`text-xs ${currentStep >= index + 1

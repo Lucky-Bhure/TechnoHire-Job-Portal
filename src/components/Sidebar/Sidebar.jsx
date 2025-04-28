@@ -145,14 +145,9 @@ const Sidebar = () => {
           }
         >
           <MdLogout size={30} />
-          {isOpen && <span className="pl-4">Log Out</span>}
+          {isOpen && <span className="pl-4" onClick={() => window.localStorage.removeItem("access_token")}>Log Out</span>}
         </NavLink>
-<<<<<<< HEAD
-      </div>
- 
-=======
     </div>
->>>>>>> 495d9249657357a30295aa455f9d2fd890632c23
   );
 };
 

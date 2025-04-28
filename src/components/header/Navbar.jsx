@@ -9,7 +9,7 @@ const Navbar = () => {
    const navigate = useNavigate() ;
 
   return (
-    <nav className="bg-white flex items-center justify-between shadow-sm px-5 w-full h-[12vh] ">
+    <nav className="h-[12vh] bg-white flex items-center justify-between shadow-sm px-5 py-1">
       {/* Left: Logo and Branding */}
       <div className="flex items-center space-x-2">
         <img
