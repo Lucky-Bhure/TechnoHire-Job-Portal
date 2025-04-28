@@ -6,15 +6,52 @@ import { BsArrowRight } from "react-icons/bs";
 import { FiPhone } from "react-icons/fi";
 import { BiEditAlt } from "react-icons/bi";
 import { AiOutlineMail } from "react-icons/ai";
+import axios from "axios"; 
 
 const VerifyAccount = () => {
   const navigate = useNavigate();
 
   const [phone, setPhone] = useState("+1 234 567 890");
   const [email, setEmail] = useState("techno@gmail.com");
-
   const [editPhone, setEditPhone] = useState(false);
   const [editEmail, setEditEmail] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleEmailVerification = async () => {
+    // Validate email format
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError("Please enter a valid email address");
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await axios.post(
+        "https://job-portal-candidate-be.onrender.com/v1/mailVerification",
+        {
+          email: email
+        },
+        {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+
+      if (response.data) {
+        
+        navigate("/emailVerify", { state: { email } });
+      }
+    } catch (err) {
+      setError(err.response?.data?.message || "Failed to send verification code");
+      console.error("Error sending verification email:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-white">
@@ -28,6 +65,13 @@ const VerifyAccount = () => {
             Where should we send your verification code?
           </span>
         </div>
+
+        {/* Error message */}
+        {error && (
+          <div className="mb-4 text-center text-red-500">
+            {error}
+          </div>
+        )}
 
         {/* Contact Boxes */}
         <div className="flex flex-col gap-6 items-center">
@@ -74,18 +118,15 @@ const VerifyAccount = () => {
                 onClick={() => setEditEmail(!editEmail)}
               />
             </div>
-            <button className="py-2 px-6 w-[190px] h-[41px] bg-violet text-white rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500" onClick={() => navigate("/emailVerify")}>
-              Select
+            <button 
+              className={`py-2 px-6 w-[190px] h-[41px] bg-violet text-white rounded-lg font-semibold hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500 ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
+              onClick={handleEmailVerification}
+              disabled={loading}
+            >
+              {loading ? "Sending..." : "Select"}
             </button>
           </div>
         </div>
-
-        <p className="mt-8 text-center text-gray-600 text-lg">
-          Go back to{" "}
-          <Link to="/login" className="text-violet hover:underline font-semibold">
-            Login
-          </Link>
-        </p>
       </div>
 
       {/* Right Side: Image */}
