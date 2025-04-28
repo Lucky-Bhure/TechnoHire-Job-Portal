@@ -147,6 +147,7 @@ const Sidebar = () => {
           <MdLogout size={30} />
           {isOpen && <span className="pl-4" onClick={() => window.localStorage.removeItem("access_token")}>Log Out</span>}
         </NavLink>
+     
     </div>
   );
 };

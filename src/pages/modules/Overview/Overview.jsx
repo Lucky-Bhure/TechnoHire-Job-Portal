@@ -11,6 +11,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { TiTick } from "react-icons/ti";
 import { themes } from "../../../components/Themes/Theme";
 import { NavLink, useNavigate } from "react-router-dom";
+import { Footer } from "antd/es/layout/layout";
 
 const Overview = () => {
   const { theme, setTheme } = useTheme();
@@ -215,8 +216,11 @@ const Overview = () => {
               ))}
             </tbody>
           </table>
+          
         </div>
       </div>
+      
+     
     </Layout>
   );
 };
