@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
               <div className="w-full  p-4 h-screen ">{children}</div>
             </div>
           </div>
-          <div className="footer">
+          <div className="footer mt-8">
             <Footer/>
           </div>
         </div>

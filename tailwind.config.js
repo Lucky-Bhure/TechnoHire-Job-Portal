@@ -14,7 +14,9 @@ export default {
     },
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide')
+  ],
   corePlugins: {
     preflight: true, // Ensure Tailwind's preflight does not override styles
   },

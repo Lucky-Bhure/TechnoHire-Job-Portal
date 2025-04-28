@@ -1,6 +1,6 @@
 import MainHeader from "../../../components/header/MainHeader";
 import React from "react";
-import { ArrowRight } from "lucide-react";
+
 
 const Customersupport = () => {
   return (

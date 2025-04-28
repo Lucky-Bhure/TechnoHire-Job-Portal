@@ -148,7 +148,7 @@ const Sidebar = () => {
           {isOpen && <span className="pl-4">Log Out</span>}
         </NavLink>
       </div>
-    </div>
+ 
   );
 };
 
