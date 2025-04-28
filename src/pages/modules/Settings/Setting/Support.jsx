@@ -4,7 +4,7 @@ import { BsGlobe } from "react-icons/bs";
 import { RiFacebookCircleLine } from "react-icons/ri";
 import { FaInstagram, FaWhatsapp, FaTwitter } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
-import Chat from "./Chat"; // Make sure this import path is correct
+import Chat from "./Chat"; 
 
 function Support() {
   const [isChatVisible, setChatVisible] = useState(false);
@@ -17,14 +17,14 @@ function Support() {
     <div className="w-[85%]">
       {isChatVisible ? (
         <div>
-          {/* Back Button */}
+       
           <button
             onClick={toggleChat}
             className="flex items-center gap-2 mb-4 text-purple-600 hover:underline"
           >
             ← Back
           </button>
-          {/* Chat UI */}
+         
           <Chat />
         </div>
       ) : (
@@ -57,7 +57,7 @@ function Support() {
               </h1>
 
               <div className="flex flex-col space-y-4">
-                {/* Website */}
+            
                 <div className="bg-[#F7F8F9] flex justify-between items-center rounded-lg border px-6 py-6">
                   <div className="flex items-center gap-2">
                     <BsGlobe className="text-[#7900BAAB]" />
@@ -68,7 +68,6 @@ function Support() {
                   <GrLinkNext className="text-[#8391A1]" />
                 </div>
 
-                {/* Facebook */}
                 <div className="bg-[#F7F8F9] flex justify-between items-center rounded-lg border px-6 py-6">
                   <div className="flex items-center gap-2">
                     <RiFacebookCircleLine className="text-[#7900BAAB]" />
@@ -79,7 +78,7 @@ function Support() {
                   <GrLinkNext className="text-[#8391A1]" />
                 </div>
 
-                {/* Instagram */}
+               
                 <div className="bg-[#F7F8F9] flex justify-between items-center rounded-lg border px-6 py-6">
                   <div className="flex items-center gap-2">
                     <FaInstagram className="text-[#7900BAAB]" />
@@ -90,7 +89,7 @@ function Support() {
                   <GrLinkNext className="text-[#8391A1]" />
                 </div>
 
-                {/* Whatsapp */}
+        
                 <div className="bg-[#F7F8F9] flex justify-between items-center rounded-lg border px-6 py-6">
                   <div className="flex items-center gap-2">
                     <FaWhatsapp className="text-[#7900BAAB]" />
@@ -101,7 +100,7 @@ function Support() {
                   <GrLinkNext className="text-[#8391A1]" />
                 </div>
 
-                {/* Twitter */}
+          
                 <div className="bg-[#F7F8F9] flex justify-between items-center rounded-lg border px-6 py-6">
                   <div className="flex items-center gap-2">
                     <FaTwitter className="text-[#7900BAAB]" />
@@ -112,7 +111,7 @@ function Support() {
                   <GrLinkNext className="text-[#8391A1]" />
                 </div>
 
-                {/* Customer Service - clickable */}
+       
                 <div
                   onClick={toggleChat}
                   className="bg-[#F7F8F9] flex justify-between items-center rounded-lg border px-6 py-6 cursor-pointer hover:bg-gray-200"
