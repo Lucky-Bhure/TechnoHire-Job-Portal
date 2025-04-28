@@ -8,6 +8,7 @@ import { AiOutlineQuestionCircle } from "react-icons/ai";
 import { BiSupport } from "react-icons/bi";
 import { CgNotes } from "react-icons/cg";
 import Searchhistory from "../../Searchhistory/Searchhistory";
+import { useLocation } from "react-router-dom";
 
 
 // const tabsData = [
@@ -34,6 +35,7 @@ import Searchhistory from "../../Searchhistory/Searchhistory";
 // ];
 
 function Settings() {
+  const location = useLocation();
   const [tabIndex, setTabIndex] = useState(0);
   const [history, setHistory] = useState(true);
   const tabsData = [
@@ -48,7 +50,7 @@ function Settings() {
       component: <Faqs />,
     },
     {
-      tabName: "Suppport",
+      tabName: "Support",
       iconLeft: <BiSupport />,
       component: <Support />,
     },
@@ -59,6 +61,13 @@ function Settings() {
     },
   ];
 
+  React.useEffect(() => {
+    if (location.state && location.state.tab === "support") {
+      setTabIndex(2); 
+    }
+  }, [location]);
+
+  
   const handleTabs = (idx) => {
     setTabIndex(idx)
     setHistory(true);
