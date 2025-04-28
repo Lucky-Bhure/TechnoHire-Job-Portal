@@ -1,66 +1,86 @@
 import React, { useState } from "react";
-import { useFormik } from "formik";
-import * as Yup from "yup";
 import LoginBack from "../../assets/img/loginBackground.png";
 import LoginLogo from "../../assets/img/loginLogo.png";
 import { AiFillEyeInvisible } from 'react-icons/ai'
 import { AiFillEye } from 'react-icons/ai'
-import { Link, Links, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
-const SignUp = () => {
+const Login = () => {
+  const navigate = useNavigate();
+
   const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const navigate = useNavigate(); // Initialize navigate
+  const [user, setUser] = useState({
+    email : "",
+    password: ""
+  })
+  const [error, setError] = useState("");
 
+  const handleInputChange = (event) => {
+    setError("");
+    setUser({...user, [e.target.name]: e.target.value})
+  }
 
-  const formik = useFormik({
-    initialValues: {
-      fullName: "",
-      username: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    },
-    validationSchema: Yup.object({
-      fullName: Yup.string().required("Full Name is required"),
-      username: Yup.string().required("Username is required"),
-      email: Yup.string().email("Invalid email address").required("Email is required"),
-      password: Yup.string()
-        .min(6, "Password must be at least 6 characters")
-        .required("Password is required"),
-      confirmPassword: Yup.string()
-        .oneOf([Yup.ref("password"), null], "Passwords must match")
-        .required("Confirm Password is required"),
-    }),
-    onSubmit: (values) => {
-      console.log("Form data:", values);
-      navigate("/verify");
-    },
-  });
+  const handleLogin = async() => {
+    try {
+      const res = await axios({
+        url: 'https://job-portal-candidate-be.onrender.com/v1/login',
+        data: user,
+        headers: {
+          "content-type":"application/json; charset=utf-8"
+        },
+        method: "post"
+      });
+      const tokenStore = window.localStorage.setItem("access_token",res.data.token);
+      
+      if(res.status === 201){
+        navigate("/dashboard");
+      } 
+
+    } catch (error) {
+      setError("Enter valid email and password")
+      console.log(error);
+    }
+
+  }
 
   return (
     <div className="flex h-screen bg-white">
-  <div className="w-full md:w-3/5 overflow-hidden bg-white px-20 md:px-20 py-20">
+  <div className="w-full md:w-3/5 overflow-hidden bg-white px-20 md:px-20 py-20 justify-center flex flex-col items-center">
         <h2 className="text-3xl font-semibold text-gray-800 mb-[45px] text-center">
           Log In To <span className="text-violet">TechnoHire</span>
         </h2>
-        <form className="space-y-4" onSubmit={e => e.preventDefault()}>
-          <div>
+        <form className="w-[80%] space-y-4">
+          <div className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200">
             <input
               type="email"
+              name="email"
               placeholder="Enter your email"
-              className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200"
+              className="w-full outline-none bg-transparent"
+              value={user.email}
+              onChange={handleInputChange}
             />
           </div>
-          <div>
+          <div className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200 flex ">
             <input
-              type="password"
+              type={showPassword ? "text": "password"}
               placeholder="Enter your password"
-              className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200"
+              name="password"
+              className="w-full outline-none bg-transparent"
+              value={user.password}
+              onChange={handleInputChange}
             />
+            {showPassword ? <AiFillEye  size={24} onClick={() => setShowPassword(prev => !prev)}/> : <AiFillEyeInvisible size={24} onClick={() => setShowPassword(prev => !prev)}/>}
           </div>
-          <div className="flex items-center justify-between">
+
+          {
+            error && <div className="w-full text-md text-[#FF3333]">
+              <p>{error}</p>
+            </div>
+          }
+
+          <div className="w-full flex items-center justify-between">
             <label className="flex items-center">
               <input type="checkbox" className="form-checkbox text-blue-600" />
               <span className="ml-2 text-md text-gray-600 font-normal">
@@ -77,8 +97,7 @@ const SignUp = () => {
           </div>
           <div className="flex justify-center ">
             <button
-              type="submit"
-              onClick={() => navigate("/dashboard")}
+              onClick={handleLogin}
               className="w-[65%] py-3 px-4 my-[20px] bg-[#6712B9]  text-white font-bold rounded-lg"
             >
               Log In
@@ -188,4 +207,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Login;

@@ -228,11 +228,11 @@ const SignUp = () => {
 
           <p className="text-gray-500 text-sm mb-4">
             By creating an account, you agree to the{" "}
-            <button type="button" onClick={() => setShowTerms(true)} className="text-violet underline">
+            <button type="button" onClick={() => setShowTerms(true)} className="text-violet">
               Terms of Use
             </button>{" "}
             and{" "}
-            <button type="button" onClick={() => setShowPrivacy(true)} className="text-violet underline">
+            <button type="button" onClick={() => setShowPrivacy(true)} className="text-violet">
               Privacy Policy
             </button>.
           </p>
