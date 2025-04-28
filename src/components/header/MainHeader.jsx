@@ -68,11 +68,9 @@ const MainHeader = () => {
                   isActive ? "border-b-2 text-[#7900BA] border-[#7900BA]" : ""
                 }`
               }
-              to="/dashboard/settings"
-              state={{ tab: "support" }}
+              to="/customer-supports"
             >
               Customer Support
-           
             </NavLink>
           </div>
           <div className="flex items-center mt-2 md:mt-0">
