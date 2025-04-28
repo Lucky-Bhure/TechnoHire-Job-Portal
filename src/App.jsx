@@ -62,7 +62,7 @@ function App() {
         <Route path="/find-job" element={<Findjob />} />
         <Route path="/find-employers" element={<Findemployee />} />
         <Route path="/job-alerts" element={<Jobalerts />} />
-        <Route path="/customer-supports" element={<Customersupport />} />
+        {/* <Route path="/customer-supports" element={<Customersupport />} /> */}
         <Route path="/dashboard" element={<Overview />} />
         <Route path="/dashboard/overview" element={<Overview />} />
         <Route path="/dashboard/my-profile" element={<Myprofile />} />

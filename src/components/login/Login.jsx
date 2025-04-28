@@ -69,7 +69,7 @@ const SignUp = () => {
             </label>
             <Link
               to="/forget-password"
-              className="text-md text-violet-600 hover:underline font-semibold"
+              className="text-md text-violet-600 font-semibold"
             >
               Forgot password?
             </Link>
@@ -139,7 +139,7 @@ const SignUp = () => {
             </svg>
           </button>
         </a>
-         <a href="https://www.linkedin.com/home">
+         {/* <a href="https://www.linkedin.com/home">
          <button className="p-0 bg-gray-100 text-white rounded-md w-[105px] h-[56px] flex justify-center items-center">
             <svg
               width="27"
@@ -158,12 +158,12 @@ const SignUp = () => {
               />
             </svg>
           </button>
-         </a>
+         </a> */}
         </div>
 
         <p className="mt-[25px] text-center text-gray-600">
-          Don't have an account?{" "}
-          <Link to="/signUp" className="text-violet-600 hover:underline font-semibold">
+          Don't have an account?
+          <Link to="/signUp" className="text-violet-600 font-semibold">
             Sign up
           </Link>
         </p>

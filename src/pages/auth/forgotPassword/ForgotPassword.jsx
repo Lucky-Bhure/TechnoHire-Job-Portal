@@ -4,25 +4,29 @@ import LoginLogo from "../../../assets/img/loginLogo.png";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { RxCross2 } from "react-icons/rx";
+import axios from "axios";
 
 const ForgotPassword = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [otp, setOtp] = useState("");
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
 
   const handleResetPassword = () => {
-    // try {
-    console.log(email);
-    setToggle((prev) => !prev);
-    // navigate("/reset-password");
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    try {
+      const res = axios.post("https://job-portal-candidate-be.onrender.com/v1/forgetPassword",{
+        "email": email
+      });
+      console.log(res);
+      setToggle((prev) => !prev);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleOTPVerification = () => {
-    navigate("/reset-password")
+    console.log(otp);
+    // navigate("/reset-password")
 
   }
 
@@ -37,7 +41,6 @@ const ForgotPassword = () => {
           Enter your registered email to receive a password reset link
         </p>
         <form className="space-y-4">
-          <div>
             <input
               type="email"
               placeholder="Enter your email"
@@ -46,9 +49,8 @@ const ForgotPassword = () => {
               value={email}
               onChange={(event) => setEmail(event.target.value)}
             />
-          </div>
           <div className="mt-0">
-            <p className=" mb-[40px] text-right text-gray-600 text-lg">
+            <p className="mb-[40px] text-right text-gray-600 text-lg">
               Go back to <span
                 className="text-violet-700 font-semibold cursor-pointer"
                 onClick={() => navigate("/login")}
@@ -69,11 +71,11 @@ const ForgotPassword = () => {
           </div>
         </form>
 
-        <p className="my-[70px] text-center text-gray-600 text-lg"> Don't have an account? <span
-            className="text-violet-700 font-semibold cursor-pointer"
-            onClick={() => navigate("/signup")}
-          >Sign up
-          </span>
+        <p className="my-4 text-center text-gray-600 text-lg"> Don't have an account? <span
+          className="text-violet-700 font-semibold cursor-pointer"
+          onClick={() => navigate("/signup")}
+        >Sign up
+        </span>
         </p>
       </div>
 
@@ -121,10 +123,9 @@ const ForgotPassword = () => {
               Verify
             </button>
 
-            <RxCross2 size={24}  className="absolute top-4 right-4" onClick={() => setToggle(prev => !prev)}/>
+            <RxCross2 size={24} className="absolute top-4 right-4" onClick={() => setToggle(prev => !prev)} />
           </div>
         </div>
-
       )}
     </div>
   );
