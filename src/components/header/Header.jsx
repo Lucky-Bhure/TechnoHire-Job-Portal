@@ -44,7 +44,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="w-full">
+      <div className="w-full ">
         <MainHeader />
         <div className="w-full h-auto bg-white px-4 sm:px-8">
           <div className="flex flex-wrap justify-between items-center">
