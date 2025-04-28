@@ -10,7 +10,7 @@ const Applicationsent = () => {
                   <h1>Notifications</h1>
                   <h1 className='text-[#636A80]  font-inter font-normal text-s' >Mark all as read</h1>
               </div>
-            <div className='flex    items-start mx- border bg-white hover:bg-[#E5E5E5]  shadow-lg hover:shadow-2xl rounded-2xl mt-[26px] p-4 gap-1 hover:border-blue-600 hover:rounded-l  cursor-pointer focus:bg-blue-700 ' >  
+            <div className='flex    items-start mx- border bg-white hover:bg-pink-100  shadow-lg hover:shadow-2xl rounded-2xl mt-[26px] p-4 gap-1  hover:rounded-l  cursor-pointer focus:bg-blue-700 ' >  
               <div className=' h-full w-14   flex items-center justify-center'>
                 <img src={Applicationsentnotification } className='h-full w-full object-contain' alt='notification-application-pic' />
               </div>

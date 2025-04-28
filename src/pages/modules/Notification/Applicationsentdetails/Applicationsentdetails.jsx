@@ -6,7 +6,7 @@ const Applicationsentdetails = () => {
     <>
   <div className="max-w-5xl mx-auto w-full" >
 
-    <div className='flex items-start mx- border bg-white hover:bg-[#E5E5E5]  rounded-2xl mt-[26px] shadow-lg p-4 gap-1 hover:shadow-2xl	 hover:border-blue-600 hover:rounded-l  cursor-pointer focus:bg-blue-700 ' >  
+    <div className='flex items-start mx- border bg-white hover:bg-pink-100 rounded-2xl mt-[26px] shadow-lg p-4 gap-1 hover:shadow-2xl	 hover:rounded-l  cursor-pointer focus:bg-blue-700 ' >  
     <div className=' h-full w-14   flex items-center justify-center'>
       <img src={notificationapplication} className='h-full w-full object-contain' alt='notification-application-pic' />
     </div>
