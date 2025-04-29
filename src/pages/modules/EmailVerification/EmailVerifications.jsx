@@ -3,7 +3,7 @@ import LoginBack from "../../../assets/img/loginBackground.png";
 import LoginLogo from "../../../assets/img/loginLogo.png";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AiOutlineLeft } from 'react-icons/ai';
-import email from "../../../assets/img/emailVerify.png";
+import emailImage from "../../../assets/img/emailVerify.png";
 import { BsArrowRight } from "react-icons/bs";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -53,6 +53,7 @@ const EmailVerifications = () => {
 
   // Handle resend verification code
   const handleResendCode = async () => {
+    if (timer > 0) return;
     try {
       setIsLoading(true);
       await axios.post("https://job-portal-candidate-be.onrender.com/v1/mailVerification", {
@@ -80,14 +81,14 @@ const EmailVerifications = () => {
       const response = await axios.post("https://job-portal-candidate-be.onrender.com/v1/verify-email", {
         email: email,
         verificationCode: verificationCode
+        
       });
+      console.log("Verify Response:", response.data);
 
-      if (response.data.success) {
+      if (response.data.message?.toLowerCase().includes("email verified")) {
         toast.success("Email verified successfully!");
-       
-        // Navigate to success page with email in state if needed
-        navigate("/EmailVerifySuccess", { 
-          state: { email: email } 
+        navigate("/emailVerifySuccess", {
+          state: { email: email }
         });
       } else {
         toast.error(response.data.message || "Verification failed");
@@ -123,7 +124,7 @@ const EmailVerifications = () => {
 
         <div className="flex justify-center items-center w-full mb-2">
           <img
-            src={email}
+            src={emailImage}
             className="w-[353px] sm:w-[40%] md:w-[250px] h-[300px]"
             alt="Landing"
           />
