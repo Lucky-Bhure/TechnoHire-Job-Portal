@@ -54,6 +54,7 @@ const EmailVerifications = () => {
   // Handle resend verification code
   const handleResendCode = async () => {
     if (timer > 0) return;
+    // console.log("Resending code to email:", email);
     try {
       setIsLoading(true);
       await axios.post("https://job-portal-candidate-be.onrender.com/v1/mailVerification", {
