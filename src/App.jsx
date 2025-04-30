@@ -2,9 +2,8 @@ import { Route, Routes } from "react-router-dom";
 
 import Homepage from "./pages/modules/CandidatesModule/Homepage/Homepage";
 import Login from "./components/login/Login";
-import ResetPassword from "./pages/auth/resetPassword/resetPassword";
 import ForgotPassword from "./pages/auth/forgotPassword/ForgotPassword";
-import ResetSuccess from "./pages/auth/passwordReset/passwordResetSuccess";
+import ResetSuccess from "./pages/auth/PasswordResetSuccessfully/PasswordResetSuccessfully";
 import Overview from "./pages/modules/Overview/Overview";
 import Myprofile from "./pages/modules/Myprofile/Myprofile";
 import Profiledetails from "./pages/modules/Myprofile/Profiledetails";
@@ -48,7 +47,6 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/Inboxes" element={<Inboxes />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/forget-password" element={<ForgotPassword />} />
         <Route path="/resetSuccess-password" element={<ResetSuccess />} />
         <Route path="/my-profile" element={<Myprofile />} />

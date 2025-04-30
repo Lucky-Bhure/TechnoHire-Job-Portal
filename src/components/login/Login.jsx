@@ -10,48 +10,54 @@ import axios from "axios";
 const Login = () => {
   const navigate = useNavigate();
 
+  const [remeberMe, setRememberMe] = useState(true);
+
   const [showPassword, setShowPassword] = useState(false);
   const [user, setUser] = useState({
-    email : "",
+    email: "",
     password: ""
   })
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (e) => {
     setError("");
-    setUser({...user, [e.target.name]: e.target.value})
+    setUser({ ...user, [e.target.name]: e.target.value })
   }
 
-  const handleLogin = async() => {
+  const handleLogin = async () => {
     try {
+      setLoading(true);
       const res = await axios({
         url: 'https://job-portal-candidate-be.onrender.com/v1/login',
         data: user,
         headers: {
-          "content-type":"application/json; charset=utf-8"
+          "content-type": "application/json"
         },
         method: "post"
       });
-      const tokenStore = window.localStorage.setItem("access_token",res.data.token);
-      
-      if(res.status === 201){
-        navigate("/dashboard");
-      } 
+      const tokenStore = window.localStorage.setItem("access_token", res.data.token);
 
+      if (res.status === 201) {
+        navigate("/dashboard");
+      }
+      setLoading(false);
     } catch (error) {
+      setLoading(true);
       setError("Enter valid email and password")
       console.log(error);
+      setLoading(false);
     }
-
+    
   }
 
   return (
     <div className="flex h-screen bg-white">
-  <div className="w-full md:w-3/5 overflow-hidden bg-white px-20 md:px-20 py-20 justify-center flex flex-col items-center">
+      <div className="w-full md:w-3/5 overflow-hidden bg-white px-20 md:px-20 py-20 justify-center flex flex-col items-center">
         <h2 className="text-3xl font-semibold text-gray-800 mb-[45px] text-center">
           Log In To <span className="text-violet">TechnoHire</span>
         </h2>
-        <form className="w-[80%] space-y-4">
+        <form className="w-[80%] space-y-4" onSubmit={(e) => e.preventDefault()}>
           <div className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200">
             <input
               type="email"
@@ -64,14 +70,14 @@ const Login = () => {
           </div>
           <div className="w-full px-4 py-3 border border-gray-400 bg-gray-100 text-md text-gray-500 rounded-lg focus:ring focus:ring-blue-200 flex ">
             <input
-              type={showPassword ? "text": "password"}
+              type={showPassword ? "text" : "password"}
               placeholder="Enter your password"
               name="password"
               className="w-full outline-none bg-transparent"
               value={user.password}
               onChange={handleInputChange}
             />
-            {showPassword ? <AiFillEye  size={24} onClick={() => setShowPassword(prev => !prev)}/> : <AiFillEyeInvisible size={24} onClick={() => setShowPassword(prev => !prev)}/>}
+            {showPassword ? <AiFillEye size={24} onClick={() => setShowPassword(prev => !prev)} /> : <AiFillEyeInvisible size={24} onClick={() => setShowPassword(prev => !prev)} />}
           </div>
 
           {
@@ -82,7 +88,7 @@ const Login = () => {
 
           <div className="w-full flex items-center justify-between">
             <label className="flex items-center">
-              <input type="checkbox" className="form-checkbox text-blue-600" />
+              <input type="checkbox" className="form-checkbox text-blue-600" checked={remeberMe} onChange={(e) => setRememberMe((prev) => !prev)} />
               <span className="ml-2 text-md text-gray-600 font-normal">
                 Remember me
               </span>
@@ -100,7 +106,7 @@ const Login = () => {
               onClick={handleLogin}
               className="w-[65%] py-3 px-4 my-[20px] bg-[#6712B9]  text-white font-bold rounded-lg"
             >
-              Log In
+             {loading ? <span className="loader"></span> : <p>Log In</p>}
             </button>
           </div>
         </form>
@@ -114,51 +120,47 @@ const Login = () => {
         </div>
 
         <div className="flex space-x-4 justify-center">
-       <a href="https://www.facebook.com/">
-       <button className="p-0 bg-gray-100 text-blue-600 rounded-md w-[105px] h-[56px] flex justify-center items-center">
-            <svg
-              width="26"
-              height="27"
-              viewBox="0 0 26 27"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M14.7956 25.1777V14.248H18.3496L18.8779 9.96868H14.7956V7.24291C14.7956 6.00805 15.1272 5.16259 16.8355 5.16259H19V1.34732C17.9468 1.23022 16.8882 1.17368 15.829 1.17796C12.6877 1.17796 10.5308 3.16761 10.5308 6.82018V9.96068H7V14.24H10.5386V25.1777H14.7956Z"
-                fill="#4092FF"
-              />
-            </svg>
-          </button>
-       </a>
-        <a href="https://accounts.google.co.in/">
-        <button className="p-0 bg-gray-100 text-white rounded-md w-[105px] h-[56px] flex justify-center items-center">
-            <svg
-              width="26"
-              height="27"
-              viewBox="0 0 26 27"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.41996 15.6433L5.59721 18.7147L2.59008 18.7784C1.69139 17.1115 1.18164 15.2044 1.18164 13.1777C1.18164 11.218 1.65825 9.36994 2.50306 7.74268H2.50371L5.1809 8.2335L6.35366 10.8946C6.10821 11.6102 5.97442 12.3784 5.97442 13.1777C5.97451 14.0453 6.13166 14.8765 6.41996 15.6433Z"
-                fill="#FBBB00"
-              />
-              <path
-                d="M24.6116 10.9698C24.7474 11.6848 24.8181 12.4231 24.8181 13.1776C24.8181 14.0237 24.7292 14.8491 24.5597 15.6452C23.9844 18.3543 22.4811 20.7198 20.3987 22.3939L20.398 22.3932L17.026 22.2212L16.5487 19.2419C17.9305 18.4316 19.0104 17.1634 19.5793 15.6452H13.2598V10.9698H19.6715H24.6116Z"
-                fill="#518EF8"
-              />
-              <path
-                d="M20.3976 22.3933L20.3983 22.3939C18.373 24.0218 15.8002 24.9959 12.9996 24.9959C8.49893 24.9959 4.58596 22.4803 2.58984 18.7784L6.41972 15.6433C7.41775 18.3069 9.98724 20.2031 12.9996 20.2031C14.2944 20.2031 15.5074 19.853 16.5483 19.242L20.3976 22.3933Z"
-                fill="#28B446"
-              />
-              <path
-                d="M20.5442 4.08026L16.7156 7.21467C15.6383 6.54131 14.3649 6.15232 13.0007 6.15232C9.92014 6.15232 7.3026 8.13542 6.35456 10.8946L2.50455 7.74261H2.50391C4.4708 3.9504 8.43313 1.3595 13.0007 1.3595C15.8682 1.3595 18.4974 2.38094 20.5442 4.08026Z"
-                fill="#F14336"
-              />
-            </svg>
-          </button>
-        </a>
-         {/* <a href="https://www.linkedin.com/home">
+            <button className="p-0 bg-gray-100 text-blue-600 rounded-md w-[105px] h-[56px] flex justify-center items-center">
+              <svg
+                width="26"
+                height="27"
+                viewBox="0 0 26 27"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M14.7956 25.1777V14.248H18.3496L18.8779 9.96868H14.7956V7.24291C14.7956 6.00805 15.1272 5.16259 16.8355 5.16259H19V1.34732C17.9468 1.23022 16.8882 1.17368 15.829 1.17796C12.6877 1.17796 10.5308 3.16761 10.5308 6.82018V9.96068H7V14.24H10.5386V25.1777H14.7956Z"
+                  fill="#4092FF"
+                />
+              </svg>
+            </button>
+            <button className="p-0 bg-gray-100 text-white rounded-md w-[105px] h-[56px] flex justify-center items-center">
+              <svg
+                width="26"
+                height="27"
+                viewBox="0 0 26 27"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.41996 15.6433L5.59721 18.7147L2.59008 18.7784C1.69139 17.1115 1.18164 15.2044 1.18164 13.1777C1.18164 11.218 1.65825 9.36994 2.50306 7.74268H2.50371L5.1809 8.2335L6.35366 10.8946C6.10821 11.6102 5.97442 12.3784 5.97442 13.1777C5.97451 14.0453 6.13166 14.8765 6.41996 15.6433Z"
+                  fill="#FBBB00"
+                />
+                <path
+                  d="M24.6116 10.9698C24.7474 11.6848 24.8181 12.4231 24.8181 13.1776C24.8181 14.0237 24.7292 14.8491 24.5597 15.6452C23.9844 18.3543 22.4811 20.7198 20.3987 22.3939L20.398 22.3932L17.026 22.2212L16.5487 19.2419C17.9305 18.4316 19.0104 17.1634 19.5793 15.6452H13.2598V10.9698H19.6715H24.6116Z"
+                  fill="#518EF8"
+                />
+                <path
+                  d="M20.3976 22.3933L20.3983 22.3939C18.373 24.0218 15.8002 24.9959 12.9996 24.9959C8.49893 24.9959 4.58596 22.4803 2.58984 18.7784L6.41972 15.6433C7.41775 18.3069 9.98724 20.2031 12.9996 20.2031C14.2944 20.2031 15.5074 19.853 16.5483 19.242L20.3976 22.3933Z"
+                  fill="#28B446"
+                />
+                <path
+                  d="M20.5442 4.08026L16.7156 7.21467C15.6383 6.54131 14.3649 6.15232 13.0007 6.15232C9.92014 6.15232 7.3026 8.13542 6.35456 10.8946L2.50455 7.74261H2.50391C4.4708 3.9504 8.43313 1.3595 13.0007 1.3595C15.8682 1.3595 18.4974 2.38094 20.5442 4.08026Z"
+                  fill="#F14336"
+                />
+              </svg>
+            </button>
+          {/* <a href="https://www.linkedin.com/home">
          <button className="p-0 bg-gray-100 text-white rounded-md w-[105px] h-[56px] flex justify-center items-center">
             <svg
               width="27"
@@ -180,12 +182,14 @@ const Login = () => {
          </a> */}
         </div>
 
-        <p className="mt-[25px] text-center text-gray-600">
-          Don't have an account?
+        <div className="mt-[25px] text-center text-gray-600 flex gap-1">
+          <p>
+            Don't have an account?
+          </p>
           <Link to="/signUp" className="text-violet-600 font-semibold">
             Sign up
           </Link>
-        </p>
+        </div>
       </div>
 
       {/* Right Side: Image */}

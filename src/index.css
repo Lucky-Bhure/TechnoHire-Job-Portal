@@ -17,3 +17,28 @@
 .text-violet{
   color: #7900BA !important;
 }
+
+p, h1, h2, h3, h4, h5, h6 {
+  cursor: default;
+}
+
+
+.loader {
+  width: 26px;
+  height: 26px;
+  border: 3px solid #FFF;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
