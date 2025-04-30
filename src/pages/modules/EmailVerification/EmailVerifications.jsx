@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import LoginBack from "../../../assets/img/loginBackground.png";
 import LoginLogo from "../../../assets/img/loginLogo.png";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { AiOutlineLeft } from 'react-icons/ai';
 import emailImage from "../../../assets/img/emailVerify.png";
 import { BsArrowRight } from "react-icons/bs";

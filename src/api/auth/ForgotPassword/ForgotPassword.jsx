@@ -7,7 +7,6 @@ const useForgotPassword = () => {
 
   // Reset Password Otp Sent
   const handleResetPasswordEmail = async(email, setError) => {
-    console.log("Runnning");
     try {
       const res = await axios.post("https://job-portal-candidate-be.onrender.com/v1/forgetPassword",{
         "email": email
