@@ -48,4 +48,4 @@ const useForgotPassword = () => {
   return {handleResetPasswordEmail, handleOTPVerification , data, handleNewPassword};
 }
 
-export default useForgotPassword
+export default useForgotPassword;
