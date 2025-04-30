@@ -5,7 +5,7 @@ import { BsArrowRight } from "react-icons/bs";
 
 const Chat = () => {  
   const [messages, setMessages] = useState([  
-    { from: "service", text: "Hi, how are you today?" },  
+    { from: "service", text: "hello, how are you today?" },  
     { from: "user", text: "Doing good, I need help how can I apply for a job" },  
     { from: "service", text: "Set up your account first." },  
     { from: "user", text: "Done setting up my account. What's next?" },  
