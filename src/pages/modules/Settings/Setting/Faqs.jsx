@@ -49,7 +49,7 @@ function Faqs() {
         {activeAccordion === 1 && (
           <div
             id="accordion-collapse-body-1"
-            className="p-5 border border-gray-200 dark:bg-gray-900"
+            className="p-5 border border-gray-200 dark:bg-gray-200"
           >
             <p className="mb-2 text-black-500">
               Flowbite is an open-source library of interactive components built
@@ -91,7 +91,7 @@ function Faqs() {
         {activeAccordion === 2 && (
           <div
             id="accordion-collapse-body-2"
-            className="p-5 border border-gray-200 dark:bg-gray-900"
+            className="p-5 border border-gray-200 dark:bg-gray-200"
           >
             <p className="mb-2 text-black-500">
               Flowbite is conceptualized using Figma.
@@ -134,7 +134,7 @@ function Faqs() {
         {activeAccordion === 3 && (
           <div
             id="accordion-collapse-body-3"
-            className="p-5 border border-gray-200 dark:bg-gray-900"
+            className="p-5 border border-gray-200 dark:bg-gray-200"
           >
             <p className="mb-2 text-black-500">
               The main difference is that Flowbite is open source.
@@ -181,7 +181,7 @@ function Faqs() {
         {activeAccordion === 4 && (
           <div
             id="accordion-collapse-body-unique-1"
-            className="p-5 border border-gray-200 dark:bg-gray-900"
+            className="p-5 border border-gray-200 dark:bg-gray-200"
           >
             <p className="mb-2 text-black-500">
             How do I set up job alerts for new opportunities?
@@ -222,7 +222,7 @@ function Faqs() {
         {activeAccordion === 5 && (
           <div
             id="accordion-collapse-body-unique-2"
-            className="p-5 border border-gray-200 dark:bg-gray-900"
+            className="p-5 border border-gray-200 dark:bg-gray-200"
           >
             <p className="mb-2 text-black-500">
             How do I upload my resume to the portal?
@@ -265,7 +265,7 @@ function Faqs() {
         {activeAccordion === 6 && (
           <div
             id="accordion-collapse-body-unique-3"
-            className="p-5 border border-gray-200 dark:bg-gray-900 mb-30"
+            className="p-5 border border-gray-200 dark:bg-gray-200 mb-30"
           >
             <p className="mb-2 text-black-500">
             How do I upload my resume to the portal?
