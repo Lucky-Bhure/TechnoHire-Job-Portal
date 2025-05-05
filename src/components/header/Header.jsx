@@ -28,18 +28,26 @@ const Header = () => {
       value: "India",
       label: (
         <div className="flex items-center gap-2">
-          <FaFlag className="text-orange-600" /> India
+          <img src="https://flagcdn.com/w40/in.png" alt="India Flag" className="w-6 h-4 object-cover rounded-sm" />
+          India
         </div>
       ),
-    },
+    }
+    ,
     {
       value: "Germany",
       label: (
         <div className="flex items-center gap-2">
-          <FaFlag className="text-blue-600" /> Germany
+          <img
+            src="https://flagcdn.com/w40/de.png"
+            alt="Germany flag"
+            className="w-6 h-4 object-cover rounded-sm"
+          />
+          Germany
         </div>
       ),
-    },
+    }
+    ,
   ];
 
   return (
