@@ -21,7 +21,7 @@ const Sidebar = () => {
     <div className={`h-[80vh] w-${isOpen ? "[400px]" : "[6%]"} transition-all flex flex-col justify-between bg-white`}>
       {/* Header + Nav */}
       <div>
-        <div className="flex justify-between items-center pl-4 pt-4">
+        <div className="flex justify-between items-center pl-8 pt-4">
           <p className={`text-gray-400 uppercase text-sm ${!isOpen && "hidden"}`}>
             Candidate Dashboard
           </p>
