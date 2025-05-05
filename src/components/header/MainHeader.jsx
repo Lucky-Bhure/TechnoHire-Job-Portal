@@ -5,7 +5,7 @@ const MainHeader = () => {
   return (
     <header className="bg-[#F1F2F4] w-full">
       <div className="w-full py-2">
-        <nav className="flex flex-wrap justify-between items-center px-4">
+        <nav className="flex flex-wrap justify-between items-center px-10">
           <div className="flex flex-wrap gap-4 md:gap-6">
           {/* <NavLink
               className={({ isActive }) =>

@@ -12,6 +12,7 @@ import 'react-quill/dist/quill.snow.css';
 createRoot(document.getElementById("root")).render(
   <RecoilRoot>
     <BrowserRouter>
+    
       <App />
     </BrowserRouter>
   </RecoilRoot>

@@ -79,10 +79,7 @@ const Chat = () => {
           onChange={(e) => setInput(e.target.value)}  
           onKeyDown={(e) => e.key === "Enter" && handleSend()}  
         />  
-        <button className="text-gray-500 text-xl">  
-        
-          <BsArrowRight /> 
-        </button>  
+      
         <button  
           onClick={handleSend}  
           className="bg-purple-500 hover:bg-purple-600 text-white p-2 rounded-full"  
