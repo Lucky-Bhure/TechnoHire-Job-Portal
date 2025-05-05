@@ -64,6 +64,7 @@ const Header = () => {
                   </p>
                 </div>
               </div>
+              
               {/* Search Section */}
               <div className="w-[650px] my-2 justify-center">
                 <Space.Compact className="w-[750px] py-4 rounded-none h-[50px]">
