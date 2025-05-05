@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Input, Select, Space } from "antd";
-import logo2 from '../../assets/logo2.png'
+import { MdOutlineMessage } from "react-icons/md";
+import { IoIosNotificationsOutline } from "react-icons/io";
+import { FaFlag } from "react-icons/fa";
+import Inboxes from "../../pages/modules/Inbox/Inboxes";
 import MainHeader from "./MainHeader";
 import { TbMessage2 } from "react-icons/tb";
 import { PiBellRingingBold } from "react-icons/pi";
+import { FaSearch } from "react-icons/fa";
+
 // import Notification from "../../pages/modules/Notification/Notification";
 
 const Header = () => {
@@ -32,19 +37,19 @@ const Header = () => {
     }
     ,
     {
-      value: "Germany",
-      label: (
-        <div className="flex items-center gap-2">
-          <img
-            src="https://flagcdn.com/w40/de.png"
-            alt="Germany flag"
-            className="w-6 h-4 object-cover rounded-sm"
-          />
-          Germany
-        </div>
-      ),
-    }
-    ,
+  value: "Germany",
+  label: (
+    <div className="flex items-center gap-2">
+      <img
+        src="https://flagcdn.com/w40/de.png"
+        alt="Germany flag"
+        className="w-6 h-4 object-cover rounded-sm"
+      />
+      Germany
+    </div>
+  ),
+}
+,
   ];
 
   return (
@@ -65,24 +70,25 @@ const Header = () => {
                 </div>
               </div>
 
-              <div className=" w-[650px] my-2 justify-center">
+            {/* Search Section */}
+            <div className=" w-[650px] my-2 justify-center">
               <Space.Compact className="w-[750px] py-4 rounded-none h-[50px] ">
                 <Select
                   options={options}
                   defaultValue={options[0]?.value}
                   style={{ height: "50px" }}
-                  className=" w-[300px]"
+                  className="w-[300px]"
                 />
-                <Input
-                  className="h-[50px]  rounded-none "
-                  placeholder="Job title,keyword,company"
-                />
+                <div className="relative flex items-center justify-start w-full h-[50px] ">
+                  <input
+                    type="text"
+                    className="pl-10 pr-4 w-full border border-gray-300 rounded-none outline-none h-full flex items-center"
+                    placeholder="Job title, keyword, company"
+                  />
+                  <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-purple-600 text-lg" />
+                </div>
               </Space.Compact>
             </div>
-            </div>
-
-            {/* Search Section */}
-            
 
             {/* User Section */}
             <div className="flex items-center gap-4 w-full sm:w-auto justify-center sm:justify-end">
