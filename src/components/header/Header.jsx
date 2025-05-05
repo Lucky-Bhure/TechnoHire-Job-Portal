@@ -72,7 +72,7 @@ const Header = () => {
                     options={options}
                     defaultValue={options[0]?.value}
                     style={{ height: "50px" }}
-                    className="w-[300px]"
+                    className="w-[200px]"
                   />
                   <div className="relative flex items-center justify-start w-full h-[50px]">
                     <input
