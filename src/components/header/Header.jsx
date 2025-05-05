@@ -55,16 +55,16 @@ const Header = () => {
           <div className="flex flex-wrap justify-between items-center">
             {/* Logo Section */}
             <div className="flex items-center w-full sm:w-auto mb-4 sm:mb-0 gap-10">
-              <div className="flex items-center py-">
-                <img src={logo2} alt="Logo" className="w-[55px] h-[60px] object-contain" />
-                <div className="w-fit pr-1">
-                  <p className=" text-2xl sm:text-2xl">TechnoHire</p>
+              <div className="flex items-center ">
+                <img src={logo2} alt="Logo" className="w-[55px] h-[65px]  object-contain mt-2" />
+                <div className="w-fit pr-2 mt-4">
+                  <p className=" font-[500] text-[25px]">TechnoHire</p>
                   <p className="text-[8px] font-bold text-white bg-[#8b008d] px-2 py-1">
                     Where Talent Meets Opportunity{" "}
                   </p>
                 </div>
               </div>
-
+             {/* Search Section */}
               <div className=" w-[650px] my-2 justify-center">
               <Space.Compact className="w-[750px] py-4 rounded-none h-[50px] ">
                 <Select
@@ -81,7 +81,7 @@ const Header = () => {
             </div>
             </div>
 
-            {/* Search Section */}
+           
             
 
             {/* User Section */}
